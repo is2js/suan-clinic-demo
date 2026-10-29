@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 5,
+  "id": "features",
+  "heading": {
+    "number": "03",
+    "eyebrow": "THE WORLD WE SHARE",
+    "title": "모험의 모든 순간을 함께",
+    "description": "전투와 성장, 동료와 진료까지. 의맥전기에서 이어지는 다섯 가지 이야기."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+  "assets": {},
+  "copy": {},
+  "actions": [],
+  "items": [
+    {
+      "id": "battle",
+      "name": "전투의 순간",
+      "description": "나만의 장비와 스킬로 펼치는 실시간 전투.",
+      "image": "/assets/rpg/ui/generated-previews/16-battle-clinic-action-center-20260628.webp",
+      "tag": "BATTLE",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/portrait-medical-male.webp",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play"
+    },
+    {
+      "id": "healing",
+      "name": "치유와 성장",
+      "description": "의료 스킬과 회복의 흐름을 연결하는 모험.",
+      "image": "/assets/rpg/ui/entry-bg-healing-buff-left-20260628.webp",
+      "tag": "HEALING",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/portrait-medical-female.webp",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play"
+    },
+    {
+      "id": "equipment",
+      "name": "준비하는 즐거움",
+      "description": "장비와 인벤토리를 정비하고 다음 전투를 준비하세요.",
+      "image": "/assets/rpg/ui/entry-bg-inventory-prep-left-20260628.webp",
+      "tag": "EQUIPMENT",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/villagers/v1/portrait-n007.webp",
+        "kind": "npc",
+        "side": "right"
+      },
+      "actionId": "play"
+    },
+    {
+      "id": "together",
+      "name": "함께하는 세계",
+      "description": "동료를 만나고 파티와 길드로 모험을 이어갑니다.",
+      "image": "/assets/rpg/ui/entry-bg-social-rest-chat-left-20260628.webp",
+      "tag": "TOGETHER",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/hero-healers.webp",
+        "kind": "pair",
+        "side": "right"
+      },
+      "actionId": "play"
+    },
+    {
+      "id": "clinic-life",
+      "name": "진료실의 일상",
+      "description": "진료실 현황과 치료 흐름을 게임 속에서 함께 살펴보세요.",
+      "image": "/assets/rpg/ui/generated-previews/18-clinic-operations-center-20260628.webp",
+      "tag": "CLINIC",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/villagers/v1/portrait-n002.webp",
+        "kind": "npc",
+        "side": "right"
+      },
+      "actionId": "clinic"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 5,
+  "id": "access",
+  "heading": {
+    "number": "",
+    "eyebrow": "A NEW CHAPTER AWAITS",
+    "title": "새로운 인연이\n당신을 기다립니다",
+    "description": "설치 없이, 브라우저에서 시작하는 우리들의 RPG."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+  "assets": {},
+  "copy": {},
+  "actions": [
+    {
+      "actionId": "play",
+      "label": "지금 모험 시작하기"
+    }
+  ]
+}

@@ -1,0 +1,2681 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/is2js/pvp",
+  "sourceCommit": "c225a27c81ee1407b9fefd8a63b25c9229c0ae64",
+  "contentRevision": "intro-authored-sections-20261022-r1",
+  "contentSha256": "841e07e4bf4c9fc83609cc79376dbb607da194cca4dfb0b789d8f92ba98f8f5b",
+  "mode": "demo",
+  "pagesEnabled": true,
+  "spriteRowVariants": 47,
+  "assetBytes": 72402031,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "bytes": 1927,
+      "sha256": "840c886b790776790205dd9a3218da70d122a5372830fbb0e1403d492683e15d",
+      "source": "tools/rpg_intro_demo/pages.yml"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 50,
+      "sha256": "84f3823e30960564bba0404b98c0e15064db984e4e3d9f0eb979604519a58962"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3868,
+      "sha256": "a69f1e5368dfede5bd643c45343b563ce1bd53fe6269fa6b2b119669f2779f20",
+      "source": "tools/rpg_intro_demo/README.md"
+    },
+    {
+      "path": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "bytes": 75773,
+      "sha256": "6dc43fd3316ad430dd37c07f52a26fa7d246150eb33506d75efee12ee9eb3b63",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "sourceSha256": "6dc43fd3316ad430dd37c07f52a26fa7d246150eb33506d75efee12ee9eb3b63",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "bytes": 75525,
+      "sha256": "b0a2b610e7adbc317b7935a8767a69f42b775896977f5f14c615165f9ffeee8e",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "sourceSha256": "b0a2b610e7adbc317b7935a8767a69f42b775896977f5f14c615165f9ffeee8e",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "assets/characters/paper-doll/weapons/effects/weapon-effects-r1/art/fire-sword1h/strip.png",
+      "bytes": 235364,
+      "sha256": "97355cdc9607ce91cb5dbdf956f77702e516ecaf34ddf696bccd4eb96ac75e52",
+      "source": "assets/characters/paper-doll/weapons/effects/weapon-effects-r1/art/fire-sword1h/strip.png",
+      "sourceSha256": "97355cdc9607ce91cb5dbdf956f77702e516ecaf34ddf696bccd4eb96ac75e52",
+      "width": 2048,
+      "height": 128
+    },
+    {
+      "path": "assets/characters/paper-doll/weapons/effects/weapon-effects-r1/art/ice-sword1h/strip.png",
+      "bytes": 218516,
+      "sha256": "5ce9e773c6583089f6af7273b3011d4f460fd409da7586278a52f7862837fb06",
+      "source": "assets/characters/paper-doll/weapons/effects/weapon-effects-r1/art/ice-sword1h/strip.png",
+      "sourceSha256": "5ce9e773c6583089f6af7273b3011d4f460fd409da7586278a52f7862837fb06",
+      "width": 2048,
+      "height": 128
+    },
+    {
+      "path": "assets/intro-sprites/034150acab969571da122608-256-r1.png",
+      "bytes": 8727,
+      "sha256": "d396c5fe61d14f19cae30a1d14ac14591c632b68294643bedeb9f6ea56e7f1d9",
+      "source": "assets/characters/paper-doll/weapons/sheets/identity-combat-care-20260912-r1/200-medical-syringe.png",
+      "sourceSha256": "034150acab969571da12260851429ddfe9579a9ba443da1c64ce3729040abf81",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/0410eb66c55e2db128a84924-128-r4.png",
+      "bytes": 25762,
+      "sha256": "22df674f94d3b3253ce289b2c2be6623407bb108a15c3ef62c342038efdf2ad4",
+      "source": "assets/rpg/monsters/sprites/M926/sheets/walk/normal.png",
+      "sourceSha256": "0410eb66c55e2db128a84924acc5bb8f149477a78015087fd46b469e6c7fa57c",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/0410eb66c55e2db128a84924-128-r5.png",
+      "bytes": 24674,
+      "sha256": "80d0091053e6b9b21d68388fbe3cc2e604fbe0a9b1ed7231f539e1c01a2ca4c6",
+      "source": "assets/rpg/monsters/sprites/M926/sheets/walk/normal.png",
+      "sourceSha256": "0410eb66c55e2db128a84924acc5bb8f149477a78015087fd46b469e6c7fa57c",
+      "sourceRow": 5,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/0483b8f666865ba695c38e17-256-r1.png",
+      "bytes": 301762,
+      "sha256": "eea5e4d16c249c1117bc744d906fcf0b8d57e10e02fe622a573710ad3bdabcf6",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/sheets/cast/normal.png",
+      "sourceSha256": "0483b8f666865ba695c38e17e57e01f024317c8b75749f5cdb59f8f0dc900e51",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/2199f6b2f8066d4e3e2d4d4e-256-r1.png",
+      "bytes": 6569,
+      "sha256": "51a126af5f38cc5095dbaa1a2d883e84ae9734f09791156c76d02b4423173382",
+      "source": "assets/characters/paper-doll/weapons/sheets/identity-combat-care-20260912-r1/100-medical-syringe.png",
+      "sourceSha256": "2199f6b2f8066d4e3e2d4d4efdd8f3f8910f41b998d0bd9bc8192eff48321123",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/2c249abd5601128da0ea6825-128-r3.png",
+      "bytes": 17373,
+      "sha256": "7cc857f6d4d37d328268dff4eb45464d8459c0f15b587dabacf94aef689349eb",
+      "source": "assets/rpg/monsters/sprites/M932/sheets/attack/normal.png",
+      "sourceSha256": "2c249abd5601128da0ea68258c35d499af8e5f3362743f631a6a289b32b5eb87",
+      "sourceRow": 3,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/2c249abd5601128da0ea6825-128-r4.png",
+      "bytes": 18110,
+      "sha256": "3e849a80a07de77a6ec8c20654bbe31feb27b897ed73fa6b6b6fea19ffa9c364",
+      "source": "assets/rpg/monsters/sprites/M932/sheets/attack/normal.png",
+      "sourceSha256": "2c249abd5601128da0ea68258c35d499af8e5f3362743f631a6a289b32b5eb87",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/2f71e95fe89959ba99d43741-128-r4.png",
+      "bytes": 23313,
+      "sha256": "03a234ea9f7bd9bc188ee57345f155f3c2dd1bd3e9b64c15edfed9bdbb27426e",
+      "source": "assets/rpg/monsters/sprites/M951/sheets/attack/normal.png",
+      "sourceSha256": "2f71e95fe89959ba99d43741f593194d23fb577c5f9549f3785c72c8fdb1f6d1",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/2f7b9800034049bb1a911121-256-r4.png",
+      "bytes": 30060,
+      "sha256": "f2a3d30f008626eb5a81b26ab7d19bebde5628e78ab584bac7930eba5c0740e5",
+      "source": "assets/characters/paper-doll/weapons/sheets/weapon-visibility-20260914-r1/base/06-100-attack-sword-throw.png",
+      "sourceSha256": "2f7b9800034049bb1a9111212ae9842a946d5de53863c259f2f43e3d6114d47b",
+      "sourceRow": 4,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/30d0ba32cc7a062c4c716721-128-r4.png",
+      "bytes": 37034,
+      "sha256": "8f4471cd81961dbb6ac9df20489e8a67b4523ddd1a92a1742e328eb325b1022b",
+      "source": "assets/rpg/monsters/sprites/M946/sheets/attack/normal.png",
+      "sourceSha256": "30d0ba32cc7a062c4c71672104f3a0cae2ed81f446470718c3cc1d42905de8ff",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/31009ab9c641e2b7175b52ed-256-r1.png",
+      "bytes": 271177,
+      "sha256": "042af5b0b5407eaf4141d5eec05e45e15a5cc5d30f0b82acc0e75e03ad534066",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/sheets/attack/medical_thrust.png",
+      "sourceSha256": "31009ab9c641e2b7175b52eddeb3d5d20634bbf035f2172b0d21c370a72bd6d1",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/34f29d70e43ce7948bf29945-256-r4.png",
+      "bytes": 282302,
+      "sha256": "757ee63652650326192568a675a4b98c72aadbaac8c2a5f8cee78b869d3d5e76",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/appearances/common/sheets/attack/attack-axe.png",
+      "sourceSha256": "34f29d70e43ce7948bf29945b77993d46b9a8acf6acd4da5ec0bc10835d38725",
+      "sourceRow": 4,
+      "width": 2048,
+      "height": 256,
+      "frames": 8,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/388e347bbe6bd61347d462fe-128-r4.png",
+      "bytes": 52977,
+      "sha256": "d32e79d354d93db0a825c700bf3a52b2f203be2f4eba1f15ffcb74225c3c556f",
+      "source": "assets/rpg/monsters/sprites/M936/sheets/attack/normal.png",
+      "sourceSha256": "388e347bbe6bd61347d462fe89481205e58d3a13ea33670e9af886a96844e95a",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/43824c27b8ba841442103475-128-r4.png",
+      "bytes": 38088,
+      "sha256": "e5211164851a6c684d014a4b4941253f985c1dcb3510776123369e8f0f424b3d",
+      "source": "assets/rpg/monsters/sprites/M946/sheets/walk/normal.png",
+      "sourceSha256": "43824c27b8ba841442103475d050512a605f0efb300a3a83958d091d696caf65",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/4a476a2f446706d75a55ca0c-128-r4.png",
+      "bytes": 25171,
+      "sha256": "5526940387e7624ef0dfef4d44bad44d3a12af56d8c845ec9b0d059a21782363",
+      "source": "assets/rpg/monsters/sprites/M926/sheets/attack/normal.png",
+      "sourceSha256": "4a476a2f446706d75a55ca0c64dd66890385bc23e5901d3bc6904040eda2d588",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/4a476a2f446706d75a55ca0c-128-r5.png",
+      "bytes": 24746,
+      "sha256": "d7ca466b9d78333a6f12bdfb69c83aefc750a51df7c9dafc9ae9ab704b6be3e4",
+      "source": "assets/rpg/monsters/sprites/M926/sheets/attack/normal.png",
+      "sourceSha256": "4a476a2f446706d75a55ca0c64dd66890385bc23e5901d3bc6904040eda2d588",
+      "sourceRow": 5,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/5bde4f25bb839b08a132e009-128-r4.png",
+      "bytes": 23651,
+      "sha256": "45f51dd1cdd6cd04e3a9f91f416ce7ddf08254ee2b467652f77d3c1750ddb0f8",
+      "source": "assets/rpg/monsters/sprites/M941/sheets/walk/normal.png",
+      "sourceSha256": "5bde4f25bb839b08a132e009852c1927f41c69cf9271a58d42c099959cd52c01",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+      "bytes": 203846,
+      "sha256": "efa9ff35e4f0e2a9380dd1514fee82b2234a1ccdfbb2df5499423a618fefb93e",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/appearances/common/sheets/idle/normal.png",
+      "sourceSha256": "60c3e1ee747410741e191e91e7fd95a90758a6c1a85d098d1840dfb6941f892b",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/61a88c892a8fa5b7ab437e95-256-r1.png",
+      "bytes": 283075,
+      "sha256": "803f29f2080871ad9cb6402eb6701fdf15591c06defb588a9227f519a515ca5b",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/sheets/attack/medical_thrust.png",
+      "sourceSha256": "61a88c892a8fa5b7ab437e956fb316a6c14017f5ece5421fa97661084eed71b6",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/73988f7afdcea18430c87567-256-r1.png",
+      "bytes": 783641,
+      "sha256": "534f692b89d61301a74abb756149cd78808b7dee79dadd6ddd16f6ba0c9bbb72",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/sheets/medical/chuna.png",
+      "sourceSha256": "73988f7afdcea18430c87567d704fc4c769bac34764b7f4cdee655f43eb440bd",
+      "sourceRow": 1,
+      "width": 3072,
+      "height": 256,
+      "frames": 12,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/76b0db7f4c14e9817e7a334b-256-r4.png",
+      "bytes": 37557,
+      "sha256": "50c60fb3bc5a6950d4c3958372534be438cbd4d075b17ed75d9470a76e83e828",
+      "source": "assets/characters/paper-doll/weapons/sheets/weapon-direction-20260919-r5/base/200-attack-attack-axe-attack-axe.png",
+      "sourceSha256": "76b0db7f4c14e9817e7a334b75dcdf1dc5bf6863f725933ba49d6d5c9ee1481c",
+      "sourceRow": 4,
+      "width": 2048,
+      "height": 256,
+      "frames": 8,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/79d46bf08722ea20fa56874e-256-r4.png",
+      "bytes": 8865,
+      "sha256": "57b1fe1fa58dfec3d530b10ac7c4725d71ae7c13b290629a9ce4f1d6034176fe",
+      "source": "assets/characters/paper-doll/weapons/sheets/weapon-direction-20260919-r5/base/200-idle-normal-attack-axe.png",
+      "sourceSha256": "79d46bf08722ea20fa56874ebecff6ffcc28d491bbf963fead6643fac5c1eebf",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/8280b603c90bb36d550360d2-256-r4.png",
+      "bytes": 312455,
+      "sha256": "8593dc2061e45ffffbe06ba9ef6e531167b85cd0748c3ee1b346734fc5477d6b",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/appearances/common/sheets/attack/throw.png",
+      "sourceSha256": "8280b603c90bb36d550360d2b7b338b413e46b286d6a1d2cd0a851b4c210415b",
+      "sourceRow": 4,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/84d37584c8a74c01146880f3-128-r4.png",
+      "bytes": 51293,
+      "sha256": "fdf7e17a5f5f2614e7d2108501c9b17f043dd88cae7194118cb5121214a05dee",
+      "source": "assets/rpg/monsters/sprites/M936/sheets/walk/normal.png",
+      "sourceSha256": "84d37584c8a74c01146880f3b33ff4d7ba9dcd7812ae7f335ae2d209457cf84f",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/855f59fe11eafaa7c0984e35-128-r4.png",
+      "bytes": 22943,
+      "sha256": "68c10f2696f4338230bae2bbd91238ff371168dca39bedf85eac319c5feb72b5",
+      "source": "assets/rpg/monsters/sprites/M941/sheets/attack/normal.png",
+      "sourceSha256": "855f59fe11eafaa7c0984e35ec872bb5d6c7bfb6f493a2b241471c7f94961ec9",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/8e84c7499b616795279704cd-128-r4.png",
+      "bytes": 17972,
+      "sha256": "8ddbc441b3914a91931eb7b0859390c107318c621b0df39e741e67dbf9342c02",
+      "source": "assets/rpg/monsters/sprites/M906/sheets/attack/normal.png",
+      "sourceSha256": "8e84c7499b616795279704cd0e12ebc9b3b7753bb70c5470b47d169879a6a988",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/973baba0a750b9659566185b-128-r4.png",
+      "bytes": 26484,
+      "sha256": "225ca06ec022c53a6fa1c6d925207c1e109c5ecbf4d2a97109433a0148d8f488",
+      "source": "assets/rpg/monsters/sprites/M911/sheets/attack/normal.png",
+      "sourceSha256": "973baba0a750b9659566185b922ae4596344ee5839a3d252f42a7f85abd9909b",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/a625febf1a0709b3bc52a31d-256-r1.png",
+      "bytes": 802173,
+      "sha256": "8c7233df1be914216bf5c7b28a64a55ef9ff58dde93710a9b3425d6960dfa254",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/sheets/medical/ultrasound_seated.png",
+      "sourceSha256": "a625febf1a0709b3bc52a31d9bcca4da9117895fa58d21cb1e2ce78248e990c5",
+      "sourceRow": 1,
+      "width": 3072,
+      "height": 256,
+      "frames": 12,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/a6abf7514f784f25c2232b8b-128-r5.png",
+      "bytes": 24205,
+      "sha256": "6c8f3c49db95c4e07d333ec838a279f540fc4a195c6385facec3b4270038a1ad",
+      "source": "assets/rpg/monsters/sprites/M828/sheets/walk/normal.png",
+      "sourceSha256": "a6abf7514f784f25c2232b8b750427446c40f6fe9d280f27d2aee37a50dddf2d",
+      "sourceRow": 5,
+      "width": 512,
+      "height": 128,
+      "frames": 4,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/a7100b6de3106967af9751bb-256-r4.png",
+      "bytes": 205886,
+      "sha256": "f56707aecda453316e4de34e48acce6f4c5e7a89c9521f02a3ec3232253bf56c",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/sheets/idle/normal.png",
+      "sourceSha256": "a7100b6de3106967af9751bb0e639063123c0202cd4ba075c3b0e982f8da0311",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/b3681183b074f9c1aebfd8a0-128-r4.png",
+      "bytes": 24860,
+      "sha256": "96b02583b21570d26f90f99efd8cc7bb98d0dbb255cf4286bee391423227d4e6",
+      "source": "assets/rpg/monsters/sprites/M921/sheets/attack/normal.png",
+      "sourceSha256": "b3681183b074f9c1aebfd8a0d028362dd3da5632e62000853274d6ddf722d081",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/b706c75b732e58b86154bedf-256-r4.png",
+      "bytes": 204494,
+      "sha256": "b38b45f0899208395bc94148a33d4340daeee0924431e8c6a7a2efeedce642fb",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/sheets/idle/normal.png",
+      "sourceSha256": "b706c75b732e58b86154bedfc7d2b4a59cde8e57ee8aae2c98b3f861a7b9e980",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/bb7704147b3d4a35bb1615b1-128-r3.png",
+      "bytes": 16597,
+      "sha256": "b86395b09091520b3111f3b3fa62ca154f8469e830f5a670e4614ae458da30ff",
+      "source": "assets/rpg/monsters/sprites/M932/sheets/walk/normal.png",
+      "sourceSha256": "bb7704147b3d4a35bb1615b1de886ae08ba0302800256c0900d0c4f4ca5325a9",
+      "sourceRow": 3,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/bb7704147b3d4a35bb1615b1-128-r4.png",
+      "bytes": 17899,
+      "sha256": "533439e0531426a10bf9204c5e960c7c780114f02a301d20dbfce3b53faa32c3",
+      "source": "assets/rpg/monsters/sprites/M932/sheets/walk/normal.png",
+      "sourceSha256": "bb7704147b3d4a35bb1615b1de886ae08ba0302800256c0900d0c4f4ca5325a9",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/c16278ea9560838ca4954699-128-r4.png",
+      "bytes": 21456,
+      "sha256": "c1b0b6fae4cb41040632626e0f649dd11eb8573c4782c932c210485ca35f534c",
+      "source": "assets/rpg/monsters/sprites/M916/sheets/attack/normal.png",
+      "sourceSha256": "c16278ea9560838ca4954699a8401e3edbceb55d3daaedaa281f326becc639b6",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/c1f4c4dc39bb3d18d5547212-256-r1.png",
+      "bytes": 266883,
+      "sha256": "78aebda0f19b83ad0833e617d4cbce188fff41a48083e2f61a1cd7ca991a4d2d",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/sheets/cast/normal.png",
+      "sourceSha256": "c1f4c4dc39bb3d18d55472129f5fb3d0559038273219a21aec3d510a0e5c0472",
+      "sourceRow": 1,
+      "width": 2304,
+      "height": 256,
+      "frames": 9,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/c3eeb8c74d9cccbaef460edc-128-r4.png",
+      "bytes": 21978,
+      "sha256": "bf05da80bbed1f37d811844ad525e0a2e078405c328d95547f1fbff8160f62a4",
+      "source": "assets/rpg/monsters/sprites/M916/sheets/walk/normal.png",
+      "sourceSha256": "c3eeb8c74d9cccbaef460edc1010fcf9a9bbd7d824fb1404a7e184451f06ae59",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+      "bytes": 210146,
+      "sha256": "20eaa198577721f2c70ee51ea0e5d18d2653a085f6e5025b280bceed9ade5659",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/appearances/common/sheets/idle/normal.png",
+      "sourceSha256": "c8a0a4468e14755cbd5e08abd8427ab6922658625814cd1cd7be695b9a7fb6dd",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/cfa79625386667bb194ed9ab-128-r4.png",
+      "bytes": 27512,
+      "sha256": "a24178c7cf68586b892a93a559a17bf54a5758985f8b1169848fed12e7ec3b5c",
+      "source": "assets/rpg/monsters/sprites/M911/sheets/walk/normal.png",
+      "sourceSha256": "cfa79625386667bb194ed9abedc07b3f617985d42101e344d4a48946efed1f09",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/d1ceb2bea7d30dcbc2340e88-128-r4.png",
+      "bytes": 39065,
+      "sha256": "b185da34a27c4d730f1a592477fbd755a1a0e6d74968f28f8657faaf7b652cda",
+      "source": "assets/rpg/monsters/sprites/M931/sheets/walk/normal.png",
+      "sourceSha256": "d1ceb2bea7d30dcbc2340e88ccdc140648a1747682e60812b9a3923891774cb1",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/e66f1af443d10ecfde2f9bb9-128-r4.png",
+      "bytes": 38701,
+      "sha256": "8cea7bcb26865409621b05eca945a32a34ca246e4332d4d100def8971b7154fb",
+      "source": "assets/rpg/monsters/sprites/M931/sheets/attack/normal.png",
+      "sourceSha256": "e66f1af443d10ecfde2f9bb9a7fba5dda3ab894761c75c81e62898637644b625",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/ebbd74861da837cf3062929a-128-r4.png",
+      "bytes": 18309,
+      "sha256": "4773984cf6ab9780e79e5b9293e12c6a2290c8450a3b844f9d3ca2a81e17e817",
+      "source": "assets/rpg/monsters/sprites/M906/sheets/walk/normal.png",
+      "sourceSha256": "ebbd74861da837cf3062929a314736d5cf115c32d59a7e7c62873155bd20bab8",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/ec1e0887e2708158682c72a6-256-r1.png",
+      "bytes": 748128,
+      "sha256": "2109848d007ce78355ba6ab1dba01d3392e75e52ea1aab73dc2d0ce676609ae4",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/sheets/medical/drink_herbal_pouch.png",
+      "sourceSha256": "ec1e0887e2708158682c72a62c8a1e89a0563cff5cd15ba34a92284a193c91c3",
+      "sourceRow": 1,
+      "width": 3072,
+      "height": 256,
+      "frames": 12,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/ed960f75709dddcae4f74713-128-r4.png",
+      "bytes": 23147,
+      "sha256": "ebd65178bfa67c486cd7b0fd761b97d6bd95e221c88dbdeeffccb2f80c527e0f",
+      "source": "assets/rpg/monsters/sprites/M951/sheets/walk/normal.png",
+      "sourceSha256": "ed960f75709dddcae4f74713dda427e131588f9c51b6830ed82a3153fac4a84f",
+      "sourceRow": 4,
+      "width": 640,
+      "height": 128,
+      "frames": 5,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/eeef7ae1c3de118d41d63135-128-r4.png",
+      "bytes": 25088,
+      "sha256": "8708d31baeb8b760204a16d99da2129bfe76190d0dc2269ef7bf2743e94b82a2",
+      "source": "assets/rpg/monsters/sprites/M921/sheets/walk/normal.png",
+      "sourceSha256": "eeef7ae1c3de118d41d63135b64f5c3ef767094b28944e5521892737852fd2f2",
+      "sourceRow": 4,
+      "width": 384,
+      "height": 128,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/fae3d1021f59200823079342-256-r1.png",
+      "bytes": 804161,
+      "sha256": "fef3685eeb801c9a6ad1831b8fa7253623dd8337683fea517971d8d5eec2719d",
+      "source": "assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/sheets/medical/needle2.png",
+      "sourceSha256": "fae3d1021f59200823079342fb6f6b1002448649fb50ef0c1e0dacd2eed87b59",
+      "sourceRow": 1,
+      "width": 3072,
+      "height": 256,
+      "frames": 12,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/intro-sprites/fddd568b5126d02c5a540147-256-r4.png",
+      "bytes": 3890,
+      "sha256": "21460d87628c6b4653203cc194ea4be503590c7429133430fb1b791e52b43a13",
+      "source": "assets/characters/paper-doll/weapons/sheets/weapon-visibility-20260914-r1/base/12-100-idle-normal-throw.png",
+      "sourceSha256": "fddd568b5126d02c5a5401471eb0f2272a711a10bc52782f6b8e814b1f896ca2",
+      "sourceRow": 4,
+      "width": 768,
+      "height": 256,
+      "frames": 3,
+      "pixelExact": true
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n002.png",
+      "bytes": 268287,
+      "sha256": "11110eb1f1dac1261fbe46a438dc236052a72e18f87c36222b8b6afb2653de26",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n002.png",
+      "sourceSha256": "11110eb1f1dac1261fbe46a438dc236052a72e18f87c36222b8b6afb2653de26",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n006.png",
+      "bytes": 296298,
+      "sha256": "46846f50ff39a6ce9232ad089e9b169d98599d09ba7b3042ddd4478b873547c7",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n006.png",
+      "sourceSha256": "46846f50ff39a6ce9232ad089e9b169d98599d09ba7b3042ddd4478b873547c7",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n007.png",
+      "bytes": 373990,
+      "sha256": "88081fcb202ffdb04af6ae9dc7bf9d9e9d3ef8f51fd8833cb7e902000cb5e343",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n007.png",
+      "sourceSha256": "88081fcb202ffdb04af6ae9dc7bf9d9e9d3ef8f51fd8833cb7e902000cb5e343",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n017.png",
+      "bytes": 297900,
+      "sha256": "abfad923442224fe7adbc0b1e9635c5f08a6103cd872d4dc1b757a24616be7eb",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n017.png",
+      "sourceSha256": "abfad923442224fe7adbc0b1e9635c5f08a6103cd872d4dc1b757a24616be7eb",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n020.png",
+      "bytes": 290706,
+      "sha256": "9d8c07a9472c4ae99db43aa74cca611d8854f09bea03815e670578f8d7fe1f65",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portraits/portrait-n020.png",
+      "sourceSha256": "9d8c07a9472c4ae99db43aa74cca611d8854f09bea03815e670578f8d7fe1f65",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/actors/npc-gpt61-sol2-ultra-r3-face-dynamic/portraits/portrait-n001.png",
+      "bytes": 337375,
+      "sha256": "285736bd17647bfece5550fc323585974050e06ee9382856356423e1f105c017",
+      "source": "assets/rpg/actors/npc-gpt61-sol2-ultra-r3-face-dynamic/portraits/portrait-n001.png",
+      "sourceSha256": "285736bd17647bfece5550fc323585974050e06ee9382856356423e1f105c017",
+      "width": 512,
+      "height": 640
+    },
+    {
+      "path": "assets/rpg/css/rpg-intro.css",
+      "bytes": 227750,
+      "sha256": "13d2fecd4661c2da796d4676005f1bd72f57914de38a8d02f0db991eaf253512",
+      "source": "assets/rpg/css/rpg-intro.css",
+      "sourceSha256": "3f6edab9027fa5321dac0e9fa4847704ac9f2b4f67043537957d9aa5b0f72c19"
+    },
+    {
+      "path": "assets/rpg/fonts/web/LICENSE.txt",
+      "bytes": 4350,
+      "sha256": "83790cca0541896a6c9b36368b77c2d6ce5922848ac0b62858c5444975fb4318",
+      "source": "assets/rpg/fonts/web/LICENSE.txt"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-00000.woff2",
+      "bytes": 16824,
+      "sha256": "51e2ff1adce2ab63463044b9e40c07973b007f141fc9ec2b6ad62cd17313b9c2",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-00000.woff2",
+      "sourceSha256": "51e2ff1adce2ab63463044b9e40c07973b007f141fc9ec2b6ad62cd17313b9c2"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-01000.woff2",
+      "bytes": 43392,
+      "sha256": "342a8b72fb673d9392daa6869ac0c29946efa87dc434570a68d098f516ad7c71",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-01000.woff2",
+      "sourceSha256": "342a8b72fb673d9392daa6869ac0c29946efa87dc434570a68d098f516ad7c71"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-01800.woff2",
+      "bytes": 9308,
+      "sha256": "d8ebfa428c52c61b3028ad5558581d62aaf8e9db22d952c2a5110fd76ae957d4",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-01800.woff2",
+      "sourceSha256": "d8ebfa428c52c61b3028ad5558581d62aaf8e9db22d952c2a5110fd76ae957d4"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-02000.woff2",
+      "bytes": 39188,
+      "sha256": "f5baa97ad2c544283e9b9678df7586e42ca0f87c852b7529fd894c7c4a8725b8",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-02000.woff2",
+      "sourceSha256": "f5baa97ad2c544283e9b9678df7586e42ca0f87c852b7529fd894c7c4a8725b8"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-02800.woff2",
+      "bytes": 19752,
+      "sha256": "a63860575bbe9f90fea9776cc174bbecf9cf26948c3a9feaf1ae7477e10a6e72",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-02800.woff2",
+      "sourceSha256": "a63860575bbe9f90fea9776cc174bbecf9cf26948c3a9feaf1ae7477e10a6e72"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-03000.woff2",
+      "bytes": 324352,
+      "sha256": "96f7503f3c53dacf5e24b39209ad4fb9ecce9cc86e22435dd6d99e531cf1588a",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-03000.woff2",
+      "sourceSha256": "96f7503f3c53dacf5e24b39209ad4fb9ecce9cc86e22435dd6d99e531cf1588a"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-03800.woff2",
+      "bytes": 444848,
+      "sha256": "f8bffb9027e3f72ac7a015089fc5d1ea43bd0b365d0b414d3546d15d0f2f8248",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-03800.woff2",
+      "sourceSha256": "f8bffb9027e3f72ac7a015089fc5d1ea43bd0b365d0b414d3546d15d0f2f8248"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-04000.woff2",
+      "bytes": 442164,
+      "sha256": "4fb1f136f171aecabd143902614e336f86903f7597bc75cfd34f4cc466948085",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-04000.woff2",
+      "sourceSha256": "4fb1f136f171aecabd143902614e336f86903f7597bc75cfd34f4cc466948085"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-04800.woff2",
+      "bytes": 435300,
+      "sha256": "4d8e1285f44ee79369d7248eeb5e477910fb5e6637ad02bd35cea65e1d54cb7f",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-04800.woff2",
+      "sourceSha256": "4d8e1285f44ee79369d7248eeb5e477910fb5e6637ad02bd35cea65e1d54cb7f"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-05000.woff2",
+      "bytes": 353968,
+      "sha256": "c92b9272dcac4fc79a8064ca3dc2aecc494015471b43e4966664735529a7511b",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-05000.woff2",
+      "sourceSha256": "c92b9272dcac4fc79a8064ca3dc2aecc494015471b43e4966664735529a7511b"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-05800.woff2",
+      "bytes": 395756,
+      "sha256": "b82aa67ed0cda5f692832e4abe9d6d65dd58923a283c3488d01e8bf03108d4dc",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-05800.woff2",
+      "sourceSha256": "b82aa67ed0cda5f692832e4abe9d6d65dd58923a283c3488d01e8bf03108d4dc"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-06000.woff2",
+      "bytes": 404416,
+      "sha256": "54b35cb2e4d1e477bd440cbf1c5980e3446b2fb8c964003e5605568c3699acd1",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-06000.woff2",
+      "sourceSha256": "54b35cb2e4d1e477bd440cbf1c5980e3446b2fb8c964003e5605568c3699acd1"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-06800.woff2",
+      "bytes": 450492,
+      "sha256": "8b84b13851746098fed437de10aeb0f02aace1cc25cd0da0621045d5de7f03dc",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-06800.woff2",
+      "sourceSha256": "8b84b13851746098fed437de10aeb0f02aace1cc25cd0da0621045d5de7f03dc"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-07000.woff2",
+      "bytes": 444188,
+      "sha256": "c4b33f1464fcce6a54325aae0dba4d90f748ba41a7c0c8642bf66194ab6b5877",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-07000.woff2",
+      "sourceSha256": "c4b33f1464fcce6a54325aae0dba4d90f748ba41a7c0c8642bf66194ab6b5877"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-07800.woff2",
+      "bytes": 467388,
+      "sha256": "bfe16f3062a2d6c9192ec65409faa8da8b684f568946b9a47ddbd113ddf7cddb",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-07800.woff2",
+      "sourceSha256": "bfe16f3062a2d6c9192ec65409faa8da8b684f568946b9a47ddbd113ddf7cddb"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-08000.woff2",
+      "bytes": 430624,
+      "sha256": "64d6bc729c40e4142305cf1182e64a71b7f2a5a5529e4c270419567cd2d3f704",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-08000.woff2",
+      "sourceSha256": "64d6bc729c40e4142305cf1182e64a71b7f2a5a5529e4c270419567cd2d3f704"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-08800.woff2",
+      "bytes": 425112,
+      "sha256": "6bfdee671beb0550abee574df6cb66187c9d0883d18f952c30b6f9c7bfbbd0d1",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-08800.woff2",
+      "sourceSha256": "6bfdee671beb0550abee574df6cb66187c9d0883d18f952c30b6f9c7bfbbd0d1"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-09000.woff2",
+      "bytes": 445028,
+      "sha256": "b8b885561aa50d091c34b9e712fc6fadb79ce8e88f9ceb4dfbeab7f194fa178f",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-09000.woff2",
+      "sourceSha256": "b8b885561aa50d091c34b9e712fc6fadb79ce8e88f9ceb4dfbeab7f194fa178f"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-09800.woff2",
+      "bytes": 520452,
+      "sha256": "e9a942b3d2e82d4119033e85aed768929f1390bc93ed8f64a73f7a0a501bdde2",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-09800.woff2",
+      "sourceSha256": "e9a942b3d2e82d4119033e85aed768929f1390bc93ed8f64a73f7a0a501bdde2"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0a800.woff2",
+      "bytes": 138028,
+      "sha256": "3bb4db70ecbac3e984821d4700d3c53d5fd9c8fb297b66b5b4cf8a82ad8c9f68",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0a800.woff2",
+      "sourceSha256": "3bb4db70ecbac3e984821d4700d3c53d5fd9c8fb297b66b5b4cf8a82ad8c9f68"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0b000.woff2",
+      "bytes": 249448,
+      "sha256": "cb8dea47c4c50fd614f8d3a41dcc28b0e0cdc0c0b94172efd725f3f6b920f45c",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0b000.woff2",
+      "sourceSha256": "cb8dea47c4c50fd614f8d3a41dcc28b0e0cdc0c0b94172efd725f3f6b920f45c"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0b800.woff2",
+      "bytes": 251704,
+      "sha256": "c48de9e9da75737a7e3273d3210970b8e0ba995808e27f46f752f4390cfdf736",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0b800.woff2",
+      "sourceSha256": "c48de9e9da75737a7e3273d3210970b8e0ba995808e27f46f752f4390cfdf736"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0c000.woff2",
+      "bytes": 239128,
+      "sha256": "e2330d7e0647bf58c10ad3b7d73c9c424357cbafc326fd646bd650ee4c85710c",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0c000.woff2",
+      "sourceSha256": "e2330d7e0647bf58c10ad3b7d73c9c424357cbafc326fd646bd650ee4c85710c"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0c800.woff2",
+      "bytes": 276216,
+      "sha256": "2557c019c4adafee3756d5099e4cb01445ff9b0a5e58a60af095653b4a9b64d2",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0c800.woff2",
+      "sourceSha256": "2557c019c4adafee3756d5099e4cb01445ff9b0a5e58a60af095653b4a9b64d2"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0d000.woff2",
+      "bytes": 274948,
+      "sha256": "431388e44ebdc436d43654d999d30c44b6d83005779ae39a9e7455f7e5ec7564",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0d000.woff2",
+      "sourceSha256": "431388e44ebdc436d43654d999d30c44b6d83005779ae39a9e7455f7e5ec7564"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-0f800.woff2",
+      "bytes": 128916,
+      "sha256": "93347d42f3de104e76df6dca3473569003825e5c7b03372850256e87fed3edf0",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-0f800.woff2",
+      "sourceSha256": "93347d42f3de104e76df6dca3473569003825e5c7b03372850256e87fed3edf0"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-10000.woff2",
+      "bytes": 4588,
+      "sha256": "7c8edc7082e32c7116a27d771c998937639da98e7d1b04c4d69803be2975f588",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-10000.woff2",
+      "sourceSha256": "7c8edc7082e32c7116a27d771c998937639da98e7d1b04c4d69803be2975f588"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-10800.woff2",
+      "bytes": 4536,
+      "sha256": "f0ac2f03ad92140c06d52d0b178f276af13e6104852714dd6ee8d48e0055f585",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-10800.woff2",
+      "sourceSha256": "f0ac2f03ad92140c06d52d0b178f276af13e6104852714dd6ee8d48e0055f585"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-11000.woff2",
+      "bytes": 4228,
+      "sha256": "0da16b9cce21237bfdf5b718608d045843993c2c37827d5b4a0fba7b7d9a7735",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-11000.woff2",
+      "sourceSha256": "0da16b9cce21237bfdf5b718608d045843993c2c37827d5b4a0fba7b7d9a7735"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-11800.woff2",
+      "bytes": 5232,
+      "sha256": "3d9be347ebb7a66c266678169841f2a3434c7b9ee6848aaefbc79970ef64737d",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-11800.woff2",
+      "sourceSha256": "3d9be347ebb7a66c266678169841f2a3434c7b9ee6848aaefbc79970ef64737d"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-14800.woff2",
+      "bytes": 156332,
+      "sha256": "1f7aa903c2a7a31185c69edd4a2b09c250e3a218b15e667bfd4f94f6315eb3ba",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-14800.woff2",
+      "sourceSha256": "1f7aa903c2a7a31185c69edd4a2b09c250e3a218b15e667bfd4f94f6315eb3ba"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-20800.woff2",
+      "bytes": 4152,
+      "sha256": "23d4b24ca2d50f358446f8bf4efad306a2ba27c79de5196e2d22ec06fc8f1886",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-20800.woff2",
+      "sourceSha256": "23d4b24ca2d50f358446f8bf4efad306a2ba27c79de5196e2d22ec06fc8f1886"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-23000.woff2",
+      "bytes": 4200,
+      "sha256": "64d1d49e8783efb735465f8717067f089a0de0505bd9b94504b517f817ef8851",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-23000.woff2",
+      "sourceSha256": "64d1d49e8783efb735465f8717067f089a0de0505bd9b94504b517f817ef8851"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-29800.woff2",
+      "bytes": 4448,
+      "sha256": "2e0e2a6d69a45e329ef4683212e26628914c6160f93b52a57ed6eb8ba4dd47b5",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-29800.woff2",
+      "sourceSha256": "2e0e2a6d69a45e329ef4683212e26628914c6160f93b52a57ed6eb8ba4dd47b5"
+    },
+    {
+      "path": "assets/rpg/fonts/web/Y1000UiWeb-common.woff2",
+      "bytes": 151180,
+      "sha256": "33de4d6ee8ca692efb8e3d10933ec9ec00044b8cb5ec7ea8a20bcf01ac52d500",
+      "source": "assets/rpg/fonts/web/Y1000UiWeb-common.woff2",
+      "sourceSha256": "33de4d6ee8ca692efb8e3d10933ec9ec00044b8cb5ec7ea8a20bcf01ac52d500"
+    },
+    {
+      "path": "assets/rpg/fonts/web/fonts.css",
+      "bytes": 19669,
+      "sha256": "0991a8478e81235eca04d0462181d21b7e002640882e63f2a98e47bc65a265fe",
+      "source": "assets/rpg/fonts/web/fonts.css",
+      "sourceSha256": "ff756374e60554af0a72f1019b12382612ae1711c12094f6c1c1640637c786a6"
+    },
+    {
+      "path": "assets/rpg/monsters/sprites/M828/walk/normal/sw_00.png",
+      "bytes": 6440,
+      "sha256": "625cbf463d4eaffbf6f9e37754240660893ee8718a7a00b1f055e17bb50584fb",
+      "source": "assets/rpg/monsters/sprites/M828/walk/normal/sw_00.png",
+      "sourceSha256": "625cbf463d4eaffbf6f9e37754240660893ee8718a7a00b1f055e17bb50584fb",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/monsters/sprites/M926/walk/normal/s_00.png",
+      "bytes": 12201,
+      "sha256": "c08778342b7dbc581d402411d32a8e9a32e437db0293f2241aacd028b6a8e1b4",
+      "source": "assets/rpg/monsters/sprites/M926/walk/normal/s_00.png",
+      "sourceSha256": "c08778342b7dbc581d402411d32a8e9a32e437db0293f2241aacd028b6a8e1b4",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/monsters/sprites/M932/walk/normal/s_00.png",
+      "bytes": 9849,
+      "sha256": "c994dface3b5354eb1e6c2599ec05dacb4acfc2e9ca969ff86411bd34308de0a",
+      "source": "assets/rpg/monsters/sprites/M932/walk/normal/s_00.png",
+      "sourceSha256": "c994dface3b5354eb1e6c2599ec05dacb4acfc2e9ca969ff86411bd34308de0a",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/monsters/sprites/M936/walk/normal/s_00.png",
+      "bytes": 14776,
+      "sha256": "c1844612e7560b618c79ecae7e54a59d1b740254cc46270acb599865cfd67a25",
+      "source": "assets/rpg/monsters/sprites/M936/walk/normal/s_00.png",
+      "sourceSha256": "c1844612e7560b618c79ecae7e54a59d1b740254cc46270acb599865cfd67a25",
+      "width": 128,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/armor-break/variants-transparent/00.png",
+      "bytes": 1004560,
+      "sha256": "2dcf2817266f35d717468e4f617bb00e4d28dccd2dcf993efacd625d1cd35147",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/armor-break/variants-transparent/00.png",
+      "sourceSha256": "2dcf2817266f35d717468e4f617bb00e4d28dccd2dcf993efacd625d1cd35147",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/attack-speed/variants-transparent/00.png",
+      "bytes": 737905,
+      "sha256": "218c7e6d9e661b0d8c54f15d1159e62313a741bfe459ef4cb926db35b6815717",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/attack-speed/variants-transparent/00.png",
+      "sourceSha256": "218c7e6d9e661b0d8c54f15d1159e62313a741bfe459ef4cb926db35b6815717",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/burn/variants-transparent/00.png",
+      "bytes": 882611,
+      "sha256": "3e1a2c83d500321d94807d0702ba00b6d91e274c744de6adf08d33b683040b4e",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/burn/variants-transparent/00.png",
+      "sourceSha256": "3e1a2c83d500321d94807d0702ba00b6d91e274c744de6adf08d33b683040b4e",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/defense-up/variants-transparent/00.png",
+      "bytes": 967940,
+      "sha256": "9f9a75b8a21b76433204f991e2a4310c13ad385de3f36240b7dc19b574763ff0",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/defense-up/variants-transparent/00.png",
+      "sourceSha256": "9f9a75b8a21b76433204f991e2a4310c13ad385de3f36240b7dc19b574763ff0",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/earth-barrier/variants-transparent/00.png",
+      "bytes": 985792,
+      "sha256": "1e3d247e2dcb356fc800b6e206c39777ed9ba6f8b0b0cc4171630619e8b6da5a",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/earth-barrier/variants-transparent/00.png",
+      "sourceSha256": "1e3d247e2dcb356fc800b6e206c39777ed9ba6f8b0b0cc4171630619e8b6da5a",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/earth-fissure/variants-transparent/00.png",
+      "bytes": 756011,
+      "sha256": "e3205158c0207249fb39e090f240e8ebb32f37920671d15a7d2bb92637bdc676",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/earth-fissure/variants-transparent/00.png",
+      "sourceSha256": "e3205158c0207249fb39e090f240e8ebb32f37920671d15a7d2bb92637bdc676",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/evasion/variants-transparent/00.png",
+      "bytes": 1121280,
+      "sha256": "f79c421b8df84380cb3e2488f0e11d8e933a7c06451596a74ee6e540bc282be9",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/evasion/variants-transparent/00.png",
+      "sourceSha256": "f79c421b8df84380cb3e2488f0e11d8e933a7c06451596a74ee6e540bc282be9",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/fire-wall/variants-transparent/00.png",
+      "bytes": 862550,
+      "sha256": "050f3e6be04e1db63ffb18e82ed0edf1eff3c2b4989f6e3ddad938b0e8c0f579",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/fire-wall/variants-transparent/00.png",
+      "sourceSha256": "050f3e6be04e1db63ffb18e82ed0edf1eff3c2b4989f6e3ddad938b0e8c0f579",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/fireball/variants-transparent/00.png",
+      "bytes": 203727,
+      "sha256": "c178a204727a7e53041adbf37962adff8e31d01b11d733e8b47a873d082537ed",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/fireball/variants-transparent/00.png",
+      "sourceSha256": "c178a204727a7e53041adbf37962adff8e31d01b11d733e8b47a873d082537ed",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/freeze/variants-transparent/00.png",
+      "bytes": 941138,
+      "sha256": "f44450282439cc87f3aa8fb297ef562c49c890d703d06879ac88747a7fba850d",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/freeze/variants-transparent/00.png",
+      "sourceSha256": "f44450282439cc87f3aa8fb297ef562c49c890d703d06879ac88747a7fba850d",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/hammer-impact/variants-transparent/00.png",
+      "bytes": 908910,
+      "sha256": "49b9a8f03d56c58fb025f500d07f918d7ed5ac79cd73c2537aaaccdb51b84704",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/hammer-impact/variants-transparent/00.png",
+      "sourceSha256": "49b9a8f03d56c58fb025f500d07f918d7ed5ac79cd73c2537aaaccdb51b84704",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/haste/variants-transparent/00.png",
+      "bytes": 709711,
+      "sha256": "715841ebdb6bec16168c754087426090e8176924145a2c59209f3104712eb3c2",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/haste/variants-transparent/00.png",
+      "sourceSha256": "715841ebdb6bec16168c754087426090e8176924145a2c59209f3104712eb3c2",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/ice-spear/variants-transparent/00.png",
+      "bytes": 130552,
+      "sha256": "953609d08076c304b88cb602237a6caeed03e28aa8de2dfd42b0129c31a3d2d6",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/ice-spear/variants-transparent/00.png",
+      "sourceSha256": "953609d08076c304b88cb602237a6caeed03e28aa8de2dfd42b0129c31a3d2d6",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/ice-spikes/variants-transparent/00.png",
+      "bytes": 842003,
+      "sha256": "3d1574f4ad91b0dc39d0d37d7cbc527ec2c9d7c21e1a8cf556b750b121e219bc",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/ice-spikes/variants-transparent/00.png",
+      "sourceSha256": "3d1574f4ad91b0dc39d0d37d7cbc527ec2c9d7c21e1a8cf556b750b121e219bc",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/ice-storm/variants-transparent/00.png",
+      "bytes": 895000,
+      "sha256": "f4e980c894e9879b3df2cf41bd9d203be7dca19f75127efd3655a25d720128b8",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/ice-storm/variants-transparent/00.png",
+      "sourceSha256": "f4e980c894e9879b3df2cf41bd9d203be7dca19f75127efd3655a25d720128b8",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/lava-eruption/variants-transparent/00.png",
+      "bytes": 975724,
+      "sha256": "519ccea75e8ee132f0ff7192ae3c99939df214ab7638ef8268cea350256b6749",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/lava-eruption/variants-transparent/00.png",
+      "sourceSha256": "519ccea75e8ee132f0ff7192ae3c99939df214ab7638ef8268cea350256b6749",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/meteor/variants-transparent/00.png",
+      "bytes": 919245,
+      "sha256": "e103d5b76a958b02a89c2ff581ce1dc7dc1527b89f40552cec166838db62f5e7",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/meteor/variants-transparent/00.png",
+      "sourceSha256": "e103d5b76a958b02a89c2ff581ce1dc7dc1527b89f40552cec166838db62f5e7",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/regeneration/variants-transparent/00.png",
+      "bytes": 853082,
+      "sha256": "3e03ae7f836957641060027c6243800ce81c025bcd455378065b083688d387bd",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/regeneration/variants-transparent/00.png",
+      "sourceSha256": "3e03ae7f836957641060027c6243800ce81c025bcd455378065b083688d387bd",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/sand-storm/variants-transparent/00.png",
+      "bytes": 1170018,
+      "sha256": "d96b47fd5d9ba4be16170d122608a78a3c3021494cef39aad69e09465824ff9c",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/sand-storm/variants-transparent/00.png",
+      "sourceSha256": "d96b47fd5d9ba4be16170d122608a78a3c3021494cef39aad69e09465824ff9c",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/wind-blade/variants-transparent/00.png",
+      "bytes": 255966,
+      "sha256": "fcc58cc5df0b47db69f35a3957ca3feff938d832ec9ee886f889d5db7a07c6a3",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/wind-blade/variants-transparent/00.png",
+      "sourceSha256": "fcc58cc5df0b47db69f35a3957ca3feff938d832ec9ee886f889d5db7a07c6a3",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/chain-generated/r2/wind-prison/variants-transparent/00.png",
+      "bytes": 933073,
+      "sha256": "f5458bd3566b27c26b3bc98ffd9aa877ab27df3ebaddc5f45b5d981b76bce450",
+      "source": "assets/rpg/skills/effects/chain-generated/r2/wind-prison/variants-transparent/00.png",
+      "sourceSha256": "f5458bd3566b27c26b3bc98ffd9aa877ab27df3ebaddc5f45b5d981b76bce450",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/001/variants-transparent/00.png",
+      "bytes": 848443,
+      "sha256": "1d639f32df4399ca35838a6fbb94c2ba65f32bebc5b9fc976f6229cc65654673",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/001/variants-transparent/00.png",
+      "sourceSha256": "1d639f32df4399ca35838a6fbb94c2ba65f32bebc5b9fc976f6229cc65654673",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/004/variants-transparent/00.png",
+      "bytes": 1044307,
+      "sha256": "b120762d40300ffc54793de2ace547bfdd301e2f9f164b425805e8d91c2c1880",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/004/variants-transparent/00.png",
+      "sourceSha256": "b120762d40300ffc54793de2ace547bfdd301e2f9f164b425805e8d91c2c1880",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/005/variants-transparent/00.png",
+      "bytes": 776128,
+      "sha256": "7ad0ea6e7fbbddce7d087d1474a3edb31c17a1227a2cc0ed09f280dbd39dd7d3",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/005/variants-transparent/00.png",
+      "sourceSha256": "7ad0ea6e7fbbddce7d087d1474a3edb31c17a1227a2cc0ed09f280dbd39dd7d3",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/006/variants-transparent/00.png",
+      "bytes": 1001837,
+      "sha256": "d128b279e8b122e4ec84da4af62881c645bcafd1b05871ca63929ffd7b10d825",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/006/variants-transparent/00.png",
+      "sourceSha256": "d128b279e8b122e4ec84da4af62881c645bcafd1b05871ca63929ffd7b10d825",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/007/variants-transparent/00.png",
+      "bytes": 1018974,
+      "sha256": "dbc412774a06a8515f608fba8818fe55d0fe27105326bf48465a0670ee79259e",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/007/variants-transparent/00.png",
+      "sourceSha256": "dbc412774a06a8515f608fba8818fe55d0fe27105326bf48465a0670ee79259e",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/012/variants-transparent/00.png",
+      "bytes": 716506,
+      "sha256": "6be588596240f3ccef885c050678f6ee50bf63b532382fc26c3f293d1b7381b7",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/012/variants-transparent/00.png",
+      "sourceSha256": "6be588596240f3ccef885c050678f6ee50bf63b532382fc26c3f293d1b7381b7",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/013/variants-transparent/00.png",
+      "bytes": 864622,
+      "sha256": "edde7b28177781e1a8b47dd984f7e9c24df0d6ddd9564eff1d79b53a03347e5b",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/013/variants-transparent/00.png",
+      "sourceSha256": "edde7b28177781e1a8b47dd984f7e9c24df0d6ddd9564eff1d79b53a03347e5b",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/effects/medical-generated/r1/019/variants-transparent/00.png",
+      "bytes": 832465,
+      "sha256": "9de20cf1e1ac8048b9b5cca50454e861d16e3864abe8cb4bf4a6a8d65a6dc15c",
+      "source": "assets/rpg/skills/effects/medical-generated/r1/019/variants-transparent/00.png",
+      "sourceSha256": "9de20cf1e1ac8048b9b5cca50454e861d16e3864abe8cb4bf4a6a8d65a6dc15c",
+      "width": 4096,
+      "height": 256
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/001.png",
+      "bytes": 5428,
+      "sha256": "01be2cc0612eaabcbec26ecc4b71275c775953167f469deb3505ea3f9071bcd0",
+      "source": "assets/rpg/skills/icons/lk-clinic/001.png",
+      "sourceSha256": "01be2cc0612eaabcbec26ecc4b71275c775953167f469deb3505ea3f9071bcd0",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/004.png",
+      "bytes": 5072,
+      "sha256": "5364707d59c70cc9250b7a2c5c5f34f3db8ff3fff7cef96e38af376bb06020d5",
+      "source": "assets/rpg/skills/icons/lk-clinic/004.png",
+      "sourceSha256": "5364707d59c70cc9250b7a2c5c5f34f3db8ff3fff7cef96e38af376bb06020d5",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/005.png",
+      "bytes": 5283,
+      "sha256": "1d09d8753e4962bfb3a5292618fbae9d576b55393aac28f28af6062a8b58f917",
+      "source": "assets/rpg/skills/icons/lk-clinic/005.png",
+      "sourceSha256": "1d09d8753e4962bfb3a5292618fbae9d576b55393aac28f28af6062a8b58f917",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/006.png",
+      "bytes": 5300,
+      "sha256": "55d0cf7baa57982a84512adf0c4e941a888a913ab8101bd40368d03e36cb3535",
+      "source": "assets/rpg/skills/icons/lk-clinic/006.png",
+      "sourceSha256": "55d0cf7baa57982a84512adf0c4e941a888a913ab8101bd40368d03e36cb3535",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/007.png",
+      "bytes": 5520,
+      "sha256": "a361ff0ed6720a06c3dc62322690524fc0e247584330aa5b42d1bd9ee72755f3",
+      "source": "assets/rpg/skills/icons/lk-clinic/007.png",
+      "sourceSha256": "a361ff0ed6720a06c3dc62322690524fc0e247584330aa5b42d1bd9ee72755f3",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/012.png",
+      "bytes": 5191,
+      "sha256": "2bdb656b5e53c19f5a11127ea88a78dc0ad8e266451e8bfd043f635f1418f300",
+      "source": "assets/rpg/skills/icons/lk-clinic/012.png",
+      "sourceSha256": "2bdb656b5e53c19f5a11127ea88a78dc0ad8e266451e8bfd043f635f1418f300",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/013.png",
+      "bytes": 5215,
+      "sha256": "857b956c895ee95cce80f77d339c88352075f903b6202bb4cfce3a96bae409b8",
+      "source": "assets/rpg/skills/icons/lk-clinic/013.png",
+      "sourceSha256": "857b956c895ee95cce80f77d339c88352075f903b6202bb4cfce3a96bae409b8",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-clinic/019.png",
+      "bytes": 5066,
+      "sha256": "395df7d64e79dba95ef989752982098dfe08286f0adc6e952dedac0b016d0846",
+      "source": "assets/rpg/skills/icons/lk-clinic/019.png",
+      "sourceSha256": "395df7d64e79dba95ef989752982098dfe08286f0adc6e952dedac0b016d0846",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/011.png",
+      "bytes": 5002,
+      "sha256": "b7564aac58a739509342546a64d19985992e9babd6101d8119f368dceb921fed",
+      "source": "assets/rpg/skills/icons/lk-custom/011.png",
+      "sourceSha256": "b7564aac58a739509342546a64d19985992e9babd6101d8119f368dceb921fed",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/012.png",
+      "bytes": 5470,
+      "sha256": "ce772b160bd2b88423331dbb7746e1ea3b31a612edb60252cc7885f5af1eea36",
+      "source": "assets/rpg/skills/icons/lk-custom/012.png",
+      "sourceSha256": "ce772b160bd2b88423331dbb7746e1ea3b31a612edb60252cc7885f5af1eea36",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/014.png",
+      "bytes": 5514,
+      "sha256": "14cfa99d6dd665086e44565c25b234323291a35f1b0451d064b8126421de552f",
+      "source": "assets/rpg/skills/icons/lk-custom/014.png",
+      "sourceSha256": "14cfa99d6dd665086e44565c25b234323291a35f1b0451d064b8126421de552f",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/015.png",
+      "bytes": 5476,
+      "sha256": "a124de89aeaed03594a5a9d188275b5f62848e18d4e22c7f51c5cea3927393d3",
+      "source": "assets/rpg/skills/icons/lk-custom/015.png",
+      "sourceSha256": "a124de89aeaed03594a5a9d188275b5f62848e18d4e22c7f51c5cea3927393d3",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/018.png",
+      "bytes": 5392,
+      "sha256": "b0f2224c239eff9e9980bfb6259db8330c5e2ec3be775f57077e227172fe7e0d",
+      "source": "assets/rpg/skills/icons/lk-custom/018.png",
+      "sourceSha256": "b0f2224c239eff9e9980bfb6259db8330c5e2ec3be775f57077e227172fe7e0d",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/023.png",
+      "bytes": 5275,
+      "sha256": "ddd5e22385eca41690732ea58147d8ac36ff1b63ad38ceb43e5ff7e4ade2b0f7",
+      "source": "assets/rpg/skills/icons/lk-custom/023.png",
+      "sourceSha256": "ddd5e22385eca41690732ea58147d8ac36ff1b63ad38ceb43e5ff7e4ade2b0f7",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/034.png",
+      "bytes": 5455,
+      "sha256": "3010258c10c6f57e5068cbb5a73d39b456e4bb57ee8ed4054ecf076a8313eb29",
+      "source": "assets/rpg/skills/icons/lk-custom/034.png",
+      "sourceSha256": "3010258c10c6f57e5068cbb5a73d39b456e4bb57ee8ed4054ecf076a8313eb29",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/036.png",
+      "bytes": 5411,
+      "sha256": "e4328de1a645aa661ba77e8cc1a0a739c6035886d8f30cb8ced4063576bb6f6e",
+      "source": "assets/rpg/skills/icons/lk-custom/036.png",
+      "sourceSha256": "e4328de1a645aa661ba77e8cc1a0a739c6035886d8f30cb8ced4063576bb6f6e",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/040.png",
+      "bytes": 5548,
+      "sha256": "d4616e3b011f7dfd9e86e593fd3fac281c7b65885fa8623f3936a21610ffdec5",
+      "source": "assets/rpg/skills/icons/lk-custom/040.png",
+      "sourceSha256": "d4616e3b011f7dfd9e86e593fd3fac281c7b65885fa8623f3936a21610ffdec5",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/044.png",
+      "bytes": 5261,
+      "sha256": "2ea08d220d8a896808332fd6a1d77dda61e554c8896b91e32127d601cf46f4c1",
+      "source": "assets/rpg/skills/icons/lk-custom/044.png",
+      "sourceSha256": "2ea08d220d8a896808332fd6a1d77dda61e554c8896b91e32127d601cf46f4c1",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/053.png",
+      "bytes": 5395,
+      "sha256": "745f4d777ec2c6f1591ba7d4b741b34b833e9bf1548a8a3e4e6289b309f8fa59",
+      "source": "assets/rpg/skills/icons/lk-custom/053.png",
+      "sourceSha256": "745f4d777ec2c6f1591ba7d4b741b34b833e9bf1548a8a3e4e6289b309f8fa59",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/061.png",
+      "bytes": 4930,
+      "sha256": "4e0298149459fab1e96789761efce70a8de7ef66d89c7a2472355fe2d0705dfb",
+      "source": "assets/rpg/skills/icons/lk-custom/061.png",
+      "sourceSha256": "4e0298149459fab1e96789761efce70a8de7ef66d89c7a2472355fe2d0705dfb",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/062.png",
+      "bytes": 5594,
+      "sha256": "115dcc8a6c2c236325fe2071dad1087bd121dcde76c244b618dd277c8fcf0191",
+      "source": "assets/rpg/skills/icons/lk-custom/062.png",
+      "sourceSha256": "115dcc8a6c2c236325fe2071dad1087bd121dcde76c244b618dd277c8fcf0191",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/066.png",
+      "bytes": 5535,
+      "sha256": "05f5a75b5bc40eacb5379d9d95d772518909b8ee1b99c7f10cc5f035b45cf023",
+      "source": "assets/rpg/skills/icons/lk-custom/066.png",
+      "sourceSha256": "05f5a75b5bc40eacb5379d9d95d772518909b8ee1b99c7f10cc5f035b45cf023",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/076.png",
+      "bytes": 5345,
+      "sha256": "4fbaa219cfd16bb88a16406d21d178bd0aecb450ca3efb287bd6abd45779cd7e",
+      "source": "assets/rpg/skills/icons/lk-custom/076.png",
+      "sourceSha256": "4fbaa219cfd16bb88a16406d21d178bd0aecb450ca3efb287bd6abd45779cd7e",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/080.png",
+      "bytes": 5407,
+      "sha256": "01f9ceda6ddd3e9a0971f8b4b98130cd2a2395be250e3d1103e0381c9cedcaa3",
+      "source": "assets/rpg/skills/icons/lk-custom/080.png",
+      "sourceSha256": "01f9ceda6ddd3e9a0971f8b4b98130cd2a2395be250e3d1103e0381c9cedcaa3",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/089.png",
+      "bytes": 5298,
+      "sha256": "a9d8c868ce1845788cbfc70af5f4945d93f46ab6dca6f27eb3d09314540920e8",
+      "source": "assets/rpg/skills/icons/lk-custom/089.png",
+      "sourceSha256": "a9d8c868ce1845788cbfc70af5f4945d93f46ab6dca6f27eb3d09314540920e8",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/090.png",
+      "bytes": 5467,
+      "sha256": "d87bd1ffb1000aca0880adc2f8c8ad5979766590d32907d2bf61e30e229226ca",
+      "source": "assets/rpg/skills/icons/lk-custom/090.png",
+      "sourceSha256": "d87bd1ffb1000aca0880adc2f8c8ad5979766590d32907d2bf61e30e229226ca",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/100.png",
+      "bytes": 5409,
+      "sha256": "1b12dfbbd1b6213f6ad9a2e6aa7ac569d7d0614616a4d78e06aeb462533a09b9",
+      "source": "assets/rpg/skills/icons/lk-custom/100.png",
+      "sourceSha256": "1b12dfbbd1b6213f6ad9a2e6aa7ac569d7d0614616a4d78e06aeb462533a09b9",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/111.png",
+      "bytes": 5405,
+      "sha256": "312965b89f57ac6320a286f54199bc827e8dc84a13cd8fe4401372b2a9e4e569",
+      "source": "assets/rpg/skills/icons/lk-custom/111.png",
+      "sourceSha256": "312965b89f57ac6320a286f54199bc827e8dc84a13cd8fe4401372b2a9e4e569",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/112.png",
+      "bytes": 5221,
+      "sha256": "83e8fbfe54abc109b0f118b512490919f7f1803b9e1d5711ed77bdc8219fd066",
+      "source": "assets/rpg/skills/icons/lk-custom/112.png",
+      "sourceSha256": "83e8fbfe54abc109b0f118b512490919f7f1803b9e1d5711ed77bdc8219fd066",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/114.png",
+      "bytes": 5344,
+      "sha256": "e9d96993128757143c985adf9c4faa5ca3f69ae893380577d619649a0111889b",
+      "source": "assets/rpg/skills/icons/lk-custom/114.png",
+      "sourceSha256": "e9d96993128757143c985adf9c4faa5ca3f69ae893380577d619649a0111889b",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/115.png",
+      "bytes": 5473,
+      "sha256": "ee8c208a47e2f5464ff27fbf0e2c0052ac6c2fbdde968e21779427e1b2e78c1e",
+      "source": "assets/rpg/skills/icons/lk-custom/115.png",
+      "sourceSha256": "ee8c208a47e2f5464ff27fbf0e2c0052ac6c2fbdde968e21779427e1b2e78c1e",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/skills/icons/lk-custom/124.png",
+      "bytes": 5283,
+      "sha256": "45cfd06a2ead32787f8280d623ee45421ba361323000d78fc56a4ec1ab6f4759",
+      "source": "assets/rpg/skills/icons/lk-custom/124.png",
+      "sourceSha256": "45cfd06a2ead32787f8280d623ee45421ba361323000d78fc56a4ec1ab6f4759",
+      "width": 48,
+      "height": 48
+    },
+    {
+      "path": "assets/rpg/sounds/providers/1000y/audio/환경/환경_숲새소리1_10001.wav",
+      "bytes": 881790,
+      "sha256": "1cb9a28288bba593eeed4f2165d7b37f7bea34301f5f00d9f20d265576a31652",
+      "source": "assets/rpg/sounds/providers/1000y/audio/환경/환경_숲새소리1_10001.wav",
+      "sourceSha256": "1cb9a28288bba593eeed4f2165d7b37f7bea34301f5f00d9f20d265576a31652"
+    },
+    {
+      "path": "assets/rpg/ui/branding/uimaek-jeongi-action-hybrid-subtitle-white.png",
+      "bytes": 82245,
+      "sha256": "38ddf2f5b678a297a8f1e6917a2e1976633688def7d05129d26ecb36e131331f",
+      "source": "assets/rpg/ui/branding/uimaek-jeongi-action-hybrid-subtitle-white.png",
+      "sourceSha256": "38ddf2f5b678a297a8f1e6917a2e1976633688def7d05129d26ecb36e131331f",
+      "width": 1164,
+      "height": 137
+    },
+    {
+      "path": "assets/rpg/ui/entry-bg-healing-buff-left-20260628.webp",
+      "bytes": 168102,
+      "sha256": "04fa918d395e9eca9949a211db2d0932990c9a0fb5b0a375bfed2cf9539562b6",
+      "source": "assets/rpg/ui/entry-bg-healing-buff-left-20260628.webp",
+      "sourceSha256": "04fa918d395e9eca9949a211db2d0932990c9a0fb5b0a375bfed2cf9539562b6",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/entry-bg-inventory-prep-left-20260628.webp",
+      "bytes": 166894,
+      "sha256": "1a4b7dd1eb0d61a454df00bd4ef896cbd1f13bd2a994b59c0979ebd62d9435ac",
+      "source": "assets/rpg/ui/entry-bg-inventory-prep-left-20260628.webp",
+      "sourceSha256": "1a4b7dd1eb0d61a454df00bd4ef896cbd1f13bd2a994b59c0979ebd62d9435ac",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/entry-bg-social-rest-chat-left-20260628.webp",
+      "bytes": 200062,
+      "sha256": "3370dfc12e353160fc057da11af223ba37becc7cb7d14d50f3c705cb50575254",
+      "source": "assets/rpg/ui/entry-bg-social-rest-chat-left-20260628.webp",
+      "sourceSha256": "3370dfc12e353160fc057da11af223ba37becc7cb7d14d50f3c705cb50575254",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/generated-previews/16-battle-clinic-action-center-20260628.webp",
+      "bytes": 370832,
+      "sha256": "ba0aceacba2c3aeed2e0fa4c20c5356365a1b6acafcd2372797133aac7c27bdc",
+      "source": "assets/rpg/ui/generated-previews/16-battle-clinic-action-center-20260628.webp",
+      "sourceSha256": "ba0aceacba2c3aeed2e0fa4c20c5356365a1b6acafcd2372797133aac7c27bdc",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/generated-previews/17-community-party-center-20260628.png",
+      "bytes": 2463086,
+      "sha256": "5acd8138b82b445f77dc6ed505ea84317fe2afb3a722659f774d35ac90fb49ff",
+      "source": "assets/rpg/ui/generated-previews/17-community-party-center-20260628.png",
+      "sourceSha256": "5acd8138b82b445f77dc6ed505ea84317fe2afb3a722659f774d35ac90fb49ff",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/generated-previews/18-clinic-operations-center-20260628.webp",
+      "bytes": 253670,
+      "sha256": "2f03c6a93eaaa87249ac194fcd30fb07234da03e4773b88d1dd31bff2cafc5a6",
+      "source": "assets/rpg/ui/generated-previews/18-clinic-operations-center-20260628.webp",
+      "sourceSha256": "2f03c6a93eaaa87249ac194fcd30fb07234da03e4773b88d1dd31bff2cafc5a6",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/generated-previews/19-raid-prep-center-20260628.png",
+      "bytes": 2146283,
+      "sha256": "d88f7d0583cbd2cbee53724fc499430f3fbd49d20d02874597357161b7efd42d",
+      "source": "assets/rpg/ui/generated-previews/19-raid-prep-center-20260628.png",
+      "sourceSha256": "d88f7d0583cbd2cbee53724fc499430f3fbd49d20d02874597357161b7efd42d",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/generated-previews/20-full-game-brand-hero-center-20260628.webp",
+      "bytes": 569210,
+      "sha256": "c8f5182a9b50f7e79d9fa81d6951fa0709921e0b19ad1ba1e6dfe6f0040481ce",
+      "source": "assets/rpg/ui/generated-previews/20-full-game-brand-hero-center-20260628.webp",
+      "sourceSha256": "c8f5182a9b50f7e79d9fa81d6951fa0709921e0b19ad1ba1e6dfe6f0040481ce",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
+      "bytes": 388020,
+      "sha256": "eab09cdc62fec27d7288a96631589df9a52455a643e2e2ab8b547c90d53b04a9",
+      "source": "assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
+      "sourceSha256": "eab09cdc62fec27d7288a96631589df9a52455a643e2e2ab8b547c90d53b04a9",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/clinic-captures/play-v2/play-clinic-300-front.webp",
+      "bytes": 961410,
+      "sha256": "df6b1a58308857cae7f4cf6e4458af6378fc382a6a1ffdc37f714b6b5fc07324",
+      "source": "assets/rpg/ui/intro/v1/clinic-captures/play-v2/play-clinic-300-front.webp",
+      "sourceSha256": "df6b1a58308857cae7f4cf6e4458af6378fc382a6a1ffdc37f714b6b5fc07324",
+      "width": 1534,
+      "height": 1056
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-front-day.webp",
+      "bytes": 575644,
+      "sha256": "e68872806e8afcd8e1026c3f92cdef44de6f2ff98fddc11bc8a2193bfd6e2678",
+      "source": "assets/rpg/ui/intro/v1/hero-front-day.webp",
+      "sourceSha256": "e68872806e8afcd8e1026c3f92cdef44de6f2ff98fddc11bc8a2193bfd6e2678",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-front-night.webp",
+      "bytes": 379774,
+      "sha256": "64e9627cb67ec666ee9c055499decf32ff6f14cfbd1ad1e736b915f51ff2697b",
+      "source": "assets/rpg/ui/intro/v1/hero-front-night.webp",
+      "sourceSha256": "64e9627cb67ec666ee9c055499decf32ff6f14cfbd1ad1e736b915f51ff2697b",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-healers.webp",
+      "bytes": 610210,
+      "sha256": "93eb13711636e3efca3dd8b379a6014dd976a7d0041a15dc3b3e5abf42966947",
+      "source": "assets/rpg/ui/intro/v1/hero-healers.webp",
+      "sourceSha256": "93eb13711636e3efca3dd8b379a6014dd976a7d0041a15dc3b3e5abf42966947",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-sky-day.webp",
+      "bytes": 444238,
+      "sha256": "dd8f53dbfab75dd9d0f86c6510d84c5962395cf722fbc1191e0cc69771ad43e9",
+      "source": "assets/rpg/ui/intro/v1/hero-sky-day.webp",
+      "sourceSha256": "dd8f53dbfab75dd9d0f86c6510d84c5962395cf722fbc1191e0cc69771ad43e9",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-sky-night.webp",
+      "bytes": 439782,
+      "sha256": "03af9a9be6f68bc9846660848eba7ccb621ce66ec950e02c45abf787e0d12373",
+      "source": "assets/rpg/ui/intro/v1/hero-sky-night.webp",
+      "sourceSha256": "03af9a9be6f68bc9846660848eba7ccb621ce66ec950e02c45abf787e0d12373",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-stage-day.webp",
+      "bytes": 706642,
+      "sha256": "a71d35153c195e11e896782f2aac5f541cfae610a61199555dc72f943503eb84",
+      "source": "assets/rpg/ui/intro/v1/hero-stage-day.webp",
+      "sourceSha256": "a71d35153c195e11e896782f2aac5f541cfae610a61199555dc72f943503eb84",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/hero-stage-night.webp",
+      "bytes": 422568,
+      "sha256": "978d7dccb5b310b9dbd7cfcec3f7f632e156e886f23ed13f64ecf6247308e175",
+      "source": "assets/rpg/ui/intro/v1/hero-stage-night.webp",
+      "sourceSha256": "978d7dccb5b310b9dbd7cfcec3f7f632e156e886f23ed13f64ecf6247308e175",
+      "width": 1671,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/logo-calligraphy-white.webp",
+      "bytes": 237964,
+      "sha256": "e7a21c3f6ac6e7129c50db14418ea8585ecc5a7dc51be6ce01f2b3f5e8ad62d8",
+      "source": "assets/rpg/ui/intro/v1/logo-calligraphy-white.webp",
+      "sourceSha256": "e7a21c3f6ac6e7129c50db14418ea8585ecc5a7dc51be6ce01f2b3f5e8ad62d8",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M906-thumb.webp",
+      "bytes": 8136,
+      "sha256": "0dadba44a9bb4f4838bf15d0ade79f77658eaf0ffc73c01c15ac9a8737c9b57a",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M906-thumb.webp",
+      "sourceSha256": "0dadba44a9bb4f4838bf15d0ade79f77658eaf0ffc73c01c15ac9a8737c9b57a",
+      "width": 128,
+      "height": 126
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M906.webp",
+      "bytes": 293734,
+      "sha256": "91fa4d357692f2894330db8e74ddfdb43f1888fa96299f3f667810d694c8a739",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M906.webp",
+      "sourceSha256": "91fa4d357692f2894330db8e74ddfdb43f1888fa96299f3f667810d694c8a739",
+      "width": 1262,
+      "height": 1246
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M911-thumb.webp",
+      "bytes": 9540,
+      "sha256": "309b2baae57f24c6c82efe34958af5d2006217bd68b5b16e81675329835d2065",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M911-thumb.webp",
+      "sourceSha256": "309b2baae57f24c6c82efe34958af5d2006217bd68b5b16e81675329835d2065",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M911.webp",
+      "bytes": 507292,
+      "sha256": "151cefcaaa7b64b4677822933450290e27b045d32430c726d943fda9dea1cdee",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M911.webp",
+      "sourceSha256": "151cefcaaa7b64b4677822933450290e27b045d32430c726d943fda9dea1cdee",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M916-thumb.webp",
+      "bytes": 10074,
+      "sha256": "8cd4119362703d389819fd9b719bc75772dfb0f72aea05da1b5920af3c5e9d79",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M916-thumb.webp",
+      "sourceSha256": "8cd4119362703d389819fd9b719bc75772dfb0f72aea05da1b5920af3c5e9d79",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M916.webp",
+      "bytes": 671456,
+      "sha256": "87b67538f463a523a455c6c4af88c3fcfaeb52bfc7fa9ee29046a61988ad8b28",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M916.webp",
+      "sourceSha256": "87b67538f463a523a455c6c4af88c3fcfaeb52bfc7fa9ee29046a61988ad8b28",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M921-thumb.webp",
+      "bytes": 7134,
+      "sha256": "a7d2bba87f93f9518159a7598fdf8ce3f056dc31cefb6434adcb3a28b8effc52",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M921-thumb.webp",
+      "sourceSha256": "a7d2bba87f93f9518159a7598fdf8ce3f056dc31cefb6434adcb3a28b8effc52",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M921.webp",
+      "bytes": 349072,
+      "sha256": "e6f3481eea3a680223f6f04a4ca0ee4f9fa12f16a5e8a212a028cf06aebe1d7c",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M921.webp",
+      "sourceSha256": "e6f3481eea3a680223f6f04a4ca0ee4f9fa12f16a5e8a212a028cf06aebe1d7c",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M926-thumb.webp",
+      "bytes": 8680,
+      "sha256": "4b54a7e68a5a98b1c3d082461264a046e0a765ff091437ab8e2afe034e8c0592",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M926-thumb.webp",
+      "sourceSha256": "4b54a7e68a5a98b1c3d082461264a046e0a765ff091437ab8e2afe034e8c0592",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M926.webp",
+      "bytes": 471872,
+      "sha256": "a9ba383140ad51d7429857b0182d287bac059581a9b2347b257b5fd079aea244",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M926.webp",
+      "sourceSha256": "a9ba383140ad51d7429857b0182d287bac059581a9b2347b257b5fd079aea244",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M931-thumb.webp",
+      "bytes": 9662,
+      "sha256": "be3fb8860d5a741cef322f6f8361135bf8e208ec08d4d0ab4513e3f7ba830037",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M931-thumb.webp",
+      "sourceSha256": "be3fb8860d5a741cef322f6f8361135bf8e208ec08d4d0ab4513e3f7ba830037",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M931.webp",
+      "bytes": 573362,
+      "sha256": "eca6018c047197b8910d29adc58c9740f9cf90a35e91fb82ce0d2f0819aef9b9",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M931.webp",
+      "sourceSha256": "eca6018c047197b8910d29adc58c9740f9cf90a35e91fb82ce0d2f0819aef9b9",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M936-thumb.webp",
+      "bytes": 8566,
+      "sha256": "de8206a4d04267e3acbdc696ab79b619a7dcfbeb2e967bee0f1134857036d784",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M936-thumb.webp",
+      "sourceSha256": "de8206a4d04267e3acbdc696ab79b619a7dcfbeb2e967bee0f1134857036d784",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M936.webp",
+      "bytes": 420068,
+      "sha256": "7705fb405e6e22b4d6769687ad4fc6cf8e049ec79770ae1d9b04df9279e2e6d9",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M936.webp",
+      "sourceSha256": "7705fb405e6e22b4d6769687ad4fc6cf8e049ec79770ae1d9b04df9279e2e6d9",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M941-thumb.webp",
+      "bytes": 10564,
+      "sha256": "c726706dc4aea3800bf238fe10e6a2b1b8f17a29f6905d28a0896946bcc71566",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M941-thumb.webp",
+      "sourceSha256": "c726706dc4aea3800bf238fe10e6a2b1b8f17a29f6905d28a0896946bcc71566",
+      "width": 117,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M941.webp",
+      "bytes": 484606,
+      "sha256": "2a8f6d20a1ab219204f9e1704274b3f9ac279724772ae9044afe332a76c7143a",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M941.webp",
+      "sourceSha256": "2a8f6d20a1ab219204f9e1704274b3f9ac279724772ae9044afe332a76c7143a",
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M946-thumb.webp",
+      "bytes": 9420,
+      "sha256": "2610c215148511a58f703239fca022883bd0ab846a9b2c28eb4324cfb51f8e12",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M946-thumb.webp",
+      "sourceSha256": "2610c215148511a58f703239fca022883bd0ab846a9b2c28eb4324cfb51f8e12",
+      "width": 85,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M946.webp",
+      "bytes": 515230,
+      "sha256": "21d95901f3cdce07e15cd48b1c365f2e792ff204ffeea766edbd538e9f8e5d6c",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M946.webp",
+      "sourceSha256": "21d95901f3cdce07e15cd48b1c365f2e792ff204ffeea766edbd538e9f8e5d6c",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M951-thumb.webp",
+      "bytes": 11512,
+      "sha256": "6b9e83f0ade5baebede1af27a6bfd81ba6c1fe3a0aa2f74cbcc503daebfcb303",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M951-thumb.webp",
+      "sourceSha256": "6b9e83f0ade5baebede1af27a6bfd81ba6c1fe3a0aa2f74cbcc503daebfcb303",
+      "width": 120,
+      "height": 128
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/monster-portraits/M951.webp",
+      "bytes": 486864,
+      "sha256": "ab0de3a019483a036a1657105a954f472f36e774a5a9b121f0fac7265c6be673",
+      "source": "assets/rpg/ui/intro/v1/monster-portraits/M951.webp",
+      "sourceSha256": "ab0de3a019483a036a1657105a954f472f36e774a5a9b121f0fac7265c6be673",
+      "width": 1212,
+      "height": 1298
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n001/idle.webp",
+      "bytes": 114518,
+      "sha256": "493311547f209acf9c0f64ac6a21444c73691439c22d84c35e7ddb4ca1daedc5",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n001/idle.webp",
+      "sourceSha256": "493311547f209acf9c0f64ac6a21444c73691439c22d84c35e7ddb4ca1daedc5",
+      "width": 2472,
+      "height": 320
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n002/idle.webp",
+      "bytes": 76132,
+      "sha256": "5b5dc06526a3e9624cbab69e4433c0708ec69d2be06917616e26c52d25446bd6",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n002/idle.webp",
+      "sourceSha256": "5b5dc06526a3e9624cbab69e4433c0708ec69d2be06917616e26c52d25446bd6",
+      "width": 1692,
+      "height": 318
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n006/idle.webp",
+      "bytes": 98724,
+      "sha256": "498476a0fff36bd9ef6f721e0edc204799fb35fd421df69883e015fab12b5aa7",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n006/idle.webp",
+      "sourceSha256": "498476a0fff36bd9ef6f721e0edc204799fb35fd421df69883e015fab12b5aa7",
+      "width": 2040,
+      "height": 197
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n007/idle.webp",
+      "bytes": 155952,
+      "sha256": "d66072bc6b96b6a604f2245421b308dd3d1dafdb2710044241bb98828ebcb172",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n007/idle.webp",
+      "sourceSha256": "d66072bc6b96b6a604f2245421b308dd3d1dafdb2710044241bb98828ebcb172",
+      "width": 2220,
+      "height": 322
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n017/idle.webp",
+      "bytes": 91480,
+      "sha256": "9b1173aeb559e03c034aa762951fe4efc549d51bc4302c645b02e1018f13fe0e",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n017/idle.webp",
+      "sourceSha256": "9b1173aeb559e03c034aa762951fe4efc549d51bc4302c645b02e1018f13fe0e",
+      "width": 1632,
+      "height": 324
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n020/idle.webp",
+      "bytes": 81320,
+      "sha256": "896f348000e7495df8ee9d18ac4a48a78ddec07398609927b159de8d593daf2c",
+      "source": "assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n020/idle.webp",
+      "sourceSha256": "896f348000e7495df8ee9d18ac4a48a78ddec07398609927b159de8d593daf2c",
+      "width": 1440,
+      "height": 324
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/portrait-medical-female.webp",
+      "bytes": 489774,
+      "sha256": "bb4248c09968d84a07a677e35bc2f9ffd267c508bc139ad63645b126f3924d07",
+      "source": "assets/rpg/ui/intro/v1/portrait-medical-female.webp",
+      "sourceSha256": "bb4248c09968d84a07a677e35bc2f9ffd267c508bc139ad63645b126f3924d07",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/portrait-medical-male.webp",
+      "bytes": 314536,
+      "sha256": "521f9d0f3b48a7c3a1318e8e1fbc6ce8548ed15e537b597f1e9e4ca5e71545cc",
+      "source": "assets/rpg/ui/intro/v1/portrait-medical-male.webp",
+      "sourceSha256": "521f9d0f3b48a7c3a1318e8e1fbc6ce8548ed15e537b597f1e9e4ca5e71545cc",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n001.webp",
+      "bytes": 25640,
+      "sha256": "7e44d960ca134278fbdd347132c01f4f8cd9948c35e01a9c30f895d592b3d65a",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n001.webp",
+      "sourceSha256": "7e44d960ca134278fbdd347132c01f4f8cd9948c35e01a9c30f895d592b3d65a",
+      "width": 256,
+      "height": 400
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n002.webp",
+      "bytes": 15972,
+      "sha256": "db927b056d6b4d423ca4133523664a3490b669dbe11c06b7b8ba49d83e4e8687",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n002.webp",
+      "sourceSha256": "db927b056d6b4d423ca4133523664a3490b669dbe11c06b7b8ba49d83e4e8687",
+      "width": 174,
+      "height": 400
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n006.webp",
+      "bytes": 22438,
+      "sha256": "73f809b6461d0d12095c46c1c572c8feaffa73d99636b1fda8d2d03e43729b5a",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n006.webp",
+      "sourceSha256": "73f809b6461d0d12095c46c1c572c8feaffa73d99636b1fda8d2d03e43729b5a",
+      "width": 266,
+      "height": 306
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n007.webp",
+      "bytes": 33054,
+      "sha256": "2837d4b70b5c74037547c7ccd175c97073a9bf5ba18b19a3471fcdc57b8adefe",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n007.webp",
+      "sourceSha256": "2837d4b70b5c74037547c7ccd175c97073a9bf5ba18b19a3471fcdc57b8adefe",
+      "width": 228,
+      "height": 400
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n017.webp",
+      "bytes": 17192,
+      "sha256": "f166582dfa10d428e1d013b3219d05d76f4dcd316c9397c77c09d2725f58b731",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n017.webp",
+      "sourceSha256": "f166582dfa10d428e1d013b3219d05d76f4dcd316c9397c77c09d2725f58b731",
+      "width": 166,
+      "height": 400
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n020.webp",
+      "bytes": 16078,
+      "sha256": "c7d4d1d5e39618776d38ff964a6b1566d337053877b02073171b612e9b486364",
+      "source": "assets/rpg/ui/intro/v1/villagers/v1/portrait-n020.webp",
+      "sourceSha256": "c7d4d1d5e39618776d38ff964a6b1566d337053877b02073171b612e9b486364",
+      "width": 145,
+      "height": 400
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400-source.png",
+      "bytes": 1902087,
+      "sha256": "dc8bad02a6f73a88e3cbb22ff5866e53f53de6c4a2bab49250fd8f48ed16b383",
+      "source": "assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400-source.png",
+      "sourceSha256": "dc8bad02a6f73a88e3cbb22ff5866e53f53de6c4a2bab49250fd8f48ed16b383",
+      "width": 1440,
+      "height": 975
+    },
+    {
+      "path": "assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400.webp",
+      "bytes": 380628,
+      "sha256": "3eff5baf633bd7f210992f4d3466c72bcc8f79ae66cbbccd73202e8d4d5a78d6",
+      "source": "assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400.webp",
+      "sourceSha256": "3eff5baf633bd7f210992f4d3466c72bcc8f79ae66cbbccd73202e8d4d5a78d6",
+      "width": 820,
+      "height": 480
+    },
+    {
+      "path": "assets/rpg/ui/intro/v2-motion/edge-leaves.svg",
+      "bytes": 1479,
+      "sha256": "04eda1b41fdff95495f1445d9b64a9e9a4c6a6d476e79f5afb5f8988b3cc615c",
+      "source": "assets/rpg/ui/intro/v2-motion/edge-leaves.svg",
+      "sourceSha256": "04eda1b41fdff95495f1445d9b64a9e9a4c6a6d476e79f5afb5f8988b3cc615c"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v2-motion/ink-edge-mask.svg",
+      "bytes": 557,
+      "sha256": "89b9c26140c8ddcfffefa4b41ff9dfe3929349e6e21f7c09f9e0059ae9585d99",
+      "source": "assets/rpg/ui/intro/v2-motion/ink-edge-mask.svg",
+      "sourceSha256": "89b9c26140c8ddcfffefa4b41ff9dfe3929349e6e21f7c09f9e0059ae9585d99"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/fonts/IntroSerif-500.woff2",
+      "bytes": 57748,
+      "sha256": "a1883532fb8e4e583a1e83d4fcf92a629fb7b508aac1b57a93f348a522396a62",
+      "source": "assets/rpg/ui/intro/v4-refinement/fonts/IntroSerif-500.woff2",
+      "sourceSha256": "a1883532fb8e4e583a1e83d4fcf92a629fb7b508aac1b57a93f348a522396a62"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/fonts/IntroSerif-600.woff2",
+      "bytes": 58996,
+      "sha256": "83702a58457d9d564e248fe7e0ae6a80346de6b43476ea6eee27914bafd3a288",
+      "source": "assets/rpg/ui/intro/v4-refinement/fonts/IntroSerif-600.woff2",
+      "sourceSha256": "83702a58457d9d564e248fe7e0ae6a80346de6b43476ea6eee27914bafd3a288"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/fonts/OFL.txt",
+      "bytes": 4385,
+      "sha256": "713c6ed41baff892f20c6e8edfdbe302eb3589e97abf9c61958b75af2e002589",
+      "source": "assets/rpg/ui/intro/v4-refinement/fonts/OFL.txt"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/fonts/fonts.css",
+      "bytes": 6938,
+      "sha256": "8cdf6248760b17501afadaf5d7a06d40aec42bf261a359e41e1e884d466ea56c",
+      "source": "assets/rpg/ui/intro/v4-refinement/fonts/fonts.css",
+      "sourceSha256": "233e15701af3dcf0da92f7e8e6c0baaef88ff5c13caa64815ceeefb35e06d2db"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/heading-ornament.svg",
+      "bytes": 321,
+      "sha256": "b919d6b23b051ac124cc901a09fcf753159483cc823964c085da0ccb7341f21a",
+      "source": "assets/rpg/ui/intro/v4-refinement/heading-ornament.svg",
+      "sourceSha256": "b919d6b23b051ac124cc901a09fcf753159483cc823964c085da0ccb7341f21a"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/paper-edge.svg",
+      "bytes": 846,
+      "sha256": "a3d284173517ac4f909a2e754c37cbc3c301b01941c1f8dc342c948ed7f150d0",
+      "source": "assets/rpg/ui/intro/v4-refinement/paper-edge.svg",
+      "sourceSha256": "a3d284173517ac4f909a2e754c37cbc3c301b01941c1f8dc342c948ed7f150d0"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v4-refinement/royal-lattice.svg",
+      "bytes": 422,
+      "sha256": "fd7cba7e48e582e1c9c2dafec2d070df269ea9d349dacdd38d21258b92e5068c",
+      "source": "assets/rpg/ui/intro/v4-refinement/royal-lattice.svg",
+      "sourceSha256": "fd7cba7e48e582e1c9c2dafec2d070df269ea9d349dacdd38d21258b92e5068c"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+      "bytes": 319940,
+      "sha256": "e8aea5c4c21dd133699a35d83a716eb0aa58c1482c8ff23b61715f64ecb078a8",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+      "sourceSha256": "e8aea5c4c21dd133699a35d83a716eb0aa58c1482c8ff23b61715f64ecb078a8",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+      "bytes": 460168,
+      "sha256": "28445e87a25a67f7d5e9b794f0bc7f0054f432d3dff5815bcb74a52c36eeda73",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+      "sourceSha256": "28445e87a25a67f7d5e9b794f0bc7f0054f432d3dff5815bcb74a52c36eeda73",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+      "bytes": 405366,
+      "sha256": "d888cd285519f18e23a6c5f6e44cea97b95cb5ac43dba0f933f3c0b60d02372d",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+      "sourceSha256": "d888cd285519f18e23a6c5f6e44cea97b95cb5ac43dba0f933f3c0b60d02372d",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
+      "bytes": 313944,
+      "sha256": "abdebaba2a6f4b3d2b6d87c8dab2067048fc449da94c273a62bb6dc0f280ae70",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
+      "sourceSha256": "abdebaba2a6f4b3d2b6d87c8dab2067048fc449da94c273a62bb6dc0f280ae70",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "path": "assets/rpg/ui/intro/v6-showcase/element-earth.webm",
+      "bytes": 904906,
+      "sha256": "3aa88c415f265ee641d372915485f8e96ca27753e736d8cf33b03205b9388b9b",
+      "source": "assets/rpg/ui/intro/v6-showcase/element-earth.webm",
+      "sourceSha256": "3aa88c415f265ee641d372915485f8e96ca27753e736d8cf33b03205b9388b9b"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v6-showcase/element-fire.webm",
+      "bytes": 898813,
+      "sha256": "5d566ddc3266395749bd85fdf23494d496c788d79ac36d5e022e60450711a8a9",
+      "source": "assets/rpg/ui/intro/v6-showcase/element-fire.webm",
+      "sourceSha256": "5d566ddc3266395749bd85fdf23494d496c788d79ac36d5e022e60450711a8a9"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v6-showcase/element-water.webm",
+      "bytes": 892898,
+      "sha256": "a4a32880ff9d193d3e941f36230b238b2f62d87cf873e6ad65dba2fa4ca7d881",
+      "source": "assets/rpg/ui/intro/v6-showcase/element-water.webm",
+      "sourceSha256": "a4a32880ff9d193d3e941f36230b238b2f62d87cf873e6ad65dba2fa4ca7d881"
+    },
+    {
+      "path": "assets/rpg/ui/intro/v6-showcase/element-wind.webm",
+      "bytes": 879286,
+      "sha256": "d94f76a6527565ad39e0c4bc688a88ee3f3f62a2d0112cc64ecda8d183a4c907",
+      "source": "assets/rpg/ui/intro/v6-showcase/element-wind.webm",
+      "sourceSha256": "d94f76a6527565ad39e0c4bc688a88ee3f3f62a2d0112cc64ecda8d183a4c907"
+    },
+    {
+      "path": "assets/rpg/worlds/namhae-renewal-3d-3/design/idong-spring-concept.webp",
+      "bytes": 255676,
+      "sha256": "1e05600902230bd9962cbccb9532d36d8e8a7db67228a6009ea626f05e016b0f",
+      "source": "assets/rpg/worlds/namhae-renewal-3d-3/design/idong-spring-concept.webp",
+      "sourceSha256": "1e05600902230bd9962cbccb9532d36d8e8a7db67228a6009ea626f05e016b0f",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "assets/rpg/worlds/namhae-renewal-3d-3/design/mijo-summer-concept.webp",
+      "bytes": 203780,
+      "sha256": "50fcd8fd53377afd1d7d489c0ca11a15df86174938f7175e778f2ddeee24a952",
+      "source": "assets/rpg/worlds/namhae-renewal-3d-3/design/mijo-summer-concept.webp",
+      "sourceSha256": "50fcd8fd53377afd1d7d489c0ca11a15df86174938f7175e778f2ddeee24a952",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "assets/rpg/worlds/namhae-renewal-3d-3/design/nam-autumn-concept.webp",
+      "bytes": 262600,
+      "sha256": "066e3f31ea1a4b50c5c8928607ba0c9f8a62ae0b169ccdd8ea1df52ba27c4e09",
+      "source": "assets/rpg/worlds/namhae-renewal-3d-3/design/nam-autumn-concept.webp",
+      "sourceSha256": "066e3f31ea1a4b50c5c8928607ba0c9f8a62ae0b169ccdd8ea1df52ba27c4e09",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "assets/rpg/worlds/namhae-renewal-3d-3/design/seolcheon-winter-concept.webp",
+      "bytes": 214576,
+      "sha256": "4854c02af0b05a9b0fa73953d027284250594a704f6ce7ab47215b95cc8e119a",
+      "source": "assets/rpg/worlds/namhae-renewal-3d-3/design/seolcheon-winter-concept.webp",
+      "sourceSha256": "4854c02af0b05a9b0fa73953d027284250594a704f6ce7ab47215b95cc8e119a",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
+      "bytes": 741496,
+      "sha256": "2a21cfed8b29e417d85cb61c60acd3e12567ac370034c5bdc9264c461dd46ac7",
+      "source": "assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
+      "sourceSha256": "2a21cfed8b29e417d85cb61c60acd3e12567ac370034c5bdc9264c461dd46ac7",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "path": "data/authored/sections/access.json",
+      "bytes": 485,
+      "sha256": "90d7484f925fe5e198bc6a84120f5e0d9afb5ec2efa04cfb05f72cce9fb17781",
+      "source": "data/rpg-intro/sections/access.json"
+    },
+    {
+      "path": "data/authored/sections/character.json",
+      "bytes": 2362,
+      "sha256": "fa8bd2410d37a6b023fa10d7d2727aa88658effda3fd4a01858658a949f375af",
+      "source": "data/rpg-intro/sections/character.json"
+    },
+    {
+      "path": "data/authored/sections/clinic.json",
+      "bytes": 1158,
+      "sha256": "dc821bf18e4ab347f3f5baf58b517f638f534a0bb8e727dfbce52e1ee224e3f4",
+      "source": "data/rpg-intro/sections/clinic.json"
+    },
+    {
+      "path": "data/authored/sections/features.json",
+      "bytes": 2686,
+      "sha256": "7670a57c18e0dd5d7a359f230622e1e73d0d29f5e7192f69d73ada2a3ee36d4e",
+      "source": "data/rpg-intro/sections/features.json"
+    },
+    {
+      "path": "data/authored/sections/gamefeatures.json",
+      "bytes": 755,
+      "sha256": "a0ddf89dfe64884cc52ae36b6a6fdaa14f960d34a1d5c754009f463bbff8c491",
+      "source": "data/rpg-intro/sections/gamefeatures.json"
+    },
+    {
+      "path": "data/authored/sections/guide.json",
+      "bytes": 1613,
+      "sha256": "4caf55a88065a073865fd67ce020ed5702f07a387129976a9815522fab5296c2",
+      "source": "data/rpg-intro/sections/guide.json"
+    },
+    {
+      "path": "data/authored/sections/media.json",
+      "bytes": 1167,
+      "sha256": "6556878af3378f42f765fc77fe776a2a9efe76b26c206f28813bb47332fc7798",
+      "source": "data/rpg-intro/sections/media.json"
+    },
+    {
+      "path": "data/authored/sections/sect.json",
+      "bytes": 1967,
+      "sha256": "c5103964e1d347ada1d7d1cfdef80792f0cdd0f75310dd2eb43109becd3d2aa7",
+      "source": "data/rpg-intro/sections/sect.json"
+    },
+    {
+      "path": "data/authored/sections/skill.json",
+      "bytes": 1412,
+      "sha256": "f14fac7a5fb7fd52659cd1941ef29591deb638a8f86cf9dc3615827af410826f",
+      "source": "data/rpg-intro/sections/skill.json"
+    },
+    {
+      "path": "data/authored/sections/universe.json",
+      "bytes": 2121,
+      "sha256": "d3f90b106208957bea5f7343bc51b1153d6c83e2e27bb1aa27fd3fd259031a1e",
+      "source": "data/rpg-intro/sections/universe.json"
+    },
+    {
+      "path": "data/authored/sections/visual.json",
+      "bytes": 3271,
+      "sha256": "51ec598259dbe7f2e304341893590fe0ae07031ebf2e515d49d817f945a3887f",
+      "source": "data/rpg-intro/sections/visual.json"
+    },
+    {
+      "path": "data/authored/site.json",
+      "bytes": 4583,
+      "sha256": "3d954e4b879460e5b39d17bc6a4f73a13ca9e7fbf623bcbeb7e28988849291ce",
+      "source": "data/rpg-intro/site.json"
+    },
+    {
+      "path": "docs/data-guide.ko.md",
+      "bytes": 6476,
+      "sha256": "fcb3ed67a9cc2dcda1c68f1f38667cd20da3fa834be9b7976c3b93203e2d3751",
+      "source": "docs/rpg-intro-data-guide.ko.md"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 37,
+      "sha256": "a4372983ba7fc75e085bd307dd565c7deb0aaac13e5b304e2a03ff4d3d3c901a",
+      "source": "tools/rpg_intro_demo/requirements.txt"
+    },
+    {
+      "path": "schema/schema.json",
+      "bytes": 62040,
+      "sha256": "e59164b47fbc462a81b3c2615ba504325a31ab2353913739e84a5527aff95460",
+      "source": "data/rpg-intro/schema.json"
+    },
+    {
+      "path": "src/rpg/intro-motion.mjs",
+      "bytes": 7980,
+      "sha256": "0cfba7a1ef959efadc2a4472d10e1f3f8b40dfcd06b27bba81bb492ffc1a21f8",
+      "source": "src/rpg/intro-motion.mjs",
+      "sourceSha256": "0cfba7a1ef959efadc2a4472d10e1f3f8b40dfcd06b27bba81bb492ffc1a21f8"
+    },
+    {
+      "path": "src/rpg/intro.mjs",
+      "bytes": 103889,
+      "sha256": "5f8d7b6e10e9478e89aea3adf49c69767602ff834ad40405b8776c1498818b78",
+      "source": "src/rpg/intro.mjs",
+      "sourceSha256": "082abef5997b68a110566ad16731913e0e209f693bd39ff67a02ca78bc605a1a"
+    },
+    {
+      "path": "templates/rpg-intro.html",
+      "bytes": 39505,
+      "sha256": "59d362fc02df3bff7f01b28d9cc9217947a6de685f91f19fe3ceb6096f2a8b2b",
+      "source": "templates/rpg-intro.html"
+    },
+    {
+      "path": "tools/build.py",
+      "bytes": 8495,
+      "sha256": "e089d9b253466b880700481f26a291ea082a54fef59eeab3e4170659e5783636",
+      "source": "tools/rpg_intro_demo/build.py"
+    },
+    {
+      "path": "tools/preview.py",
+      "bytes": 3934,
+      "sha256": "31e066b99b916fbda4c89d8d904f390c34ba2979b83dcbc2d4a54d4300f84181",
+      "source": "tools/rpg_intro_demo/preview.py"
+    },
+    {
+      "path": "tools/rpg_intro_content.py",
+      "bytes": 13567,
+      "sha256": "ed566db684ac66f2c8319ed29bcbdcaf72b7e8867a4b12ee5a7f3f60ec9ecdfb",
+      "source": "tools/rpg_intro_content.py"
+    },
+    {
+      "path": "tools/verify.py",
+      "bytes": 4077,
+      "sha256": "c1004cc1f93e9a620f4e4ec486789ed12906cba5e0d071d01d2fcf983ddfc470",
+      "source": "tools/rpg_intro_demo/verify.py"
+    },
+    {
+      "path": "assets/art/hero-day.webp",
+      "bytes": 444238,
+      "sha256": "dd8f53dbfab75dd9d0f86c6510d84c5962395cf722fbc1191e0cc69771ad43e9",
+      "source": "assets/rpg/ui/intro/v1/hero-sky-day.webp"
+    },
+    {
+      "path": "assets/art/hero-night.webp",
+      "bytes": 439782,
+      "sha256": "03af9a9be6f68bc9846660848eba7ccb621ce66ec950e02c45abf787e0d12373",
+      "source": "assets/rpg/ui/intro/v1/hero-sky-night.webp"
+    },
+    {
+      "path": "assets/art/clinic-morning-gate.webp",
+      "bytes": 319940,
+      "sha256": "e8aea5c4c21dd133699a35d83a716eb0aa58c1482c8ff23b61715f64ecb078a8",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp"
+    },
+    {
+      "path": "assets/art/healing-courtyard.webp",
+      "bytes": 405366,
+      "sha256": "d888cd285519f18e23a6c5f6e44cea97b95cb5ac43dba0f933f3c0b60d02372d",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp"
+    },
+    {
+      "path": "assets/art/medical-apothecary.webp",
+      "bytes": 313944,
+      "sha256": "abdebaba2a6f4b3d2b6d87c8dab2067048fc449da94c273a62bb6dc0f280ae70",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp"
+    },
+    {
+      "path": "assets/art/herb-garden.webp",
+      "bytes": 460168,
+      "sha256": "28445e87a25a67f7d5e9b794f0bc7f0054f432d3dff5815bcb74a52c36eeda73",
+      "source": "assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp"
+    },
+    {
+      "path": "assets/clinicians/jo-jaeseong.png",
+      "bytes": 252621,
+      "sha256": "0653720168a193d9e3d68156d99f8ecf4a10b90f2003950caf987d83a2f90d65",
+      "source": "images/doctors/d001.png"
+    },
+    {
+      "path": "assets/clinicians/kim-seokyoung.png",
+      "bytes": 100161,
+      "sha256": "94fd999cfc69255998612205bd3bc3e7655c1b61e0a414a05fd95f2fff19707f",
+      "source": "images/doctors/doctor002.png"
+    }
+  ],
+  "provenance": {
+    "/actors/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/actors/0/encounter/idle/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/actors/0/encounter/idle/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/actors/0/encounter/idle/tools/0/sprite/bodyManifest": "/assets/characters/100/animation.json",
+    "/actors/0/encounter/hover/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/actors/0/encounter/hover/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/actors/0/encounter/hover/tools/0/sprite/bodyManifest": "/assets/characters/100/animation.json",
+    "/actors/1/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/actors/1/encounter/idle/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/actors/1/encounter/idle/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/actors/1/encounter/idle/tools/0/sprite/bodyManifest": "/assets/characters/200/animation.json",
+    "/actors/1/encounter/hover/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/actors/1/encounter/hover/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/actors/1/encounter/hover/tools/0/sprite/bodyManifest": "/assets/characters/200/animation.json",
+    "/actors/2/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n001/animation.json",
+    "/actors/2/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r3-face-dynamic/portrait-n001.glb?v=164858935a82",
+    "/actors/2/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n001/animation.json",
+    "/actors/2/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r3-face-dynamic/portrait-n001.glb?v=164858935a82",
+    "/actors/3/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n002/animation.json",
+    "/actors/3/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n002.glb?v=5a4aaef0419d",
+    "/actors/3/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n002/animation.json",
+    "/actors/3/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n002.glb?v=5a4aaef0419d",
+    "/actors/4/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n006/animation.json",
+    "/actors/4/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n006.glb?v=ab7ea6f12d78",
+    "/actors/4/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n006/animation.json",
+    "/actors/4/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n006.glb?v=ab7ea6f12d78",
+    "/actors/5/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n007/animation.json",
+    "/actors/5/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n007.glb?v=d62ec0888a8c",
+    "/actors/5/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n007/animation.json",
+    "/actors/5/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n007.glb?v=d62ec0888a8c",
+    "/actors/6/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n017/animation.json",
+    "/actors/6/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n017.glb?v=089718a8f4f2",
+    "/actors/6/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n017/animation.json",
+    "/actors/6/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n017.glb?v=089718a8f4f2",
+    "/actors/7/encounter/idle/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n020/animation.json",
+    "/actors/7/encounter/idle/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n020.glb?v=80709ce32c6b",
+    "/actors/7/encounter/hover/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n020/animation.json",
+    "/actors/7/encounter/hover/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n020.glb?v=80709ce32c6b",
+    "/monsters/0/sourceManifest": "/assets/rpg/monsters/sprites/M906/animation.json",
+    "/monsters/0/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M906/art.png",
+    "/monsters/0/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M906/animation.json",
+    "/monsters/0/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M906/animation.json",
+    "/monsters/1/sourceManifest": "/assets/rpg/monsters/sprites/M911/animation.json",
+    "/monsters/1/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M911/art.png",
+    "/monsters/1/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M911/animation.json",
+    "/monsters/1/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M911/animation.json",
+    "/monsters/2/sourceManifest": "/assets/rpg/monsters/sprites/M916/animation.json",
+    "/monsters/2/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M916/art.png",
+    "/monsters/2/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M916/animation.json",
+    "/monsters/2/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M916/animation.json",
+    "/monsters/3/sourceManifest": "/assets/rpg/monsters/sprites/M921/animation.json",
+    "/monsters/3/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M921/art.png",
+    "/monsters/3/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M921/animation.json",
+    "/monsters/3/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M921/animation.json",
+    "/monsters/4/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/monsters/4/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M926/art.png",
+    "/monsters/4/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/monsters/4/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/monsters/5/sourceManifest": "/assets/rpg/monsters/sprites/M931/animation.json",
+    "/monsters/5/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M931/art.png",
+    "/monsters/5/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M931/animation.json",
+    "/monsters/5/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M931/animation.json",
+    "/monsters/6/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/monsters/6/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M936/art.png",
+    "/monsters/6/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/monsters/6/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/monsters/7/sourceManifest": "/assets/rpg/monsters/sprites/M941/animation.json",
+    "/monsters/7/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M941/art.png",
+    "/monsters/7/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M941/animation.json",
+    "/monsters/7/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M941/animation.json",
+    "/monsters/8/sourceManifest": "/assets/rpg/monsters/sprites/M946/animation.json",
+    "/monsters/8/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M946/art.png",
+    "/monsters/8/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M946/animation.json",
+    "/monsters/8/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M946/animation.json",
+    "/monsters/9/sourceManifest": "/assets/rpg/monsters/sprites/M951/animation.json",
+    "/monsters/9/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M951/art.png",
+    "/monsters/9/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M951/animation.json",
+    "/monsters/9/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M951/animation.json",
+    "/heroMonsters/0/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/heroMonsters/0/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M932/art.png",
+    "/heroMonsters/0/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/heroMonsters/0/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/heroMonsters/0/heroSequence/steps/0/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/heroMonsters/0/heroSequence/steps/1/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/heroMonsters/1/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/heroMonsters/1/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M926/art.png",
+    "/heroMonsters/1/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/heroMonsters/1/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/heroMonsters/1/heroSequence/steps/0/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/heroMonsters/1/heroSequence/steps/1/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M926/animation.json",
+    "/heroMonsters/2/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroMonsters/2/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M936/art.png",
+    "/heroMonsters/2/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroMonsters/2/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroMonsters/2/heroSequence/steps/0/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroMonsters/2/heroSequence/steps/1/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/guild/0/motionActors/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/guild/0/motionActors/1/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/guild/1/motionActors/0/sprite/sourceManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/portrait-n017/animation.json",
+    "/guild/1/motionActors/0/sprite/sourceModel": "/assets/rpg/actors/npc-gpt61-sol2-ultra-r2-portraits/portrait-n017.glb?v=089718a8f4f2",
+    "/guild/2/motionActors/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/guild/2/motionActors/1/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/0/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/0/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/0/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/004/manifest.json",
+    "/medical/skills/0/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/004/layers-front/00.png",
+    "/medical/skills/0/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/004/layers-back/00.png",
+    "/medical/skills/1/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/1/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/1/performerTools/0/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/medical/skills/1/performerTools/0/bodyManifest": "/assets/characters/100/animation.json",
+    "/medical/skills/1/performerTools/1/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/medical/skills/1/performerTools/1/bodyManifest": "/assets/characters/200/animation.json",
+    "/medical/skills/1/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/005/manifest.json",
+    "/medical/skills/1/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/005/layers-front/00.png",
+    "/medical/skills/1/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/005/layers-back/00.png",
+    "/medical/skills/2/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/2/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/2/performerTools/0/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/medical/skills/2/performerTools/0/bodyManifest": "/assets/characters/100/animation.json",
+    "/medical/skills/2/performerTools/1/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/medical/skills/2/performerTools/1/bodyManifest": "/assets/characters/200/animation.json",
+    "/medical/skills/2/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/006/manifest.json",
+    "/medical/skills/2/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/006/layers-front/00.png",
+    "/medical/skills/2/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/006/layers-back/00.png",
+    "/medical/skills/3/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/3/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/3/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/007/manifest.json",
+    "/medical/skills/3/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/007/layers-front/00.png",
+    "/medical/skills/3/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/007/layers-back/00.png",
+    "/medical/skills/4/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/4/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/4/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/012/manifest.json",
+    "/medical/skills/4/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/012/layers-front/00.png",
+    "/medical/skills/4/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/012/layers-back/00.png",
+    "/medical/skills/5/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/5/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/5/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/019/manifest.json",
+    "/medical/skills/5/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/019/layers-front/00.png",
+    "/medical/skills/5/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/019/layers-back/00.png",
+    "/medical/skills/6/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/6/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/6/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/001/manifest.json",
+    "/medical/skills/6/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/001/layers-front/00.png",
+    "/medical/skills/6/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/001/layers-back/00.png",
+    "/medical/skills/7/performers/0/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/medical/skills/7/performers/1/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/medical/skills/7/effect/sourceManifest": "/assets/rpg/skills/effects/medical-generated/r1/013/manifest.json",
+    "/medical/skills/7/effect/frontSrc": "/assets/rpg/skills/effects/medical-generated/r1/013/layers-front/00.png",
+    "/medical/skills/7/effect/backSrc": "/assets/rpg/skills/effects/medical-generated/r1/013/layers-back/00.png",
+    "/medical/target/spriteSW/sourceManifest": "/assets/rpg/monsters/sprites/M828/animation.json",
+    "/elements/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/elements/0/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/fireball/manifest.json",
+    "/elements/0/effect/frontSrc": null,
+    "/elements/0/effect/backSrc": null,
+    "/elements/0/skills/0/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/fireball/manifest.json",
+    "/elements/0/skills/0/effect/frontSrc": null,
+    "/elements/0/skills/0/effect/backSrc": null,
+    "/elements/0/skills/1/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/fire-wall/manifest.json",
+    "/elements/0/skills/1/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/fire-wall/layers-front/00.png",
+    "/elements/0/skills/1/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/fire-wall/layers-back/00.png",
+    "/elements/0/skills/2/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/lava-eruption/manifest.json",
+    "/elements/0/skills/2/effect/frontSrc": null,
+    "/elements/0/skills/2/effect/backSrc": null,
+    "/elements/0/skills/3/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/burn/manifest.json",
+    "/elements/0/skills/3/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/burn/layers-front/00.png",
+    "/elements/0/skills/3/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/burn/layers-back/00.png",
+    "/elements/0/skills/4/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r3/fire-weapon/manifest.json",
+    "/elements/0/skills/4/effect/frontSrc": null,
+    "/elements/0/skills/4/effect/backSrc": null,
+    "/elements/0/skills/5/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/meteor/manifest.json",
+    "/elements/0/skills/5/effect/frontSrc": null,
+    "/elements/0/skills/5/effect/backSrc": null,
+    "/elements/1/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/elements/1/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/ice-spear/manifest.json",
+    "/elements/1/effect/frontSrc": null,
+    "/elements/1/effect/backSrc": null,
+    "/elements/1/skills/0/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/ice-spear/manifest.json",
+    "/elements/1/skills/0/effect/frontSrc": null,
+    "/elements/1/skills/0/effect/backSrc": null,
+    "/elements/1/skills/1/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/freeze/manifest.json",
+    "/elements/1/skills/1/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/freeze/layers-front/00.png",
+    "/elements/1/skills/1/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/freeze/layers-back/00.png",
+    "/elements/1/skills/2/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/ice-spikes/manifest.json",
+    "/elements/1/skills/2/effect/frontSrc": null,
+    "/elements/1/skills/2/effect/backSrc": null,
+    "/elements/1/skills/3/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r3/ice-weapon/manifest.json",
+    "/elements/1/skills/3/effect/frontSrc": null,
+    "/elements/1/skills/3/effect/backSrc": null,
+    "/elements/1/skills/4/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/regeneration/manifest.json",
+    "/elements/1/skills/4/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/regeneration/layers-front/00.png",
+    "/elements/1/skills/4/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/regeneration/layers-back/00.png",
+    "/elements/1/skills/5/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/ice-storm/manifest.json",
+    "/elements/1/skills/5/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/ice-storm/layers-front/00.png",
+    "/elements/1/skills/5/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/ice-storm/layers-back/00.png",
+    "/elements/2/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/elements/2/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/wind-blade/manifest.json",
+    "/elements/2/effect/frontSrc": null,
+    "/elements/2/effect/backSrc": null,
+    "/elements/2/skills/0/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/wind-blade/manifest.json",
+    "/elements/2/skills/0/effect/frontSrc": null,
+    "/elements/2/skills/0/effect/backSrc": null,
+    "/elements/2/skills/1/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/haste/manifest.json",
+    "/elements/2/skills/1/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/haste/layers-front/00.png",
+    "/elements/2/skills/1/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/haste/layers-back/00.png",
+    "/elements/2/skills/2/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/wind-blade/manifest.json",
+    "/elements/2/skills/2/effect/frontSrc": null,
+    "/elements/2/skills/2/effect/backSrc": null,
+    "/elements/2/skills/3/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/attack-speed/manifest.json",
+    "/elements/2/skills/3/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/attack-speed/layers-front/00.png",
+    "/elements/2/skills/3/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/attack-speed/layers-back/00.png",
+    "/elements/2/skills/4/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/evasion/manifest.json",
+    "/elements/2/skills/4/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/evasion/layers-front/00.png",
+    "/elements/2/skills/4/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/evasion/layers-back/00.png",
+    "/elements/2/skills/5/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/wind-prison/manifest.json",
+    "/elements/2/skills/5/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/wind-prison/layers-front/00.png",
+    "/elements/2/skills/5/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/wind-prison/layers-back/00.png",
+    "/elements/3/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/elements/3/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/earth-fissure/manifest.json",
+    "/elements/3/effect/frontSrc": null,
+    "/elements/3/effect/backSrc": null,
+    "/elements/3/skills/0/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/earth-fissure/manifest.json",
+    "/elements/3/skills/0/effect/frontSrc": null,
+    "/elements/3/skills/0/effect/backSrc": null,
+    "/elements/3/skills/1/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/hammer-impact/manifest.json",
+    "/elements/3/skills/1/effect/frontSrc": null,
+    "/elements/3/skills/1/effect/backSrc": null,
+    "/elements/3/skills/2/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/earth-barrier/manifest.json",
+    "/elements/3/skills/2/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/earth-barrier/layers-front/00.png",
+    "/elements/3/skills/2/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/earth-barrier/layers-back/00.png",
+    "/elements/3/skills/3/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/armor-break/manifest.json",
+    "/elements/3/skills/3/effect/frontSrc": null,
+    "/elements/3/skills/3/effect/backSrc": null,
+    "/elements/3/skills/4/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/defense-up/manifest.json",
+    "/elements/3/skills/4/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/defense-up/layers-front/00.png",
+    "/elements/3/skills/4/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/defense-up/layers-back/00.png",
+    "/elements/3/skills/5/effect/sourceManifest": "/assets/rpg/skills/effects/chain-generated/r2/sand-storm/manifest.json",
+    "/elements/3/skills/5/effect/frontSrc": "/assets/rpg/skills/effects/chain-generated/r2/sand-storm/layers-front/00.png",
+    "/elements/3/skills/5/effect/backSrc": "/assets/rpg/skills/effects/chain-generated/r2/sand-storm/layers-back/00.png",
+    "/sequence/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/sequence/1/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M932/animation.json",
+    "/sequence/2/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/sequence/3/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/heroSprites/0/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/heroSprites/0/encounter/idle/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/heroSprites/0/encounter/idle/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/heroSprites/0/encounter/idle/tools/0/sprite/bodyManifest": "/assets/characters/100/animation.json",
+    "/heroSprites/0/encounter/hover/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/animation.json",
+    "/heroSprites/0/encounter/hover/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/heroSprites/0/encounter/hover/tools/0/sprite/bodyManifest": "/assets/characters/100/animation.json",
+    "/heroSprites/1/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/heroSprites/1/encounter/idle/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/heroSprites/1/encounter/idle/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/heroSprites/1/encounter/idle/tools/0/sprite/bodyManifest": "/assets/characters/200/animation.json",
+    "/heroSprites/1/encounter/hover/sprite/sourceManifest": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/animation.json",
+    "/heroSprites/1/encounter/hover/tools/0/sprite/sourceManifest": "/assets/characters/paper-doll/weapons/animation.json",
+    "/heroSprites/1/encounter/hover/tools/0/sprite/bodyManifest": "/assets/characters/200/animation.json",
+    "/heroSprites/2/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroSprites/2/sourceArtwork": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/art/M936/art.png",
+    "/heroSprites/2/encounter/idle/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/heroSprites/2/encounter/hover/sprite/sourceManifest": "/assets/rpg/monsters/sprites/M936/animation.json",
+    "/sources": {
+      "npcCatalog": "/assets/rpg/worlds/namhae-renewal-3d-3/releases/landscape-r34-roadside-life-wayfinding/npc-catalog.json",
+      "characterLookRelease": "lk-medical-3d-look-20261018-r3",
+      "medicalPresentations": "/assets/rpg/skills/medical-presentations.v1.json",
+      "elementPresets": "/assets/rpg/skills/chain-presets.v1.json",
+      "growthRevision": "skill-growth-20261017-r1",
+      "heroMonsterManifests": [
+        "/assets/rpg/monsters/sprites/M932/animation.json",
+        "/assets/rpg/monsters/sprites/M926/animation.json",
+        "/assets/rpg/monsters/sprites/M936/animation.json"
+      ],
+      "heroMonsterUse": "gentle regional subspecies concepts M932/M926/M936; intro only; gameplay bindings unchanged",
+      "subspeciesWorklist": "/assets/rpg/monsters/source/lk-dungeon-variants-r1/worklist.json",
+      "subspeciesMediaManifest": "/assets/rpg/ui/intro/v1/monster-portraits/manifest.json",
+      "worldCaptureManifest": "/assets/rpg/ui/intro/v1/world-captures/v2/manifest.json",
+      "skillVideoManifest": "/assets/rpg/ui/intro/v6-showcase/manifest.json",
+      "trainingPropManifest": "/assets/rpg/monsters/sprites/M828/animation.json",
+      "trainingPropUse": "intro-demonstration-only; SW walk frame0 is the source manifest idle fallback",
+      "equippedEncounterManifest": "/assets/rpg/ui/intro/v1/encounters/v1/medical.json",
+      "npcEncounterManifest": "/assets/rpg/ui/intro/v1/npc-motion/v1/manifest.json",
+      "authoredSite": "/data/rpg-intro/site.json",
+      "authoredSections": "/data/rpg-intro/sections/",
+      "contentSchema": "/data/rpg-intro/schema.json"
+    }
+  }
+}

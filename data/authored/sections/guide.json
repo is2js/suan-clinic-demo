@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 5,
+  "id": "guide",
+  "heading": {
+    "number": "08",
+    "eyebrow": "FIRST CHAPTER",
+    "title": "첫걸음도, 함께",
+    "description": "처음 만나는 세계가 낯설지 않도록."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+  "assets": {
+    "protagonist": "/assets/rpg/ui/intro/v1/portrait-medical-male.webp"
+  },
+  "copy": {
+    "protagonistAlt": "의맥전기 남성 주인공의 단독 원화",
+    "eyebrow": "새로운 인연을 위한 작은 안내서",
+    "title": "오늘, 우리의\n첫 장을 열어볼까요?",
+    "description": "서버를 고르고, 캐릭터를 만나고.\n첫 모험까지 한 걸음씩 함께해요.",
+    "startLabel": "의맥전기 시작하기",
+    "storyAriaLabel": "인연을 잇는 이야기"
+  },
+  "actions": [
+    {
+      "actionId": "play",
+      "label": "의맥전기 시작하기"
+    }
+  ],
+  "stories": [
+    {
+      "id": "first-adventure",
+      "name": "당신의 첫 모험",
+      "description": "서버를 선택하고 나만의 의료진과 함께 첫 장을 열어보세요.",
+      "image": "/assets/rpg/ui/generated-previews/20-full-game-brand-hero-center-20260628.webp",
+      "tag": "ADVENTURE GUIDE",
+      "actionId": "play"
+    },
+    {
+      "id": "healing-life",
+      "name": "치유로 이어지는 일상",
+      "description": "진료실과 플레이를 잇는 베드 타이머를 만나보세요.",
+      "image": "/assets/rpg/ui/generated-previews/18-clinic-operations-center-20260628.webp",
+      "tag": "CLINIC GUIDE",
+      "actionId": "clinic"
+    }
+  ]
+}

@@ -1,0 +1,2807 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:uimaek-intro:schema:5",
+  "title": "의맥전기 인트로 작성 데이터와 런타임 카탈로그 v5",
+  "description": "Authored site/section files and compatible runtime projection. Original game sprite metadata remains authoritative.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/site"
+    },
+    {
+      "$ref": "#/$defs/section"
+    },
+    {
+      "$ref": "#/$defs/catalog"
+    }
+  ],
+  "$defs": {
+    "assetTree": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/assetTree"
+          }
+        }
+      ]
+    },
+    "heading": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "number",
+        "eyebrow",
+        "title",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "actionDefinition": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "pattern": "^/(?!/)"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "enum": [
+            "GET",
+            "POST"
+          ]
+        },
+        "demoMessage": {
+          "const": "준비 중입니다."
+        },
+        "visibility": {
+          "enum": [
+            "all",
+            "operator"
+          ]
+        }
+      },
+      "required": [
+        "href",
+        "label",
+        "method",
+        "demoMessage"
+      ],
+      "additionalProperties": false
+    },
+    "actionReference": {
+      "type": "object",
+      "properties": {
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "actionId"
+          ],
+          "not": {
+            "required": [
+              "target"
+            ]
+          }
+        },
+        {
+          "required": [
+            "target"
+          ],
+          "not": {
+            "required": [
+              "actionId"
+            ]
+          }
+        }
+      ]
+    },
+    "navigationEntry": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "value": {
+          "enum": [
+            "actors",
+            "monsters"
+          ]
+        },
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "navigationGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "enum": [
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "carousel",
+            "actors",
+            "medical",
+            "elements",
+            "links"
+          ]
+        },
+        "carousel": {
+          "enum": [
+            "universe",
+            "features",
+            "guild",
+            "media"
+          ]
+        },
+        "source": {
+          "enum": [
+            "universe",
+            "features",
+            "guild",
+            "medical.skills",
+            "elements",
+            "gallery"
+          ]
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/navigationEntry"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "source"
+          ]
+        },
+        {
+          "required": [
+            "entries"
+          ]
+        }
+      ]
+    },
+    "brand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "string"
+        },
+        "hanja": {
+          "type": "string"
+        },
+        "serviceLabel": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        "subtitleImage": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        }
+      },
+      "required": [
+        "name",
+        "subtitle",
+        "logo",
+        "subtitleImage",
+        "primary",
+        "secondary",
+        "hanja",
+        "serviceLabel"
+      ],
+      "additionalProperties": false
+    },
+    "site": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 5
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sectionOrder": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "visual",
+              "universe",
+              "character",
+              "features",
+              "gamefeatures",
+              "sect",
+              "skill",
+              "clinic",
+              "guide",
+              "media",
+              "access"
+            ]
+          },
+          "minItems": 11,
+          "maxItems": 11
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "themeColor": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "themeColor",
+            "language"
+          ],
+          "additionalProperties": false
+        },
+        "brand": {
+          "$ref": "#/$defs/brand"
+        },
+        "actions": {
+          "type": "object",
+          "required": [
+            "play",
+            "login",
+            "clinic",
+            "staffBoard",
+            "logout",
+            "admin"
+          ],
+          "additionalProperties": {
+            "$ref": "#/$defs/actionDefinition"
+          }
+        },
+        "navigation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/navigationGroup"
+          },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "serviceBar": {
+          "type": "object",
+          "properties": {
+            "tagline": {
+              "type": "string"
+            },
+            "loginLabel": {
+              "type": "string"
+            },
+            "loggedInLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tagline",
+            "loginLabel",
+            "loggedInLabel"
+          ],
+          "additionalProperties": false
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "copyright": {
+              "type": "string"
+            },
+            "actionIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "description",
+            "copyright",
+            "actionIds"
+          ],
+          "additionalProperties": false
+        },
+        "theme": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "day",
+                "night"
+              ]
+            },
+            "toDayLabel": {
+              "type": "string"
+            },
+            "toNightLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "default",
+            "toDayLabel",
+            "toNightLabel"
+          ],
+          "additionalProperties": false
+        },
+        "audio": {
+          "type": "object",
+          "properties": {
+            "ambientSrc": {
+              "type": "string",
+              "pattern": "^/assets/[^\\\\]*$"
+            }
+          },
+          "required": [
+            "ambientSrc"
+          ],
+          "additionalProperties": false
+        },
+        "copy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "revision",
+        "sectionOrder",
+        "metadata",
+        "brand",
+        "actions",
+        "navigation",
+        "serviceBar",
+        "footer",
+        "theme",
+        "audio",
+        "copy"
+      ],
+      "additionalProperties": false
+    },
+    "foreground": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        "kind": {
+          "enum": [
+            "portrait",
+            "npc",
+            "pair"
+          ]
+        },
+        "side": {
+          "enum": [
+            "left",
+            "right"
+          ]
+        }
+      },
+      "required": [
+        "image",
+        "kind",
+        "side"
+      ],
+      "additionalProperties": false
+    },
+    "marketing": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "originalImage": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "gameplayCapture": {
+          "type": "boolean"
+        },
+        "foreground": {
+          "$ref": "#/$defs/foreground"
+        },
+        "type": {
+          "enum": [
+            "image",
+            "video"
+          ]
+        },
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "contentRef": {
+          "type": "string",
+          "pattern": "^(universe|features|guild):[a-zA-Z0-9_-]+$"
+        },
+        "spriteRef": {
+          "type": "string",
+          "pattern": "^(actor|hero|medical):[a-zA-Z0-9_-]+(:[01])?$"
+        },
+        "motionActorIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "name",
+            "description",
+            "image",
+            "tag"
+          ]
+        },
+        {
+          "required": [
+            "contentRef"
+          ]
+        }
+      ]
+    },
+    "actorCopy": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        },
+        "portrait": {
+          "type": "string",
+          "pattern": "^/assets/[^\\\\]*$"
+        }
+      },
+      "required": [
+        "description",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "section": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 5
+        },
+        "id": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "heading": {
+          "$ref": "#/$defs/heading"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^/assets/[^\\\\]*$"
+            },
+            {
+              "const": ""
+            }
+          ]
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/assetTree"
+          }
+        },
+        "copy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/actionReference"
+          },
+          "minItems": 0
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/marketing"
+          },
+          "minItems": 1
+        },
+        "stories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/marketing"
+          },
+          "minItems": 1
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/marketing"
+          },
+          "minItems": 1
+        },
+        "actorCopy": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/actorCopy"
+          }
+        },
+        "heroCopy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "heading",
+        "background",
+        "assets",
+        "copy",
+        "actions"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "universe"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 5,
+                "maxItems": 5
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "features"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 5,
+                "maxItems": 5
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "sect"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 3,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "media"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 6,
+                "maxItems": 6
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "guide"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "stories": {
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "assets": {
+                "required": [
+                  "protagonist"
+                ]
+              },
+              "copy": {
+                "required": [
+                  "protagonistAlt",
+                  "eyebrow",
+                  "title",
+                  "description",
+                  "startLabel"
+                ]
+              }
+            },
+            "required": [
+              "stories"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "visual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sequence": {
+                "minItems": 4,
+                "maxItems": 4
+              },
+              "heroCopy": {
+                "required": [
+                  "M932",
+                  "M926",
+                  "M936"
+                ]
+              },
+              "assets": {
+                "required": [
+                  "healers",
+                  "layers"
+                ]
+              }
+            },
+            "required": [
+              "sequence",
+              "heroCopy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "character"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "actorCopy": {
+                "required": [
+                  "medical-male",
+                  "medical-female",
+                  "portrait-n001",
+                  "portrait-n002",
+                  "portrait-n006",
+                  "portrait-n007",
+                  "portrait-n017",
+                  "portrait-n020"
+                ],
+                "minProperties": 8,
+                "maxProperties": 8
+              }
+            },
+            "required": [
+              "actorCopy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "skill"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "assets": {
+                "required": [
+                  "videoPoster",
+                  "videos"
+                ],
+                "properties": {
+                  "videos": {
+                    "type": "object",
+                    "required": [
+                      "fire",
+                      "water",
+                      "wind",
+                      "earth"
+                    ],
+                    "minProperties": 4,
+                    "maxProperties": 4
+                  }
+                }
+              }
+            },
+            "required": []
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "clinic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "assets": {
+                "required": [
+                  "capture"
+                ]
+              },
+              "copy": {
+                "required": [
+                  "captureAlt",
+                  "caption",
+                  "captionDetail",
+                  "note",
+                  "expandNote"
+                ]
+              }
+            },
+            "required": []
+          }
+        }
+      ]
+    },
+    "sprite": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "minLength": 1
+        },
+        "frameWidth": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "frameHeight": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "frames": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "rows": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "frameMs": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "row": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "displayWidth": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "originX": {
+          "type": "number"
+        },
+        "originY": {
+          "type": "number"
+        },
+        "staticFrame": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sourceManifest": {
+          "type": "string"
+        },
+        "bodyManifest": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "src",
+        "frameWidth",
+        "frameHeight",
+        "frames",
+        "rows",
+        "row",
+        "frameMs"
+      ],
+      "additionalProperties": true
+    },
+    "nullableSprite": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/sprite"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "encounterPhase": {
+      "type": "object",
+      "properties": {
+        "sprite": {
+          "$ref": "#/$defs/sprite"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sprite": {
+                "$ref": "#/$defs/sprite"
+              },
+              "placements": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "sprite"
+            ],
+            "additionalProperties": true
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "sprite",
+        "tools"
+      ],
+      "additionalProperties": true
+    },
+    "runtimeArtwork": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sprite": {
+          "$ref": "#/$defs/sprite"
+        },
+        "encounter": {
+          "type": "object",
+          "properties": {
+            "idle": {
+              "$ref": "#/$defs/encounterPhase"
+            },
+            "hover": {
+              "$ref": "#/$defs/encounterPhase"
+            }
+          },
+          "required": [
+            "idle",
+            "hover"
+          ],
+          "additionalProperties": false
+        },
+        "heroSequence": {
+          "type": "object",
+          "properties": {
+            "direction": {
+              "type": "string"
+            },
+            "loop": {
+              "type": "boolean"
+            },
+            "staticFrame": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/encounterPhase"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "direction",
+            "loop",
+            "staticFrame",
+            "steps"
+          ],
+          "additionalProperties": false
+        },
+        "motionActorIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "motionActors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sprite": {
+                "$ref": "#/$defs/sprite"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "sprite"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "image"
+      ],
+      "additionalProperties": true
+    },
+    "medicalSkill": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "growthNodeId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "performers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/nullableSprite"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "performerTools": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nullableSprite"
+              },
+              "minItems": 0,
+              "maxItems": 0
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nullableSprite"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          ]
+        },
+        "performerIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "effect": {
+          "$ref": "#/$defs/sprite"
+        },
+        "effectStartMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "effectDurationMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "demoMode": {
+          "enum": [
+            "self",
+            "target"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "growthNodeId",
+        "name",
+        "description",
+        "icon",
+        "performers",
+        "performerIndex",
+        "effect",
+        "effectStartMs",
+        "effectDurationMs",
+        "demoMode"
+      ],
+      "additionalProperties": true
+    },
+    "elementSkill": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "growthNodeId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "effect": {
+          "$ref": "#/$defs/sprite"
+        },
+        "effectStartMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "effectDurationMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "castDurationMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "castMode": {
+          "type": "string"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "growthNodeId",
+        "name",
+        "description",
+        "icon",
+        "effect",
+        "effectStartMs",
+        "effectDurationMs",
+        "castDurationMs",
+        "castMode",
+        "prerequisites"
+      ],
+      "additionalProperties": true
+    },
+    "element": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "enum": [
+            "fire",
+            "water",
+            "wind",
+            "earth"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "sprite": {
+          "$ref": "#/$defs/sprite"
+        },
+        "effect": {
+          "$ref": "#/$defs/sprite"
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/elementSkill"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "defaultSkillIndex": {
+          "const": 0
+        },
+        "videoSrc": {
+          "type": "string"
+        },
+        "videoPoster": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "sprite",
+        "effect",
+        "skills",
+        "defaultSkillIndex"
+      ],
+      "additionalProperties": true
+    },
+    "catalog": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 5
+        },
+        "revision": {
+          "type": "string"
+        },
+        "site": {
+          "$ref": "#/$defs/runtimeSite"
+        },
+        "sections": {
+          "type": "object",
+          "properties": {
+            "visual": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "universe": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "character": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "features": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "gamefeatures": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "sect": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "skill": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "clinic": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "guide": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "media": {
+              "$ref": "#/$defs/runtimeSection"
+            },
+            "access": {
+              "$ref": "#/$defs/runtimeSection"
+            }
+          },
+          "required": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ],
+          "additionalProperties": false
+        },
+        "brand": {
+          "$ref": "#/$defs/runtimeBrand"
+        },
+        "startHref": {
+          "type": "string"
+        },
+        "ambientSrc": {
+          "type": "string"
+        },
+        "universe": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "actors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "monsters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "heroMonsters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 0,
+          "maxItems": 0
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "guild": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "heroSprites": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeArtwork"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "guide": {
+          "type": "object",
+          "properties": {
+            "protagonist": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "image",
+                "alt"
+              ],
+              "additionalProperties": false
+            },
+            "stories": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/runtimeArtwork"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "protagonist",
+            "stories"
+          ],
+          "additionalProperties": false
+        },
+        "medical": {
+          "type": "object",
+          "properties": {
+            "skills": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/medicalSkill"
+              },
+              "minItems": 8,
+              "maxItems": 8
+            },
+            "performers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "logicalBody": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "body",
+                  "logicalBody"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "target": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "spriteSW": {
+                  "$ref": "#/$defs/sprite"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "image",
+                "spriteSW",
+                "description"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "skills",
+            "performers",
+            "target"
+          ],
+          "additionalProperties": false
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/element"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "characterScene": {
+          "type": "object",
+          "properties": {
+            "background": {
+              "type": "string"
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "background",
+            "width",
+            "height"
+          ],
+          "additionalProperties": true
+        },
+        "sources": {
+          "type": "object"
+        },
+        "clinicDemo": {
+          "type": "object",
+          "required": [
+            "appointments",
+            "reviews",
+            "sampleNotice",
+            "appointmentNotice",
+            "reviewNotice"
+          ],
+          "properties": {
+            "appointments": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "alias",
+                  "time",
+                  "status"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "alias": {
+                    "type": "string",
+                    "pattern": "^[가-힣]\\*\\*$"
+                  },
+                  "time": {
+                    "type": "string",
+                    "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"
+                  },
+                  "status": {
+                    "enum": [
+                      "대기",
+                      "진료 중",
+                      "완료"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "reviews": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "alias",
+                  "daysAgo",
+                  "content"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "alias": {
+                    "type": "string",
+                    "pattern": "^[가-힣]\\*\\*$"
+                  },
+                  "daysAgo": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 365
+                  },
+                  "content": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "sampleNotice": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300,
+              "pattern": "예시"
+            },
+            "appointmentNotice": {
+              "type": "string",
+              "pattern": "예시",
+              "maxLength": 300
+            },
+            "reviewNotice": {
+              "type": "string",
+              "pattern": "예시",
+              "maxLength": 300
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "revision",
+        "site",
+        "sections",
+        "brand",
+        "startHref",
+        "ambientSrc",
+        "universe",
+        "actors",
+        "monsters",
+        "heroMonsters",
+        "features",
+        "guild",
+        "gallery",
+        "sequence",
+        "heroSprites",
+        "guide",
+        "medical",
+        "elements",
+        "characterScene",
+        "clinicDemo"
+      ],
+      "additionalProperties": true
+    },
+    "runtimeAssetTree": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/runtimeAssetTree"
+          }
+        }
+      ]
+    },
+    "runtimeActionDefinition": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "enum": [
+            "GET",
+            "POST"
+          ]
+        },
+        "demoMessage": {
+          "const": "준비 중입니다."
+        },
+        "visibility": {
+          "enum": [
+            "all",
+            "operator"
+          ]
+        }
+      },
+      "required": [
+        "href",
+        "label",
+        "method",
+        "demoMessage"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeActionReference": {
+      "type": "object",
+      "properties": {
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "actionId"
+          ],
+          "not": {
+            "required": [
+              "target"
+            ]
+          }
+        },
+        {
+          "required": [
+            "target"
+          ],
+          "not": {
+            "required": [
+              "actionId"
+            ]
+          }
+        }
+      ]
+    },
+    "runtimeNavigationEntry": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "value": {
+          "enum": [
+            "actors",
+            "monsters"
+          ]
+        },
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeNavigationGroup": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "enum": [
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "carousel",
+            "actors",
+            "medical",
+            "elements",
+            "links"
+          ]
+        },
+        "carousel": {
+          "enum": [
+            "universe",
+            "features",
+            "guild",
+            "media"
+          ]
+        },
+        "source": {
+          "enum": [
+            "universe",
+            "features",
+            "guild",
+            "medical.skills",
+            "elements",
+            "gallery"
+          ]
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeNavigationEntry"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "kind"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "source"
+          ]
+        },
+        {
+          "required": [
+            "entries"
+          ]
+        }
+      ]
+    },
+    "runtimeBrand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "string"
+        },
+        "secondary": {
+          "type": "string"
+        },
+        "hanja": {
+          "type": "string"
+        },
+        "serviceLabel": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subtitleImage": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "subtitle",
+        "logo",
+        "subtitleImage",
+        "primary",
+        "secondary",
+        "hanja",
+        "serviceLabel"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeForeground": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "portrait",
+            "npc",
+            "pair"
+          ]
+        },
+        "side": {
+          "enum": [
+            "left",
+            "right"
+          ]
+        }
+      },
+      "required": [
+        "image",
+        "kind",
+        "side"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeMarketing": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tag": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "originalImage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caption": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "gameplayCapture": {
+          "type": "boolean"
+        },
+        "foreground": {
+          "$ref": "#/$defs/runtimeForeground"
+        },
+        "type": {
+          "enum": [
+            "image",
+            "video"
+          ]
+        },
+        "actionId": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+        },
+        "target": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "contentRef": {
+          "type": "string",
+          "pattern": "^(universe|features|guild):[a-zA-Z0-9_-]+$"
+        },
+        "spriteRef": {
+          "type": "string",
+          "pattern": "^(actor|hero|medical):[a-zA-Z0-9_-]+(:[01])?$"
+        },
+        "motionActorIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "motionActors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sprite": {
+                "$ref": "#/$defs/sprite"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "sprite"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "name",
+            "description",
+            "image",
+            "tag"
+          ]
+        },
+        {
+          "required": [
+            "contentRef"
+          ]
+        }
+      ]
+    },
+    "runtimeSection": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 5
+        },
+        "id": {
+          "enum": [
+            "visual",
+            "universe",
+            "character",
+            "features",
+            "gamefeatures",
+            "sect",
+            "skill",
+            "clinic",
+            "guide",
+            "media",
+            "access"
+          ]
+        },
+        "heading": {
+          "$ref": "#/$defs/heading"
+        },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "const": ""
+            }
+          ]
+        },
+        "assets": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/runtimeAssetTree"
+          }
+        },
+        "copy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeActionReference"
+          },
+          "minItems": 0
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeMarketing"
+          },
+          "minItems": 1
+        },
+        "stories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeMarketing"
+          },
+          "minItems": 1
+        },
+        "sequence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeMarketing"
+          },
+          "minItems": 1
+        },
+        "actorCopy": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/runtimeActorCopy"
+          }
+        },
+        "heroCopy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "id",
+        "heading",
+        "background",
+        "assets",
+        "copy",
+        "actions"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "universe"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 5,
+                "maxItems": 5
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "features"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 5,
+                "maxItems": 5
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "sect"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 3,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "media"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "items": {
+                "minItems": 6,
+                "maxItems": 6
+              }
+            },
+            "required": [
+              "items"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "guide"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "stories": {
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "assets": {
+                "required": [
+                  "protagonist"
+                ]
+              },
+              "copy": {
+                "required": [
+                  "protagonistAlt",
+                  "eyebrow",
+                  "title",
+                  "description",
+                  "startLabel"
+                ]
+              }
+            },
+            "required": [
+              "stories"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "visual"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sequence": {
+                "minItems": 4,
+                "maxItems": 4
+              },
+              "heroCopy": {},
+              "assets": {
+                "required": [
+                  "healers",
+                  "layers"
+                ]
+              }
+            },
+            "required": [
+              "sequence",
+              "heroCopy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "character"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "actorCopy": {
+                "required": [
+                  "medical-male",
+                  "medical-female"
+                ],
+                "minProperties": 2,
+                "maxProperties": 2
+              }
+            },
+            "required": [
+              "actorCopy"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "skill"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "assets": {
+                "required": [
+                  "videoPoster",
+                  "videos"
+                ],
+                "properties": {
+                  "videos": {
+                    "type": "object",
+                    "minProperties": 0,
+                    "maxProperties": 4
+                  }
+                }
+              }
+            },
+            "required": []
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "id": {
+                "const": "clinic"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "assets": {
+                "required": [
+                  "capture"
+                ]
+              },
+              "copy": {
+                "required": [
+                  "captureAlt",
+                  "caption",
+                  "captionDetail",
+                  "note",
+                  "expandNote"
+                ]
+              }
+            },
+            "required": []
+          }
+        }
+      ]
+    },
+    "runtimeSite": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 5
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sectionOrder": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "visual",
+              "universe",
+              "character",
+              "features",
+              "gamefeatures",
+              "sect",
+              "skill",
+              "clinic",
+              "guide",
+              "media",
+              "access"
+            ]
+          },
+          "minItems": 11,
+          "maxItems": 11
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "themeColor": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "themeColor",
+            "language"
+          ],
+          "additionalProperties": false
+        },
+        "brand": {
+          "$ref": "#/$defs/runtimeBrand"
+        },
+        "actions": {
+          "type": "object",
+          "required": [
+            "play",
+            "login",
+            "clinic",
+            "staffBoard",
+            "logout",
+            "admin"
+          ],
+          "additionalProperties": {
+            "$ref": "#/$defs/runtimeActionDefinition"
+          }
+        },
+        "navigation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/runtimeNavigationGroup"
+          },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "serviceBar": {
+          "type": "object",
+          "properties": {
+            "tagline": {
+              "type": "string"
+            },
+            "loginLabel": {
+              "type": "string"
+            },
+            "loggedInLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "tagline",
+            "loginLabel",
+            "loggedInLabel"
+          ],
+          "additionalProperties": false
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "copyright": {
+              "type": "string"
+            },
+            "actionIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]*$"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "description",
+            "copyright",
+            "actionIds"
+          ],
+          "additionalProperties": false
+        },
+        "theme": {
+          "type": "object",
+          "properties": {
+            "default": {
+              "enum": [
+                "day",
+                "night"
+              ]
+            },
+            "toDayLabel": {
+              "type": "string"
+            },
+            "toNightLabel": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "default",
+            "toDayLabel",
+            "toNightLabel"
+          ],
+          "additionalProperties": false
+        },
+        "audio": {
+          "type": "object",
+          "properties": {
+            "ambientSrc": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "ambientSrc"
+          ],
+          "additionalProperties": false
+        },
+        "copy": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "revision",
+        "sectionOrder",
+        "metadata",
+        "brand",
+        "actions",
+        "navigation",
+        "serviceBar",
+        "footer",
+        "theme",
+        "audio",
+        "copy"
+      ],
+      "additionalProperties": false
+    },
+    "runtimeActorCopy": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1
+        },
+        "portrait": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "description",
+        "role"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

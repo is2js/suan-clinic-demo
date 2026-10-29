@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 5,
+  "id": "sect",
+  "heading": {
+    "number": "05",
+    "eyebrow": "TOGETHER",
+    "title": "혼자보다 빛나는 우리",
+    "description": "뜻을 나누고 등을 맞대면, 더 넓은 세상이 열립니다."
+  },
+  "background": "/assets/rpg/ui/entry-bg-social-rest-chat-left-20260628.webp",
+  "assets": {},
+  "copy": {},
+  "actions": [],
+  "items": [
+    {
+      "id": "party",
+      "name": "파티",
+      "description": "동료를 초대하고 경험치와 보상을 나누며 함께 성장하세요.",
+      "image": "/assets/rpg/ui/generated-previews/17-community-party-center-20260628.png",
+      "tag": "PARTY",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/hero-healers.webp",
+        "kind": "pair",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "medical-male",
+        "medical-female"
+      ]
+    },
+    {
+      "id": "guild",
+      "name": "길드",
+      "description": "같은 목표를 향해 모이는 동료들과 나만의 이야기를 만드세요.",
+      "image": "/assets/rpg/ui/entry-bg-social-rest-chat-left-20260628.webp",
+      "tag": "GUILD",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/villagers/v1/portrait-n017.webp",
+        "kind": "npc",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "portrait-n017"
+      ]
+    },
+    {
+      "id": "siege",
+      "name": "공성·길드전",
+      "description": "길드의 동료와 참가를 준비하고 새로운 전장에 도전하세요.",
+      "image": "/assets/rpg/ui/generated-previews/19-raid-prep-center-20260628.png",
+      "tag": "GUILD BATTLE",
+      "foreground": {
+        "image": "/assets/rpg/ui/intro/v1/portrait-medical-male.webp",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "medical-male",
+        "medical-female"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 5,
+  "id": "gamefeatures",
+  "heading": {
+    "number": "04",
+    "eyebrow": "THE ART OF HEALING",
+    "title": "치유의 손끝, 빛나는 의술",
+    "description": "정성을 담은 한 수, 소중한 인연을 지키는 힘이 됩니다."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
+  "assets": {},
+  "copy": {
+    "targetName": "허수아비",
+    "targetDescription": "의료 동작을 살펴보기 위한 남서 방향의 소개 시연 소품",
+    "demonstrationLabel": "실제 의술 모션 시연",
+    "selfModeLabel": "의료진 자신에게 시연하는 회복·강화 의술",
+    "targetModeLabel": "허수아비를 대상으로 시연하는 의술"
+  },
+  "actions": []
+}

@@ -1,95 +1,61 @@
-# 수안부부한의원 시안 데이터 가이드
+# 수안 인트로 데이터·이미지 가이드
 
-이 정적 웹사이트는 화면 구성을 검토하기 위한 시안입니다. 후기 5건과 예약 현황 6건은 모두 **가상의 예시**이며 실제 환자, 실제 후기나 실시간 예약 정보가 아닙니다. 공간 원화도 한의학의 분위기를 표현한 이미지입니다. 예약·로그인 등 외부 서비스와 연결되어 있지 않습니다.
+## 변경 원칙
 
-## 수정하는 파일
+`data/content.json`이 독립 빌드의 입력입니다. UTF-8 JSON으로 저장하고 `tools/build.py --check`, 빌드, `tools/verify.py`, 브라우저 검수를 순서대로 실행합니다. `data/authored/`는 RPG 원본의 참고 기록이므로 편집해도 현재 화면에는 반영되지 않습니다. 기존 PVP와 의맥전기 저장소는 변경하지 않습니다.
 
-| 파일 | 역할 |
-| --- | --- |
-| `data/content.json` | 화면에 사용하는 문구·의료진·리뷰·예약·이미지 입력 |
-| `schema/content.schema.json` | 필수 필드·형식·상태값의 검증 계약 |
-| `assets/` | 낮·밤 원화, 진료/공간 원화와 의료진 이미지 |
-| `assets/provenance.json` | 자산별 출처, 원본 커밋, 크기, SHA-256 및 변환 기록 |
-| `dist/` | 빌드 결과물. 직접 수정하지 않고 다시 생성 |
+주소는 `/assets/...`로 시작하는 저장소 기준 경로로 작성합니다. 빌더가 `/suan-clinic-demo/` 같은 Pages 접두사를 적용합니다. 실제로 표시되는 목록과 섹션 설정에 비슷한 값이 중복되는 경우 두 위치를 함께 수정합니다. 새 자산은 `export-manifest.json`에 정확한 대소문자 경로와 SHA-256, 크기를 기록하고 이미지 출처는 `assets/provenance.json`에도 기록합니다.
 
-JSON 파일은 UTF-8로 저장하며 주석·마지막 쉼표를 쓰지 않습니다. 이미지 경로는 `assets/art/hero-day.webp`처럼 저장소 루트 기준으로 표기합니다. `/suan-clinic-demo/` 같은 배포 접두사나 로컬 절대 경로를 데이터에 넣지 않습니다. `id`는 배열 내에서 고유하고 외부에서 참조해도 바뀌지 않는 영문 소문자·숫자·하이픈을 사용합니다.
+## 섹션과 데이터
 
-## 섹션별 필드
-
-| 콘텐츠 | 필수 필드 | 현재 용도 |
+| 구간 | 편집 위치 | 준비할 내용과 이미지 |
 | --- | --- | --- |
-| `site` | `brand`, `tagline`, `description` | 시안 이름·짧은 문구·문서 소개 |
-| `hero` | `eyebrow`, `title`, `description`, `dayImage`, `nightImage` | 낮·밤 메인 풍경과 제목. 문구의 `\n`은 줄바꿈 |
-| `clinicians[]` | `id`, `name`, `role`, `image`, `focus`, `description` | 의료진 이름·역할·사진·관심 진료 영역. `focus`는 문자열 |
-| `departments[]` | `id`, `name`, `eyebrow`, `description`, `image` | 소개할 진료 분야와 가로 원화 |
-| `reviews[]` | `id`, `alias`, `daysAgo`, `content` | 가상 후기. `daysAgo`는 한국 날짜 기준으로 오늘부터 지난 날짜 수 |
-| `appointments[]` | `id`, `alias`, `time`, `status` | 가상 금일 예약 현황. 날짜는 화면에서 `Asia/Seoul` 기준으로 표시 |
-| `spaces[]` | `id`, `name`, `description`, `image` | 공간 분위기를 표현한 원화. 실제 시설 사진으로 표시하지 않음 |
-| `notices[]` | `title`, `label` | 실제 운영 정보가 아닌 안내 문구 예시 |
-| `faq[]` | `question`, `answer` | 시안 기능에 대한 질문과 답변 |
+| 첫 화면 | `brand`, `site.brand`, `sections.visual` | 한의원명·소개 문구와 낮/밤 풍경. 투명 인물과 기존 레이어는 별도 이미지 |
+| 한의원 소개 | `universe`, `sections.universe.items` | 소개 문구와 가로 풍경 5개, 각 이미지의 `alt`·설명. 실제 시설 사진이 아니라면 시안이라고 표시 |
+| 의료진 | `actors`, `sections.character.actorCopy` | 남녀 의료진 2명. `name`, `role`, `description`, `portrait`, `image`를 함께 수정. 사진 원본과 이용 범위 기록 |
+| 최근 후기 | `clinicDemo.reviews` | 다섯 가상 후기의 별명·내용·상대 날짜. 빌드 시 후기 카드와 메뉴에 자동 반영. 카드 배경은 `features`와 `sections.features.items`에서 관리 |
+| 의료 스킬 | `medical.skills`, `sections.gamefeatures` | 치료 항목 이름·설명·아이콘과 시연용 스프라이트. 실제 치료 효과나 확정적 결과를 주장하지 않음 |
+| 함께하는 진료 | `guild`, `sections.sect.items` | 세 장면의 배경과 문구. `motionActors`의 스프라이트는 기존 모션 |
+| 진료 항목 | `elements`, `sections.skill` | 네 분류별 두 항목. 이미지와 설명을 바꾸되 시연 프레임·효과 타이밍을 유지 |
+| 예약 현황 | `clinicDemo.appointments`, `sections.clinic` | `id`, `alias`, `time`, `status`와 예시 표기. 날짜는 한국 시간 기준 표시 |
+| 안내 | `guide`, `sections.guide` | 주인공 일러스트·안내 카드 2개와 서비스 버튼 문구 |
+| 미디어 | `gallery`, `sections.media.items` | 6개 원화와 확대용 이미지·대체 문구. 시설 실사진이 아닌 풍경은 구분 |
+| 이용 안내 | `sections.access`, `clinicDemo.notices`, `clinicDemo.faq` | 사실 확인된 운영 정보만 입력. 미확인 연락처·주소는 준비 중으로 남김 |
 
-의료진·진료 분야·후기·예약·공간 배열은 최소 한 항목이 필요합니다. 공지와 FAQ는 비울 수 있습니다. 항목 추가·삭제 시 PC와 모바일 배치도 확인하세요. 확인되지 않은 의료진 경력·자격·직함·진료 효과, 실제 주소·전화·진료시간을 임의로 입력하지 않습니다.
+캐릭터 스프라이트와 의료진 초상화는 별도입니다. `actors[*].portrait`과 `image`의 사진을 바꾸어도 `sprite`·`encounter`는 건드리지 않으면 마을 장면의 대기 및 선택 모션이 유지됩니다. 남성 사진은 `assets/clinicians/jo-jaeseong.png`(515×515), 여성 사진은 `assets/clinicians/kim-seokyoung.png`(326×343)이며 원본 출처는 `assets/provenance.json`을 확인하세요. 화면에 맞추는 크롭은 스타일에서 처리합니다.
 
-## 가상 후기와 금일 예약
+## 예시 예약·후기
 
-후기의 `alias`는 성 한 글자와 별 두 개, `daysAgo`는 0 이상 정수입니다. 날짜를 오늘 기준으로 계산하므로 오래된 고정 날짜가 실제 후기처럼 보이지 않습니다.
+시안에서는 실명·환자 정보를 넣지 않습니다. 별명은 한글 한 글자와 `**`, 시간은 `HH:MM`, 상태는 `대기`, `진료 중`, `완료` 중 하나입니다. 화면의 건수와 상태별 합계는 같은 예약 배열에서 계산합니다. `clinicDemo.sampleNotice`, `appointmentNotice`, `reviewNotice`에는 예시임을 명확히 씁니다.
 
 ```json
 {
-  "id": "review-example-01",
-  "alias": "김**",
-  "daysAgo": 0,
-  "content": "상담 내용을 차분하게 들을 수 있었어요."
+  "appointments": [{"id": "example-01", "alias": "김**", "time": "09:30", "status": "대기"}],
+  "reviews": [{"id": "review-01", "alias": "박**", "daysAgo": 1, "content": "예시 후기 문구"}],
+  "sampleNotice": "예약과 후기는 실제 정보가 아닌 시안 예시입니다.",
+  "appointmentNotice": "금일 예약은 실제 정보가 아닌 가상의 예시입니다.",
+  "reviewNotice": "후기는 실제 이용 후기가 아닌 가상의 예시입니다."
 }
 ```
 
-예약은 유효한 24시간 `HH:MM`과 `대기`, `진료 중`, `완료` 중 하나의 상태를 사용합니다. 화면의 합계는 이 배열에서 계산되며 현재 시간에 따라 실제 상태가 자동 갱신되지는 않습니다.
+후기 `daysAgo`는 표시 기준 날짜에서 뺄 일수입니다. 실제 예약 접수·사용자 정보 저장·환자 조회 기능은 이 정적 시안에 없습니다.
 
-```json
-{
-  "id": "appointment-example-01",
-  "alias": "김**",
-  "time": "09:30",
-  "status": "대기"
-}
-```
+후기를 바꿀 때는 `clinicDemo.reviews`의 별명·내용·`daysAgo`만 편집하고 다시 빌드합니다. 빌더가 각 후기의 순서에 맞춰 카드 이름·본문·날짜 및 가상 예시 표시와 상단 메뉴 이름을 채웁니다. 기존 다섯 카드의 이미지·ID·순서는 유지되므로 후기 개수는 카드 개수와 같아야 하며 각 후기 ID는 중복될 수 없습니다. `features`와 `sections.features.items`의 카드 ID 및 메뉴 항목 순서는 서로 일치해야 합니다.
 
-실제 환자의 이름·연락처·진료 내용이나 식별 가능한 예약을 이 공개 가능한 정적 파일에 넣지 않습니다. 실제 리뷰·예약 연동은 별도 서비스와 검토가 필요한 후속 작업입니다. UI의 예시 표시도 유지하세요.
+## 이미지·자산 교체
 
-## 이미지 준비와 교체
-
-| 역할 | 현재 자산·규격 | 교체할 때 |
-| --- | --- | --- |
-| 메인 낮·밤 | `assets/art/hero-day.webp`, `hero-night.webp` · 각각 1672×941 | 두 장의 구도와 글자 뒤 여백을 맞춥니다. 작은 화면의 중심 구도도 확인합니다. |
-| 진료 분야·공간 배경 | `assets/art/clinic-morning-gate.webp`, `healing-courtyard.webp`, `medical-apothecary.webp`, `herb-garden.webp` · 각각 1672×941 | 가로 16:9에 가까운 충분한 해상도의 원화를 사용합니다. 실제 시설 사진 여부를 정확히 설명합니다. |
-| 조재성 원장 | `assets/clinicians/jo-jaeseong.png` · 515×515 투명 PNG | 원본 인물 식별이 유지되는 사진을 사용합니다. |
-| 김석영 원장 | `assets/clinicians/kim-seokyoung.png` · 326×343 투명 PNG | 초상 비율과 투명 배경을 유지하고 확대 시 화질을 확인합니다. |
-
-기존 이미지는 해당 프로젝트의 원본 파일에서 **바이트 변경 없이 복사**했습니다. 원화는 실제 한의원의 시설을 촬영한 사진이 아닙니다. 의료진 사진은 사용자가 참고하도록 지정한 기존 한의원 사이트의 인물 사진입니다. 공개하거나 운영 사이트에 적용하기 전에 사진의 사용 범위·초상권과 다른 원화의 이용 범위를 확인합니다.
-
-새 파일로 교체할 때는 다음 순서로 작업합니다.
-
-1. 파일을 `assets/` 아래에 넣고 `data/content.json`의 이미지 경로를 바꿉니다. 파일명과 대소문자를 정확히 맞춥니다.
-2. `assets/provenance.json`에 해당 경로, 결과 SHA-256과 바이트 수, 실제 출처·설명·변환 사항을 기록합니다. 새 자산은 기존 원본 커밋에서 왔다고 표시하지 않습니다.
-3. 검증과 빌드를 실행해 누락 경로·해시를 확인합니다. 변경하지 않은 자산을 무조건 재해시하지 않습니다.
-4. 최종 화면에서 이미지 잘림, 명도, 대체 텍스트와 텍스트 대비를 확인합니다.
-
-원본 이력의 `source.repository`, `source.revision`, `source.path`, `referenceUrl`, `matchesRevision`은 복사 시점의 기록입니다. 원본 파일을 교체하거나 수정했다면 실제 새 출처와 변환 방법을 별도로 기록하고 `matchesRevision`을 사실에 맞게 바꿉니다.
-
-## 검증·실행
-
-Python 3.10 이상과 Node.js 18 이상을 준비합니다. Windows에서 저장소 루트 기준:
+1. 사용 권한을 확인한 이미지를 `assets/` 안에 넣고, 데이터의 경로와 대체 텍스트를 바꿉니다. 새 사진은 충분한 해상도와 얼굴이 잘리지 않는 구도를 준비하세요.
+2. 이미지의 출처·파일 크기·해시·가로세로 크기를 `assets/provenance.json`에 기록합니다. 기존 원화의 출처는 `export-manifest.json`의 원본 경로를 확인하세요.
+3. `export-manifest.json`의 `files`에 새 자산을 추가하거나 변경 파일의 `bytes`와 `sha256`을 갱신합니다. `assetBytes`도 실제 포함된 자산 합계에 맞춥니다. 해시는 아래 명령으로 확인합니다.
+4. `--check`, 테스트, 빌드와 정적 검증을 실행하고 PC·모바일에서 사진, 선택 동작과 예시 안내를 확인합니다.
 
 ```powershell
-python -m venv .venv
-.venv/Scripts/python.exe -m pip install -r requirements.txt
+Get-FileHash assets/clinicians/jo-jaeseong.png -Algorithm SHA256
+(Get-Item assets/clinicians/jo-jaeseong.png).Length
 .venv/Scripts/python.exe tools/build.py --check
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 .venv/Scripts/python.exe tools/build.py --base-path /suan-clinic-demo/
 .venv/Scripts/python.exe tools/verify.py --base-path /suan-clinic-demo/
-.venv/Scripts/python.exe tools/preview.py --port 8080 --base-path /suan-clinic-demo/
 ```
 
-미리보기 주소는 `http://127.0.0.1:8080/suan-clinic-demo/`입니다. macOS/Linux에서는 `.venv/Scripts/python.exe` 대신 `.venv/bin/python`을 사용합니다. GitHub 프로젝트 경로가 다르면 세 명령에 같은 `--base-path /저장소명/`을 전달합니다.
-
-수정 후에는 360·390·768·1024·1440px 이상에서 가로 넘침, 사진 초점, 모바일 메뉴, 슬라이더, 키보드와 확대 창의 Escape·초점 복귀, 움직임 줄이기를 확인합니다. 저장소 업로드나 Pages 배포는 별도 작업이며 빌드 명령만으로 공개되지 않습니다.
+직접 수정하지 않은 자산의 출처나 해시를 임의로 바꾸지 않습니다. RPG 인트로 재내보내기를 수안 작업 폴더에 바로 실행하면 수안 데이터가 덮어써질 수 있습니다. 원본의 이후 변경은 별도로 비교해 필요한 부분만 수안 저장소에 반영하세요.

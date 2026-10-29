@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 5,
+  "id": "character",
+  "heading": {
+    "number": "02",
+    "eyebrow": "FATE & FRIENDS",
+    "title": "우연에서 시작되는 인연",
+    "description": "치유의 손길을 나누는 동료, 그리고 모험의 길에서 마주할 존재들."
+  },
+  "background": "/assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
+  "assets": {},
+  "copy": {
+    "villageLabel": "마을의 인연",
+    "monsterLabel": "몬스터 아종",
+    "villageCaption": "인연이 머무는 작은 마을",
+    "villageEyebrow": "MEET THE VILLAGERS",
+    "exploreLabel": "마을 둘러보기. 작은 화면에서는 가로로 이동할 수 있습니다.",
+    "portraitHint": "인물을 선택하면 이야기를 만날 수 있어요."
+  },
+  "actions": [],
+  "actorCopy": {
+    "medical-male": {
+      "description": "치유와 모험의 길을 함께 걷는 의맥전기의 의료진.",
+      "role": "의료진",
+      "name": "남성 의료진",
+      "image": "/assets/rpg/ui/intro/v1/portrait-medical-male.webp",
+      "portrait": "/assets/rpg/ui/intro/v1/portrait-medical-male.webp"
+    },
+    "medical-female": {
+      "description": "환자를 돌보는 손길로 새로운 세계를 탐험합니다.",
+      "role": "의료진",
+      "name": "여성 의료진",
+      "image": "/assets/rpg/ui/intro/v1/portrait-medical-female.webp",
+      "portrait": "/assets/rpg/ui/intro/v1/portrait-medical-female.webp"
+    },
+    "portrait-n001": {
+      "description": "새로운 여행자의 첫걸음을 함께하는 아놀드.",
+      "role": "모험의 길잡이"
+    },
+    "portrait-n002": {
+      "description": "마을의 진료실에서 모험가를 맞이하는 간호사.",
+      "role": "치료와 회복"
+    },
+    "portrait-n006": {
+      "description": "다음 모험에 필요한 물품을 준비하는 잡상인.",
+      "role": "마을의 상인"
+    },
+    "portrait-n007": {
+      "description": "모험의 든든한 준비를 돕는 대장장이.",
+      "role": "장비와 제작"
+    },
+    "portrait-n017": {
+      "description": "동료와 함께할 길을 안내하는 길드마스터.",
+      "role": "길드의 안내자"
+    },
+    "portrait-n020": {
+      "description": "모험가와 마을을 이어주는 건물관리인.",
+      "role": "마을의 관리자"
+    }
+  }
+}

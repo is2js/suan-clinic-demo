@@ -1,0 +1,271 @@
+{% set site = intro_data.site %}
+{% set sections = intro_data.sections %}
+{% set deployment = intro_data.deployment | default({'mode': 'live'}) %}
+{% set demo = deployment.mode == 'demo' %}
+{% set nav_groups = site.navigation %}
+{% macro brand() -%}{{ site.brand.primary }}<span>{{ site.brand.secondary }}</span><small>{{ site.brand.hanja }}</small>{%- endmacro %}
+{% macro lines(text) -%}{% for line in text.split('\n') %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{%- endmacro %}
+{% macro service(action_id, class_name='', label='', arrow=true) -%}
+  {% set action = site.actions[action_id] %}
+  {% if demo %}<button type="button" class="{{ class_name }}" data-service-action="{{ action_id }}">{% elif action.method == 'POST' %}<form action="{{ action.href }}" method="post" data-service-action="{{ action_id }}"><button type="submit" class="{{ class_name }}">{% else %}<a class="{{ class_name }}" href="{{ action.href }}" data-service-action="{{ action_id }}">{% endif %}
+  {{ label or action.label }}{% if arrow %} <b aria-hidden="true">↗</b>{% endif %}
+  {% if demo %}</button>{% elif action.method == 'POST' %}</button></form>{% else %}</a>{% endif %}
+{%- endmacro %}
+{% macro section_heading(id) -%}{% set h = sections[id].heading %}{{ heading(h.number, h.eyebrow, h.title, h.description) }}{%- endmacro %}
+{% macro nav_links(group) -%}
+  {% if group.kind != 'links' %}<a class="intro-nav-overview" href="#{{ group.id }}">{{ site['copy'].navOverview }} <span aria-hidden="true">↗</span></a>{% endif %}
+  {% for entry in group.entries %}
+    {% if entry.actionId is defined %}{{ service(entry.actionId, label=entry.name, arrow=false) }}{% else %}<a href="{{ entry.href if group.kind == 'links' else '#' ~ group.id }}"{% if group.kind == 'carousel' %} data-nav-carousel="{{ group.carousel }}" data-nav-index="{{ loop.index0 }}"{% elif group.kind == 'actors' %} data-nav-actor-kind="{{ entry.value }}"{% elif group.kind == 'medical' %} data-nav-medical-index="{{ loop.index0 }}"{% elif group.kind == 'elements' %} data-nav-element-index="{{ loop.index0 }}"{% endif %}>{{ entry.name | default(entry.title) }}</a>{% endif %}
+  {% endfor %}
+{%- endmacro %}
+{% macro sprite(asset, extra_class='') -%}
+  {% set s = asset.sprite if asset.sprite is defined else asset %}
+  {% set display_width = s.displayWidth | default(112) %}
+  <span class="intro-sprite {{ extra_class }}" data-sprite='{{ s | tojson }}' aria-hidden="true" style="--sprite-width:{{ display_width }}px;--sprite-height:{{ (display_width * s.frameHeight / s.frameWidth) | round(2) }}px;--sprite-frames:{{ s.frames }};--sprite-rows:{{ s.rows }};--sprite-row:{{ s.row | default(0) }}"></span>
+  {% if asset.image is defined %}<noscript><img class="intro-sprite-static {{ extra_class }}" src="{{ asset.image }}" alt="{{ asset.name | default('수안의 이야기') }}" loading="lazy" decoding="async"></noscript>{% endif %}
+{%- endmacro %}
+{% macro heading(number, eyebrow, title, description='') -%}
+  <header class="intro-heading" data-reveal data-reveal-lines>
+    <p class="intro-heading__eyebrow" style="--reveal-order:0"><span>{{ number }}</span> {{ eyebrow }}</p>
+    <h2 style="--reveal-order:1"><i aria-hidden="true"></i><span>{{ title }}</span><i aria-hidden="true"></i></h2>
+    {% if description %}<p class="intro-heading__description" style="--reveal-order:2">{{ description }}</p>{% endif %}
+  </header>
+{%- endmacro %}
+{% macro scenery(kind, source) -%}
+  <img class="intro-section-scenery" data-section-scenery="{{ kind }}" data-src="{{ source }}" alt="" aria-hidden="true" decoding="async" loading="lazy" draggable="false"><noscript><img class="intro-section-scenery" data-section-scenery="{{ kind }}" src="{{ source }}" alt="" aria-hidden="true" loading="lazy"></noscript>
+{%- endmacro %}
+{% macro arrows(label='다음 이야기') -%}
+  <button class="intro-arrow intro-arrow--prev" type="button" data-step="-1" aria-label="이전 이야기"><span aria-hidden="true">‹</span></button>
+  <button class="intro-arrow intro-arrow--next" type="button" data-step="1" aria-label="{{ label }}"><span aria-hidden="true">›</span></button>
+{%- endmacro %}
+{% macro foreground(asset, class_name) -%}
+  <div class="{{ class_name }}" data-kind="{{ asset.kind | default('portrait') }}" data-side="{{ asset.side | default('right') }}" aria-hidden="true"><img data-scene-src="{{ asset.image }}" alt="" loading="lazy" decoding="async" draggable="false"><noscript><img src="{{ asset.image }}" alt="" loading="lazy" decoding="async" draggable="false"></noscript></div>
+{%- endmacro %}
+{% macro dots(items) -%}
+  <div class="intro-indicators" aria-label="슬라이드 선택">
+    {% for item in items %}<button type="button" data-index="{{ loop.index0 }}" class="intro-indicator{% if loop.first %} is-active{% endif %}" aria-label="{{ item.name | default(item.title) }}" aria-current="{{ 'true' if loop.first else 'false' }}"><span></span></button>{% endfor %}
+  </div>
+{%- endmacro %}
+<!doctype html>
+<html lang="{{ site.metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="{{ site.metadata.themeColor }}">
+    <meta name="description" content="{{ site.metadata.description }}">
+    <title>{{ site.metadata.title }}{{ " · DEMO" if demo else "" }}</title>
+    <link rel="stylesheet" href="/assets/rpg/fonts/web/fonts.css">
+    <link rel="stylesheet" href="/assets/rpg/ui/intro/v4-refinement/fonts/fonts.css">
+    <link rel="stylesheet" href="/assets/rpg/css/rpg-intro.css?v=20261022-4">
+    <noscript><style>.intro-sprite{display:none!important}</style></noscript>
+    <script type="module" src="/src/rpg/intro.mjs?v=20261022-4"></script>
+  </head>
+  <body class="intro" data-rpg-intro data-deployment="{{ deployment.mode }}" data-theme="{{ site.theme.default }}">
+    <a class="intro-skip" href="#universe">본문으로 건너뛰기</a>
+    <div class="intro-service-bar"><a href="#visual" aria-label="{{ site.brand.name }} 처음으로"><b>{{ site.brand.serviceLabel }}</b>{{ " · DEMO" if demo else "" }}</a><span>{{ site.serviceBar.tagline }}</span>{{ service("login", label=site.serviceBar.loggedInLabel if landing_is_logged_in else site.serviceBar.loginLabel) }}</div>
+    <header class="intro-header" data-header>
+      <div class="intro-header__inner">
+        <button class="intro-menu-button" type="button" data-action="menu" aria-label="메뉴 열기" aria-expanded="false" aria-controls="intro-menu"><span></span><span></span><span></span></button>
+        <a class="intro-brand" href="#visual" aria-label="{{ site.brand.name }} 처음으로">{{ brand() }}</a>
+        <nav class="intro-nav" data-desktop-nav aria-label="주요 메뉴">
+          <div class="intro-nav__top" data-nav-top>{% for group in nav_groups %}<a href="#{{ group.id }}" data-nav-trigger="{{ group.id }}" aria-controls="intro-nav-panel" aria-expanded="false">{{ group.label }}</a>{% endfor %}</div>
+          <div class="intro-nav-panel" id="intro-nav-panel" data-nav-panel hidden inert>
+            <div class="intro-nav-panel__inner">{% for group in nav_groups %}<div class="intro-nav-column" data-nav-column="{{ group.id }}" aria-label="{{ group.label }} 하위 메뉴">{{ nav_links(group) }}</div>{% endfor %}</div>
+          </div>
+        </nav>
+        <div class="intro-header__actions"><button class="intro-sound" type="button" data-action="sound" aria-label="환경음 켜기" aria-pressed="false"><span aria-hidden="true">♪</span><i></i><i></i><i></i></button>{{ service("play", "intro-header__start") }}</div>
+      </div>
+    </header>
+    <dialog class="intro-drawer" id="intro-menu" data-menu aria-hidden="true" role="dialog" aria-label="모바일 메뉴" aria-modal="true">
+      <button class="intro-drawer__shade" tabindex="-1" data-action="menu" type="button" aria-label="메뉴 닫기"></button>
+      <nav class="intro-drawer__panel" aria-label="모바일 메뉴">
+        <button class="intro-drawer__close" type="button" data-action="menu" data-drawer-close autofocus aria-label="메뉴 닫기">×</button><a class="intro-brand" href="#visual">{{ brand() }}</a><p>{{ site['copy'].drawerLead }}</p>
+        <div class="intro-drawer-groups" data-mobile-nav>{% for group in nav_groups %}<details class="intro-drawer-group" data-mobile-nav-group="{{ group.id }}"><summary><span><small>{{ '%02d' | format(loop.index) }}</small>{{ group.label }}</span><i aria-hidden="true"></i></summary><div class="intro-drawer-group__links">{{ nav_links(group) }}</div></details>{% endfor %}</div>
+        {{ service("play", "intro-button", site['copy'].drawerStart) }}
+      </nav>
+    </dialog>
+    <main>
+      <section class="intro-hero" id="visual" data-section data-hero aria-labelledby="intro-title">
+        <div class="intro-hero__scene">
+          <div class="intro-hero__layer intro-hero__sky" data-parallax="sky" data-opening-layer="sky" aria-hidden="true"><div class="intro-theme-image intro-theme-image--night" style="background-image:url('{{ sections.visual.assets.layers.night.sky }}')"></div><div class="intro-theme-image intro-theme-image--day" style="background-image:url('{{ sections.visual.assets.layers.day.sky }}')"></div></div>
+          <div class="intro-hero__stars" aria-hidden="true"></div><canvas class="intro-leaf-canvas" data-leaf-canvas aria-hidden="true"></canvas>
+          <div class="intro-hero__layer intro-hero__stage" data-parallax="stage" data-opening-layer="stage" aria-hidden="true"><div class="intro-theme-image intro-theme-image--night" style="background-image:url('{{ sections.visual.assets.layers.night.stage }}')"></div><div class="intro-theme-image intro-theme-image--day" style="background-image:url('{{ sections.visual.assets.layers.day.stage }}')"></div></div>
+          <div class="intro-hero__mist intro-hero__mist--one" aria-hidden="true"></div><div class="intro-hero__mist intro-hero__mist--two" aria-hidden="true"></div>
+          <button class="intro-theme-toggle" type="button" data-action="theme" aria-label="낮 풍경으로 변경" aria-pressed="false"><span aria-hidden="true">☼</span><span aria-hidden="true">☾</span><i></i></button>
+          <div class="intro-hero__title">
+            <span class="intro-hero__pattern" aria-hidden="true"></span>
+            <p class="intro-hero__kicker" data-opening-layer="title">{{ sections.visual['copy'].kicker }}</p>
+            <h1 id="intro-title" class="intro-hero__logo intro-hero__logo--clinic" data-opening-layer="logo">{{ site.brand.name }}</h1>
+            <p class="intro-hero__lead" data-opening-layer="title">{{ sections.visual['copy'].lead }}</p>
+            <a href="#universe" class="intro-play" aria-label="한의원 이야기 살펴보기"><span class="intro-play__ring"></span><span class="intro-play__triangle"></span><i></i><i></i><i></i><i></i></a>
+            <span class="intro-hero__play-label">{{ sections.visual['copy'].playLabel }}</span>
+          </div>
+          <img class="intro-hero__healers" data-opening-layer="healers" src="{{ sections.visual.assets.healers }}" alt="{{ sections.visual['copy'].healersAlt }}" fetchpriority="high" decoding="async">
+          <div class="intro-hero__layer intro-hero__front" data-parallax="front" data-opening-layer="front" aria-hidden="true"><div class="intro-theme-image intro-theme-image--night" style="background-image:url('{{ sections.visual.assets.layers.night.front }}')"></div><div class="intro-theme-image intro-theme-image--day" style="background-image:url('{{ sections.visual.assets.layers.day.front }}')"></div></div>
+          <div class="intro-hero__downloads" data-opening-layer="cta">{{ service("play", "intro-button intro-button--gold", sections.visual['copy'].startLabel) }}<a class="intro-button intro-button--outline" href="#universe">{{ sections.visual['copy'].aboutLabel }} <b aria-hidden="true">↓</b></a><a class="intro-scroll-guide" href="#universe"><span>{{ sections.visual['copy'].scrollLabel }}</span><i></i><b aria-hidden="true">⌄</b></a></div>
+        </div>
+        <div class="intro-hero__story" data-reveal data-reveal-lines><p style="--reveal-order:0">{{ sections.visual['copy'].storyKicker }}</p><h2 style="--reveal-order:1">{{ sections.visual['copy'].storyTitleBefore }}<br><em>{{ sections.visual['copy'].storyTitleEmphasis }}</em>{{ sections.visual['copy'].storyTitleAfter }}</h2><a href="#universe" class="intro-story-link" style="--reveal-order:2"><span>{{ sections.visual['copy'].storyLink }}</span><b aria-hidden="true">▶</b></a></div>
+      </section>
+      <section class="intro-section intro-universe intro-illustrated" id="universe" data-section>
+        {{ scenery('world', sections.universe.background) }}
+        {{ section_heading("universe") }}
+        <div class="intro-world-carousel" data-carousel="universe">
+          <div class="intro-world-carousel__viewport"><div class="intro-world-track" data-track>
+            {% for item in intro_data.universe %}<article class="intro-world-slide{% if loop.first %} is-active{% endif %}" data-slide>
+              <div class="intro-world-slide__copy" data-ink-reveal="copy"><span class="intro-seal">{{ '%02d' | format(loop.index) }}</span><p>{{ item.tag | default('인연이 머무는 곳') }}</p><h3 id="universe-title-{{ loop.index }}">{{ item.name | default(item.title) }}</h3><div class="intro-rule" aria-hidden="true"></div><p class="intro-world-slide__description">{{ item.description }}</p></div>
+              <figure class="intro-world-picture" data-ink-reveal="photo"{% if item.gameplayCapture | default(false) %} data-static-photo{% endif %}>
+                <button type="button" data-action="world-capture"{% if item.gameplayCapture | default(false) %} data-static-photo{% endif %} data-world-image="{{ item.image }}" data-world-original="{{ item.originalImage | default('') }}" data-world-title="{{ item.name | default(item.title) }}" data-world-caption="{{ item.caption | default('분위기를 표현한 시안 원화') }}" aria-label="{{ item.name | default(item.title) }} 크게 보기"><img data-scene-src="{{ item.image }}" alt="{{ item.alt | default(item.name) }}" decoding="async" loading="lazy" draggable="false"><noscript><img src="{{ item.image }}" alt="{{ item.name }}" loading="lazy"></noscript><span class="intro-world-picture__expand" aria-hidden="true">↗</span></button>
+                <figcaption><span>{{ 'PLAY · OUR STORY' if item.gameplayCapture | default(false) else 'WORLD JOURNAL' }}</span>{{ item.caption | default('분위기를 표현한 시안 원화') }}</figcaption>
+              </figure>
+            </article>{% endfor %}
+          </div></div>{{ arrows() }}{{ dots(intro_data.universe) }}
+        </div>
+        <div class="intro-cloud intro-cloud--bottom" aria-hidden="true"></div>
+      </section>
+      <section class="intro-section intro-characters intro-character-explorer" id="character" data-section data-actor-view="actors">
+        {{ section_heading("character") }}
+        <div class="intro-explorer-body">
+          {% set character_scene = intro_data.characterScene | default({'background': '/assets/rpg/ui/generated-previews/17-community-party-center-20260628.png', 'width': 1600, 'height': 900}) %}
+          <div class="intro-actor-village" id="intro-actor-village" data-actor-village aria-label="의료진 소개">
+            <div class="intro-village-caption"><span><i aria-hidden="true"></i>{{ sections.character['copy'].villageCaption }}</span><span>{{ sections.character['copy'].villageEyebrow }}</span></div>
+            <div class="intro-village-scene">
+            <div class="intro-village-viewport" data-actor-viewport tabindex="0" aria-label="{{ sections.character['copy'].exploreLabel }}">
+              <div class="intro-village-world" data-actor-world style="--scene-ratio:{{ character_scene.width }}/{{ character_scene.height }}">
+                {{ scenery('characters', character_scene.background) }}
+                <div class="intro-village-atmosphere" aria-hidden="true"></div>
+                <div class="intro-village-petals" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+                {% for item in intro_data.actors[:2] %}
+                  {% set scene = item.scene | default({}) %}
+                  <button class="intro-village-actor{% if item.sprite is defined %} intro-village-actor--medical{% endif %}{% if item.encounter is defined %} intro-village-actor--sprite{% endif %}" type="button" data-actor-scene-index="{{ loop.index0 }}" aria-label="{{ item.name }} · {{ item.role | default('마을의 인연') }} 알아보기" aria-pressed="false" aria-controls="intro-actor-panel" style="--actor-x:{{ scene.x | default(15 + loop.index0 * 10) }}%;--actor-y:{{ scene.y | default(72) }}%;--actor-width:{{ scene.width | default(10) }}%;--actor-depth:{{ scene.depth | default(loop.index) }};--actor-order:{{ loop.index0 }};--actor-origin-x:{{ scene.originXPercent | default(50) }}%;--actor-origin-y:{{ scene.originYPercent | default(93.359375 if item.sprite is defined else 100) }}%">
+                    <span class="intro-village-actor__art" data-encounter-host="actors:{{ loop.index0 }}">{% if item.encounter is defined %}{{ sprite(item.encounter.idle.sprite) }}<noscript><img src="{{ scene.image | default(item.spriteImage | default(item.image), true) }}" alt="" loading="lazy" draggable="false"></noscript>{% elif item.sprite is defined %}{{ sprite(item) }}{% else %}<img data-scene-src="{{ scene.image | default(item.image, true) }}" alt="" decoding="async" draggable="false"><noscript><img src="{{ scene.image | default(item.image, true) }}" alt="" loading="lazy" draggable="false"></noscript>{% endif %}</span>
+                    <span class="intro-village-actor__pin" aria-hidden="true"><i></i><b>+</b></span><span class="intro-village-actor__name">{{ item.name }}</span>
+                  </button>
+                {% endfor %}
+              </div>
+            </div>
+              <div class="intro-village-depth" aria-hidden="true"><span class="intro-village-depth__light"></span><span class="intro-village-depth__mist"></span><span class="intro-village-depth__leaves intro-village-depth__leaves--left"></span><span class="intro-village-depth__leaves intro-village-depth__leaves--right"></span></div>
+            </div>
+            <div class="intro-village-guide"><p><span aria-hidden="true">✧</span> {{ sections.character['copy'].portraitHint }}</p><span class="intro-village-guide__pan"><i aria-hidden="true">↔</i> 옆으로 둘러보기</span><span class="intro-village-guide__count">02 <i>의료진 이야기</i></span></div>
+            <div class="intro-actor-selector intro-explorer-selector" data-actor-list="actors" aria-label="마을 인연 선택">
+              {% for item in intro_data.actors[:2] %}<button type="button" class="intro-actor-button intro-explorer-choice" data-actor-index="{{ loop.index0 }}" aria-label="{{ item.name }} 알아보기" aria-pressed="false" aria-controls="intro-actor-panel"><span class="intro-explorer-choice__number">{{ '%02d' | format(loop.index) }}</span><span class="intro-explorer-choice__name">{{ item.name }}</span><span aria-hidden="true">↗</span></button>{% endfor %}
+            </div>
+          </div>
+          {% set first_actor = intro_data.actors | first %}
+          <section class="intro-actor-panel" id="intro-actor-panel" data-actor-panel data-side="right" role="region" aria-labelledby="intro-actor-name" hidden>
+            <div class="intro-actor-panel__top"><span data-actor-category>수안의 의료진</span><button type="button" class="intro-actor-panel__close" data-action="actor-close" aria-label="인연 소개 닫기"><span aria-hidden="true">×</span></button></div>
+            <div class="intro-character-stage intro-actor-panel__art is-portrait" data-actor-stage><span class="intro-actor-region" data-actor-region hidden></span></div>
+            <span class="intro-actor-panel__image-status" data-actor-image-status aria-live="polite" hidden></span>
+            <div class="intro-actor-panel__copy"><p data-actor-role>{{ first_actor.role | default('인연의 동료') }}</p><h3 id="intro-actor-name" data-actor-name aria-live="polite">{{ first_actor.name }}</h3><span class="intro-actor-panel__rule" aria-hidden="true"></span><p class="intro-actor-panel__description" data-actor-description>{{ first_actor.description }}</p></div>
+            <div class="intro-actor-panel__footer"><button type="button" class="intro-actor-panel__more" data-action="actor-detail">자세히 보기 <span aria-hidden="true">↗</span></button><div class="intro-actor-panel__arrows"><button type="button" data-action="actor-prev" aria-label="이전 인물"><span aria-hidden="true">←</span></button><button type="button" data-action="actor-next" aria-label="다음 인물"><span aria-hidden="true">→</span></button></div></div>
+          </section>
+
+        </div>
+      </section>
+      <section class="intro-section intro-features intro-illustrated" id="features" data-section aria-label="가상 후기">
+        {{ scenery('features', sections.features.background) }}
+        <div class="intro-features__wash" aria-hidden="true"></div>
+        {{ section_heading("features") }}
+        <p class="intro-sample-notice">가상의 예시 후기이며 실제 이용 후기가 아닙니다.</p>
+        <div class="intro-features-carousel" data-carousel="features" data-carousel-align="center" aria-label="예시 후기 이야기">
+          <div class="intro-features-carousel__viewport">
+            <div class="intro-features-track" data-track>
+              {% for item in intro_data.features %}
+              <article class="intro-features-card{% if loop.first %} is-active{% endif %}" id="intro-feature-panel-{{ loop.index }}" data-slide role="tabpanel" aria-labelledby="intro-feature-tab-{{ loop.index }}" aria-label="{{ loop.index }} / {{ intro_data.features | length }} · {{ item.name | default(item.title) }}">
+                <div class="intro-features-card__paper">
+                  <div class="intro-features-card__art"><img data-scene-src="{{ item.image }}" alt="{{ item.name | default(item.title) }}" width="1672" height="941" loading="lazy" decoding="async" draggable="false"><noscript><img src="{{ item.image }}" alt="{{ item.name | default(item.title) }}" width="1672" height="941" loading="lazy" draggable="false"></noscript><span class="intro-features-card__number" aria-hidden="true">{{ '%02d' | format(loop.index) }}</span></div>
+                  {% if item.foreground is defined %}{{ foreground(item.foreground, 'intro-features-card__foreground') }}{% endif %}
+                  <div class="intro-features-card__copy"><p>{{ item.tag | default('진료 이야기') }}</p><h3>{{ item.name | default(item.title) }}</h3><p>{{ item.description }}</p><button class="intro-features-card__select" type="button" data-feature-select="{{ loop.index0 }}" aria-label="{{ item.name | default(item.title) }} 이야기 보기"><span>이야기 보기</span><b aria-hidden="true">↗</b></button></div>
+                </div>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+          {{ arrows('다음 예시 후기') }}
+          <nav class="intro-features-nav" data-feature-nav role="tablist" aria-label="예시 후기 선택">
+            {% for item in intro_data.features %}<button type="button" id="intro-feature-tab-{{ loop.index }}" data-index="{{ loop.index0 }}" class="{% if loop.first %}is-active{% endif %}" role="tab" aria-controls="intro-feature-panel-{{ loop.index }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" aria-label="{{ item.name | default(item.title) }}" aria-current="{{ 'true' if loop.first else 'false' }}"><span class="intro-features-nav__thumb" aria-hidden="true"><img src="{{ item.foreground.image if item.foreground is defined else item.image }}" alt="" loading="lazy" decoding="async"><span class="intro-features-nav__number" aria-hidden="true">{{ '%02d' | format(loop.index) }}</span></span><span class="intro-features-nav__name">{{ item.name | default(item.title) }}</span><i aria-hidden="true"></i></button>{% endfor %}
+          </nav>
+        </div>
+      </section>
+      <section class="intro-section intro-medical intro-illustrated" id="gamefeatures" data-section>
+        {{ scenery('medical', sections.gamefeatures.background) }}
+        {{ section_heading("gamefeatures") }}
+        {% set first_medical = intro_data.medical.skills | first %}
+        <div class="intro-medical__inner" data-reveal>
+          <div class="intro-medical-skills" data-skill-count="{{ intro_data.medical.skills | length }}" role="tablist" aria-label="진료 항목 선택">
+            {% for item in intro_data.medical.skills %}<button class="intro-medical-skill{% if loop.first %} is-active{% endif %}" type="button" data-medical-skill-index="{{ loop.index0 }}" style="--item-order:{{ loop.index0 }}" role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}" aria-controls="intro-medical-demonstration"><span class="intro-medical-skill__icon"><img src="{{ item.icon }}" alt="" loading="lazy" decoding="async"></span><span>{{ item.name }}</span></button>{% endfor %}
+          </div>
+          <div class="intro-medical-summary" id="intro-medical-demonstration"><span>진료의 손길 <i aria-hidden="true">醫術</i></span><h3 data-medical-name>{{ first_medical.name }}</h3><p data-medical-description>{{ first_medical.description }}</p></div>
+          <div class="intro-medical-arenas">
+            <figure class="intro-medical-arena" data-medical-arena="0" data-demo-mode="{{ first_medical.demoMode | default('target') }}" aria-label="의료진의 진료 모션 연출">
+              <figcaption><span data-medical-performer>300 · 남성 의료진</span><i aria-hidden="true">醫術</i></figcaption>
+              <div class="intro-medical-arena__floor" aria-hidden="true"></div>
+              <div class="intro-medical-unit intro-medical-unit--caster" data-medical-caster="0" aria-hidden="true"></div>
+              <div class="intro-medical-unit intro-medical-unit--target" data-medical-target="0" aria-hidden="true"></div>
+              <div class="intro-medical-unit intro-medical-unit--effect" data-medical-effect="0" aria-hidden="true"></div>
+              <div class="intro-medical-arena__caption"><span>정성을 모아, 치유를 전하다</span><span class="intro-medical-arena__seal" aria-hidden="true">醫</span></div>
+            </figure>
+          </div>
+          <p class="intro-medical__motion-note">게임 속 캐릭터로 표현한 이미지 연출이며 실제 시술 장면은 아닙니다.</p>
+          <p class="intro-medical__note">다양한 진료 항목을 의료진의 움직임으로 만나보세요.</p>
+        </div>
+      </section>
+      <section class="intro-section intro-guild intro-illustrated" id="sect" data-section>
+        {{ scenery('companions', sections.sect.background) }}
+        {{ section_heading("sect") }}
+        <div class="intro-guild-carousel" data-carousel="guild" data-reveal><div class="intro-guild-doors" data-companion-doors aria-hidden="true"><div class="intro-guild-door intro-guild-door--left"><span>同</span><i></i></div><div class="intro-guild-door intro-guild-door--right"><span>行</span><i></i></div></div><div class="intro-guild-carousel__viewport"><div class="intro-guild-track" data-track>
+          {% for item in intro_data.guild %}<article class="intro-guild-slide{% if loop.first %} is-active{% endif %}" data-slide><div class="intro-guild-slide__background"><img data-scene-src="{{ item.image }}" alt="{{ item.name | default(item.title) }}" loading="lazy" decoding="async" draggable="false"><noscript><img src="{{ item.image }}" alt="{{ item.name | default(item.title) }}" loading="lazy"></noscript></div>{% if item.motionActors is defined %}<div class="intro-guild-foreground" data-kind="sprite" aria-hidden="true"><div class="intro-guild-foreground__motion">{% for actor in item.motionActors %}{{ sprite(actor.sprite) }}{% endfor %}</div></div>{% elif item.foreground is defined %}{{ foreground(item.foreground, 'intro-guild-foreground') }}{% endif %}<div class="intro-guild-slide__copy"><p>{{ item.tag | default('함께 걷는 길') }}</p><h3>{{ item.name | default(item.title) }}</h3><p>{{ item.description }}</p></div></article>{% endfor %}
+        </div></div>{{ arrows('다음 진료 과정') }}{{ dots(intro_data.guild) }}</div>
+      </section>
+      {% set first_element = intro_data.elements | first %}
+      <section class="intro-section intro-elements intro-illustrated" id="skill" data-section data-element="{{ first_element.id }}" style="--element-accent:{{ first_element.accent }}">
+        {{ scenery('elements', sections.skill.background) }}
+        {{ section_heading("skill") }}
+        <div class="intro-element-tabs" role="tablist" aria-label="진료 분야 선택">
+          {% for item in intro_data.elements %}<button class="intro-element-tab{% if loop.first %} is-active{% endif %}" type="button" data-element-index="{{ loop.index0 }}" style="--tab-accent:{{ item.accent }}" role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}" aria-controls="intro-element-presentation"><span class="intro-element-tab__symbol" aria-hidden="true">{{ item.symbol }}</span><span>{{ item.name }}</span></button>{% endfor %}
+        </div>
+        {% set first_element_skills = first_element.skills | default([]) %}
+        {% set first_element_skill = (first_element_skills | first) | default(first_element) %}
+        <div class="intro-element-presentation" id="intro-element-presentation" data-reveal>
+          <div class="intro-element-introduction"><p class="intro-element-introduction__eyebrow">한 사람을 위한 다양한 진료 이야기</p><h3 data-element-name>{{ first_element.name }}</h3><p data-element-description>{{ first_element.description }}</p></div>
+          <div class="intro-element-network" data-element-network><svg class="intro-element-connections" data-element-connections viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true" focusable="false"></svg><div class="intro-element-chain" data-element-chain role="tablist" aria-label="진료 항목 선택">
+            {% for item in first_element_skills %}<button class="intro-element-chain__skill{% if loop.first %} is-active{% endif %}" type="button" data-element-skill-index="{{ loop.index0 }}" data-chain-selected="{{ 'true' if loop.first else 'false' }}" role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}" aria-controls="intro-element-skill-detail"><span class="intro-element-chain__image"><img src="{{ item.icon }}" alt="" loading="lazy" decoding="async" draggable="false"></span><span class="intro-element-chain__number">{{ '%02d' | format(loop.index) }}</span><span class="intro-element-chain__name">{{ item.name }}</span></button>{% endfor %}
+          </div>
+          </div>
+          <div class="intro-element-detail" id="intro-element-skill-detail" role="tabpanel">
+            <div class="intro-element-detail__icon"><img src="{{ first_element_skill.icon }}" alt="" data-element-icon loading="lazy" decoding="async" draggable="false"></div>
+            <div class="intro-element-detail__copy"><span class="intro-element-detail__eyebrow">{{ sections.skill['copy'].detailEyebrow }}</span><h4 data-element-skill-name>{{ first_element_skill.name if first_element_skills else first_element.skillName }}</h4><p data-element-skill-description>{{ first_element_skill.description if first_element_skills else first_element.skillDescription }}</p></div>
+          </div>
+        </div>
+      </section>
+      <section class="intro-section intro-clinic" id="clinic" data-section>
+        {{ scenery('clinic', sections.clinic.background) }}
+        {{ section_heading("clinic") }}
+        <div class="intro-clinic-story" data-reveal>
+          <div class="intro-clinic-demo" aria-labelledby="clinic-demo-title">
+            <div class="intro-clinic-demo__head"><div><p class="intro-clinic-demo__eyebrow">TODAY AT SUAN · 예시 데이터</p><h3 id="clinic-demo-title">금일 예약 현황</h3><p data-clinic-date>오늘</p></div><strong>{{ intro_data.clinicDemo.appointments | length }} <small>건의 예시 예약</small></strong></div>
+            <p class="intro-clinic-demo__notice">가상의 예약 현황이며 실제 예약과 무관합니다.</p>
+            <div class="intro-clinic-demo__stats"><span>대기 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '대기') | list | length }}</b></span><span>진료 중 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '진료 중') | list | length }}</b></span><span>완료 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '완료') | list | length }}</b></span></div>
+            <ul class="intro-clinic-demo__list" aria-label="가상 금일 예약 목록">{% for appointment in intro_data.clinicDemo.appointments %}<li><time>{{ appointment.time }}</time><strong>{{ appointment.alias }}</strong><span>{{ appointment.status }}</span></li>{% endfor %}</ul>
+          </div>
+          <div class="intro-clinic-info"><div><h3>공지 안내</h3>{% for notice in intro_data.clinicDemo.notices %}<p><small>{{ notice.label }}</small> {{ notice.title }}</p>{% endfor %}</div><div><h3>자주 묻는 질문</h3>{% for item in intro_data.clinicDemo.faq %}<details><summary>{{ item.question }}</summary><p>{{ item.answer }}</p></details>{% endfor %}</div><p>오시는 길과 진료시간은 확인 후 안내해 드리겠습니다.</p></div>
+          <nav class="intro-clinic-links" aria-label="예약과 상담 문의">{{ service("play", "intro-button intro-button--ink", "예약 문의") }}{{ service("clinic", "intro-text-link", "상담 문의") }}{{ service("staffBoard", "intro-text-link", "전화 문의") }}</nav>
+        </div>
+      </section>
+      <section class="intro-section intro-guide intro-illustrated" id="guide" data-section>
+        {{ scenery('guide', sections.guide.background) }}
+        {{ section_heading("guide") }}
+        {% set guide = intro_data.guide | default({}) %}
+        {% set guide_protagonist = guide.protagonist | default({'image': '/assets/rpg/ui/intro/v1/hero-healers.webp', 'alt': '의료진 이미지 연출'}) %}
+        <div class="intro-guide__content" data-reveal><span class="intro-guide__chapter" aria-hidden="true">一</span><figure class="intro-guide__protagonist"><img data-scene-src="{{ guide_protagonist.image }}" alt="{{ guide_protagonist.alt }}" loading="lazy" decoding="async" draggable="false"><noscript><img src="{{ guide_protagonist.image }}" alt="{{ guide_protagonist.alt }}" loading="lazy"></noscript></figure><div class="intro-guide__copy"><p>{{ sections.guide['copy'].eyebrow }}</p><h3>{{ lines(sections.guide['copy'].title) }}</h3><p>{{ lines(sections.guide['copy'].description) }}</p>{{ service("play", "intro-button intro-button--ink", sections.guide['copy'].startLabel) }}</div><nav class="intro-guide-stories" aria-label="인연을 잇는 이야기">{% for story in guide.stories | default([]) %}<{{ "button" if demo else "a" }} class="intro-guide-story" {% if demo %}type="button"{% else %}href="{{ story.href }}"{% endif %} data-service-action="{{ story.actionId }}" aria-labelledby="intro-guide-story-title-{{ loop.index }}" style="--story-order:{{ loop.index0 }}"><span class="intro-guide-story__art"><img data-scene-src="{{ story.image }}" alt="" loading="lazy" decoding="async" draggable="false"><noscript><img src="{{ story.image }}" alt="" loading="lazy"></noscript></span><span class="intro-guide-story__copy"><small>{{ story.tag }}</small><strong id="intro-guide-story-title-{{ loop.index }}">{{ story.name }}</strong><span>{{ story.description }}</span><b aria-hidden="true">↗</b></span></{{ "button" if demo else "a" }}>{% endfor %}</nav></div>
+      </section>
+      <section class="intro-media" id="media" data-section>
+        <div class="intro-media-carousel" data-carousel="media"><div class="intro-media__screens"><div class="intro-media-track" data-track>{% for item in intro_data.gallery %}<article class="intro-media-slide{% if loop.first %} is-active{% endif %}" data-slide><img src="{{ item.image }}" alt="{{ item.name | default(item.title) }}" loading="lazy" decoding="async"><div class="intro-media-slide__caption"><span>{{ sections.media['copy'].captionEyebrow }}</span><h3>{{ item.name | default(item.title) }}</h3></div></article>{% endfor %}</div></div><div class="intro-media__heading">{{ section_heading("media") }}</div><button type="button" class="intro-play intro-play--media" data-action="image" aria-label="선택한 미디어 크게 보기"><span class="intro-play__ring"></span><span class="intro-play__triangle"></span><i></i><i></i><i></i><i></i></button><a class="intro-media-download" data-media-download href="{{ (intro_data.gallery | first).image }}" download aria-label="선택한 미디어 내려받기"><span aria-hidden="true">↓</span></a>{{ arrows('다음 미디어') }}<div class="intro-media-counter" aria-label="현재 미디어"><span data-media-current>01</span><i aria-hidden="true">/</i><span data-media-total>{{ '%02d' | format(intro_data.gallery | length) }}</span></div><div class="intro-media-progress" aria-hidden="true"><span data-media-progress></span></div><div class="intro-media__thumbnails">{% for item in intro_data.gallery %}<button type="button" data-index="{{ loop.index0 }}" class="{% if loop.first %}is-active{% endif %}" aria-label="{{ item.name | default(item.title) }}" aria-current="{{ 'true' if loop.first else 'false' }}"><img src="{{ item.image }}" alt="" loading="lazy" decoding="async"><span>{{ '%02d' | format(loop.index) }}</span></button>{% endfor %}</div></div>
+      </section>
+      <section class="intro-section intro-access intro-illustrated" id="access" data-section>{{ scenery('access', sections.access.background) }}<div class="intro-access__ornament" aria-hidden="true">緣</div><div data-reveal data-reveal-lines><p class="intro-heading__eyebrow" style="--reveal-order:0">{{ sections.access.heading.eyebrow }}</p><h2 style="--reveal-order:1">{{ lines(sections.access.heading.title) }}</h2><p style="--reveal-order:2">{{ sections.access.heading.description }}</p>{{ service("play", "intro-button intro-button--ink", sections.access.actions[0].label) }}</div></section>
+    </main>
+    <footer class="intro-footer"><a class="intro-brand" href="#visual">{{ brand() }}</a><nav aria-label="서비스 메뉴">{% for action_id in site.footer.actionIds %}{% if action_id != 'admin' or landing_is_operator %}{{ service(action_id, arrow=false) }}{% endif %}{% endfor %}</nav><p>{{ site.footer.description.replace('LIVE', 'DEMO') if demo else site.footer.description }}</p><small>{{ site.footer.copyright }}</small>{% if landing_is_logged_in and not demo %}{{ service('logout', arrow=false) }}{% endif %}</footer>
+    <a class="intro-back-top" href="#visual" data-action="top" aria-label="맨 위로"><span aria-hidden="true">↑</span></a>
+    <dialog id="intro-dialog" class="intro-dialog" aria-label="수안 이야기"><button class="intro-dialog__close" type="button" data-action="close-dialog" aria-label="닫기">×</button><div class="intro-dialog__body" data-dialog-content></div></dialog>
+    <script type="application/json" id="intro-data">{{ intro_data | tojson }}</script>
+  </body>
+</html>

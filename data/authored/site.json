@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 5,
+  "revision": "intro-authored-sections-20261022-r1",
+  "sectionOrder": [
+    "visual",
+    "universe",
+    "character",
+    "features",
+    "gamefeatures",
+    "sect",
+    "skill",
+    "clinic",
+    "guide",
+    "media",
+    "access"
+  ],
+  "metadata": {
+    "title": "의맥전기 · 치유의 인연, 전설의 시작",
+    "description": "치유의 인연으로 이어지는 새로운 전설. 의맥전기에서 모험과 전투, 동료와 함께하는 이야기를 만나세요.",
+    "themeColor": "#141c32",
+    "language": "ko"
+  },
+  "brand": {
+    "name": "의맥전기",
+    "subtitle": "치유의 손끝에서, 새로운 모험이 시작된다",
+    "logo": "/assets/rpg/ui/intro/v1/logo-calligraphy-white.webp",
+    "subtitleImage": "/assets/rpg/ui/branding/uimaek-jeongi-action-hybrid-subtitle-white.png",
+    "primary": "의맥",
+    "secondary": "전기",
+    "hanja": "醫脈傳奇",
+    "serviceLabel": "PVP RPG"
+  },
+  "actions": {
+    "play": {
+      "href": "/play",
+      "label": "게임 시작",
+      "method": "GET",
+      "demoMessage": "준비 중입니다."
+    },
+    "login": {
+      "href": "/play",
+      "label": "로그인",
+      "method": "GET",
+      "demoMessage": "준비 중입니다."
+    },
+    "clinic": {
+      "href": "/rpg/clinic",
+      "label": "진료실 열기",
+      "method": "GET",
+      "demoMessage": "준비 중입니다."
+    },
+    "staffBoard": {
+      "href": "/rpg/staff-board",
+      "label": "현황판 보기",
+      "method": "GET",
+      "demoMessage": "준비 중입니다."
+    },
+    "logout": {
+      "href": "/play/logout",
+      "label": "로그아웃",
+      "method": "POST",
+      "demoMessage": "준비 중입니다."
+    },
+    "admin": {
+      "href": "/rpg/admin",
+      "label": "관리자 도구",
+      "method": "GET",
+      "demoMessage": "준비 중입니다.",
+      "visibility": "operator"
+    }
+  },
+  "navigation": [
+    {
+      "id": "universe",
+      "label": "세계관",
+      "kind": "carousel",
+      "carousel": "universe",
+      "source": "universe"
+    },
+    {
+      "id": "character",
+      "label": "인연",
+      "kind": "actors",
+      "entries": [
+        {
+          "name": "마을의 인연",
+          "value": "actors"
+        },
+        {
+          "name": "몬스터 아종",
+          "value": "monsters"
+        }
+      ]
+    },
+    {
+      "id": "features",
+      "label": "게임특징",
+      "kind": "carousel",
+      "carousel": "features",
+      "source": "features"
+    },
+    {
+      "id": "gamefeatures",
+      "label": "의술",
+      "kind": "medical",
+      "source": "medical.skills"
+    },
+    {
+      "id": "sect",
+      "label": "동료",
+      "kind": "carousel",
+      "carousel": "guild",
+      "source": "guild"
+    },
+    {
+      "id": "skill",
+      "label": "원소",
+      "kind": "elements",
+      "source": "elements"
+    },
+    {
+      "id": "clinic",
+      "label": "진료실",
+      "kind": "links",
+      "entries": [
+        {
+          "name": "진료실 소개",
+          "target": "clinic"
+        },
+        {
+          "name": "진료실 열기",
+          "actionId": "clinic"
+        },
+        {
+          "name": "현황판 보기",
+          "actionId": "staffBoard"
+        }
+      ]
+    },
+    {
+      "id": "guide",
+      "label": "가이드",
+      "kind": "links",
+      "entries": [
+        {
+          "name": "첫걸음 안내",
+          "target": "guide"
+        },
+        {
+          "name": "게임 시작",
+          "actionId": "play"
+        }
+      ]
+    },
+    {
+      "id": "media",
+      "label": "미디어",
+      "kind": "carousel",
+      "carousel": "media",
+      "source": "gallery"
+    }
+  ],
+  "serviceBar": {
+    "tagline": "함께 만드는 또 하나의 세계",
+    "loginLabel": "로그인",
+    "loggedInLabel": "내 모험으로 돌아가기"
+  },
+  "footer": {
+    "description": "치유의 인연, 전설의 시작 · PVP RPG LIVE",
+    "copyright": "© PVP RPG. All rights reserved.",
+    "actionIds": [
+      "play",
+      "clinic",
+      "staffBoard",
+      "admin"
+    ]
+  },
+  "theme": {
+    "default": "night",
+    "toDayLabel": "낮 풍경으로 변경",
+    "toNightLabel": "밤 풍경으로 변경"
+  },
+  "audio": {
+    "ambientSrc": "/assets/rpg/sounds/providers/1000y/audio/환경/환경_숲새소리1_10001.wav"
+  },
+  "copy": {
+    "drawerLead": "우리의 이야기가 전설이 되는 곳",
+    "drawerStart": "모험 시작하기",
+    "navOverview": "전체 소개",
+    "backToTop": "맨 위로",
+    "demoNotice": "준비 중입니다."
+  }
+}

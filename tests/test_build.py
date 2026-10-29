@@ -1,128 +1,103 @@
-"""Meaningful build, integrity and project-path checks without game dependencies."""
-from __future__ import annotations
-
-import hashlib
-import json
+"""Regression checks for the independently built clinic intro."""
+from copy import deepcopy
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
 from unittest import TestCase
 
+from jsonschema import Draft202012Validator
+
 PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT / "tools"))
-from build import base_path, build, checked_file, validate
+from build import base_path, build, checked_file, project_reviews, validate
+from rpg_intro_content import read_json
 from verify import verify
 
 
-def write_json(path, value):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+class ClinicIntroChecks(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.data, cls.manifest = validate(PROJECT)
+        cls.schema = read_json(PROJECT / "schema/schema.json")
+        cls.catalog_schema = {**cls.schema, "$ref": "#/$defs/catalog"}
+        cls.catalog_schema.pop("oneOf", None)
+        cls.validator = Draft202012Validator(cls.catalog_schema)
 
+    def test_data_has_two_medical_staff_and_examples(self):
+        self.assertEqual({item["id"] for item in self.data["actors"]}, {"medical-male", "medical-female"})
+        self.assertTrue(self.data["clinicDemo"]["reviews"])
+        self.assertTrue(self.data["clinicDemo"]["appointments"])
+        self.assertIn("예시", self.data["clinicDemo"]["appointmentNotice"])
+        self.assertIn("예시", self.data["clinicDemo"]["reviewNotice"])
+        self.assertTrue(self.manifest["files"])
 
-class IndependentBuildTests(TestCase):
-    def setUp(self):
-        parent = (PROJECT / ".cache/test-fixtures").resolve()
-        parent.mkdir(parents=True, exist_ok=True)
-        self.temporary = TemporaryDirectory(prefix="clinic-", dir=parent)
-        self.root = Path(self.temporary.name).resolve()
-        self.assertEqual(self.root.parent, parent)
-        for relative in ("assets/css", "assets/img", "src", "data", "schema", "templates"):
-            (self.root / relative).mkdir(parents=True, exist_ok=True)
-        image = self.root / "assets/img/day.webp"
-        image.write_bytes(b"example image bytes")
-        (self.root / "assets/css/site.css").write_text("body { color: #112; }\n", encoding="utf-8")
-        (self.root / "src/site.mjs").write_text("export const ready = true;\n", encoding="utf-8")
-        (self.root / "templates/index.html").write_text(
-            '<!doctype html><html><body><main id="reviews">{{ content.site.brand }}'
-            '<img src="{{ asset(content.hero.dayImage) }}"><a href="#reviews">후기</a>'
-            '<button type="button" data-service-action="booking">예약</button></main>'
-            '<link rel="stylesheet" href="{{ asset(\'assets/css/site.css\') }}">'
-            '<script type="module" src="{{ asset(\'src/site.mjs\') }}"></script>'
-            '</body></html>', encoding="utf-8")
-        write_json(self.root / "schema/content.schema.json", {
-            "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "type": "object", "required": ["site", "hero", "appointments"],
-            "properties": {"site": {"type": "object"}, "hero": {"type": "object"},
-                           "appointments": {"type": "array"}},
-        })
-        write_json(self.root / "data/content.json", {
-            "site": {"brand": "시안 한의원"}, "hero": {"dayImage": "assets/img/day.webp"},
-            "appointments": [{"id": "sample", "alias": "김**", "time": "09:00", "status": "대기"}],
-        })
-        write_json(self.root / "assets/provenance.json", {
-            "schemaVersion": 1,
-            "assets": [{"path": "assets/img/day.webp", "bytes": image.stat().st_size,
-                        "sha256": hashlib.sha256(image.read_bytes()).hexdigest()}],
-        })
+    def test_invalid_examples_and_actor_counts_are_rejected(self):
+        for mutation in ("alias", "time", "status", "notice", "actor"):
+            value = deepcopy(self.data)
+            if mutation == "alias": value["clinicDemo"]["appointments"][0]["alias"] = "실명"
+            elif mutation == "time": value["clinicDemo"]["appointments"][0]["time"] = "25:99"
+            elif mutation == "status": value["clinicDemo"]["appointments"][0]["status"] = "접수"
+            elif mutation == "notice": value["clinicDemo"]["reviewNotice"] = "환자 후기"
+            else: value["actors"].pop()
+            with self.subTest(mutation=mutation):
+                self.assertFalse(self.validator.is_valid(value))
 
-    def tearDown(self):
-        self.assertTrue(self.root.is_relative_to((PROJECT / ".cache/test-fixtures").resolve()))
-        self.temporary.cleanup()
+    def test_review_projection_updates_cards_and_navigation(self):
+        value = deepcopy(self.data)
+        review = value["clinicDemo"]["reviews"][0]
+        review.update(alias="윤**", content="변경된 가상 후기", daysAgo=7)
+        original_image = value["features"][0]["image"]
+        original_id = value["features"][0]["id"]
+        project_reviews(value)
+        card, copy = value["features"][0], value["sections"]["features"]["items"][0]
+        entry = next(group for group in value["site"]["navigation"] if group["id"] == "features")["entries"][0]
+        for item in (card, copy):
+            self.assertEqual(item["name"], "윤** · 예시 후기")
+            self.assertEqual(item["description"], "변경된 가상 후기")
+            self.assertEqual(item["tag"], "7일 전 · 가상 예시")
+        self.assertEqual(entry["name"], card["name"])
+        self.assertEqual(card["image"], original_image)
+        self.assertEqual(card["id"], original_id)
+        value["clinicDemo"]["reviews"][0]["daysAgo"] = 0
+        project_reviews(value)
+        self.assertEqual(value["features"][0]["tag"], "오늘 · 가상 예시")
 
-    def test_root_and_project_path_render_and_validate(self):
-        for prefix, directory in (("/", "dist-root"), ("/suan-clinic-demo/", "dist-project")):
-            with self.subTest(prefix=prefix):
-                output = self.root / directory
-                self.assertEqual(build(self.root, output, prefix)["basePath"], prefix)
-                page = (output / "index.html").read_text(encoding="utf-8")
-                self.assertIn(f'src="{prefix}assets/img/day.webp"', page)
-                self.assertIn(f'src="{prefix}src/site.mjs"', page)
-                self.assertTrue((output / ".nojekyll").is_file())
-                self.assertTrue(verify(self.root, output, prefix)["valid"])
+    def test_review_projection_rejects_mismatched_or_duplicate_inputs(self):
+        for mutation in ("count", "duplicate", "section_id", "navigation_id"):
+            value = deepcopy(self.data)
+            if mutation == "count": value["clinicDemo"]["reviews"].pop()
+            elif mutation == "duplicate": value["clinicDemo"]["reviews"][1]["id"] = value["clinicDemo"]["reviews"][0]["id"]
+            elif mutation == "section_id": value["sections"]["features"]["items"][0]["id"] = "wrong"
+            else: next(group for group in value["site"]["navigation"] if group["id"] == "features")["entries"][0]["id"] = "wrong"
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                project_reviews(value)
 
-    def test_modified_image_fails_provenance_integrity(self):
-        (self.root / "assets/img/day.webp").write_bytes(b"unreviewed change")
-        with self.assertRaisesRegex(ValueError, "integrity mismatch"):
-            validate(self.root)
-
-    def test_missing_asset_and_case_mismatch_are_rejected(self):
-        with self.assertRaisesRegex(ValueError, "incorrectly cased"):
-            checked_file(self.root, "assets/img/DAY.webp")
-        data = json.loads((self.root / "data/content.json").read_text(encoding="utf-8"))
-        data["hero"]["dayImage"] = "assets/img/missing.webp"
-        write_json(self.root / "data/content.json", data)
-        with self.assertRaisesRegex(ValueError, "Missing or incorrectly cased"):
-            validate(self.root)
-
-    def test_duplicate_properties_and_ids_are_rejected(self):
-        path = self.root / "data/content.json"
-        path.write_text('{"site": {}, "site": {}, "hero": {}, "appointments": []}', encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "Duplicate JSON property"):
-            validate(self.root)
-        write_json(path, {"site": {}, "hero": {}, "appointments": [{"id": "same"}, {"id": "same"}]})
-        with self.assertRaisesRegex(ValueError, "Duplicate ID"):
-            validate(self.root)
-
-    def test_unsafe_paths_and_unowned_output_are_preserved(self):
+    def test_invalid_paths_and_missing_asset_rejected(self):
         for prefix in ("//example/", "/../", "https://example.com/"):
-            with self.subTest(prefix=prefix), self.assertRaises(ValueError):
-                base_path(prefix)
-        with self.assertRaises(ValueError):
-            checked_file(self.root, "assets/../../outside")
-        output = self.root / "unowned"
-        output.mkdir()
-        (output / "keep.txt").write_text("preserve", encoding="utf-8")
-        with self.assertRaisesRegex(ValueError, "unowned"):
-            build(self.root, output)
-        self.assertEqual((output / "keep.txt").read_text(encoding="utf-8"), "preserve")
+            with self.subTest(prefix=prefix), self.assertRaises(ValueError): base_path(prefix)
+        with self.assertRaises(ValueError): checked_file(PROJECT, "assets/../../outside")
+        with self.assertRaisesRegex(ValueError, "incorrectly cased"):
+            checked_file(PROJECT, "assets/CLINICIANS/jo-jaeseong.png")
 
-    def test_service_links_and_forms_cannot_appear_in_demo(self):
-        output = self.root / "dist"
-        build(self.root, output)
-        page = output / "index.html"
-        original = page.read_text(encoding="utf-8")
-        for fragment in ('<form action="/booking">', '<a href="tel:012345">전화</a>',
-                         '<a href="/play">게임</a>'):
-            with self.subTest(fragment=fragment):
-                page.write_text(original.replace("</body>", fragment + "</body>"), encoding="utf-8")
-                with self.assertRaises(ValueError):
-                    verify(self.root, output, "/")
-
-
-class CurrentContentTests(TestCase):
-    def test_actual_content_and_selected_assets_validate(self):
-        data, provenance = validate(PROJECT)
-        self.assertTrue(data["clinicians"])
-        self.assertTrue(data["reviews"])
-        self.assertTrue(data["appointments"])
-        self.assertTrue(provenance["assets"])
+    def test_build_subpath_and_reject_unowned_and_service_links(self):
+        parent = PROJECT / ".cache" / "test-fixtures"
+        parent.mkdir(parents=True, exist_ok=True)
+        with TemporaryDirectory(prefix="clinic-intro-", dir=parent) as temp:
+            folder = Path(temp).resolve()
+            self.assertEqual(folder.parent, parent.resolve())
+            unowned = folder / "unowned"
+            unowned.mkdir()
+            (unowned / "keep.txt").write_text("preserve", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "unowned"):
+                build(PROJECT, unowned, "/suan-clinic-demo/")
+            self.assertEqual((unowned / "keep.txt").read_text(encoding="utf-8"), "preserve")
+            output = folder / "dist"
+            build(PROJECT, output, "/suan-clinic-demo/")
+            self.assertTrue(verify(PROJECT, output, "/suan-clinic-demo/")["valid"])
+            page = output / "index.html"
+            original = page.read_text(encoding="utf-8")
+            self.assertIn("/suan-clinic-demo/assets/", original)
+            for fragment in ('<form action="/booking"></form>', '<a href="tel:012345">전화</a>', '<a href="/play">게임</a>'):
+                with self.subTest(fragment=fragment):
+                    page.write_text(original.replace("</body>", fragment + "</body>"), encoding="utf-8")
+                    with self.assertRaises(ValueError): verify(PROJECT, output, "/suan-clinic-demo/")

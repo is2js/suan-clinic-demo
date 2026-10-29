@@ -1,140 +1,3715 @@
 {
-  "site": {
-    "brand": "수안부부한의원",
-    "tagline": "일상의 균형을 살피는 시간",
-    "description": "한의학의 차분한 시선으로 일상을 돌아보는 공간. 이 페이지는 디자인 시안입니다."
+  "schemaVersion": 5,
+  "revision": "intro-authored-sections-20261022-r1",
+  "startHref": "/play",
+  "brand": {
+    "name": "수안부부한의원",
+    "subtitle": "당신의 일상에, 편안한 쉼을",
+    "logo": "/assets/rpg/ui/intro/v1/logo-calligraphy-white.webp",
+    "subtitleImage": "/assets/rpg/ui/branding/uimaek-jeongi-action-hybrid-subtitle-white.png",
+    "primary": "수안",
+    "secondary": "부부한의원",
+    "hanja": "守安",
+    "serviceLabel": "KOREAN MEDICINE"
   },
-  "hero": {
-    "eyebrow": "A MOMENT FOR YOUR WELLBEING",
-    "title": "당신의 일상에, 편안한 쉼을",
-    "description": "한 분 한 분의 이야기에 귀 기울이는 시간.\n수안부부한의원에서 나의 균형을 살펴보세요.",
-    "dayImage": "assets/art/hero-day.webp",
-    "nightImage": "assets/art/hero-night.webp"
-  },
-  "clinicians": [
+  "universe": [
     {
-      "id": "jo-jaeseong",
+      "id": "first-step",
+      "name": "수안의 첫인사",
+      "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "WELCOME",
+      "caption": "분위기를 표현한 시안 이미지",
+      "alt": "수안의 첫인사을 표현한 시안 일러스트",
+      "gameplayCapture": false,
+      "title": "수안의 첫인사",
+      "eyebrow": "WELCOME"
+    },
+    {
+      "id": "spring",
+      "name": "봄의 정원",
+      "description": "계절의 흐름을 담은 동양적 풍경입니다.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "SPRING",
+      "title": "봄의 정원",
+      "eyebrow": "SPRING",
+      "alt": "봄의 정원을 표현한 시안 일러스트",
+      "caption": "분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "summer",
+      "name": "여름의 풍경",
+      "description": "푸른 자연을 담은 시안 일러스트입니다.",
+      "image": "/assets/art/herb-garden.webp",
+      "tag": "SUMMER",
+      "title": "여름의 풍경",
+      "eyebrow": "SUMMER",
+      "alt": "여름의 풍경을 표현한 시안 일러스트",
+      "caption": "분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "autumn",
+      "name": "가을의 풍경",
+      "description": "차분한 사색을 위한 시안 일러스트입니다.",
+      "image": "/assets/art/medical-apothecary.webp",
+      "tag": "AUTUMN",
+      "title": "가을의 풍경",
+      "eyebrow": "AUTUMN",
+      "alt": "가을의 풍경을 표현한 시안 일러스트",
+      "caption": "분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "winter",
+      "name": "겨울의 풍경",
+      "description": "고요한 풍경을 담은 시안 일러스트입니다.",
+      "image": "/assets/art/hero-day.webp",
+      "tag": "WINTER",
+      "title": "겨울의 풍경",
+      "eyebrow": "WINTER",
+      "alt": "겨울의 풍경을 표현한 시안 일러스트",
+      "caption": "분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    }
+  ],
+  "actors": [
+    {
       "name": "조재성",
+      "title": "조재성 원장",
+      "eyebrow": "근골격계 · 추나 · 재활",
+      "tag": "한의사",
+      "description": "몸의 움직임과 일상 속 불편에 귀 기울이는 진료 이야기를 소개합니다.",
+      "image": "/assets/clinicians/jo-jaeseong.png",
+      "id": "medical-male",
       "role": "원장 · 한의사",
-      "image": "assets/clinicians/jo-jaeseong.png",
-      "focus": "근골격계 · 추나 · 재활",
-      "description": "몸의 움직임과 일상 속 불편에 귀 기울이는 진료 이야기를 소개합니다."
+      "portrait": "/assets/clinicians/jo-jaeseong.png",
+      "displayMode": "portrait",
+      "spriteImage": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "sprite": {
+        "src": "/assets/intro-sprites/a7100b6de3106967af9751bb-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "scene": {
+        "x": 29.5,
+        "y": 75,
+        "width": 7.5,
+        "depth": 75,
+        "originXPercent": 50,
+        "originYPercent": 93.359375
+      },
+      "encounter": {
+        "idle": {
+          "sprite": {
+            "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/fddd568b5126d02c5a540147-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "identity-idle-walk-20260909-r1-100-idle-throw",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true,
+                "toolId": "throw",
+                "selectedSheet": "sheets/weapon-visibility-20260914-r1/base/12-100-idle-normal-throw.png",
+                "clock": "body",
+                "sourceDurationMs": 900
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        },
+        "hover": {
+          "sprite": {
+            "src": "/assets/intro-sprites/8280b603c90bb36d550360d2-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 35.55555555555556,
+            "displayWidth": 180,
+            "durationMs": 320,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "sword",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": false
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/2f7b9800034049bb1a911121-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 9,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 35.55555555555556,
+                "displayWidth": 180,
+                "durationMs": 320,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "attack",
+                "action": "identity-combat-care-20260912-r1-100-throw",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": false,
+                "toolId": "throw",
+                "selectedSheet": "sheets/weapon-visibility-20260914-r1/base/06-100-attack-sword-throw.png",
+                "clock": "body",
+                "sourceDurationMs": 720
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": -3,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -14,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        }
+      }
     },
     {
-      "id": "kim-seokyoung",
       "name": "김석영",
+      "title": "김석영 원장",
+      "eyebrow": "피부 · 미용 · 여성 건강",
+      "tag": "한의사",
+      "description": "저마다 다른 일상의 고민을 함께 살펴보는 진료 이야기를 소개합니다.",
+      "image": "/assets/clinicians/kim-seokyoung.png",
+      "id": "medical-female",
       "role": "원장 · 한의사",
-      "image": "assets/clinicians/kim-seokyoung.png",
-      "focus": "피부 · 미용 · 여성 건강",
-      "description": "저마다 다른 일상의 고민을 함께 살펴보는 진료 이야기를 소개합니다."
+      "portrait": "/assets/clinicians/kim-seokyoung.png",
+      "displayMode": "portrait",
+      "spriteImage": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "sprite": {
+        "src": "/assets/intro-sprites/b706c75b732e58b86154bedf-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "scene": {
+        "x": 58.3,
+        "y": 64.5,
+        "width": 7.2,
+        "depth": 65,
+        "originXPercent": 50,
+        "originYPercent": 93.359375
+      },
+      "encounter": {
+        "idle": {
+          "sprite": {
+            "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/79d46bf08722ea20fa56874e-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "identity-idle-walk-20260909-r1-200-idle-attack-axe",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true,
+                "toolId": "attack-axe",
+                "selectedSheet": "sheets/weapon-direction-20260919-r5/base/200-idle-normal-attack-axe.png",
+                "clock": "body",
+                "sourceDurationMs": 900
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        },
+        "hover": {
+          "sprite": {
+            "src": "/assets/intro-sprites/34f29d70e43ce7948bf29945-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 8,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 40,
+            "displayWidth": 180,
+            "durationMs": 320,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "attack-axe",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": false
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/76b0db7f4c14e9817e7a334b-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 8,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 40,
+                "displayWidth": 180,
+                "durationMs": 320,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "attack",
+                "action": "identity-combat-care-20260912-r1-200-attack-axe",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": false,
+                "toolId": "attack-axe",
+                "selectedSheet": "sheets/weapon-direction-20260919-r5/base/200-attack-attack-axe-attack-axe.png",
+                "clock": "body",
+                "sourceDurationMs": 720
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -14,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -10,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ],
-  "departments": [
+  "monsters": [],
+  "heroMonsters": [],
+  "features": [
     {
-      "id": "musculoskeletal",
-      "name": "통증·재활",
-      "eyebrow": "MOVEMENT & BALANCE",
-      "description": "일상 속 움직임과 몸의 불편에 관한 상담을 살펴봅니다.",
-      "image": "assets/art/clinic-morning-gate.webp"
+      "id": "battle",
+      "name": "김** · 예시 후기",
+      "description": "상담 내용을 차분하게 설명해 주어 편안한 마음으로 이야기할 수 있었어요.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+      "actionId": "play",
+      "title": "김** · 예시 후기",
+      "eyebrow": "SAMPLE REVIEW",
+      "href": "/play",
+      "label": "예시 후기"
     },
     {
-      "id": "chuna",
-      "name": "추나",
-      "eyebrow": "A GENTLE APPROACH",
-      "description": "몸의 상태와 움직임을 바탕으로 추나 진료를 안내합니다.",
-      "image": "assets/art/healing-courtyard.webp"
+      "id": "healing",
+      "name": "박** · 예시 후기",
+      "description": "궁금했던 부분을 하나씩 물어볼 수 있어 좋았습니다.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+      "actionId": "play",
+      "title": "박** · 예시 후기",
+      "eyebrow": "SAMPLE REVIEW",
+      "href": "/play",
+      "label": "예시 후기"
     },
     {
-      "id": "womens-health",
-      "name": "여성 건강",
-      "eyebrow": "EVERYDAY CARE",
-      "description": "일상의 변화와 여성 건강에 대한 고민을 함께 살펴봅니다.",
-      "image": "assets/art/herb-garden.webp"
+      "id": "equipment",
+      "name": "이** · 예시 후기",
+      "description": "처음 방문할 때 필요한 안내를 이해하기 쉽게 들을 수 있었어요.",
+      "image": "/assets/art/herb-garden.webp",
+      "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+      "actionId": "play",
+      "title": "이** · 예시 후기",
+      "eyebrow": "SAMPLE REVIEW",
+      "href": "/play",
+      "label": "예시 후기"
     },
     {
-      "id": "skin-beauty",
-      "name": "피부·미용",
-      "eyebrow": "SKIN & WELLNESS",
-      "description": "피부와 미용에 관한 개인의 고민을 나누는 시간을 소개합니다.",
-      "image": "assets/art/medical-apothecary.webp"
+      "id": "together",
+      "name": "최** · 예시 후기",
+      "description": "제 이야기를 천천히 나눌 수 있는 시간이 인상적이었습니다.",
+      "image": "/assets/art/medical-apothecary.webp",
+      "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+      "actionId": "play",
+      "title": "최** · 예시 후기",
+      "eyebrow": "SAMPLE REVIEW",
+      "href": "/play",
+      "label": "예시 후기"
+    },
+    {
+      "id": "clinic-life",
+      "name": "정** · 예시 후기",
+      "description": "편안한 분위기에서 상담을 받을 수 있었습니다.",
+      "image": "/assets/art/hero-day.webp",
+      "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+      "actionId": "clinic",
+      "title": "정** · 예시 후기",
+      "eyebrow": "SAMPLE REVIEW",
+      "href": "/rpg/clinic",
+      "label": "예시 후기"
     }
   ],
-  "reviews": [
+  "guild": [
     {
-      "id": "review-example-01",
-      "alias": "김**",
-      "daysAgo": 0,
-      "content": "상담 내용을 차분하게 설명해 주어 편안한 마음으로 이야기할 수 있었어요."
+      "id": "party",
+      "name": "상담과 확인",
+      "description": "현재의 불편함과 일상의 이야기를 나눕니다.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "CONSULTATION",
+      "foreground": {
+        "image": "/assets/clinicians/jo-jaeseong.png",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "medical-male",
+        "medical-female"
+      ],
+      "title": "상담과 확인",
+      "eyebrow": "CONSULTATION",
+      "href": "/play",
+      "label": "안내 보기",
+      "motionActors": [
+        {
+          "id": "medical-male",
+          "name": "조재성",
+          "sprite": {
+            "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        },
+        {
+          "id": "medical-female",
+          "name": "김석영",
+          "sprite": {
+            "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        }
+      ]
     },
     {
-      "id": "review-example-02",
-      "alias": "박**",
-      "daysAgo": 1,
-      "content": "궁금했던 부분을 하나씩 물어볼 수 있어 좋았습니다."
+      "id": "guild",
+      "name": "진료 안내",
+      "description": "상담을 바탕으로 진료 항목을 살펴봅니다.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "CARE",
+      "foreground": {
+        "image": "/assets/clinicians/kim-seokyoung.png",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "medical-male",
+        "medical-female"
+      ],
+      "title": "진료 안내",
+      "eyebrow": "CARE",
+      "href": "/play",
+      "label": "안내 보기",
+      "motionActors": [
+        {
+          "id": "medical-male",
+          "name": "조재성",
+          "sprite": {
+            "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        },
+        {
+          "id": "medical-female",
+          "name": "김석영",
+          "sprite": {
+            "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        }
+      ]
     },
     {
-      "id": "review-example-03",
-      "alias": "이**",
-      "daysAgo": 2,
-      "content": "처음 방문할 때 필요한 안내를 이해하기 쉽게 들을 수 있었어요."
-    },
-    {
-      "id": "review-example-04",
-      "alias": "최**",
-      "daysAgo": 4,
-      "content": "제 이야기를 천천히 나눌 수 있는 시간이 인상적이었습니다."
-    },
-    {
-      "id": "review-example-05",
-      "alias": "정**",
-      "daysAgo": 6,
-      "content": "편안한 분위기에서 상담을 받을 수 있었습니다."
+      "id": "siege",
+      "name": "방문 안내",
+      "description": "예약과 이용 안내는 확인 후 제공됩니다.",
+      "image": "/assets/art/herb-garden.webp",
+      "tag": "VISIT",
+      "foreground": {
+        "image": "/assets/clinicians/jo-jaeseong.png",
+        "kind": "portrait",
+        "side": "right"
+      },
+      "actionId": "play",
+      "motionActorIds": [
+        "medical-male",
+        "medical-female"
+      ],
+      "title": "방문 안내",
+      "eyebrow": "VISIT",
+      "href": "/play",
+      "label": "안내 보기",
+      "motionActors": [
+        {
+          "id": "medical-male",
+          "name": "조재성",
+          "sprite": {
+            "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        },
+        {
+          "id": "medical-female",
+          "name": "김석영",
+          "sprite": {
+            "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          }
+        }
+      ]
     }
   ],
-  "appointments": [
-    { "id": "appointment-example-01", "alias": "김**", "time": "09:30", "status": "완료" },
-    { "id": "appointment-example-02", "alias": "이**", "time": "10:00", "status": "완료" },
-    { "id": "appointment-example-03", "alias": "박**", "time": "10:30", "status": "진료 중" },
-    { "id": "appointment-example-04", "alias": "최**", "time": "11:00", "status": "대기" },
-    { "id": "appointment-example-05", "alias": "정**", "time": "11:30", "status": "대기" },
-    { "id": "appointment-example-06", "alias": "한**", "time": "14:00", "status": "대기" }
-  ],
-  "spaces": [
+  "medical": {
+    "skills": [
+      {
+        "id": "lk-clinic-004",
+        "name": "침",
+        "description": "침 진료 항목을 소개합니다. 진료 여부와 방법은 상담을 통해 확인해 주세요.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/004.png",
+        "performers": [
+          {
+            "src": "/assets/intro-sprites/fae3d1021f59200823079342-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 12,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 250,
+            "displayWidth": 230,
+            "durationMs": 3000,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "medical",
+            "action": "needle2",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          },
+          null
+        ],
+        "performerTools": [],
+        "performerIndex": 0,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/004/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-004-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "target",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 1500,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-004",
+        "effectId": "rpg-medical-004-r1",
+        "demoMode": "target",
+        "executionKind": "attack",
+        "targetMode": "enemy",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-005",
+        "name": "약침",
+        "description": "약침 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/005.png",
+        "performers": [
+          null,
+          {
+            "src": "/assets/intro-sprites/61a88c892a8fa5b7ab437e95-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 100,
+            "displayWidth": 230,
+            "durationMs": 900,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "medical_thrust",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          }
+        ],
+        "performerTools": [
+          null,
+          {
+            "src": "/assets/intro-sprites/034150acab969571da122608-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 100,
+            "displayWidth": 230,
+            "durationMs": 900,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "identity-combat-care-20260912-r1-200-medical-syringe",
+            "toolId": "medical-syringe",
+            "logicalBody": "200",
+            "layer": "front"
+          }
+        ],
+        "performerIndex": 1,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/005/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-005-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "target",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 400,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-005",
+        "effectId": "rpg-medical-005-r1",
+        "demoMode": "target",
+        "executionKind": "attack",
+        "targetMode": "enemy",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-006",
+        "name": "도침",
+        "description": "도침 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/006.png",
+        "performers": [
+          {
+            "src": "/assets/intro-sprites/31009ab9c641e2b7175b52ed-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 100,
+            "displayWidth": 230,
+            "durationMs": 900,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "medical_thrust",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          },
+          null
+        ],
+        "performerTools": [
+          {
+            "src": "/assets/intro-sprites/2199f6b2f8066d4e3e2d4d4e-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 100,
+            "displayWidth": 230,
+            "durationMs": 900,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "identity-combat-care-20260912-r1-100-medical-syringe",
+            "toolId": "medical-syringe",
+            "logicalBody": "100",
+            "layer": "front"
+          },
+          null
+        ],
+        "performerIndex": 0,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/006/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-006-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "target",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 400,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-006",
+        "effectId": "rpg-medical-006-r1",
+        "demoMode": "target",
+        "executionKind": "attack",
+        "targetMode": "enemy",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-007",
+        "name": "추나",
+        "description": "몸의 움직임을 살피는 추나 진료 항목을 소개합니다.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/007.png",
+        "performers": [
+          null,
+          {
+            "src": "/assets/intro-sprites/73988f7afdcea18430c87567-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 12,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 200,
+            "displayWidth": 230,
+            "durationMs": 2400,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "medical",
+            "action": "chuna",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          }
+        ],
+        "performerTools": [],
+        "performerIndex": 1,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/007/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-007-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "target",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 1200,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-007",
+        "effectId": "rpg-medical-007-r1",
+        "demoMode": "target",
+        "executionKind": "attack",
+        "targetMode": "enemy",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-012",
+        "name": "초음파",
+        "description": "초음파 관련 진료 항목을 소개합니다. 이용 가능 여부는 확인이 필요합니다.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/012.png",
+        "performers": [
+          {
+            "src": "/assets/intro-sprites/a625febf1a0709b3bc52a31d-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 12,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 200,
+            "displayWidth": 230,
+            "durationMs": 2400,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "medical",
+            "action": "ultrasound_seated",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          },
+          null
+        ],
+        "performerTools": [],
+        "performerIndex": 0,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/012/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-012-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "target",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 1200,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-012",
+        "effectId": "rpg-medical-012-r1",
+        "demoMode": "target",
+        "executionKind": "attack",
+        "targetMode": "area_enemy",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-019",
+        "name": "한약",
+        "description": "한약 상담과 처방에 관한 안내입니다.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/019.png",
+        "performers": [
+          null,
+          {
+            "src": "/assets/intro-sprites/ec1e0887e2708158682c72a6-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 12,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 200,
+            "displayWidth": 230,
+            "durationMs": 2400,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "medical",
+            "action": "drink_herbal_pouch",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          }
+        ],
+        "performerTools": [],
+        "performerIndex": 1,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/019/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-019-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "caster",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 1200,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-019",
+        "effectId": "rpg-medical-019-r1",
+        "demoMode": "self",
+        "executionKind": "heal",
+        "targetMode": "ally",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-001",
+        "name": "물리치료",
+        "description": "물리치료 관련 항목을 소개합니다. 이용 가능 여부는 확인이 필요합니다.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/001.png",
+        "performers": [
+          {
+            "src": "/assets/intro-sprites/c1f4c4dc39bb3d18d5547212-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 40,
+            "displayWidth": 230,
+            "durationMs": 360,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "cast",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          },
+          null
+        ],
+        "performerTools": [],
+        "performerIndex": 0,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/001/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-001-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "caster",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 0,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-001",
+        "effectId": "rpg-medical-001-r1",
+        "demoMode": "self",
+        "executionKind": "heal",
+        "targetMode": "ally",
+        "castMode": "manual"
+      },
+      {
+        "id": "lk-clinic-013",
+        "name": "테이핑",
+        "description": "테이핑 관련 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+        "icon": "/assets/rpg/skills/icons/lk-clinic/013.png",
+        "performers": [
+          null,
+          {
+            "src": "/assets/intro-sprites/0483b8f666865ba695c38e17-256-r1.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 40,
+            "displayWidth": 230,
+            "durationMs": 360,
+            "direction": "ne",
+            "originX": 128,
+            "originY": 239,
+            "motion": "cast",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+          }
+        ],
+        "performerTools": [],
+        "performerIndex": 1,
+        "effect": {
+          "src": "/assets/rpg/skills/effects/medical-generated/r1/013/variants-transparent/00.png",
+          "frameWidth": 256,
+          "frameHeight": 256,
+          "frames": 16,
+          "rows": 1,
+          "row": 0,
+          "frameMs": 80,
+          "durationMs": 1280,
+          "originX": 128,
+          "originY": 240,
+          "displayWidth": 252,
+          "variantIndex": 0,
+          "effectId": "rpg-medical-013-r1",
+          "anchor": "caster",
+          "introDemoAnchor": "caster",
+          "placementType": "status_body_aura",
+          "scalePercent": 190,
+          "offsetX": 0,
+          "offsetY": 0,
+          "playback": "once"
+        },
+        "effectStartMs": 0,
+        "effectDurationMs": 1280,
+        "growthNodeId": "medical-013",
+        "effectId": "rpg-medical-013-r1",
+        "demoMode": "self",
+        "executionKind": "shield",
+        "targetMode": "ally",
+        "castMode": "manual"
+      }
+    ],
+    "performers": [
+      {
+        "name": "조재성 원장",
+        "body": "300",
+        "logicalBody": "100"
+      },
+      {
+        "name": "김석영 원장",
+        "body": "400",
+        "logicalBody": "200"
+      }
+    ],
+    "target": {
+      "name": "시연 소품",
+      "image": "/assets/rpg/monsters/sprites/M828/walk/normal/sw_00.png",
+      "spriteSW": {
+        "src": "/assets/intro-sprites/a6abf7514f784f25c2232b8b-128-r5.png",
+        "frameWidth": 128,
+        "frameHeight": 128,
+        "frames": 4,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 150,
+        "displayWidth": 180,
+        "durationMs": 600,
+        "direction": "sw",
+        "originX": 64,
+        "originY": 112,
+        "motion": "walk",
+        "action": "normal",
+        "staticFrame": 0
+      },
+      "freezeFrame": 0,
+      "description": "RPG 캐릭터의 진료 모션을 표현한 시안 소품"
+    }
+  },
+  "elements": [
     {
-      "id": "courtyard",
-      "name": "마음을 놓는 풍경",
-      "description": "자연과 한옥을 모티프로 한 분위기 이미지입니다.",
-      "image": "assets/art/healing-courtyard.webp"
+      "id": "fire",
+      "name": "침·약침",
+      "symbol": "針",
+      "accent": "#dc6a45",
+      "description": "침과 약침에 관한 진료 항목을 소개합니다.",
+      "icon": "/assets/rpg/skills/icons/lk-clinic/004.png",
+      "skillName": "침",
+      "skillDescription": "침 진료 항목을 소개합니다. 진료 여부와 방법은 상담을 통해 확인해 주세요.",
+      "skillId": "lk-clinic-004",
+      "growthNodeId": "medical-004",
+      "castMode": "manual",
+      "sprite": {
+        "src": "/assets/intro-sprites/c1f4c4dc39bb3d18d5547212-256-r1.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 9,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 40,
+        "displayWidth": 180,
+        "durationMs": 360,
+        "direction": "ne",
+        "originX": 128,
+        "originY": 239,
+        "motion": "cast",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "effect": {
+        "src": "/assets/rpg/skills/effects/medical-generated/r1/004/variants-transparent/00.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 16,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 80,
+        "durationMs": 1280,
+        "originX": 128,
+        "originY": 240,
+        "displayWidth": 252,
+        "variantIndex": 0,
+        "effectId": "rpg-medical-004-r1",
+        "anchor": "caster",
+        "introDemoAnchor": "target",
+        "placementType": "status_body_aura",
+        "scalePercent": 190,
+        "offsetX": 0,
+        "offsetY": 0,
+        "playback": "once"
+      },
+      "effectStartMs": 1500,
+      "effectDurationMs": 1280,
+      "castDurationMs": 3000,
+      "skills": [
+        {
+          "id": "lk-clinic-004",
+          "growthNodeId": "medical-004",
+          "name": "침",
+          "description": "침 진료 항목을 소개합니다. 진료 여부와 방법은 상담을 통해 확인해 주세요.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/004.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/004/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-004-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "target",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 1500,
+          "effectDurationMs": 1280,
+          "castDurationMs": 3000,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        },
+        {
+          "id": "lk-clinic-005",
+          "growthNodeId": "medical-005",
+          "name": "약침",
+          "description": "약침 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/005.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/005/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-005-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "target",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 400,
+          "effectDurationMs": 1280,
+          "castDurationMs": 900,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        }
+      ],
+      "defaultSkillIndex": 0,
+      "links": [],
+      "videoSrc": "",
+      "videoPoster": "/assets/art/herb-garden.webp"
     },
     {
-      "id": "herb-garden",
-      "name": "한의학의 정원",
-      "description": "한의학의 정취를 담아 표현한 상상 속 정원입니다.",
-      "image": "assets/art/herb-garden.webp"
+      "id": "water",
+      "name": "추나·도침",
+      "symbol": "手",
+      "accent": "#4a9cce",
+      "description": "몸의 움직임을 살피는 항목을 소개합니다.",
+      "icon": "/assets/rpg/skills/icons/lk-clinic/007.png",
+      "skillName": "추나",
+      "skillDescription": "몸의 움직임을 살피는 추나 진료 항목을 소개합니다.",
+      "skillId": "lk-clinic-007",
+      "growthNodeId": "medical-007",
+      "castMode": "manual",
+      "sprite": {
+        "src": "/assets/intro-sprites/0483b8f666865ba695c38e17-256-r1.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 9,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 40,
+        "displayWidth": 180,
+        "durationMs": 360,
+        "direction": "ne",
+        "originX": 128,
+        "originY": 239,
+        "motion": "cast",
+        "action": "normal",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "effect": {
+        "src": "/assets/rpg/skills/effects/medical-generated/r1/007/variants-transparent/00.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 16,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 80,
+        "durationMs": 1280,
+        "originX": 128,
+        "originY": 240,
+        "displayWidth": 252,
+        "variantIndex": 0,
+        "effectId": "rpg-medical-007-r1",
+        "anchor": "caster",
+        "introDemoAnchor": "target",
+        "placementType": "status_body_aura",
+        "scalePercent": 190,
+        "offsetX": 0,
+        "offsetY": 0,
+        "playback": "once"
+      },
+      "effectStartMs": 1200,
+      "effectDurationMs": 1280,
+      "castDurationMs": 2400,
+      "skills": [
+        {
+          "id": "lk-clinic-007",
+          "growthNodeId": "medical-007",
+          "name": "추나",
+          "description": "몸의 움직임을 살피는 추나 진료 항목을 소개합니다.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/007.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/007/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-007-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "target",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 1200,
+          "effectDurationMs": 1280,
+          "castDurationMs": 2400,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        },
+        {
+          "id": "lk-clinic-006",
+          "growthNodeId": "medical-006",
+          "name": "도침",
+          "description": "도침 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/006.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/006/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-006-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "target",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 400,
+          "effectDurationMs": 1280,
+          "castDurationMs": 900,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        }
+      ],
+      "defaultSkillIndex": 0,
+      "links": [],
+      "videoSrc": "",
+      "videoPoster": "/assets/art/herb-garden.webp"
     },
     {
-      "id": "apothecary",
-      "name": "약재가 머무는 곳",
-      "description": "전통 약재와 목재의 온기를 담은 분위기 이미지입니다.",
-      "image": "assets/art/medical-apothecary.webp"
+      "id": "wind",
+      "name": "한약·초음파",
+      "symbol": "藥",
+      "accent": "#6aaf8e",
+      "description": "한약과 초음파 관련 항목을 소개합니다.",
+      "icon": "/assets/rpg/skills/icons/lk-clinic/019.png",
+      "skillName": "한약",
+      "skillDescription": "한약 상담과 처방에 관한 안내입니다.",
+      "skillId": "lk-clinic-019",
+      "growthNodeId": "medical-019",
+      "castMode": "manual",
+      "sprite": {
+        "src": "/assets/intro-sprites/0483b8f666865ba695c38e17-256-r1.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 9,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 40,
+        "displayWidth": 180,
+        "durationMs": 360,
+        "direction": "ne",
+        "originX": 128,
+        "originY": 239,
+        "motion": "cast",
+        "action": "normal",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "effect": {
+        "src": "/assets/rpg/skills/effects/medical-generated/r1/019/variants-transparent/00.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 16,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 80,
+        "durationMs": 1280,
+        "originX": 128,
+        "originY": 240,
+        "displayWidth": 252,
+        "variantIndex": 0,
+        "effectId": "rpg-medical-019-r1",
+        "anchor": "caster",
+        "introDemoAnchor": "caster",
+        "placementType": "status_body_aura",
+        "scalePercent": 190,
+        "offsetX": 0,
+        "offsetY": 0,
+        "playback": "once"
+      },
+      "effectStartMs": 1200,
+      "effectDurationMs": 1280,
+      "castDurationMs": 2400,
+      "skills": [
+        {
+          "id": "lk-clinic-019",
+          "growthNodeId": "medical-019",
+          "name": "한약",
+          "description": "한약 상담과 처방에 관한 안내입니다.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/019.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/019/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-019-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "caster",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 1200,
+          "effectDurationMs": 1280,
+          "castDurationMs": 2400,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        },
+        {
+          "id": "lk-clinic-012",
+          "growthNodeId": "medical-012",
+          "name": "초음파",
+          "description": "초음파 관련 진료 항목을 소개합니다. 이용 가능 여부는 확인이 필요합니다.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/012.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/012/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-012-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "target",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 1200,
+          "effectDurationMs": 1280,
+          "castDurationMs": 2400,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        }
+      ],
+      "defaultSkillIndex": 0,
+      "links": [],
+      "videoSrc": "",
+      "videoPoster": "/assets/art/herb-garden.webp"
+    },
+    {
+      "id": "earth",
+      "name": "물리·테이핑",
+      "symbol": "整",
+      "accent": "#ad8953",
+      "description": "물리치료와 테이핑 관련 항목을 소개합니다.",
+      "icon": "/assets/rpg/skills/icons/lk-clinic/001.png",
+      "skillName": "물리치료",
+      "skillDescription": "물리치료 관련 항목을 소개합니다. 이용 가능 여부는 확인이 필요합니다.",
+      "skillId": "lk-clinic-001",
+      "growthNodeId": "medical-001",
+      "castMode": "manual",
+      "sprite": {
+        "src": "/assets/intro-sprites/c1f4c4dc39bb3d18d5547212-256-r1.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 9,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 40,
+        "displayWidth": 180,
+        "durationMs": 360,
+        "direction": "ne",
+        "originX": 128,
+        "originY": 239,
+        "motion": "cast",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "effect": {
+        "src": "/assets/rpg/skills/effects/medical-generated/r1/001/variants-transparent/00.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 16,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 80,
+        "durationMs": 1280,
+        "originX": 128,
+        "originY": 240,
+        "displayWidth": 252,
+        "variantIndex": 0,
+        "effectId": "rpg-medical-001-r1",
+        "anchor": "caster",
+        "introDemoAnchor": "caster",
+        "placementType": "status_body_aura",
+        "scalePercent": 190,
+        "offsetX": 0,
+        "offsetY": 0,
+        "playback": "once"
+      },
+      "effectStartMs": 0,
+      "effectDurationMs": 1280,
+      "castDurationMs": 360,
+      "skills": [
+        {
+          "id": "lk-clinic-001",
+          "growthNodeId": "medical-001",
+          "name": "물리치료",
+          "description": "물리치료 관련 항목을 소개합니다. 이용 가능 여부는 확인이 필요합니다.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/001.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/001/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-001-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "caster",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 0,
+          "effectDurationMs": 1280,
+          "castDurationMs": 360,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        },
+        {
+          "id": "lk-clinic-013",
+          "growthNodeId": "medical-013",
+          "name": "테이핑",
+          "description": "테이핑 관련 진료 항목을 소개합니다. 적용 여부는 상담을 통해 확인해 주세요.",
+          "icon": "/assets/rpg/skills/icons/lk-clinic/013.png",
+          "effect": {
+            "src": "/assets/rpg/skills/effects/medical-generated/r1/013/variants-transparent/00.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 16,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 80,
+            "durationMs": 1280,
+            "originX": 128,
+            "originY": 240,
+            "displayWidth": 252,
+            "variantIndex": 0,
+            "effectId": "rpg-medical-013-r1",
+            "anchor": "caster",
+            "introDemoAnchor": "caster",
+            "placementType": "status_body_aura",
+            "scalePercent": 190,
+            "offsetX": 0,
+            "offsetY": 0,
+            "playback": "once"
+          },
+          "effectStartMs": 0,
+          "effectDurationMs": 1280,
+          "castDurationMs": 360,
+          "castMode": "manual",
+          "role": "core",
+          "prerequisites": [],
+          "links": []
+        }
+      ],
+      "defaultSkillIndex": 0,
+      "links": [],
+      "videoSrc": "",
+      "videoPoster": "/assets/art/herb-garden.webp"
     }
   ],
-  "notices": [
-    { "title": "방문 안내를 준비하고 있습니다.", "label": "안내 예시" },
-    { "title": "진료 정보는 확인 후 제공될 예정입니다.", "label": "소식 예시" }
-  ],
-  "faq": [
+  "gallery": [
     {
-      "question": "이 페이지에서 예약할 수 있나요?",
-      "answer": "현재는 디자인 시안으로, 온라인 예약 기능은 준비 중입니다."
+      "id": "media-01",
+      "name": "수안의 첫인사",
+      "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "GALLERY",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "수안의 첫인사을 표현한 시안 일러스트",
+      "gameplayCapture": false,
+      "title": "수안의 첫인사",
+      "eyebrow": "SUAN GALLERY",
+      "type": "image"
     },
     {
-      "question": "보이는 예약 현황은 실제 정보인가요?",
-      "answer": "아닙니다. 현황판의 이름·시간·상태는 화면 구성을 위한 가상 예시입니다."
+      "id": "media-02",
+      "name": "봄의 정원",
+      "description": "계절의 흐름을 담은 동양적 풍경입니다.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "GALLERY",
+      "actionId": "play",
+      "title": "봄의 정원",
+      "eyebrow": "SUAN GALLERY",
+      "href": "/play",
+      "label": "진료 안내",
+      "type": "image",
+      "alt": "봄의 정원을 표현한 시안 일러스트",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
     },
     {
-      "question": "후기와 공간 사진은 실제 사례인가요?",
-      "answer": "후기는 가상 예시이며, 공간 이미지는 한의학의 분위기를 표현한 원화입니다."
+      "id": "media-03",
+      "name": "여름의 풍경",
+      "description": "푸른 자연을 담은 시안 일러스트입니다.",
+      "image": "/assets/art/herb-garden.webp",
+      "tag": "GALLERY",
+      "title": "여름의 풍경",
+      "eyebrow": "SUAN GALLERY",
+      "type": "image",
+      "alt": "여름의 풍경을 표현한 시안 일러스트",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "media-04",
+      "name": "가을의 풍경",
+      "description": "차분한 사색을 위한 시안 일러스트입니다.",
+      "image": "/assets/art/medical-apothecary.webp",
+      "tag": "GALLERY",
+      "title": "가을의 풍경",
+      "eyebrow": "SUAN GALLERY",
+      "type": "image",
+      "alt": "가을의 풍경을 표현한 시안 일러스트",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "media-05",
+      "name": "겨울의 풍경",
+      "description": "고요한 풍경을 담은 시안 일러스트입니다.",
+      "image": "/assets/art/hero-day.webp",
+      "tag": "GALLERY",
+      "title": "겨울의 풍경",
+      "eyebrow": "SUAN GALLERY",
+      "type": "image",
+      "alt": "겨울의 풍경을 표현한 시안 일러스트",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
+    },
+    {
+      "id": "media-06",
+      "name": "수안의 첫인사",
+      "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "GALLERY",
+      "actionId": "clinic",
+      "title": "수안의 첫인사",
+      "eyebrow": "SUAN GALLERY",
+      "href": "/rpg/clinic",
+      "label": "진료 안내",
+      "type": "image",
+      "alt": "수안의 첫인사을 표현한 시안 일러스트",
+      "caption": "공간 분위기를 표현한 시안 이미지",
+      "gameplayCapture": false
     }
-  ]
+  ],
+  "guide": {
+    "protagonist": {
+      "image": "/assets/clinicians/jo-jaeseong.png",
+      "alt": "조재성 원장 사진"
+    },
+    "stories": [
+      {
+        "id": "first-adventure",
+        "name": "처음 방문하신다면",
+        "description": "상담과 진료 안내를 차분히 살펴보세요.",
+        "image": "/assets/art/clinic-morning-gate.webp",
+        "tag": "VISIT GUIDE",
+        "actionId": "play",
+        "title": "처음 방문하신다면",
+        "eyebrow": "VISIT GUIDE",
+        "href": "/play",
+        "label": "예약 문의"
+      },
+      {
+        "id": "healing-life",
+        "name": "수안의 진료 이야기",
+        "description": "일상과 건강을 위한 진료 항목을 소개합니다.",
+        "image": "/assets/art/healing-courtyard.webp",
+        "tag": "VISIT GUIDE",
+        "actionId": "clinic",
+        "title": "수안의 진료 이야기",
+        "eyebrow": "VISIT GUIDE",
+        "href": "/rpg/clinic",
+        "label": "예약 문의"
+      }
+    ]
+  },
+  "sequence": [
+    {
+      "id": "healing-start",
+      "name": "마음을 살피는 시간",
+      "description": "한 사람의 이야기를 듣는 진료.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "01",
+      "title": "마음을 살피는 시간",
+      "eyebrow": "01",
+      "sprite": {
+        "src": "/assets/intro-sprites/a7100b6de3106967af9751bb-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "spriteRef": "actor:medical-male"
+    },
+    {
+      "id": "battle",
+      "name": "함께하는 진료",
+      "description": "두 의료진이 함께 만드는 이야기.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "02",
+      "title": "함께하는 진료",
+      "eyebrow": "02",
+      "sprite": {
+        "src": "/assets/intro-sprites/b706c75b732e58b86154bedf-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "spriteRef": "actor:medical-female"
+    },
+    {
+      "id": "together",
+      "name": "계절의 풍경",
+      "description": "한의학의 분위기를 표현한 원화.",
+      "image": "/assets/art/herb-garden.webp",
+      "tag": "03",
+      "title": "계절의 풍경",
+      "eyebrow": "03",
+      "sprite": {
+        "src": "/assets/intro-sprites/a7100b6de3106967af9751bb-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "spriteRef": "actor:medical-male"
+    },
+    {
+      "id": "healing-time",
+      "name": "일상의 균형",
+      "description": "편안한 방문을 위한 안내.",
+      "image": "/assets/art/medical-apothecary.webp",
+      "tag": "04",
+      "title": "일상의 균형",
+      "eyebrow": "04",
+      "sprite": {
+        "src": "/assets/intro-sprites/ec1e0887e2708158682c72a6-256-r1.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 12,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 200,
+        "displayWidth": 230,
+        "durationMs": 2400,
+        "direction": "ne",
+        "originX": 128,
+        "originY": 239,
+        "motion": "medical",
+        "action": "drink_herbal_pouch",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "spriteRef": "medical:medical-019:1"
+    }
+  ],
+  "heroSprites": [
+    {
+      "name": "조재성",
+      "title": "조재성 원장",
+      "eyebrow": "의료진",
+      "tag": "의료진",
+      "description": "몸의 움직임과 일상 속 불편에 귀 기울이는 진료 이야기를 소개합니다.",
+      "image": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "id": "medical-male",
+      "role": "원장 · 한의사",
+      "portrait": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "displayMode": "sprite",
+      "spriteImage": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/300/idle/normal/s_00.png",
+      "sprite": {
+        "src": "/assets/intro-sprites/a7100b6de3106967af9751bb-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "100",
+        "visualBody": "300",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "encounter": {
+        "idle": {
+          "sprite": {
+            "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/fddd568b5126d02c5a540147-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "identity-idle-walk-20260909-r1-100-idle-throw",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true,
+                "toolId": "throw",
+                "selectedSheet": "sheets/weapon-visibility-20260914-r1/base/12-100-idle-normal-throw.png",
+                "clock": "body",
+                "sourceDurationMs": 900
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        },
+        "hover": {
+          "sprite": {
+            "src": "/assets/intro-sprites/8280b603c90bb36d550360d2-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 9,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 35.55555555555556,
+            "displayWidth": 180,
+            "durationMs": 320,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "sword",
+            "logicalBody": "100",
+            "visualBody": "300",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": false
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/2f7b9800034049bb1a911121-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 9,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 35.55555555555556,
+                "displayWidth": 180,
+                "durationMs": 320,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "attack",
+                "action": "identity-combat-care-20260912-r1-100-throw",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": false,
+                "toolId": "throw",
+                "selectedSheet": "sheets/weapon-visibility-20260914-r1/base/06-100-attack-sword-throw.png",
+                "clock": "body",
+                "sourceDurationMs": 720
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": -3,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -14,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "김석영",
+      "title": "김석영 원장",
+      "eyebrow": "의료진",
+      "tag": "의료진",
+      "description": "저마다 다른 일상의 고민을 함께 살펴보는 진료 이야기를 소개합니다.",
+      "image": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "id": "medical-female",
+      "role": "원장 · 한의사",
+      "portrait": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "displayMode": "sprite",
+      "spriteImage": "/assets/characters/3d-candidates/lk-medical-3d-look-20261018-r3/400/idle/normal/s_00.png",
+      "sprite": {
+        "src": "/assets/intro-sprites/b706c75b732e58b86154bedf-256-r4.png",
+        "frameWidth": 256,
+        "frameHeight": 256,
+        "frames": 3,
+        "rows": 1,
+        "row": 0,
+        "frameMs": 300,
+        "displayWidth": 180,
+        "durationMs": 900,
+        "direction": "s",
+        "originX": 128,
+        "originY": 239,
+        "motion": "idle",
+        "action": "normal",
+        "logicalBody": "200",
+        "visualBody": "400",
+        "appearanceRelease": "lk-medical-3d-look-20261018-r3"
+      },
+      "encounter": {
+        "idle": {
+          "sprite": {
+            "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 3,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 300,
+            "displayWidth": 180,
+            "durationMs": 900,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "idle",
+            "action": "normal",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": true
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/79d46bf08722ea20fa56874e-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "identity-idle-walk-20260909-r1-200-idle-attack-axe",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true,
+                "toolId": "attack-axe",
+                "selectedSheet": "sheets/weapon-direction-20260919-r5/base/200-idle-normal-attack-axe.png",
+                "clock": "body",
+                "sourceDurationMs": 900
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        },
+        "hover": {
+          "sprite": {
+            "src": "/assets/intro-sprites/34f29d70e43ce7948bf29945-256-r4.png",
+            "frameWidth": 256,
+            "frameHeight": 256,
+            "frames": 8,
+            "rows": 1,
+            "row": 0,
+            "frameMs": 40,
+            "displayWidth": 180,
+            "durationMs": 320,
+            "direction": "s",
+            "originX": 128,
+            "originY": 239,
+            "motion": "attack",
+            "action": "attack-axe",
+            "logicalBody": "200",
+            "visualBody": "400",
+            "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+            "loop": false
+          },
+          "tools": [
+            {
+              "sprite": {
+                "src": "/assets/intro-sprites/76b0db7f4c14e9817e7a334b-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 8,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 40,
+                "displayWidth": 180,
+                "durationMs": 320,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "attack",
+                "action": "identity-combat-care-20260912-r1-200-attack-axe",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": false,
+                "toolId": "attack-axe",
+                "selectedSheet": "sheets/weapon-direction-20260919-r5/base/200-attack-attack-axe-attack-axe.png",
+                "clock": "body",
+                "sourceDurationMs": 720
+              },
+              "placements": [
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -14,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": -10,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                },
+                {
+                  "x": 0,
+                  "y": 0,
+                  "rotationDeg": 0,
+                  "layer": "front"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "ambientSrc": "/assets/rpg/sounds/providers/1000y/audio/환경/환경_숲새소리1_10001.wav",
+  "characterScene": {
+    "background": "/assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
+    "width": 1600,
+    "height": 900
+  },
+  "site": {
+    "schemaVersion": 5,
+    "revision": "intro-authored-sections-20261022-r1",
+    "sectionOrder": [
+      "visual",
+      "universe",
+      "character",
+      "features",
+      "gamefeatures",
+      "sect",
+      "skill",
+      "clinic",
+      "guide",
+      "media",
+      "access"
+    ],
+    "metadata": {
+      "title": "수안부부한의원 · 마음을 살피는 진료",
+      "description": "한 사람의 일상에 귀 기울이는 수안부부한의원 홈페이지 시안입니다.",
+      "themeColor": "#141c32",
+      "language": "ko"
+    },
+    "brand": {
+      "name": "수안부부한의원",
+      "subtitle": "당신의 일상에, 편안한 쉼을",
+      "logo": "/assets/rpg/ui/intro/v1/logo-calligraphy-white.webp",
+      "subtitleImage": "/assets/rpg/ui/branding/uimaek-jeongi-action-hybrid-subtitle-white.png",
+      "primary": "수안",
+      "secondary": "부부한의원",
+      "hanja": "守安",
+      "serviceLabel": "KOREAN MEDICINE"
+    },
+    "actions": {
+      "play": {
+        "href": "/play",
+        "label": "예약 문의",
+        "method": "GET",
+        "demoMessage": "준비 중입니다."
+      },
+      "login": {
+        "href": "/play",
+        "label": "예약 문의",
+        "method": "GET",
+        "demoMessage": "준비 중입니다."
+      },
+      "clinic": {
+        "href": "/rpg/clinic",
+        "label": "진료 안내",
+        "method": "GET",
+        "demoMessage": "준비 중입니다."
+      },
+      "staffBoard": {
+        "href": "/rpg/staff-board",
+        "label": "예약 현황",
+        "method": "GET",
+        "demoMessage": "준비 중입니다."
+      },
+      "logout": {
+        "href": "/play/logout",
+        "label": "예약 문의",
+        "method": "POST",
+        "demoMessage": "준비 중입니다."
+      },
+      "admin": {
+        "href": "/rpg/admin",
+        "label": "관리자 안내",
+        "method": "GET",
+        "demoMessage": "준비 중입니다.",
+        "visibility": "operator"
+      }
+    },
+    "navigation": [
+      {
+        "id": "universe",
+        "label": "한의원 소개",
+        "kind": "carousel",
+        "carousel": "universe",
+        "source": "universe",
+        "entries": [
+          {
+            "id": "first-step",
+            "name": "수안의 첫인사"
+          },
+          {
+            "id": "spring",
+            "name": "봄의 정원"
+          },
+          {
+            "id": "summer",
+            "name": "여름의 풍경"
+          },
+          {
+            "id": "autumn",
+            "name": "가을의 풍경"
+          },
+          {
+            "id": "winter",
+            "name": "겨울의 풍경"
+          }
+        ]
+      },
+      {
+        "id": "character",
+        "label": "의료진",
+        "kind": "actors",
+        "entries": [
+          {
+            "name": "의료진 소개",
+            "value": "actors"
+          }
+        ]
+      },
+      {
+        "id": "features",
+        "label": "예시 후기",
+        "kind": "carousel",
+        "carousel": "features",
+        "source": "features",
+        "entries": [
+          {
+            "id": "battle",
+            "name": "김** · 예시 후기"
+          },
+          {
+            "id": "healing",
+            "name": "박** · 예시 후기"
+          },
+          {
+            "id": "equipment",
+            "name": "이** · 예시 후기"
+          },
+          {
+            "id": "together",
+            "name": "최** · 예시 후기"
+          },
+          {
+            "id": "clinic-life",
+            "name": "정** · 예시 후기"
+          }
+        ]
+      },
+      {
+        "id": "gamefeatures",
+        "label": "진료 항목",
+        "kind": "medical",
+        "source": "medical.skills",
+        "entries": [
+          {
+            "name": "침",
+            "id": "lk-clinic-004"
+          },
+          {
+            "name": "약침",
+            "id": "lk-clinic-005"
+          },
+          {
+            "name": "도침",
+            "id": "lk-clinic-006"
+          },
+          {
+            "name": "추나",
+            "id": "lk-clinic-007"
+          },
+          {
+            "name": "초음파",
+            "id": "lk-clinic-012"
+          },
+          {
+            "name": "한약",
+            "id": "lk-clinic-019"
+          },
+          {
+            "name": "물리치료",
+            "id": "lk-clinic-001"
+          },
+          {
+            "name": "테이핑",
+            "id": "lk-clinic-013"
+          }
+        ]
+      },
+      {
+        "id": "sect",
+        "label": "진료 과정",
+        "kind": "carousel",
+        "carousel": "guild",
+        "source": "guild",
+        "entries": [
+          {
+            "id": "party",
+            "name": "상담과 확인"
+          },
+          {
+            "id": "guild",
+            "name": "진료 안내"
+          },
+          {
+            "id": "siege",
+            "name": "방문 안내"
+          }
+        ]
+      },
+      {
+        "id": "skill",
+        "label": "치료 안내",
+        "kind": "elements",
+        "source": "elements",
+        "entries": [
+          {
+            "id": "fire",
+            "name": "침·약침"
+          },
+          {
+            "id": "water",
+            "name": "추나·도침"
+          },
+          {
+            "id": "wind",
+            "name": "한약·초음파"
+          },
+          {
+            "id": "earth",
+            "name": "물리·테이핑"
+          }
+        ]
+      },
+      {
+        "id": "clinic",
+        "label": "예약 현황",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "예약 현황",
+            "target": "clinic",
+            "href": "#clinic"
+          },
+          {
+            "name": "예약 문의",
+            "actionId": "clinic",
+            "href": "/rpg/clinic",
+            "label": "예약 문의"
+          }
+        ]
+      },
+      {
+        "id": "guide",
+        "label": "이용 안내",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "이용 안내",
+            "target": "guide",
+            "href": "#guide"
+          },
+          {
+            "name": "예약 문의",
+            "actionId": "play",
+            "href": "/play",
+            "label": "예약 문의"
+          }
+        ]
+      },
+      {
+        "id": "media",
+        "label": "수안의 풍경",
+        "kind": "carousel",
+        "carousel": "media",
+        "source": "gallery",
+        "entries": [
+          {
+            "id": "media-01",
+            "name": "수안의 첫인사"
+          },
+          {
+            "id": "media-02",
+            "name": "봄의 정원"
+          },
+          {
+            "id": "media-03",
+            "name": "여름의 풍경"
+          },
+          {
+            "id": "media-04",
+            "name": "가을의 풍경"
+          },
+          {
+            "id": "media-05",
+            "name": "겨울의 풍경"
+          },
+          {
+            "id": "media-06",
+            "name": "수안의 첫인사"
+          }
+        ]
+      }
+    ],
+    "serviceBar": {
+      "tagline": "한 사람의 일상에 귀 기울이는 진료",
+      "loginLabel": "예약 문의",
+      "loggedInLabel": "예약 문의"
+    },
+    "footer": {
+      "description": "한 사람의 일상에 귀 기울이는 진료 · 예시 화면",
+      "copyright": "© SUAN KOREAN MEDICINE · DEMO",
+      "actionIds": [
+        "play",
+        "clinic",
+        "staffBoard"
+      ]
+    },
+    "theme": {
+      "default": "night",
+      "toDayLabel": "낮 풍경으로 변경",
+      "toNightLabel": "밤 풍경으로 변경"
+    },
+    "audio": {
+      "ambientSrc": "/assets/rpg/sounds/providers/1000y/audio/환경/환경_숲새소리1_10001.wav"
+    },
+    "copy": {
+      "drawerLead": "당신의 일상에 편안한 쉼을",
+      "drawerStart": "예약 문의",
+      "navOverview": "전체 소개",
+      "backToTop": "맨 위로",
+      "demoNotice": "준비 중입니다."
+    }
+  },
+  "sections": {
+    "access": {
+      "schemaVersion": 5,
+      "id": "access",
+      "heading": {
+        "number": "",
+        "eyebrow": "A NEW CHAPTER AWAITS",
+        "title": "새로운 인연이\n당신을 기다립니다",
+        "description": "예약과 방문 안내는 준비 중입니다."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+      "assets": {},
+      "copy": {},
+      "actions": [
+        {
+          "actionId": "play",
+          "label": "예약 문의",
+          "href": "/play"
+        }
+      ]
+    },
+    "character": {
+      "schemaVersion": 5,
+      "id": "character",
+      "heading": {
+        "number": "02",
+        "eyebrow": "OUR DOCTORS",
+        "title": "마음을 살피는 의료진",
+        "description": "두 의료진이 함께 당신의 이야기에 귀 기울입니다."
+      },
+      "background": "/assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
+      "assets": {},
+      "copy": {
+        "villageLabel": "수안의 의료진",
+        "monsterLabel": "진료 이야기",
+        "villageCaption": "한 사람을 향한 두 마음",
+        "villageEyebrow": "MEET OUR DOCTORS",
+        "exploreLabel": "두 의료진을 선택해 이야기를 살펴보세요.",
+        "portraitHint": "의료진을 선택하면 소개를 볼 수 있어요."
+      },
+      "actions": [],
+      "actorCopy": {
+        "medical-male": {
+          "description": "몸의 움직임과 일상 속 불편에 귀 기울이는 진료 이야기를 소개합니다.",
+          "role": "원장 · 한의사",
+          "name": "조재성",
+          "image": "/assets/clinicians/jo-jaeseong.png",
+          "portrait": "/assets/clinicians/jo-jaeseong.png"
+        },
+        "medical-female": {
+          "description": "저마다 다른 일상의 고민을 함께 살펴보는 진료 이야기를 소개합니다.",
+          "role": "원장 · 한의사",
+          "name": "김석영",
+          "image": "/assets/clinicians/kim-seokyoung.png",
+          "portrait": "/assets/clinicians/kim-seokyoung.png"
+        }
+      }
+    },
+    "clinic": {
+      "schemaVersion": 5,
+      "id": "clinic",
+      "heading": {
+        "number": "07",
+        "eyebrow": "TIME TO HEAL",
+        "title": "치유의 시간을 한눈에",
+        "description": "금일 예약 현황은 실제 예약이 아닌 가상 예시입니다."
+      },
+      "background": "/assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
+      "assets": {
+        "capture": "/assets/art/medical-apothecary.webp"
+      },
+      "copy": {
+        "captureAlt": "진료의 분위기를 표현한 시안 일러스트",
+        "captureAriaLabel": "진료 안내 이미지 크게 보기",
+        "caption": "한 사람의 일상을 위한 시간",
+        "captionDetail": "진료 안내 시안",
+        "note": "예약 현황은 실제 정보가 아닌 가상 예시입니다.",
+        "expandNote": "이미지를 누르면 크게 볼 수 있어요.",
+        "zoomLabel": "크게 보기 ↗"
+      },
+      "actions": [
+        {
+          "actionId": "clinic",
+          "href": "/rpg/clinic",
+          "label": "예약 문의"
+        },
+        {
+          "actionId": "staffBoard",
+          "href": "/rpg/staff-board",
+          "label": "예약 현황 안내"
+        }
+      ]
+    },
+    "features": {
+      "schemaVersion": 5,
+      "id": "features",
+      "heading": {
+        "number": "03",
+        "eyebrow": "VOICES OF SUAN",
+        "title": "우리의 진료 이야기",
+        "description": "이곳에 소개된 후기는 화면 구성을 위한 가상 예시입니다."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+      "assets": {},
+      "copy": {},
+      "actions": [],
+      "items": [
+        {
+          "id": "battle",
+          "name": "김** · 예시 후기",
+          "description": "상담 내용을 차분하게 설명해 주어 편안한 마음으로 이야기할 수 있었어요.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+          "actionId": "play",
+          "title": "김** · 예시 후기",
+          "eyebrow": "SAMPLE REVIEW",
+          "href": "/play",
+          "label": "예시 후기"
+        },
+        {
+          "id": "healing",
+          "name": "박** · 예시 후기",
+          "description": "궁금했던 부분을 하나씩 물어볼 수 있어 좋았습니다.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+          "actionId": "play",
+          "title": "박** · 예시 후기",
+          "eyebrow": "SAMPLE REVIEW",
+          "href": "/play",
+          "label": "예시 후기"
+        },
+        {
+          "id": "equipment",
+          "name": "이** · 예시 후기",
+          "description": "처음 방문할 때 필요한 안내를 이해하기 쉽게 들을 수 있었어요.",
+          "image": "/assets/art/herb-garden.webp",
+          "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+          "actionId": "play",
+          "title": "이** · 예시 후기",
+          "eyebrow": "SAMPLE REVIEW",
+          "href": "/play",
+          "label": "예시 후기"
+        },
+        {
+          "id": "together",
+          "name": "최** · 예시 후기",
+          "description": "제 이야기를 천천히 나눌 수 있는 시간이 인상적이었습니다.",
+          "image": "/assets/art/medical-apothecary.webp",
+          "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+          "actionId": "play",
+          "title": "최** · 예시 후기",
+          "eyebrow": "SAMPLE REVIEW",
+          "href": "/play",
+          "label": "예시 후기"
+        },
+        {
+          "id": "clinic-life",
+          "name": "정** · 예시 후기",
+          "description": "편안한 분위기에서 상담을 받을 수 있었습니다.",
+          "image": "/assets/art/hero-day.webp",
+          "tag": "가상 후기 · 실제 이용 후기가 아닙니다",
+          "actionId": "clinic",
+          "title": "정** · 예시 후기",
+          "eyebrow": "SAMPLE REVIEW",
+          "href": "/rpg/clinic",
+          "label": "예시 후기"
+        }
+      ]
+    },
+    "gamefeatures": {
+      "schemaVersion": 5,
+      "id": "gamefeatures",
+      "heading": {
+        "number": "04",
+        "eyebrow": "THE ART OF HEALING",
+        "title": "치유의 손끝, 빛나는 의술",
+        "description": "진료 항목을 RPG 캐릭터의 모션으로 소개합니다. 실제 시술 화면은 아닙니다."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
+      "assets": {},
+      "copy": {
+        "targetName": "시연 소품",
+        "targetDescription": "게임 속 진료 모션을 표현하는 시안 소품",
+        "demonstrationLabel": "RPG 캐릭터로 표현한 진료 항목 예시",
+        "selfModeLabel": "RPG 캐릭터의 시안 연출",
+        "targetModeLabel": "RPG 캐릭터의 시안 연출"
+      },
+      "actions": []
+    },
+    "guide": {
+      "schemaVersion": 5,
+      "id": "guide",
+      "heading": {
+        "number": "08",
+        "eyebrow": "FIRST CHAPTER",
+        "title": "첫걸음도, 함께",
+        "description": "편안한 방문을 위한 작은 안내입니다."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+      "assets": {
+        "protagonist": "/assets/clinicians/jo-jaeseong.png"
+      },
+      "copy": {
+        "protagonistAlt": "조재성 원장 사진",
+        "eyebrow": "편안한 방문을 위한 작은 안내",
+        "title": "오늘, 우리의\n첫 인사를 나눠볼까요?",
+        "description": "진료 안내와 예약 문의를\n차근차근 살펴보세요.",
+        "startLabel": "예약 문의",
+        "storyAriaLabel": "수안 이용 안내"
+      },
+      "actions": [
+        {
+          "actionId": "play",
+          "label": "예약 문의",
+          "href": "/play"
+        }
+      ],
+      "stories": [
+        {
+          "id": "first-adventure",
+          "name": "처음 방문하신다면",
+          "description": "상담과 진료 안내를 차분히 살펴보세요.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "tag": "VISIT GUIDE",
+          "actionId": "play",
+          "title": "처음 방문하신다면",
+          "eyebrow": "VISIT GUIDE",
+          "href": "/play",
+          "label": "예약 문의"
+        },
+        {
+          "id": "healing-life",
+          "name": "수안의 진료 이야기",
+          "description": "일상과 건강을 위한 진료 항목을 소개합니다.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "tag": "VISIT GUIDE",
+          "actionId": "clinic",
+          "title": "수안의 진료 이야기",
+          "eyebrow": "VISIT GUIDE",
+          "href": "/rpg/clinic",
+          "label": "예약 문의"
+        }
+      ]
+    },
+    "media": {
+      "schemaVersion": 5,
+      "id": "media",
+      "heading": {
+        "number": "09",
+        "eyebrow": "OUR MOMENTS",
+        "title": "수안의 풍경",
+        "description": "공간의 분위기를 표현한 시안 일러스트입니다."
+      },
+      "background": "",
+      "assets": {},
+      "copy": {
+        "captionEyebrow": "MOMENTS OF SUAN",
+        "downloadLabel": "선택한 미디어 내려받기",
+        "expandLabel": "선택한 미디어 크게 보기"
+      },
+      "actions": [],
+      "items": [
+        {
+          "id": "media-01",
+          "contentRef": "universe:first-step",
+          "tag": "GALLERY",
+          "type": "image"
+        },
+        {
+          "id": "media-02",
+          "contentRef": "features:battle",
+          "tag": "GALLERY",
+          "type": "image"
+        },
+        {
+          "id": "media-03",
+          "contentRef": "universe:spring",
+          "tag": "GALLERY",
+          "type": "image"
+        },
+        {
+          "id": "media-04",
+          "contentRef": "universe:summer",
+          "tag": "GALLERY",
+          "type": "image"
+        },
+        {
+          "id": "media-05",
+          "contentRef": "universe:winter",
+          "tag": "GALLERY",
+          "type": "image"
+        },
+        {
+          "id": "media-06",
+          "contentRef": "features:clinic-life",
+          "tag": "GALLERY",
+          "type": "image"
+        }
+      ]
+    },
+    "sect": {
+      "schemaVersion": 5,
+      "id": "sect",
+      "heading": {
+        "number": "05",
+        "eyebrow": "TOGETHER",
+        "title": "처음부터 함께하는 진료",
+        "description": "처음 만나는 순간부터 차분하게 안내합니다."
+      },
+      "background": "/assets/art/healing-courtyard.webp",
+      "assets": {},
+      "copy": {},
+      "actions": [],
+      "items": [
+        {
+          "id": "party",
+          "name": "상담과 확인",
+          "description": "현재의 불편함과 일상의 이야기를 나눕니다.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "tag": "CONSULTATION",
+          "foreground": {
+            "image": "/assets/clinicians/jo-jaeseong.png",
+            "kind": "portrait",
+            "side": "right"
+          },
+          "actionId": "play",
+          "motionActorIds": [
+            "medical-male",
+            "medical-female"
+          ],
+          "title": "상담과 확인",
+          "eyebrow": "CONSULTATION",
+          "href": "/play",
+          "label": "안내 보기",
+          "motionActors": [
+            {
+              "id": "medical-male",
+              "name": "조재성",
+              "sprite": {
+                "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            },
+            {
+              "id": "medical-female",
+              "name": "김석영",
+              "sprite": {
+                "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "guild",
+          "name": "진료 안내",
+          "description": "상담을 바탕으로 진료 항목을 살펴봅니다.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "tag": "CARE",
+          "foreground": {
+            "image": "/assets/clinicians/kim-seokyoung.png",
+            "kind": "portrait",
+            "side": "right"
+          },
+          "actionId": "play",
+          "motionActorIds": [
+            "medical-male",
+            "medical-female"
+          ],
+          "title": "진료 안내",
+          "eyebrow": "CARE",
+          "href": "/play",
+          "label": "안내 보기",
+          "motionActors": [
+            {
+              "id": "medical-male",
+              "name": "조재성",
+              "sprite": {
+                "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            },
+            {
+              "id": "medical-female",
+              "name": "김석영",
+              "sprite": {
+                "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "siege",
+          "name": "방문 안내",
+          "description": "예약과 이용 안내는 확인 후 제공됩니다.",
+          "image": "/assets/art/herb-garden.webp",
+          "tag": "VISIT",
+          "foreground": {
+            "image": "/assets/clinicians/jo-jaeseong.png",
+            "kind": "portrait",
+            "side": "right"
+          },
+          "actionId": "play",
+          "motionActorIds": [
+            "medical-male",
+            "medical-female"
+          ],
+          "title": "방문 안내",
+          "eyebrow": "VISIT",
+          "href": "/play",
+          "label": "안내 보기",
+          "motionActors": [
+            {
+              "id": "medical-male",
+              "name": "조재성",
+              "sprite": {
+                "src": "/assets/intro-sprites/c8a0a4468e14755cbd5e08ab-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "100",
+                "visualBody": "300",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            },
+            {
+              "id": "medical-female",
+              "name": "김석영",
+              "sprite": {
+                "src": "/assets/intro-sprites/60c3e1ee747410741e191e91-256-r4.png",
+                "frameWidth": 256,
+                "frameHeight": 256,
+                "frames": 3,
+                "rows": 1,
+                "row": 0,
+                "frameMs": 300,
+                "displayWidth": 180,
+                "durationMs": 900,
+                "direction": "s",
+                "originX": 128,
+                "originY": 239,
+                "motion": "idle",
+                "action": "normal",
+                "logicalBody": "200",
+                "visualBody": "400",
+                "appearanceRelease": "lk-medical-3d-look-20261018-r3",
+                "loop": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "skill": {
+      "schemaVersion": 5,
+      "id": "skill",
+      "heading": {
+        "number": "06",
+        "eyebrow": "OUR CLINICS",
+        "title": "몸과 마음을 살피는 진료",
+        "description": "진료 항목을 네 가지 주제로 살펴보세요."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+      "assets": {
+        "videoPoster": "/assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+        "videos": {}
+      },
+      "copy": {
+        "detailEyebrow": "진료 항목 안내",
+        "filmEyebrow": "게임 속 모션",
+        "filmTitleSuffix": "RPG 연출",
+        "filmWatch": "모션 보기",
+        "filmStamp": "RPG MOTION",
+        "prologueLabel": "프롤로그 감상",
+        "startLabel": "예약 문의",
+        "manualCastMode": "항목의 실제 제공 여부는 상담 시 확인해 주세요.",
+        "autoCastMode": "항목의 실제 제공 여부는 상담 시 확인해 주세요.",
+        "passiveCastMode": "항목의 실제 제공 여부는 상담 시 확인해 주세요."
+      },
+      "actions": [
+        {
+          "actionId": "play",
+          "label": "예약 문의",
+          "href": "/play"
+        }
+      ]
+    },
+    "universe": {
+      "schemaVersion": 5,
+      "id": "universe",
+      "heading": {
+        "number": "01",
+        "eyebrow": "THE WORLD",
+        "title": "수안의 이야기",
+        "description": "한 사람의 일상에 귀 기울이는 두 마음의 진료."
+      },
+      "background": "/assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+      "assets": {},
+      "copy": {},
+      "actions": [],
+      "items": [
+        {
+          "id": "first-step",
+          "name": "수안의 첫인사",
+          "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "tag": "WELCOME",
+          "caption": "분위기를 표현한 시안 이미지",
+          "alt": "수안의 첫인사을 표현한 시안 일러스트",
+          "gameplayCapture": false,
+          "title": "수안의 첫인사",
+          "eyebrow": "WELCOME"
+        },
+        {
+          "id": "spring",
+          "name": "봄의 정원",
+          "description": "계절의 흐름을 담은 동양적 풍경입니다.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "tag": "SPRING",
+          "title": "봄의 정원",
+          "eyebrow": "SPRING",
+          "alt": "봄의 정원을 표현한 시안 일러스트",
+          "caption": "분위기를 표현한 시안 이미지",
+          "gameplayCapture": false
+        },
+        {
+          "id": "summer",
+          "name": "여름의 풍경",
+          "description": "푸른 자연을 담은 시안 일러스트입니다.",
+          "image": "/assets/art/herb-garden.webp",
+          "tag": "SUMMER",
+          "title": "여름의 풍경",
+          "eyebrow": "SUMMER",
+          "alt": "여름의 풍경을 표현한 시안 일러스트",
+          "caption": "분위기를 표현한 시안 이미지",
+          "gameplayCapture": false
+        },
+        {
+          "id": "autumn",
+          "name": "가을의 풍경",
+          "description": "차분한 사색을 위한 시안 일러스트입니다.",
+          "image": "/assets/art/medical-apothecary.webp",
+          "tag": "AUTUMN",
+          "title": "가을의 풍경",
+          "eyebrow": "AUTUMN",
+          "alt": "가을의 풍경을 표현한 시안 일러스트",
+          "caption": "분위기를 표현한 시안 이미지",
+          "gameplayCapture": false
+        },
+        {
+          "id": "winter",
+          "name": "겨울의 풍경",
+          "description": "고요한 풍경을 담은 시안 일러스트입니다.",
+          "image": "/assets/art/hero-day.webp",
+          "tag": "WINTER",
+          "title": "겨울의 풍경",
+          "eyebrow": "WINTER",
+          "alt": "겨울의 풍경을 표현한 시안 일러스트",
+          "caption": "분위기를 표현한 시안 이미지",
+          "gameplayCapture": false
+        }
+      ]
+    },
+    "visual": {
+      "schemaVersion": 5,
+      "id": "visual",
+      "heading": {
+        "number": "",
+        "eyebrow": "",
+        "title": "수안부부한의원",
+        "description": "당신의 일상에, 편안한 쉼을"
+      },
+      "background": "/assets/rpg/ui/intro/v1/hero-sky-night.webp",
+      "assets": {
+        "healers": "/assets/rpg/ui/intro/v1/hero-healers.webp",
+        "layers": {
+          "day": {
+            "sky": "/assets/rpg/ui/intro/v1/hero-sky-day.webp",
+            "stage": "/assets/rpg/ui/intro/v1/hero-stage-day.webp",
+            "front": "/assets/rpg/ui/intro/v1/hero-front-day.webp"
+          },
+          "night": {
+            "sky": "/assets/rpg/ui/intro/v1/hero-sky-night.webp",
+            "stage": "/assets/rpg/ui/intro/v1/hero-stage-night.webp",
+            "front": "/assets/rpg/ui/intro/v1/hero-front-night.webp"
+          }
+        }
+      },
+      "copy": {
+        "kicker": "한 사람의 일상을 위한 두 마음",
+        "lead": "당신의 이야기를 듣는 시간",
+        "playLabel": "수안의 이야기",
+        "playAriaLabel": "수안의 이야기 감상",
+        "healersAlt": "수안의 이야기를 표현한 시안 일러스트",
+        "startLabel": "예약 문의",
+        "aboutLabel": "수안 알아보기",
+        "storyKicker": "한 사람을 향한 두 마음",
+        "storyTitleBefore": "우리의 마음이",
+        "storyTitleEmphasis": "일상",
+        "storyTitleAfter": "으로 이어지는 곳",
+        "storyLink": "이야기 보기",
+        "scrollLabel": "SCROLL DOWN"
+      },
+      "actions": [
+        {
+          "actionId": "play",
+          "label": "예약 문의",
+          "href": "/play"
+        },
+        {
+          "target": "universe",
+          "label": "수안 알아보기",
+          "href": "#universe"
+        }
+      ],
+      "sequence": [
+        {
+          "id": "healing-start",
+          "name": "마음을 살피는 시간",
+          "description": "한 사람의 이야기를 듣는 진료.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "tag": "01",
+          "title": "마음을 살피는 시간",
+          "eyebrow": "01",
+          "spriteRef": "actor:medical-male"
+        },
+        {
+          "id": "battle",
+          "name": "함께하는 진료",
+          "description": "두 의료진이 함께 만드는 이야기.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "tag": "02",
+          "title": "함께하는 진료",
+          "eyebrow": "02",
+          "spriteRef": "actor:medical-female"
+        },
+        {
+          "id": "together",
+          "name": "계절의 풍경",
+          "description": "한의학의 분위기를 표현한 원화.",
+          "image": "/assets/art/herb-garden.webp",
+          "tag": "03",
+          "title": "계절의 풍경",
+          "eyebrow": "03",
+          "spriteRef": "actor:medical-male"
+        },
+        {
+          "id": "healing-time",
+          "name": "일상의 균형",
+          "description": "편안한 방문을 위한 안내.",
+          "image": "/assets/art/medical-apothecary.webp",
+          "tag": "04",
+          "title": "일상의 균형",
+          "eyebrow": "04",
+          "spriteRef": "medical:medical-019:1"
+        }
+      ],
+      "heroCopy": {}
+    }
+  },
+  "deployment": {
+    "mode": "demo",
+    "basePath": "/"
+  },
+  "assetBase": "/assets/",
+  "clinicDemo": {
+    "appointments": [
+      {
+        "id": "appointment-example-01",
+        "alias": "김**",
+        "time": "09:30",
+        "status": "완료"
+      },
+      {
+        "id": "appointment-example-02",
+        "alias": "이**",
+        "time": "10:00",
+        "status": "완료"
+      },
+      {
+        "id": "appointment-example-03",
+        "alias": "박**",
+        "time": "10:30",
+        "status": "진료 중"
+      },
+      {
+        "id": "appointment-example-04",
+        "alias": "최**",
+        "time": "11:00",
+        "status": "대기"
+      },
+      {
+        "id": "appointment-example-05",
+        "alias": "정**",
+        "time": "11:30",
+        "status": "대기"
+      },
+      {
+        "id": "appointment-example-06",
+        "alias": "한**",
+        "time": "14:00",
+        "status": "대기"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "review-example-01",
+        "alias": "김**",
+        "daysAgo": 0,
+        "content": "상담 내용을 차분하게 설명해 주어 편안한 마음으로 이야기할 수 있었어요."
+      },
+      {
+        "id": "review-example-02",
+        "alias": "박**",
+        "daysAgo": 1,
+        "content": "궁금했던 부분을 하나씩 물어볼 수 있어 좋았습니다."
+      },
+      {
+        "id": "review-example-03",
+        "alias": "이**",
+        "daysAgo": 2,
+        "content": "처음 방문할 때 필요한 안내를 이해하기 쉽게 들을 수 있었어요."
+      },
+      {
+        "id": "review-example-04",
+        "alias": "최**",
+        "daysAgo": 4,
+        "content": "제 이야기를 천천히 나눌 수 있는 시간이 인상적이었습니다."
+      },
+      {
+        "id": "review-example-05",
+        "alias": "정**",
+        "daysAgo": 6,
+        "content": "편안한 분위기에서 상담을 받을 수 있었습니다."
+      }
+    ],
+    "sampleNotice": "예약과 후기는 실제 정보가 아닌 시안 예시입니다.",
+    "notices": [
+      {
+        "title": "방문 안내를 준비하고 있습니다.",
+        "label": "안내 예시"
+      },
+      {
+        "title": "진료 정보는 확인 후 제공될 예정입니다.",
+        "label": "소식 예시"
+      }
+    ],
+    "faq": [
+      {
+        "question": "이 페이지에서 예약할 수 있나요?",
+        "answer": "현재는 디자인 시안으로, 온라인 예약 기능은 준비 중입니다."
+      },
+      {
+        "question": "보이는 예약 현황은 실제 정보인가요?",
+        "answer": "아닙니다. 현황판의 이름·시간·상태는 화면 구성을 위한 가상 예시입니다."
+      },
+      {
+        "question": "후기와 공간 사진은 실제 사례인가요?",
+        "answer": "후기는 가상 예시이며, 공간 이미지는 한의학의 분위기를 표현한 원화입니다."
+      }
+    ],
+    "appointmentNotice": "금일 예약은 실제 정보가 아닌 가상의 예시입니다.",
+    "reviewNotice": "후기는 실제 이용 후기가 아닌 가상의 예시입니다."
+  }
 }

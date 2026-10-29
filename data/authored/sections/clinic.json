@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 5,
+  "id": "clinic",
+  "heading": {
+    "number": "07",
+    "eyebrow": "TIME TO HEAL",
+    "title": "치유의 시간을 한눈에",
+    "description": "모험을 즐기는 순간에도, 우리의 진료는 이어집니다."
+  },
+  "background": "/assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
+  "assets": {
+    "capture": "/assets/rpg/ui/intro/v1/clinic-captures/play-v2/play-clinic-300-front.webp"
+  },
+  "copy": {
+    "captureAlt": "남성 의료진이 정면을 바라보는 실제 의맥전기 플레이와 왼쪽 위에 연동된 진행 중·일시정지·대기 베드의 진료 타이머",
+    "captureAriaLabel": "플레이와 연결된 진료 타이머 화면 크게 보기",
+    "caption": "모험과 함께 흐르는 진료의 시간",
+    "captionDetail": "실제 PLAY · 좌상단 진료 연동",
+    "note": "진료실과 연동된 실제 플레이 화면 · 예시 데이터 촬영",
+    "expandNote": "이미지를 누르면 크게 볼 수 있어요.",
+    "zoomLabel": "크게 보기 ↗"
+  },
+  "actions": [
+    {
+      "actionId": "clinic"
+    },
+    {
+      "actionId": "staffBoard"
+    }
+  ]
+}

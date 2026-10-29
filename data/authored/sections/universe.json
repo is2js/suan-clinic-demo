@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 5,
+  "id": "universe",
+  "heading": {
+    "number": "01",
+    "eyebrow": "THE WORLD",
+    "title": "인연이 흐르는 세계",
+    "description": "낯선 풍경 너머, 당신을 기다리는 이야기가 있습니다."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+  "assets": {},
+  "copy": {},
+  "actions": [],
+  "items": [
+    {
+      "id": "first-step",
+      "name": "함께 떠나는 첫걸음",
+      "description": "진료를 마친 두 의료진, 낯선 마을에서 다음 모험을 약속합니다.",
+      "image": "/assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400.webp",
+      "tag": "PLAY",
+      "originalImage": "/assets/rpg/ui/intro/v1/world-captures/v2/play-namhae3-r35f-300-400-source.png",
+      "caption": "실제 새남해3 R35f · 300·400 의료진의 예시 대화",
+      "alt": "새남해3 남해읍에서 300·400 의료진이 두 말풍선으로 대화하는 실제 의맥전기 플레이 화면",
+      "gameplayCapture": true
+    },
+    {
+      "id": "spring",
+      "name": "봄을 걷다",
+      "description": "이동면의 푸른 풍경에서 새로운 길을 발견하세요.",
+      "image": "/assets/rpg/worlds/namhae-renewal-3d-3/design/idong-spring-concept.webp",
+      "tag": "SPRING"
+    },
+    {
+      "id": "summer",
+      "name": "여름의 바다",
+      "description": "미조의 해안과 마을을 지나 다음 모험으로.",
+      "image": "/assets/rpg/worlds/namhae-renewal-3d-3/design/mijo-summer-concept.webp",
+      "tag": "SUMMER"
+    },
+    {
+      "id": "autumn",
+      "name": "가을의 여정",
+      "description": "남면의 풍경 속에서 이어지는 모험의 발걸음.",
+      "image": "/assets/rpg/worlds/namhae-renewal-3d-3/design/nam-autumn-concept.webp",
+      "tag": "AUTUMN"
+    },
+    {
+      "id": "winter",
+      "name": "겨울의 숨결",
+      "description": "설천의 겨울 풍경 너머 새로운 도전을 만나세요.",
+      "image": "/assets/rpg/worlds/namhae-renewal-3d-3/design/seolcheon-winter-concept.webp",
+      "tag": "WINTER"
+    }
+  ]
+}

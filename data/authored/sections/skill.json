@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 5,
+  "id": "skill",
+  "heading": {
+    "number": "06",
+    "eyebrow": "AWAKEN YOUR ELEMENT",
+    "title": "당신만의 원소를 깨우다",
+    "description": "불꽃의 의지, 물결의 지혜, 바람의 자유, 대지의 굳건함."
+  },
+  "background": "/assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+  "assets": {
+    "videoPoster": "/assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+    "videos": {
+      "fire": "/assets/rpg/ui/intro/v6-showcase/element-fire.webm",
+      "water": "/assets/rpg/ui/intro/v6-showcase/element-water.webm",
+      "wind": "/assets/rpg/ui/intro/v6-showcase/element-wind.webm",
+      "earth": "/assets/rpg/ui/intro/v6-showcase/element-earth.webm"
+    }
+  },
+  "copy": {
+    "detailEyebrow": "원소의 비전",
+    "filmEyebrow": "의맥의 움직임",
+    "filmTitleSuffix": "실제 스킬 프레임 시연",
+    "filmWatch": "모션 감상",
+    "filmStamp": "ACTUAL SKILL MOTION",
+    "prologueLabel": "프롤로그 감상",
+    "startLabel": "나만의 원소를 만나보세요",
+    "manualCastMode": "직접 선택해 사용하는 스킬입니다.",
+    "autoCastMode": "자동으로 이어지는 스킬입니다.",
+    "passiveCastMode": "조건에 따라 적용되는 상시 효과입니다."
+  },
+  "actions": [
+    {
+      "actionId": "play",
+      "label": "나만의 원소를 만나보세요"
+    }
+  ]
+}

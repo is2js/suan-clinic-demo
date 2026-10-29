@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 5,
+  "id": "media",
+  "heading": {
+    "number": "09",
+    "eyebrow": "OUR MOMENTS",
+    "title": "이야기가 머무는 순간",
+    "description": ""
+  },
+  "background": "",
+  "assets": {},
+  "copy": {
+    "captionEyebrow": "THE MOMENTS OF UIMAEK",
+    "downloadLabel": "선택한 미디어 내려받기",
+    "expandLabel": "선택한 미디어 크게 보기"
+  },
+  "actions": [],
+  "items": [
+    {
+      "id": "media-01",
+      "contentRef": "universe:first-step",
+      "tag": "GALLERY",
+      "type": "image"
+    },
+    {
+      "id": "media-02",
+      "contentRef": "features:battle",
+      "tag": "GALLERY",
+      "type": "image"
+    },
+    {
+      "id": "media-03",
+      "contentRef": "universe:spring",
+      "tag": "GALLERY",
+      "type": "image"
+    },
+    {
+      "id": "media-04",
+      "contentRef": "universe:summer",
+      "tag": "GALLERY",
+      "type": "image"
+    },
+    {
+      "id": "media-05",
+      "contentRef": "universe:winter",
+      "tag": "GALLERY",
+      "type": "image"
+    },
+    {
+      "id": "media-06",
+      "contentRef": "features:clinic-life",
+      "tag": "GALLERY",
+      "type": "image"
+    }
+  ]
+}

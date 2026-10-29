@@ -1,86 +1,84 @@
-"""Check built HTML, local asset paths and demo-only controls."""
+"""Validate generated static HTML and asset closure, without a game server."""
 from __future__ import annotations
 
 import argparse
 from html.parser import HTMLParser
 import json
 from pathlib import Path
-import posixpath
 import re
 import subprocess
 from urllib.parse import unquote, urlsplit
 
-from build import base_path, checked_file, validate
+from build import base_path, validate
 
 
 class Markup(HTMLParser):
-    def __init__(self, html: str):
-        self.ids, self.urls, self.services = [], [], []
+    def __init__(self, text):
         super().__init__()
-        self.feed(html)
+        self.urls, self.ids, self.services, self.forms = [], [], [], []
+        self.feed(text)
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
-        if attrs.get("id"):
+        if "id" in attrs:
             self.ids.append(attrs["id"])
         if "data-service-action" in attrs:
             self.services.append((tag, attrs))
-        if tag == "form" and attrs.get("action"):
-            raise ValueError("Demo must not submit a booking or patient form")
-        for key in ("src", "href", "poster", "data-src"):
+        if tag == "form":
+            self.forms.append(attrs)
+        for key in ("src", "href", "poster", "data-scene-src", "data-src", "data-clinic-capture"):
             if attrs.get(key):
-                self.urls.append((tag, attrs[key]))
-        for url in re.findall(r"url\(\s*[\"']?([^)'\"]+)", attrs.get("style", "")):
-            self.urls.append((tag, url.strip()))
+                self.urls.append(attrs[key])
+        self.urls.extend(re.findall(r"url\(['\"]?([^)'\"]+)", attrs.get("style", "")))
 
 
-def check_url(output: Path, prefix: str, url: str, *, allow_external: bool = False):
-    parsed = urlsplit(url)
-    if parsed.scheme or parsed.netloc:
-        if allow_external and parsed.scheme in {"http", "https"}:
-            return
-        raise ValueError(f"Unexpected external or service URL: {url}")
-    if not parsed.path:
-        return
-    path = unquote(parsed.path)
-    if path.startswith("/"):
-        if not path.startswith(prefix):
-            raise ValueError(f"URL escaped configured base path: {url}")
-        path = path[len(prefix):]
-    if not path:
-        path = "index.html"
-    checked_file(output, path)
+def existing_exact(root, relative):
+    path = root
+    for part in Path(relative).parts:
+        if part in ("..", ".") or not path.is_dir() or part not in {child.name for child in path.iterdir()}:
+            raise ValueError(f"Missing or incorrectly cased static path: {relative}")
+        path = path / part
+    if not path.is_file():
+        raise ValueError(f"Static URL does not name a file: {relative}")
 
 
-def verify(root: Path, output: Path, prefix: str) -> dict:
-    root, output, prefix = root.resolve(), output.resolve(), base_path(prefix)
-    _, provenance = validate(root)
-    html = (output / "index.html").read_text(encoding="utf-8")
-    markup = Markup(html)
+def verify(root, output, prefix):
+    prefix = base_path(prefix)
+    _, manifest = validate(root)
+    page = (output / "index.html").read_text(encoding="utf-8")
+    markup = Markup(page)
     if len(set(markup.ids)) != len(markup.ids):
-        raise ValueError("Duplicate HTML id")
-    if not markup.services or any(tag != "button" or attrs.get("type") != "button"
-                                  for tag, attrs in markup.services):
-        raise ValueError("All demo service actions must be non-submitting buttons")
-    for tag, url in markup.urls:
+        raise ValueError("Static HTML has duplicate IDs")
+    expected = {"visual", "universe", "character", "features", "gamefeatures", "sect", "skill", "clinic", "guide", "media", "access"}
+    if not expected <= set(markup.ids):
+        raise ValueError("Static HTML lost a section anchor")
+    if len(markup.services) < 10 or any(tag != "button" or attrs.get("type") != "button" for tag, attrs in markup.services):
+        raise ValueError("Demo service actions must all be inert buttons")
+    if markup.forms:
+        raise ValueError("Demo HTML must not contain a submitting form")
+    for url in set(markup.urls):
         if url.startswith("#"):
             if url[1:] not in markup.ids:
-                raise ValueError(f"Missing anchor: {url}")
+                raise ValueError(f"Missing anchor target: {url}")
             continue
-        check_url(output, prefix, url, allow_external=tag == "a")
-    css = (output / "assets/css/site.css").read_text(encoding="utf-8")
-    for url in re.findall(r"url\(\s*[\"']?([^)'\"]+)", css):
-        url = url.strip()
+        parsed = urlsplit(url)
+        if parsed.scheme or parsed.netloc:
+            raise ValueError(f"Unexpected external runtime URL: {url}")
+        if not parsed.path.startswith(prefix):
+            raise ValueError(f"Asset escaped the configured base path: {url}")
+        existing_exact(output, unquote(parsed.path[len(prefix):]))
+    for relative in ("src/rpg/intro.mjs", "src/rpg/intro-motion.mjs"):
+        subprocess.run(["node", "--check", str(output / relative)], check=True, capture_output=True)
+    css = (output / "assets/rpg/css/rpg-intro.css").read_text(encoding="utf-8")
+    for url in re.findall(r"url\(['\"]?([^)'\"]+)", css):
         if url.startswith(("data:", "#")):
             continue
-        if not url.startswith("/"):
-            url = posixpath.normpath(posixpath.join("assets/css", url))
-            if not url.startswith("assets/"):
-                raise ValueError(f"CSS asset escapes assets/: {url}")
-        check_url(output, prefix, url)
-    subprocess.run(["node", "--check", str(output / "src/site.mjs")], check=True, capture_output=True)
-    return {"valid": True, "basePath": prefix, "services": len(markup.services),
-            "urls": len(set(markup.urls)), "imageAssets": len(provenance["assets"])}
+        parsed = urlsplit(url)
+        if not parsed.path.startswith(prefix):
+            raise ValueError(f"CSS URL escaped configured base: {url}")
+        existing_exact(output, unquote(parsed.path[len(prefix):]))
+    return {"valid": True, "basePath": prefix, "services": len(markup.services), "urls": len(set(markup.urls)),
+            "assetFiles": len(manifest["files"]), "assetBytes": manifest["assetBytes"]}
 
 
 def main():
@@ -89,7 +87,7 @@ def main():
     parser.add_argument("--output", type=Path)
     parser.add_argument("--base-path", default="/")
     args = parser.parse_args()
-    print(json.dumps(verify(args.root, args.output or args.root / "dist", args.base_path), ensure_ascii=False))
+    print(json.dumps(verify(args.root.resolve(), (args.output or args.root / "dist").resolve(), args.base_path), ensure_ascii=False))
 
 
 if __name__ == "__main__":

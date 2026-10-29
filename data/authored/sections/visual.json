@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 5,
+  "id": "visual",
+  "heading": {
+    "number": "",
+    "eyebrow": "",
+    "title": "의맥전기",
+    "description": "치유의 손끝에서, 새로운 모험이 시작된다"
+  },
+  "background": "/assets/rpg/ui/intro/v1/hero-sky-night.webp",
+  "assets": {
+    "healers": "/assets/rpg/ui/intro/v1/hero-healers.webp",
+    "layers": {
+      "day": {
+        "sky": "/assets/rpg/ui/intro/v1/hero-sky-day.webp",
+        "stage": "/assets/rpg/ui/intro/v1/hero-stage-day.webp",
+        "front": "/assets/rpg/ui/intro/v1/hero-front-day.webp"
+      },
+      "night": {
+        "sky": "/assets/rpg/ui/intro/v1/hero-sky-night.webp",
+        "stage": "/assets/rpg/ui/intro/v1/hero-stage-night.webp",
+        "front": "/assets/rpg/ui/intro/v1/hero-front-night.webp"
+      }
+    }
+  },
+  "copy": {
+    "kicker": "치유의 인연, 전설의 시작",
+    "lead": "누군가의 손길이, 새로운 세상을 열다",
+    "playLabel": "이야기 감상하기",
+    "playAriaLabel": "의맥전기 이야기 감상",
+    "healersAlt": "의맥전기의 치유사와 모험가들",
+    "startLabel": "지금, 모험을 시작하세요",
+    "aboutLabel": "의맥전기 알아보기",
+    "storyKicker": "같은 세계, 서로 다른 인연.",
+    "storyTitleBefore": "우리의 이야기가",
+    "storyTitleEmphasis": "전설",
+    "storyTitleAfter": "이 되는 곳",
+    "storyLink": "프롤로그 감상",
+    "scrollLabel": "SCROLL DOWN"
+  },
+  "actions": [
+    {
+      "actionId": "play",
+      "label": "지금, 모험을 시작하세요"
+    },
+    {
+      "target": "universe",
+      "label": "의맥전기 알아보기"
+    }
+  ],
+  "sequence": [
+    {
+      "id": "healing-start",
+      "name": "치유에서 시작된 모험",
+      "description": "의맥전기의 세계로 떠나는 첫걸음.",
+      "image": "/assets/rpg/ui/generated-previews/20-full-game-brand-hero-center-20260628.webp",
+      "tag": "01",
+      "spriteRef": "actor:medical-male"
+    },
+    {
+      "id": "battle",
+      "name": "나만의 전투",
+      "description": "의료진과 몬스터가 만나는 모험의 순간.",
+      "image": "/assets/rpg/ui/generated-previews/16-battle-clinic-action-center-20260628.webp",
+      "tag": "02",
+      "spriteRef": "hero:M932"
+    },
+    {
+      "id": "together",
+      "name": "함께 걷는 세계",
+      "description": "사계절의 마을에서 새로운 동료를 만나세요.",
+      "image": "/assets/rpg/worlds/namhae-renewal-3d-3/design/idong-spring-concept.webp",
+      "tag": "03",
+      "spriteRef": "actor:medical-female"
+    },
+    {
+      "id": "healing-time",
+      "name": "다시, 치유의 시간",
+      "description": "진료실과 모험을 잇는 나만의 이야기.",
+      "image": "/assets/rpg/ui/generated-previews/18-clinic-operations-center-20260628.webp",
+      "tag": "04",
+      "spriteRef": "medical:medical-019:1"
+    }
+  ],
+  "heroCopy": {
+    "M932": {
+      "description": "바람이 부는 고원에서 만나는 작은 유목 피그미의 아종 콘셉트."
+    },
+    "M926": {
+      "description": "백색 해안의 돌을 닮은 둥근 수호골렘의 아종 콘셉트."
+    },
+    "M936": {
+      "description": "맑은 바람을 두른 고원 정령의 아종 콘셉트."
+    }
+  }
+}
