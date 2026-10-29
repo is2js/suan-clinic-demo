@@ -49,7 +49,9 @@
 
 `clinicDemo.notices`의 `label`, `title`은 공지 섹션에 표시되며 현재는 가상 예시입니다. `clinicDemo.community`의 `boards`는 각 게시판의 `id`, `title`, `description`, `posts`(각 `title`, `label`, `date`)로 구성합니다. 데이터의 `notice`에 실제 게시글이 아닌 예시임을 계속 표시합니다. 게시판 버튼은 “준비 중입니다.”를 안내하며 실제 읽기·쓰기나 서버 저장은 없습니다.
 
-`clinicDemo.products.items`의 `id`, `name`, `category`, `description`, `image`, `alt`, `actionId`, `actionLabel`을 수정하면 상품 시안에 반영됩니다. 상품 이미지와 제품 정보가 실제 판매 제품이 아닌 시안임을 `clinicDemo.products.notice`와 이미지 대체 텍스트에 표시합니다. 공진단은 사용자 요청에 따른 예시로, 실제 취급 여부와 가격·구성은 확인되지 않았습니다. 효능이나 치료 결과를 추정하여 기재하지 않습니다. 모든 상품 버튼은 주문이나 결제 없이 “준비 중입니다.”를 표시합니다.
+`clinicDemo.products.items`의 `id`, `name`, `category`, `description`, `image`, `alt`, `actionId`, `actionLabel`을 수정하면 상품 슬라이더에 반영됩니다. 상품별 `id`는 `#product-<id>` 직접 연결에 사용됩니다. 기존 항목을 교체할 때는 이미지와 대체 문구도 함께 바꾸고, 상품 수나 ID를 변경할 때는 상단 메뉴 `site.navigation`의 `products` 항목과 연결 주소도 일치시킵니다. 이미지는 가로형 16:9를 권장하며 가장자리는 화면에서 자연스럽게 처리됩니다. 상품 이미지와 제품 정보가 실제 판매 제품이 아닌 시안임을 `clinicDemo.products.notice`와 이미지 대체 텍스트에 표시합니다. 공진단은 사용자 요청에 따른 예시로, 실제 취급 여부와 가격·구성은 확인되지 않았습니다. 효능이나 치료 결과를 추정하여 기재하지 않습니다. 모든 상품 버튼은 주문이나 결제 없이 “준비 중입니다.”를 표시합니다.
+
+상품은 좌우 화살표·이름 선택·드래그·모바일 스와이프로 탐색하며 이름 탭에서 키보드 방향키로 이동할 수 있습니다. 자동 전환은 포인터가 올라가 있거나 초점이 슬라이더 안에 있을 때, 화면 밖·숨김 탭·동작 줄이기 설정에서 멈춥니다. 화면과 데이터의 상품 개수·ID, 선택 버튼과 앞뒤 화살표 연결은 `tools/verify.py`가 검증합니다.
 
 `assets/art/herbal-products-concept.png`, `herbal-jar-concept.png`, `herbal-decoction-concept.png`는 상품 분위기를 표현한 OpenAI 생성 원화로 실제 제품 사진이 아닙니다. 프롬프트와 해시는 `assets/provenance.json`을 참조하세요. 확인된 상품 사진으로 교체할 때는 사용 권한, 정보의 정확성 및 관련 표시를 검토합니다.
 

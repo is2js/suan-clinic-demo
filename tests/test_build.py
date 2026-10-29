@@ -156,6 +156,9 @@ class ClinicIntroChecks(TestCase):
                     self.assertIn(f"product-{item['id']}", markup.ids)
                     self.assertIn(item["name"], original)
                     self.assertIn(item["alt"], original)
+            self.assertEqual(len(markup.product_carousels), 1)
+            self.assertEqual(len(markup.product_slides), len(self.data["clinicDemo"]["products"]["items"]))
+            self.assertEqual(len(markup.product_tabs), len(markup.product_slides))
             self.assertIn(self.data["clinicDemo"]["community"]["notice"], original)
             self.assertIn(self.data["clinicDemo"]["products"]["notice"], original)
             for guide in self.data["clinicDemo"]["visitorGuides"]:
@@ -172,6 +175,13 @@ class ClinicIntroChecks(TestCase):
             # Section navigation must continue to match the declared page order.
             page.write_text(original.replace('id="notice" data-section', 'id="notice-missing" data-section', 1), encoding="utf-8")
             with self.assertRaises(ValueError): verify(PROJECT, output, "/suan-clinic-demo/")
+            # A malformed product control must not silently publish an inaccessible slider.
+            for before, after in (('data-step="-1" aria-label="이전 한방 상품"', 'data-step="0" aria-label="이전 한방 상품"'),
+                                  ('aria-controls="product-gongjindan"', 'aria-controls="missing-product"')):
+                with self.subTest(control=before):
+                    self.assertIn(before, original)
+                    page.write_text(original.replace(before, after, 1), encoding="utf-8")
+                    with self.assertRaises(ValueError): verify(PROJECT, output, "/suan-clinic-demo/")
             for fragment in ('<form action="/booking"></form>', '<a href="tel:012345">전화</a>', '<a href="/play">게임</a>'):
                 with self.subTest(fragment=fragment):
                     page.write_text(original.replace("</body>", fragment + "</body>"), encoding="utf-8")

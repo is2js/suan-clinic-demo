@@ -10,6 +10,8 @@
 
 **커뮤니티 게시글은 가상 예시**이며 게시판 열람이나 글쓰기는 연결되지 않습니다. **공진단·경옥고·한약 상품과 그림은 시안**입니다. 공진단은 요청에 따른 소개 예시이며 실제 취급 여부, 가격과 구성은 확인되지 않았습니다. 상품 문의와 구매는 준비 중이고 결제·주문·배송 기능은 없습니다. `assets/art/herbal-products-concept.png`, `herbal-jar-concept.png`, `herbal-decoction-concept.png`는 실제 제품 사진이 아닌 생성 원화로, 출처는 `assets/provenance.json`에 기록합니다.
 
+`#products`에서는 화살표·상품 이름 선택과 좌우 드래그 또는 모바일 스와이프로 상품을 둘러볼 수 있습니다. 상품 선택 탭은 키보드 방향키로도 이동합니다. 자동 전환은 마우스를 올리거나 키보드 초점이 있을 때, 화면을 벗어나거나 탭이 숨겨졌을 때, 동작 줄이기 설정에서 멈춥니다. 상품 내용과 이미지를 바꾸는 방법은 [데이터 가이드](docs/data-guide.ko.md)를 참고하세요.
+
 `#media`의 **한의원 둘러보기**는 접수·상담·치료·약재 공간을 소개하는 슬라이더입니다. 실내 원화 `assets/art/clinic-interior-concept.png`, `clinic-consult-concept.png`, `clinic-treatment-concept.png`는 이번 시안을 위해 생성한 가상의 이미지이며 실제 시설 사진이 아닙니다. 원본과 생성 정보는 `assets/provenance.json`에 기록했습니다. 이미지나 설명을 교체할 때는 [데이터 가이드](docs/data-guide.ko.md)의 `clinicDemo.tour.items` 절차를 따릅니다.
 
 ## 로컬 실행

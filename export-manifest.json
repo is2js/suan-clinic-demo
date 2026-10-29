@@ -7,7 +7,7 @@
   "mode": "demo",
   "pagesEnabled": true,
   "spriteRowVariants": 47,
-  "assetBytes": 87483281,
+  "assetBytes": 87489708,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5526,
-      "sha256": "ffb583416f6b4e33d1fc2aa29ca50cad6df9458b114a213249d9f0df220cc1e4",
+      "bytes": 6020,
+      "sha256": "3018ffe9812aa89524d032e3207fa6baabb05930aa1b50557557891bafd52fe1",
       "source": "tools/rpg_intro_demo/README.md"
     },
     {
@@ -687,8 +687,8 @@
     },
     {
       "path": "assets/rpg/css/rpg-intro.css",
-      "bytes": 243016,
-      "sha256": "f84dc3efb94e5b6d83e395a1aa29f108c7c72d24b5946cf5890b5a8f83eeb9ee",
+      "bytes": 249443,
+      "sha256": "a2550e80262dd13bef8a6d4f224f141d9f3a0ff7ab7044ec1c13a0b4f71ce676",
       "source": "assets/rpg/css/rpg-intro.css",
       "sourceSha256": "3f6edab9027fa5321dac0e9fa4847704ac9f2b4f67043537957d9aa5b0f72c19"
     },
@@ -2282,8 +2282,8 @@
     },
     {
       "path": "docs/data-guide.ko.md",
-      "bytes": 9993,
-      "sha256": "bc1086d5a7114834c331105704b3f8c16e48ecfe8e16994e1eb855e7a636d81b",
+      "bytes": 10831,
+      "sha256": "62cd00a956c2bcec0f8a4a03c97e0c5772bd7b3345d48c29bddf18ce6f25ef3a",
       "source": "docs/rpg-intro-data-guide.ko.md"
     },
     {
@@ -2307,15 +2307,15 @@
     },
     {
       "path": "src/rpg/intro.mjs",
-      "bytes": 104888,
-      "sha256": "778eaa0bfa29aa349637788b3fb302edad632d28bb46d83fcb406adb0044facd",
+      "bytes": 107023,
+      "sha256": "463d3ac37f67d9f3c5fc6f7e6afbacd1884b9ff1563732a751863f994d28f274",
       "source": "src/rpg/intro.mjs",
       "sourceSha256": "082abef5997b68a110566ad16731913e0e209f693bd39ff67a02ca78bc605a1a"
     },
     {
       "path": "templates/rpg-intro.html",
-      "bytes": 44129,
-      "sha256": "e4b7ee8232c5a6a5e2f9e10099418e6a4a6426fea9e32c2e60255c892b57e4e5",
+      "bytes": 45389,
+      "sha256": "fb5e185f86f3b7716eafeb354836d5f5e7fbe9270f4c51608c8e126b3e5b3113",
       "source": "templates/rpg-intro.html"
     },
     {
@@ -2338,8 +2338,8 @@
     },
     {
       "path": "tools/verify.py",
-      "bytes": 4945,
-      "sha256": "dda88bde7888c4ee2ae9617875fe093d2d96af87de251b50d6de9afd3c55be4f",
+      "bytes": 7456,
+      "sha256": "d4e6f5ee3ebf9dd7ad3f9f0fdd6609458f831698bdc215bccaa41d301c2ed827",
       "source": "tools/rpg_intro_demo/verify.py"
     },
     {

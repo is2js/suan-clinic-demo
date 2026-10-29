@@ -178,7 +178,7 @@ export function mountIntro(root, data) {
   let navOpen = false, navReturn = null, navRestoring = false, navPointerType = 'mouse';
   let dead = false, raf = 0, dirty = true, drawerOpen = false, previousFocus = null;
   let actorKind = 'actors', actorIndex = -1, actorTrigger = null, actorArtTimer = 0, audio = null, soundWanted = false;
-  let sequence = null, mediaElapsed = 0, previousTick = null;
+  let sequence = null, mediaElapsed = 0, productElapsed = 0, previousTick = null;
   let medicalClip = null, medicalElapsed = 0;
   let elementIndex = 0, elementSkillIndex = 0, elementClip = null, elementElapsed = 0, elementPlaying = !reduced.matches;
   const spriteStates = new Map(), visibleSprites = new Set(), activeSections = new Set(), carousels = new Map();
@@ -1117,6 +1117,7 @@ export function mountIntro(root, data) {
       if (total) total.textContent = String(count).padStart(2, '0');
       const download = $('[data-media-download]'); if (download) download.href = data.gallery[index].image;
     }
+    if (name === 'products') productElapsed = 0;
     if (restoreFocus) slides[index].querySelector('[data-feature-select]')?.focus({ preventScroll: true });
     schedule();
   }
@@ -1129,6 +1130,15 @@ export function mountIntro(root, data) {
     carousel.pending = false;
     if (!ready) { carousel.focusFrom = null; carousel.requestedIndex = carousel.index; if (carousel.name === 'media') mediaElapsed = 0; layoutCarousel(carousel); announce('이미지를 준비하지 못해 현재 장면을 유지합니다. 다시 선택해 주세요.'); }
     schedule();
+  }
+  async function selectProductTarget(target, focus = false) {
+    const carousel = carousels.get('products');
+    const index = carousel?.slides.indexOf(target) ?? -1;
+    if (index < 0) return;
+    await updateCarousel(carousel, index);
+    if (dead || carousel.index !== index || win.location.hash !== `#${target.id}`) return;
+    if (focus) { target.tabIndex = -1; target.focus({ preventScroll: true }); }
+    target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth', block: 'start' });
   }
   for (const el of $$('[data-carousel]')) {
     const carousel = { el, name: el.dataset.carousel, align: el.dataset.carouselAlign, track: el.querySelector('[data-track]'), slides: [...el.querySelectorAll('[data-slide]')],
@@ -1154,11 +1164,18 @@ export function mountIntro(root, data) {
     } });
     carousels.set(carousel.name, carousel); applyCarousel(carousel, 0, true);
     if (carousel.name === 'media') continue;
+    if (carousel.name === 'products') {
+      on(el, 'pointerenter', event => { if (event.pointerType === 'mouse') carousel.hovered = true; });
+      on(el, 'pointerleave', event => { if (event.pointerType === 'mouse') { carousel.hovered = false; schedule(); } });
+      on(el, 'focusin', () => schedule());
+      on(el, 'focusout', () => schedule());
+    }
     const point = event => ({ id: event.pointerId, x: event.clientX, y: event.clientY, time: event.timeStamp });
     on(el, 'pointerdown', event => {
       if (event.isPrimary === false || event.button !== 0 || !event.target.closest('[data-track]')) return;
       const control = event.target.closest('button,a');
       if (control && control.dataset.action !== 'world-capture' && !control.hasAttribute('data-feature-select')) return;
+      if (carousel.name === 'products') productElapsed = 0;
       carousel.selection.invalidate(); carousel.request++; carousel.pending = false; carousel.requestedIndex = carousel.index;
       cancelDrag(carousel); carousel.suppressUntil = 0;
       if (carousel.wrapRemaining) { carousel.wrapRemaining = 0; carousel.el.classList.add('is-track-reset'); carousel.resetFrames = 2; layoutCarousel(carousel); }
@@ -1410,6 +1427,15 @@ export function mountIntro(root, data) {
       $('[data-media-progress]')?.style.setProperty('--media-progress', String(mediaElapsed / 5000));
       if (mediaElapsed >= 5000 && !media.pending) updateCarousel(media, media.index + 1);
     }
+    const products = carousels.get('products');
+    if (!reduced.matches && !overlayOpen && products && products.slides.length > 1 && activeSections.has(products.el.closest('[data-section]'))) {
+      const box = products.el.getBoundingClientRect();
+      const visible = box.bottom > 0 && box.top < win.innerHeight;
+      if (visible && !products.hovered && !products.el.contains(doc.activeElement) && products.pointerId === null && !products.pending) {
+        productElapsed += delta; animating = true;
+        if (productElapsed >= 3000) { productElapsed = 0; updateCarousel(products, products.index + 1); }
+      }
+    }
     if (animating) schedule(); else previousTick = null;
   }
 
@@ -1476,6 +1502,10 @@ export function mountIntro(root, data) {
     if (button.matches('a[href^="#"]')) {
       const target = doc.getElementById(button.getAttribute('href').slice(1));
       if (target) {
+        if (carousels.get('products')?.slides.includes(target)) {
+          event.preventDefault(); if (drawerOpen) setMenu(false);
+          win.history.replaceState(null, '', `#${target.id}`); selectProductTarget(target, true); return;
+        }
         if (target.hasAttribute('data-community-index')) selectCommunity(Number(target.dataset.communityIndex));
         event.preventDefault(); if (drawerOpen) setMenu(false);
         if (button.closest('[data-nav-panel],.intro-drawer-group__links')) {
@@ -1588,6 +1618,9 @@ export function mountIntro(root, data) {
   const selectCommunityHash = () => { const target = doc.getElementById(win.location.hash.slice(1)); if (target?.hasAttribute('data-community-index')) selectCommunity(Number(target.dataset.communityIndex)); };
   on(win, 'hashchange', selectCommunityHash);
   selectCommunityHash();
+  const selectProductHash = () => { const target = doc.getElementById(win.location.hash.slice(1)); if (target && carousels.get('products')?.slides.includes(target)) selectProductTarget(target); };
+  on(win, 'hashchange', selectProductHash);
+  selectProductHash();
 
   root.classList.add('is-enhanced', 'has-motion');
   root.classList.toggle('is-motion-preview', motionPreview);

@@ -17,11 +17,30 @@ class Markup(HTMLParser):
         super().__init__()
         self.urls, self.ids, self.services, self.forms, self.sections = [], [], [], [], []
         self.guide_links, self.footer_links, self.footer_services = [], [], []
+        self.product_carousels, self.product_tracks = [], []
+        self.product_slides, self.product_tabs, self.product_steps = [], [], []
+        self.product_section_depth = 0
         self.in_footer = False
         self.feed(text)
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
+        if tag == "section":
+            if attrs.get("id") == "products":
+                self.product_section_depth = 1
+            elif self.product_section_depth:
+                self.product_section_depth += 1
+        if self.product_section_depth:
+            if attrs.get("data-carousel") == "products":
+                self.product_carousels.append((tag, attrs))
+            if "data-track" in attrs:
+                self.product_tracks.append((tag, attrs))
+            if "data-slide" in attrs:
+                self.product_slides.append((tag, attrs))
+            if attrs.get("role") == "tab" and "data-index" in attrs:
+                self.product_tabs.append((tag, attrs))
+            if "data-step" in attrs:
+                self.product_steps.append((tag, attrs))
         if tag == "footer":
             self.in_footer = True
         if tag == "a" and "intro-guide-story" in attrs.get("class", "").split():
@@ -44,6 +63,8 @@ class Markup(HTMLParser):
         self.urls.extend(re.findall(r"url\(['\"]?([^)'\"]+)", attrs.get("style", "")))
 
     def handle_endtag(self, tag):
+        if tag == "section" and self.product_section_depth:
+            self.product_section_depth -= 1
         if tag == "footer":
             self.in_footer = False
 
@@ -74,6 +95,27 @@ def verify(root, output, prefix):
         raise ValueError("Demo service actions must all be inert buttons")
     if markup.forms:
         raise ValueError("Demo HTML must not contain a submitting form")
+    products = data["clinicDemo"]["products"]["items"]
+    if len(markup.product_carousels) != 1 or len(markup.product_tracks) != 1:
+        raise ValueError("Product slider must have exactly one carousel and track")
+    if len(markup.product_slides) != len(products) or len(markup.product_tabs) != len(products):
+        raise ValueError("Product slider slides and navigation must match the catalog")
+    if len(markup.product_steps) != 2 or {(tag, attrs.get("type"), attrs.get("data-step")) for tag, attrs in markup.product_steps} != {
+        ("button", "button", "-1"), ("button", "button", "1")
+    }:
+        raise ValueError("Product slider needs previous and next buttons")
+    for index, (item, (slide_tag, slide), (tab_tag, tab)) in enumerate(
+        zip(products, markup.product_slides, markup.product_tabs)
+    ):
+        if (slide_tag != "article" or slide.get("role") != "tabpanel"
+                or slide.get("id") != f"product-{item['id']}"
+                or slide.get("aria-labelledby") != f"product-tab-{index}"
+                or tab_tag != "button" or tab.get("type") != "button"
+                or tab.get("id") != f"product-tab-{index}"
+                or tab.get("data-index") != str(index)
+                or tab.get("aria-controls") != slide.get("id")
+                or tab.get("aria-selected") != ("true" if index == 0 else "false")):
+            raise ValueError(f"Invalid product slider navigation at index {index}")
     for url in set(markup.urls):
         if url.startswith("#"):
             if url[1:] not in markup.ids:

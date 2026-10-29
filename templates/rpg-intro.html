@@ -274,9 +274,19 @@
         {{ scenery('products', sections.skill.background) }}
         {{ section_heading("products") }}
         <p class="intro-products__notice" data-reveal>{{ intro_data.clinicDemo.products.notice }}</p>
-        <div class="intro-products__list" data-reveal>{% for item in intro_data.clinicDemo.products['items'] %}
-          <article class="intro-products__item" id="product-{{ item.id }}"><div class="intro-products__image"><img data-scene-src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy" decoding="async"><noscript><img src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy"></noscript><span>{{ '%02d' | format(loop.index) }}</span></div><div class="intro-products__copy"><span>{{ item.category }}</span><h3>{{ item.name }}</h3><p>{{ item.description }}</p>{{ service(item.actionId, 'intro-text-link', item.actionLabel) }}</div></article>
-        {% endfor %}</div>
+        <div class="intro-products-carousel" data-carousel="products" data-reveal aria-label="한방 상품 둘러보기">
+          <div class="intro-products__viewport"><div class="intro-products__track" data-track>{% for item in intro_data.clinicDemo.products['items'] %}
+            <article class="intro-products__item{% if loop.first %} is-active{% endif %}" id="product-{{ item.id }}" data-slide role="tabpanel" aria-labelledby="product-tab-{{ loop.index0 }}">
+              <div class="intro-products__image"><img data-scene-src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy" decoding="async"><noscript><img src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy"></noscript><span>{{ '%02d' | format(loop.index) }}</span></div>
+              <div class="intro-products__copy"><span>{{ item.category }}</span><h3>{{ item.name }}</h3><p>{{ item.description }}</p>{{ service(item.actionId, 'intro-text-link', item.actionLabel) }}</div>
+            </article>
+          {% endfor %}</div></div>
+          <div class="intro-products__controls">
+            <button class="intro-products__arrow" type="button" data-step="-1" aria-label="이전 한방 상품"><span aria-hidden="true">‹</span></button>
+            <nav class="intro-products__nav" role="tablist" aria-label="한방 상품 선택">{% for item in intro_data.clinicDemo.products['items'] %}<button type="button" id="product-tab-{{ loop.index0 }}" data-index="{{ loop.index0 }}" role="tab" aria-controls="product-{{ item.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" class="{% if loop.first %}is-active{% endif %}"><span>{{ '%02d' | format(loop.index) }}</span><b>{{ item.name }}</b></button>{% endfor %}</nav>
+            <button class="intro-products__arrow" type="button" data-step="1" aria-label="다음 한방 상품"><span aria-hidden="true">›</span></button>
+          </div>
+        </div>
       </section>
       <section class="intro-section intro-guide intro-illustrated" id="guide" data-section>
         {{ scenery('guide', sections.guide.background) }}

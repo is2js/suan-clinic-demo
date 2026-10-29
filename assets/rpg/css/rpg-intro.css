@@ -2123,6 +2123,47 @@ body.intro.is-enhanced noscript { display: none !important; }
 .intro .intro-visitor__item p { color: #303b30; }
 .intro #faq { scroll-margin-top: calc(var(--intro-header-height, 84px) + 22px); }
 
+/* Product story: reuse the intro's image queue and gesture-driven carousel. */
+.intro-products-carousel { position: relative; width: min(1170px, calc(100% - 80px)); margin: 52px auto 0; }
+.intro-products__viewport { overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; touch-action: pan-x pan-y; }
+.intro.is-enhanced .intro-products__viewport { overflow: hidden; scroll-snap-type: none; touch-action: pan-y; }
+.intro-products__track { display: flex; align-items: stretch; width: 100%; }
+.intro.is-enhanced .intro-products__track { transition: transform .35s cubic-bezier(.22, 1, .36, 1); touch-action: pan-y; }
+.intro-products__item { flex: 0 0 100%; width: 100%; min-width: 0; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr); align-items: center; gap: clamp(30px, 5vw, 76px); scroll-snap-align: start; scroll-margin-top: calc(var(--intro-header-height,72px) + 20px); }
+.intro-products__image { aspect-ratio: 16/10; }
+.intro-products__copy { padding: 24px 10px 24px 0; }
+.intro-products__copy h3 { margin: 14px 0; font-size: clamp(28px, 3vw, 42px); }
+.intro-products__copy p { max-width: 25em; font-size: 15px; line-height: 1.9; }
+.intro-products__controls { display: flex; justify-content: center; align-items: center; gap: clamp(12px, 3vw, 40px); margin: 38px auto 0; }
+.intro-products__arrow { display: grid; place-items: center; flex: 0 0 48px; width: 48px; height: 48px; padding: 0; border: 1px solid #8c7959; border-radius: 50%; background: #f9f5e8d9; color: #5d4b31; transition: background .2s, color .2s; }
+.intro-products__arrow span { font-size: 30px; line-height: 1; }
+.intro-products__arrow:hover { background: #435b46; color: #fff8e5; }
+.intro-products__arrow:focus-visible, .intro-products__nav button:focus-visible { outline: 2px solid #496f53; outline-offset: 3px; }
+.intro-products__nav { display: flex; align-items: stretch; justify-content: center; gap: clamp(4px, 2vw, 18px); min-width: 0; }
+.intro-products__nav button { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 8px 14px; background: transparent; color: #687061; font-family: var(--intro-serif); font-size: 14px; white-space: nowrap; }
+.intro-products__nav button span { color: #a18b68; font-size: 10px; }
+.intro-products__nav button b { font-weight: 500; }
+.intro-products__nav button[aria-selected="true"] { color: #294431; }
+.intro-products__nav button[aria-selected="true"]::after { content: ""; position: absolute; bottom: 1px; left: 12px; right: 12px; height: 2px; background: #648369; }
+.intro-products-carousel.is-dragging .intro-products__track, .intro-products-carousel.is-track-reset .intro-products__track { transition: none; }
+.intro:not(.is-enhanced) .intro-products__controls { display: none; }
+.intro:not(.is-enhanced) .intro-products__image > img[data-scene-src] { display: none; }
+@media (max-width: 768px) {
+  .intro-products-carousel { width: calc(100% - 40px); margin-top: 36px; }
+  .intro-products__item { display: block; }
+  .intro-products__image { aspect-ratio: 16/10; }
+  .intro-products__copy { padding: 20px 3px 0; }
+  .intro-products__copy h3 { margin: 8px 0; font-size: 28px; }
+  .intro-products__copy p { min-height: 0; font-size: 14px; }
+  .intro-products__controls { gap: 4px; margin-top: 20px; }
+  .intro-products__arrow { flex-basis: 44px; width: 44px; height: 44px; }
+  .intro-products__nav { flex: 1; gap: 0; }
+  .intro-products__nav button { flex: 1; gap: 4px; padding: 6px 3px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-products__track { transition: none; }
+}
+
 
 /* Distinct, open editorial chapters for booking, news, community and products. */
 .intro-reservations { padding-bottom: clamp(72px, 7vw, 112px); }
@@ -2260,4 +2301,47 @@ body.intro.is-enhanced noscript { display: none !important; }
   @media (max-width: 768px) {
     body.intro:has(#clinic.is-active) .intro-back-top:not(:focus-visible) { opacity: 0; visibility: hidden; pointer-events: none; }
   }
+}
+
+/* Natural media edges: keep faces, text, focus rings, and hit areas intact. */
+.intro .intro-world-picture > button > img,
+.intro .intro-guide-story__art > img {
+  border-radius: 4px;
+}
+
+/* Fallback without CSS mask support: original images remain fully visible. */
+@supports ((-webkit-mask-image: linear-gradient(#000, transparent)) or (mask-image: linear-gradient(#000, transparent))) {
+  .intro .intro-guide__protagonist img {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 83%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 83%, transparent 100%);
+  }
+  .intro .intro-world-picture > button,
+  .intro .intro-guide-story__art { background: transparent; }
+  .intro .intro-world-picture > button > img,
+  .intro .intro-guide-story__art > img {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%);
+  }
+  .intro .intro-guide-story__art::after { border: 0; }
+}
+
+/* A gentle feather on all edges where compositing is supported. */
+@supports ((mask-composite: intersect) or (-webkit-mask-composite: source-in)) {
+  .intro .intro-world-picture > button > img,
+  .intro .intro-guide-story__art > img {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 4%, #000 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 4%, #000 90%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
+
+/* Soften the product art without masking its labels or controls. */
+.intro .intro-products__image { aspect-ratio: 16/9; border-radius: 6px; }
+@supports ((-webkit-mask-image: linear-gradient(#000, transparent)) or (mask-image: linear-gradient(#000, transparent))) {
+  .intro .intro-products__image { background: transparent; }
+  .intro .intro-products__image img { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%); }
+}
+@supports ((mask-composite: intersect) or (-webkit-mask-composite: source-in)) {
+  .intro .intro-products__image img { -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 3%, #000 90%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 3%, #000 90%, transparent 100%); mask-composite: intersect; }
 }
