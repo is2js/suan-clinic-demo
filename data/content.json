@@ -1891,86 +1891,86 @@
   "gallery": [
     {
       "id": "media-01",
-      "name": "수안의 첫인사",
-      "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
-      "image": "/assets/art/clinic-morning-gate.webp",
-      "tag": "GALLERY",
-      "caption": "공간 분위기를 표현한 시안 이미지",
-      "alt": "수안의 첫인사을 표현한 시안 일러스트",
+      "name": "접수와 대기의 공간",
+      "description": "방문을 맞이하는 접수와 대기 공간을 상상해 표현한 시안입니다.",
+      "image": "/assets/art/clinic-interior-concept.png",
+      "tag": "시안 원화",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
+      "alt": "접수와 대기의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
       "gameplayCapture": false,
-      "title": "수안의 첫인사",
-      "eyebrow": "SUAN GALLERY",
+      "title": "접수와 대기의 공간",
+      "eyebrow": "SPACE OF SUAN",
       "type": "image"
     },
     {
       "id": "media-02",
-      "name": "봄의 정원",
-      "description": "계절의 흐름을 담은 동양적 풍경입니다.",
-      "image": "/assets/art/healing-courtyard.webp",
-      "tag": "GALLERY",
+      "name": "상담의 공간",
+      "description": "편안하게 이야기를 나누는 상담 공간을 상상한 시안입니다.",
+      "image": "/assets/art/clinic-interior-concept.png",
+      "tag": "시안 원화",
       "actionId": "play",
-      "title": "봄의 정원",
-      "eyebrow": "SUAN GALLERY",
+      "title": "상담의 공간",
+      "eyebrow": "SPACE OF SUAN",
       "href": "/play",
       "label": "진료 안내",
       "type": "image",
-      "alt": "봄의 정원을 표현한 시안 일러스트",
-      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "상담의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
       "gameplayCapture": false
     },
     {
       "id": "media-03",
-      "name": "여름의 풍경",
-      "description": "푸른 자연을 담은 시안 일러스트입니다.",
-      "image": "/assets/art/herb-garden.webp",
-      "tag": "GALLERY",
-      "title": "여름의 풍경",
-      "eyebrow": "SUAN GALLERY",
+      "name": "진료와 치료의 공간",
+      "description": "치료를 위한 공간의 분위기를 표현한 시안입니다.",
+      "image": "/assets/art/clinic-interior-concept.png",
+      "tag": "시안 원화",
+      "title": "진료와 치료의 공간",
+      "eyebrow": "SPACE OF SUAN",
       "type": "image",
-      "alt": "여름의 풍경을 표현한 시안 일러스트",
-      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "진료와 치료의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
       "gameplayCapture": false
     },
     {
       "id": "media-04",
-      "name": "가을의 풍경",
-      "description": "차분한 사색을 위한 시안 일러스트입니다.",
+      "name": "약재가 머무는 공간",
+      "description": "한의학의 약재와 전통적인 공간을 표현한 원화입니다.",
       "image": "/assets/art/medical-apothecary.webp",
-      "tag": "GALLERY",
-      "title": "가을의 풍경",
-      "eyebrow": "SUAN GALLERY",
+      "tag": "시안 원화",
+      "title": "약재가 머무는 공간",
+      "eyebrow": "SPACE OF SUAN",
       "type": "image",
-      "alt": "가을의 풍경을 표현한 시안 일러스트",
-      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "약재가 머무는 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
       "gameplayCapture": false
     },
     {
       "id": "media-05",
-      "name": "겨울의 풍경",
-      "description": "고요한 풍경을 담은 시안 일러스트입니다.",
-      "image": "/assets/art/hero-day.webp",
-      "tag": "GALLERY",
-      "title": "겨울의 풍경",
-      "eyebrow": "SUAN GALLERY",
+      "name": "수안의 첫 풍경",
+      "description": "한옥과 자연이 어우러진 입구 분위기를 표현한 원화입니다.",
+      "image": "/assets/art/clinic-morning-gate.webp",
+      "tag": "시안 원화",
+      "title": "수안의 첫 풍경",
+      "eyebrow": "SPACE OF SUAN",
       "type": "image",
-      "alt": "겨울의 풍경을 표현한 시안 일러스트",
-      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "수안의 첫 풍경 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
       "gameplayCapture": false
     },
     {
       "id": "media-06",
-      "name": "수안의 첫인사",
-      "description": "한 사람 한 사람의 일상과 이야기를 듣습니다.",
-      "image": "/assets/art/clinic-morning-gate.webp",
-      "tag": "GALLERY",
+      "name": "마음이 쉬어가는 풍경",
+      "description": "정원과 풍경이 어우러진 쉼의 분위기를 표현한 원화입니다.",
+      "image": "/assets/art/healing-courtyard.webp",
+      "tag": "시안 원화",
       "actionId": "clinic",
-      "title": "수안의 첫인사",
-      "eyebrow": "SUAN GALLERY",
+      "title": "마음이 쉬어가는 풍경",
+      "eyebrow": "SPACE OF SUAN",
       "href": "/rpg/clinic",
       "label": "진료 안내",
       "type": "image",
-      "alt": "수안의 첫인사을 표현한 시안 일러스트",
-      "caption": "공간 분위기를 표현한 시안 이미지",
+      "alt": "마음이 쉬어가는 풍경 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다.",
+      "caption": "공간 분위기를 표현한 시안 원화 · 실제 시설 아님",
       "gameplayCapture": false
     }
   ],
@@ -2551,13 +2551,13 @@
     "revision": "intro-authored-sections-20261022-r1",
     "sectionOrder": [
       "visual",
+      "clinic",
       "universe",
       "character",
       "features",
       "gamefeatures",
       "sect",
       "skill",
-      "clinic",
       "guide",
       "media",
       "access"
@@ -2618,6 +2618,29 @@
       }
     },
     "navigation": [
+      {
+        "id": "clinic",
+        "label": "예약·공지",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "금일 예약 현황",
+            "target": "clinic",
+            "href": "#clinic"
+          },
+          {
+            "name": "공지사항",
+            "target": "clinic",
+            "href": "#notice"
+          },
+          {
+            "name": "예약 문의",
+            "actionId": "play",
+            "href": "/play",
+            "label": "예약 문의"
+          }
+        ]
+      },
       {
         "id": "universe",
         "label": "한의원 소개",
@@ -2773,71 +2796,77 @@
         ]
       },
       {
-        "id": "clinic",
-        "label": "예약 현황",
-        "kind": "links",
-        "entries": [
-          {
-            "name": "예약 현황",
-            "target": "clinic",
-            "href": "#clinic"
-          },
-          {
-            "name": "예약 문의",
-            "actionId": "clinic",
-            "href": "/rpg/clinic",
-            "label": "예약 문의"
-          }
-        ]
-      },
-      {
         "id": "guide",
         "label": "이용 안내",
         "kind": "links",
         "entries": [
           {
-            "name": "이용 안내",
+            "name": "진료시간",
             "target": "guide",
-            "href": "#guide"
+            "href": "#visit-hours"
           },
           {
-            "name": "예약 문의",
-            "actionId": "play",
-            "href": "/play",
-            "label": "예약 문의"
+            "name": "예약·상담 안내",
+            "target": "guide",
+            "href": "#visit-reservation"
+          },
+          {
+            "name": "처음 오시는 분",
+            "target": "guide",
+            "href": "#visit-first"
+          },
+          {
+            "name": "오시는 길",
+            "target": "guide",
+            "href": "#visit-directions"
+          },
+          {
+            "name": "주차 안내",
+            "target": "guide",
+            "href": "#visit-parking"
+          },
+          {
+            "name": "진료비·서류 안내",
+            "target": "guide",
+            "href": "#visit-cost"
+          },
+          {
+            "name": "자주 묻는 질문",
+            "target": "clinic",
+            "href": "#faq"
           }
         ]
       },
       {
         "id": "media",
-        "label": "수안의 풍경",
+        "label": "한의원 둘러보기",
         "kind": "carousel",
         "carousel": "media",
         "source": "gallery",
         "entries": [
           {
             "id": "media-01",
-            "name": "수안의 첫인사"
+            "name": "접수와 대기의 공간"
           },
           {
             "id": "media-02",
-            "name": "봄의 정원"
+            "name": "상담의 공간"
           },
           {
             "id": "media-03",
-            "name": "여름의 풍경"
+            "name": "진료와 치료의 공간"
           },
           {
             "id": "media-04",
-            "name": "가을의 풍경"
+            "name": "약재가 머무는 공간"
           },
           {
             "id": "media-05",
-            "name": "겨울의 풍경"
+            "name": "수안의 첫 풍경"
           },
           {
             "id": "media-06",
-            "name": "수안의 첫인사"
+            "name": "마음이 쉬어가는 풍경"
           }
         ]
       }
@@ -2897,7 +2926,7 @@
       "schemaVersion": 5,
       "id": "character",
       "heading": {
-        "number": "02",
+        "number": "03",
         "eyebrow": "OUR DOCTORS",
         "title": "마음을 살피는 의료진",
         "description": "두 의료진이 함께 당신의 이야기에 귀 기울입니다."
@@ -2934,10 +2963,10 @@
       "schemaVersion": 5,
       "id": "clinic",
       "heading": {
-        "number": "07",
-        "eyebrow": "TIME TO HEAL",
-        "title": "치유의 시간을 한눈에",
-        "description": "금일 예약 현황은 실제 예약이 아닌 가상 예시입니다."
+        "number": "01",
+        "eyebrow": "TODAY AT SUAN",
+        "title": "오늘의 예약과 소식",
+        "description": "예약 현황과 공지는 실제 정보가 아닌 가상 예시입니다."
       },
       "background": "/assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
       "assets": {
@@ -2969,7 +2998,7 @@
       "schemaVersion": 5,
       "id": "features",
       "heading": {
-        "number": "03",
+        "number": "04",
         "eyebrow": "VOICES OF SUAN",
         "title": "우리의 진료 이야기",
         "description": "이곳에 소개된 후기는 화면 구성을 위한 가상 예시입니다."
@@ -3045,7 +3074,7 @@
       "schemaVersion": 5,
       "id": "gamefeatures",
       "heading": {
-        "number": "04",
+        "number": "05",
         "eyebrow": "THE ART OF HEALING",
         "title": "치유의 손끝, 빛나는 의술",
         "description": "진료 항목을 RPG 캐릭터의 모션으로 소개합니다. 실제 시술 화면은 아닙니다."
@@ -3121,14 +3150,14 @@
       "id": "media",
       "heading": {
         "number": "09",
-        "eyebrow": "OUR MOMENTS",
-        "title": "수안의 풍경",
-        "description": "공간의 분위기를 표현한 시안 일러스트입니다."
+        "eyebrow": "SPACE OF SUAN",
+        "title": "한의원 둘러보기",
+        "description": "공간 분위기를 표현한 시안 원화이며 실제 시설 사진이 아닙니다."
       },
       "background": "",
       "assets": {},
       "copy": {
-        "captionEyebrow": "MOMENTS OF SUAN",
+        "captionEyebrow": "SPACE OF SUAN · 실제 시설이 아닌 시안 원화",
         "downloadLabel": "선택한 미디어 내려받기",
         "expandLabel": "선택한 미디어 크게 보기"
       },
@@ -3176,7 +3205,7 @@
       "schemaVersion": 5,
       "id": "sect",
       "heading": {
-        "number": "05",
+        "number": "06",
         "eyebrow": "TOGETHER",
         "title": "처음부터 함께하는 진료",
         "description": "처음 만나는 순간부터 차분하게 안내합니다."
@@ -3405,7 +3434,7 @@
       "schemaVersion": 5,
       "id": "skill",
       "heading": {
-        "number": "06",
+        "number": "07",
         "eyebrow": "OUR CLINICS",
         "title": "몸과 마음을 살피는 진료",
         "description": "진료 항목을 네 가지 주제로 살펴보세요."
@@ -3439,7 +3468,7 @@
       "schemaVersion": 5,
       "id": "universe",
       "heading": {
-        "number": "01",
+        "number": "02",
         "eyebrow": "THE WORLD",
         "title": "수안의 이야기",
         "description": "한 사람의 일상에 귀 기울이는 두 마음의 진료."
@@ -3710,6 +3739,91 @@
       }
     ],
     "appointmentNotice": "금일 예약은 실제 정보가 아닌 가상의 예시입니다.",
-    "reviewNotice": "후기는 실제 이용 후기가 아닌 가상의 예시입니다."
+    "reviewNotice": "후기는 실제 이용 후기가 아닌 가상의 예시입니다.",
+    "tour": {
+      "title": "한의원 둘러보기",
+      "description": "수안이 꿈꾸는 공간을 살펴보세요.",
+      "notice": "공간 분위기를 표현한 시안 원화이며 실제 시설 사진이 아닙니다.",
+      "items": [
+        {
+          "id": "media-01",
+          "title": "접수와 대기의 공간",
+          "description": "방문을 맞이하는 접수와 대기 공간을 상상해 표현한 시안입니다.",
+          "image": "/assets/art/clinic-interior-concept.png",
+          "alt": "접수와 대기의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        },
+        {
+          "id": "media-02",
+          "title": "상담의 공간",
+          "description": "편안하게 이야기를 나누는 상담 공간을 상상한 시안입니다.",
+          "image": "/assets/art/clinic-consult-concept.png",
+          "alt": "상담의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        },
+        {
+          "id": "media-03",
+          "title": "진료와 치료의 공간",
+          "description": "치료를 위한 공간의 분위기를 표현한 시안입니다.",
+          "image": "/assets/art/clinic-treatment-concept.png",
+          "alt": "진료와 치료의 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        },
+        {
+          "id": "media-04",
+          "title": "약재가 머무는 공간",
+          "description": "한의학의 약재와 전통적인 공간을 표현한 원화입니다.",
+          "image": "/assets/art/medical-apothecary.webp",
+          "alt": "약재가 머무는 공간 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        },
+        {
+          "id": "media-05",
+          "title": "수안의 첫 풍경",
+          "description": "한옥과 자연이 어우러진 입구 분위기를 표현한 원화입니다.",
+          "image": "/assets/art/clinic-morning-gate.webp",
+          "alt": "수안의 첫 풍경 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        },
+        {
+          "id": "media-06",
+          "title": "마음이 쉬어가는 풍경",
+          "description": "정원과 풍경이 어우러진 쉼의 분위기를 표현한 원화입니다.",
+          "image": "/assets/art/healing-courtyard.webp",
+          "alt": "마음이 쉬어가는 풍경 분위기를 표현한 생성 시안 원화. 실제 시설 사진이 아닙니다."
+        }
+      ]
+    },
+    "visitorGuides": [
+      {
+        "id": "visit-hours",
+        "title": "진료시간",
+        "description": "정확한 진료시간과 휴진 일정은 확인 후 안내해 드리겠습니다."
+      },
+      {
+        "id": "visit-reservation",
+        "title": "예약·상담 안내",
+        "description": "방문 전 예약과 상담 방법을 준비하고 있습니다.",
+        "actionId": "play",
+        "actionLabel": "예약 문의"
+      },
+      {
+        "id": "visit-first",
+        "title": "처음 오시는 분",
+        "description": "첫 방문을 위한 상담과 진료 과정 안내를 살펴보세요."
+      },
+      {
+        "id": "visit-directions",
+        "title": "오시는 길",
+        "description": "주소와 교통편은 확인 후 안내해 드리겠습니다."
+      },
+      {
+        "id": "visit-parking",
+        "title": "주차 안내",
+        "description": "주차 가능 여부와 이용 방법은 확인 후 안내해 드리겠습니다."
+      },
+      {
+        "id": "visit-cost",
+        "title": "진료비·서류 안내",
+        "description": "진료비와 각종 서류 발급 정보는 확인 후 안내해 드리겠습니다.",
+        "actionId": "staffBoard",
+        "actionLabel": "문의하기"
+      }
+    ]
   }
 }

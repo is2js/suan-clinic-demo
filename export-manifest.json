@@ -3,11 +3,11 @@
   "sourceRepository": "https://github.com/is2js/pvp",
   "sourceCommit": "c225a27c81ee1407b9fefd8a63b25c9229c0ae64",
   "contentRevision": "intro-authored-sections-20261022-r1",
-  "contentSha256": "841e07e4bf4c9fc83609cc79376dbb607da194cca4dfb0b789d8f92ba98f8f5b",
+  "contentSha256": "c5d5bfc091f03f04630f15e69bcd05d11d8075ff35a9bf0d2dc2ac9f0c0b06ce",
   "mode": "demo",
   "pagesEnabled": true,
   "spriteRowVariants": 47,
-  "assetBytes": 72402031,
+  "assetBytes": 80593212,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3868,
-      "sha256": "a69f1e5368dfede5bd643c45343b563ce1bd53fe6269fa6b2b119669f2779f20",
+      "bytes": 4833,
+      "sha256": "4ca273d0e300760c22334b7bc9cdf22511f381e0e25af01589b121b4e9d61e5e",
       "source": "tools/rpg_intro_demo/README.md"
     },
     {
@@ -687,8 +687,8 @@
     },
     {
       "path": "assets/rpg/css/rpg-intro.css",
-      "bytes": 227750,
-      "sha256": "13d2fecd4661c2da796d4676005f1bd72f57914de38a8d02f0db991eaf253512",
+      "bytes": 230415,
+      "sha256": "440d3fcef7682727714cee4f18cb94684b151332df57cbd80883d136fcd63791",
       "source": "assets/rpg/css/rpg-intro.css",
       "sourceSha256": "3f6edab9027fa5321dac0e9fa4847704ac9f2b4f67043537957d9aa5b0f72c19"
     },
@@ -2282,8 +2282,8 @@
     },
     {
       "path": "docs/data-guide.ko.md",
-      "bytes": 6476,
-      "sha256": "fcb3ed67a9cc2dcda1c68f1f38667cd20da3fa834be9b7976c3b93203e2d3751",
+      "bytes": 7947,
+      "sha256": "a9641c9720c15efb27fa05712ba34bddb0645e283d44be16a89f740f15a62ac8",
       "source": "docs/rpg-intro-data-guide.ko.md"
     },
     {
@@ -2294,8 +2294,8 @@
     },
     {
       "path": "schema/schema.json",
-      "bytes": 62040,
-      "sha256": "e59164b47fbc462a81b3c2615ba504325a31ab2353913739e84a5527aff95460",
+      "bytes": 65806,
+      "sha256": "7969fb46ab7e90d03ead3e37661681eaf63f4779822c32c3c9650160c6aa7476",
       "source": "data/rpg-intro/schema.json"
     },
     {
@@ -2307,21 +2307,21 @@
     },
     {
       "path": "src/rpg/intro.mjs",
-      "bytes": 103889,
-      "sha256": "5f8d7b6e10e9478e89aea3adf49c69767602ff834ad40405b8776c1498818b78",
+      "bytes": 103916,
+      "sha256": "3192d51c9af2f66456d734d4a7db326ef5badd6756e1998c5f3bc0058da6ea36",
       "source": "src/rpg/intro.mjs",
       "sourceSha256": "082abef5997b68a110566ad16731913e0e209f693bd39ff67a02ca78bc605a1a"
     },
     {
       "path": "templates/rpg-intro.html",
-      "bytes": 39505,
-      "sha256": "59d362fc02df3bff7f01b28d9cc9217947a6de685f91f19fe3ceb6096f2a8b2b",
+      "bytes": 40162,
+      "sha256": "cac4685c825caa149d2381ef0aa7b0083f56e28677d2b4f444782eb5df4f4ac7",
       "source": "templates/rpg-intro.html"
     },
     {
       "path": "tools/build.py",
-      "bytes": 8495,
-      "sha256": "e089d9b253466b880700481f26a291ea082a54fef59eeab3e4170659e5783636",
+      "bytes": 10120,
+      "sha256": "c4c9cfd94c31346da01b57237b440632eaf3016068ddf09d0d9c12e168430abd",
       "source": "tools/rpg_intro_demo/build.py"
     },
     {
@@ -2389,6 +2389,24 @@
       "bytes": 100161,
       "sha256": "94fd999cfc69255998612205bd3bc3e7655c1b61e0a414a05fd95f2fff19707f",
       "source": "images/doctors/doctor002.png"
+    },
+    {
+      "path": "assets/art/clinic-interior-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2641613,
+      "sha256": "f158a5627da2dc78544a20fb1efcaebe0d8815e389efbcc91a256629b61a9e28"
+    },
+    {
+      "path": "assets/art/clinic-consult-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2759861,
+      "sha256": "08f88d5df48fe66d603584dd7aae9f9b72f9b0825a33b19bbf2e39f2b79bcd23"
+    },
+    {
+      "path": "assets/art/clinic-treatment-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2787042,
+      "sha256": "7909e4c6dc88ebc4b880bae963357a0cfc66a2289fb89f7da46a0ab07b3dce83"
     }
   ],
   "provenance": {

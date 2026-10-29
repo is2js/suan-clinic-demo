@@ -78,6 +78,34 @@ def project_reviews(data: dict) -> None:
         entry["name"] = name
 
 
+def project_tour(data: dict) -> None:
+    """Project the clinic tour data into the original media carousel and its menu."""
+    tour = data["clinicDemo"]["tour"]
+    items = tour["items"]
+    slides = data["gallery"]
+    groups = [group for group in data["site"]["navigation"] if group["id"] == "media"]
+    if len(groups) != 1:
+        raise ValueError("Expected one media navigation group")
+    entries = groups[0]["entries"]
+    if len(items) != len(slides) or len(slides) != len(entries):
+        raise ValueError("Tour item count must match the gallery and its navigation")
+    item_ids = [item["id"] for item in items]
+    if len(set(item_ids)) != len(item_ids):
+        raise ValueError("Duplicate IDs in clinicDemo.tour.items")
+    if item_ids != [slide["id"] for slide in slides] or item_ids != [entry["id"] for entry in entries]:
+        raise ValueError("Tour item IDs must match the gallery and navigation order")
+    for item, slide, entry in zip(items, slides, entries):
+        slide.update(name=item["title"], title=item["title"], description=item["description"],
+                     image=item["image"], alt=item["alt"], caption=tour["notice"])
+        if "originalImage" in slide:
+            slide["originalImage"] = item["image"]
+        entry["name"] = item["title"]
+    data["sections"]["media"]["heading"].update(title=tour["title"], description=tour["notice"])
+    guides = data["clinicDemo"]["visitorGuides"]
+    if len({guide["id"] for guide in guides}) != len(guides):
+        raise ValueError("Duplicate IDs in clinicDemo.visitorGuides")
+
+
 def validate(root: Path) -> tuple[dict, dict]:
     data = read_json(root / "data/content.json")
     schema = read_json(root / "schema/schema.json")
@@ -111,6 +139,7 @@ def validate(root: Path) -> tuple[dict, dict]:
         if len({row["id"] for row in rows}) != len(rows):
             raise ValueError(f"Duplicate IDs in clinicDemo.{kind}")
     project_reviews(deepcopy(data))
+    project_tour(deepcopy(data))
     return data, manifest
 
 
@@ -120,6 +149,7 @@ def build(root: Path, output: Path, prefix: str = "/") -> dict:
     # A fixed demo deployment prevents a JSON edit from turning a CTA into a real login.
     data = deepcopy(data)
     project_reviews(data)
+    project_tour(data)
     data = scope_urls(data, prefix)
     data["deployment"] = {"mode": "demo", "basePath": prefix}
     data["assetBase"] = prefix + "assets/"

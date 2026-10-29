@@ -971,7 +971,7 @@ export function mountIntro(root, data) {
     const link = createServiceAction(item.actionId); link.className = 'intro-button intro-button--ink';
     copy.append(tag, title, description, link); panel.append(copy); content.append(panel);
   }
-  async function openPhoto({ src, title, captionText, origin, original, originalLabel = '원본 크기로 보기 ↗' }) {
+  async function openPhoto({ src, title, alt, captionText, origin, original, originalLabel = '원본 크기로 보기 ↗' }) {
     if (!safeAsset(src)) return;
     const source = origin?.querySelector?.('img') || origin;
     const sourceRect = source?.getBoundingClientRect();
@@ -988,13 +988,13 @@ export function mountIntro(root, data) {
     if (dead || generation !== modalGeneration || !dialog.open || !content.contains(figure)) return;
     figure.setAttribute('aria-busy', 'false');
     if (!loaded) { figure.classList.add('has-missing-art'); caption.append(doc.createTextNode(' · 이미지를 불러오지 못했습니다. 닫은 뒤 다시 시도해 주세요.')); return; }
-    const image = makeImage(src, title); figure.prepend(image);
+    const image = makeImage(src, alt || title); figure.prepend(image);
     photoView = { image, origin: source };
     pendingPhotoFlip = { image, sourceRect, generation }; schedule();
   }
   function openGallery(button) {
     const carousel = carousels.get('media'), item = data.gallery?.[carousel?.index || 0];
-    if (item) openPhoto({ src: item.image, title: item.title, captionText: item.caption, original: item.originalImage, origin: carousel?.slides[carousel.index].querySelector('img') || button });
+    if (item) openPhoto({ src: item.image, title: item.title, alt: item.alt, captionText: item.caption, original: item.originalImage, origin: carousel?.slides[carousel.index].querySelector('img') || button });
   }
   function openWorldCapture(button) {
     openPhoto({ src: button.dataset.worldImage, title: button.dataset.worldTitle || '수안의 이야기', origin: button,

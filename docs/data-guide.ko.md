@@ -11,6 +11,7 @@
 | 구간 | 편집 위치 | 준비할 내용과 이미지 |
 | --- | --- | --- |
 | 첫 화면 | `brand`, `site.brand`, `sections.visual` | 한의원명·소개 문구와 낮/밤 풍경. 투명 인물과 기존 레이어는 별도 이미지 |
+| 예약·공지 | `clinicDemo.appointments`, `clinicDemo.notices`, `sections.clinic` | 첫 화면 다음에 나타나는 예약 예시와 공지. 이름·시간·상태는 가상 데이터로 관리 |
 | 한의원 소개 | `universe`, `sections.universe.items` | 소개 문구와 가로 풍경 5개, 각 이미지의 `alt`·설명. 실제 시설 사진이 아니라면 시안이라고 표시 |
 | 의료진 | `actors`, `sections.character.actorCopy` | 남녀 의료진 2명. `name`, `role`, `description`, `portrait`, `image`를 함께 수정. 사진 원본과 이용 범위 기록 |
 | 최근 후기 | `clinicDemo.reviews` | 다섯 가상 후기의 별명·내용·상대 날짜. 빌드 시 후기 카드와 메뉴에 자동 반영. 카드 배경은 `features`와 `sections.features.items`에서 관리 |
@@ -18,9 +19,9 @@
 | 함께하는 진료 | `guild`, `sections.sect.items` | 세 장면의 배경과 문구. `motionActors`의 스프라이트는 기존 모션 |
 | 진료 항목 | `elements`, `sections.skill` | 네 분류별 두 항목. 이미지와 설명을 바꾸되 시연 프레임·효과 타이밍을 유지 |
 | 예약 현황 | `clinicDemo.appointments`, `sections.clinic` | `id`, `alias`, `time`, `status`와 예시 표기. 날짜는 한국 시간 기준 표시 |
-| 안내 | `guide`, `sections.guide` | 주인공 일러스트·안내 카드 2개와 서비스 버튼 문구 |
-| 미디어 | `gallery`, `sections.media.items` | 6개 원화와 확대용 이미지·대체 문구. 시설 실사진이 아닌 풍경은 구분 |
-| 이용 안내 | `sections.access`, `clinicDemo.notices`, `clinicDemo.faq` | 사실 확인된 운영 정보만 입력. 미확인 연락처·주소는 준비 중으로 남김 |
+| 이용 안내 | `guide`, `sections.guide`, `clinicDemo.visitorGuides`, `clinicDemo.faq` | 진료시간·예약·첫 방문·오시는 길·주차·진료비와 서류. 미확인 정보는 준비 중으로 남김 |
+| 한의원 둘러보기 | `clinicDemo.tour.items`, `clinicDemo.tour.notice` | 6개 공간 원화의 제목·설명·이미지·대체 문구. 빌드 시 갤러리와 메뉴에 반영 |
+| 마지막 안내 | `sections.access` | 방문과 예약을 안내하는 마무리 문구 |
 
 캐릭터 스프라이트와 의료진 초상화는 별도입니다. `actors[*].portrait`과 `image`의 사진을 바꾸어도 `sprite`·`encounter`는 건드리지 않으면 마을 장면의 대기 및 선택 모션이 유지됩니다. 남성 사진은 `assets/clinicians/jo-jaeseong.png`(515×515), 여성 사진은 `assets/clinicians/kim-seokyoung.png`(326×343)이며 원본 출처는 `assets/provenance.json`을 확인하세요. 화면에 맞추는 크롭은 스타일에서 처리합니다.
 
@@ -41,6 +42,12 @@
 후기 `daysAgo`는 표시 기준 날짜에서 뺄 일수입니다. 실제 예약 접수·사용자 정보 저장·환자 조회 기능은 이 정적 시안에 없습니다.
 
 후기를 바꿀 때는 `clinicDemo.reviews`의 별명·내용·`daysAgo`만 편집하고 다시 빌드합니다. 빌더가 각 후기의 순서에 맞춰 카드 이름·본문·날짜 및 가상 예시 표시와 상단 메뉴 이름을 채웁니다. 기존 다섯 카드의 이미지·ID·순서는 유지되므로 후기 개수는 카드 개수와 같아야 하며 각 후기 ID는 중복될 수 없습니다. `features`와 `sections.features.items`의 카드 ID 및 메뉴 항목 순서는 서로 일치해야 합니다.
+
+## 둘러보기와 방문 안내
+
+`clinicDemo.tour.items`의 각 항목에서 `id`, `title`, `description`, `image`, `alt`를 편집합니다. 빌더가 같은 순서의 갤러리와 메뉴에 반영하므로 항목 수와 기존 갤러리·메뉴의 ID 순서를 맞춥니다. `clinicDemo.tour.notice`에는 실제 시설이 아닌 시안이라는 안내를 유지합니다. 현재 `assets/art/clinic-interior-concept.png`, `clinic-consult-concept.png`, `clinic-treatment-concept.png`는 OpenAI 이미지 생성으로 만든 가상의 한옥 실내 원화이며, 프롬프트·해시·크기 등은 `assets/provenance.json`에 기록되어 있습니다. 실제 시설 사진으로 교체할 때는 촬영 및 공개 사용 권한을 확인하세요.
+
+`clinicDemo.visitorGuides`의 `id`, `title`, `description`을 편집하면 이용 안내에 표시됩니다. 고정 `id`는 메뉴의 `href`와 연결되므로 변경할 때 함께 수정합니다. `actionId`와 `actionLabel`이 있는 항목의 버튼은 데모에서 “준비 중입니다.”를 표시합니다. 진료시간·주소·교통·주차·진료비·서류 정보는 확인되지 않은 상태에서 실제 정보처럼 적지 않습니다.
 
 ## 이미지·자산 교체
 

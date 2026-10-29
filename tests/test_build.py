@@ -9,9 +9,9 @@ from jsonschema import Draft202012Validator
 
 PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT / "tools"))
-from build import base_path, build, checked_file, project_reviews, validate
+from build import base_path, build, checked_file, project_reviews, project_tour, validate
 from rpg_intro_content import read_json
-from verify import verify
+from verify import Markup, verify
 
 
 class ClinicIntroChecks(TestCase):
@@ -72,6 +72,33 @@ class ClinicIntroChecks(TestCase):
             with self.subTest(mutation=mutation), self.assertRaises(ValueError):
                 project_reviews(value)
 
+    def test_tour_projection_updates_gallery_and_navigation(self):
+        value = deepcopy(self.data)
+        item = value["clinicDemo"]["tour"]["items"][0]
+        item.update(title="새로운 공간", description="새 시안 설명", image="/assets/art/herb-garden.webp", alt="새 시안 원화")
+        value["gallery"][0]["originalImage"] = "/assets/art/hero-day.webp"
+        project_tour(value)
+        slide = value["gallery"][0]
+        entry = next(group for group in value["site"]["navigation"] if group["id"] == "media")["entries"][0]
+        self.assertEqual(slide["name"], item["title"])
+        self.assertEqual(slide["description"], item["description"])
+        self.assertEqual(slide["image"], item["image"])
+        self.assertEqual(slide["originalImage"], item["image"])
+        self.assertEqual(slide["alt"], item["alt"])
+        self.assertEqual(entry["name"], item["title"])
+        self.assertEqual(value["sections"]["media"]["heading"]["description"], value["clinicDemo"]["tour"]["notice"])
+
+    def test_tour_projection_rejects_mismatched_or_duplicate_inputs(self):
+        for mutation in ("count", "duplicate", "gallery_id", "navigation_id", "visitor_id"):
+            value = deepcopy(self.data)
+            if mutation == "count": value["clinicDemo"]["tour"]["items"].pop()
+            elif mutation == "duplicate": value["clinicDemo"]["tour"]["items"][1]["id"] = value["clinicDemo"]["tour"]["items"][0]["id"]
+            elif mutation == "gallery_id": value["gallery"][0]["id"] = "wrong"
+            elif mutation == "navigation_id": next(group for group in value["site"]["navigation"] if group["id"] == "media")["entries"][0]["id"] = "wrong"
+            else: value["clinicDemo"]["visitorGuides"][1]["id"] = value["clinicDemo"]["visitorGuides"][0]["id"]
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                project_tour(value)
+
     def test_invalid_paths_and_missing_asset_rejected(self):
         for prefix in ("//example/", "/../", "https://example.com/"):
             with self.subTest(prefix=prefix), self.assertRaises(ValueError): base_path(prefix)
@@ -97,6 +124,22 @@ class ClinicIntroChecks(TestCase):
             page = output / "index.html"
             original = page.read_text(encoding="utf-8")
             self.assertIn("/suan-clinic-demo/assets/", original)
+            markup = Markup(original)
+            self.assertLess(markup.ids.index("visual"), markup.ids.index("clinic"))
+            self.assertLess(markup.ids.index("clinic"), markup.ids.index("universe"))
+            self.assertIn("notice", markup.ids)
+            self.assertIn("faq", markup.ids)
+            for guide in self.data["clinicDemo"]["visitorGuides"]:
+                with self.subTest(guide=guide["id"]):
+                    self.assertIn(guide["id"], markup.ids)
+                    self.assertIn(guide["title"], original)
+            self.assertIn(self.data["clinicDemo"]["tour"]["title"], original)
+            self.assertIn(self.data["clinicDemo"]["tour"]["notice"], original)
+            self.assertIn("금일 예약 현황", original)
+            self.assertIn("가상의 예약 현황", original)
+            self.assertTrue(markup.services)
+            self.assertTrue(all(tag == "button" and attrs.get("type") == "button"
+                                for tag, attrs in markup.services))
             for fragment in ('<form action="/booking"></form>', '<a href="tel:012345">전화</a>', '<a href="/play">게임</a>'):
                 with self.subTest(fragment=fragment):
                     page.write_text(original.replace("</body>", fragment + "</body>"), encoding="utf-8")

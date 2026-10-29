@@ -1715,7 +1715,9 @@
             "reviews",
             "sampleNotice",
             "appointmentNotice",
-            "reviewNotice"
+            "reviewNotice",
+            "tour",
+            "visitorGuides"
           ],
           "properties": {
             "appointments": {
@@ -1802,6 +1804,125 @@
               "type": "string",
               "pattern": "예시",
               "maxLength": 300
+            },
+            "tour": {
+              "type": "object",
+              "required": [
+                "title",
+                "description",
+                "notice",
+                "items"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                },
+                "description": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300
+                },
+                "notice": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 300,
+                  "pattern": "시안"
+                },
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 12,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "title",
+                      "description",
+                      "image",
+                      "alt"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9][a-z0-9-]*$"
+                      },
+                      "title": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 300
+                      },
+                      "description": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 300
+                      },
+                      "image": {
+                        "type": "string",
+                        "pattern": "^/assets/"
+                      },
+                      "alt": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 300
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "visitorGuides": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "title",
+                  "description"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^visit-[a-z0-9-]+$"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 300
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 300
+                  },
+                  "actionId": {
+                    "enum": [
+                      "play",
+                      "clinic",
+                      "staffBoard"
+                    ]
+                  },
+                  "actionLabel": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 300
+                  }
+                },
+                "dependentRequired": {
+                  "actionId": [
+                    "actionLabel"
+                  ],
+                  "actionLabel": [
+                    "actionId"
+                  ]
+                },
+                "additionalProperties": false
+              }
             }
           },
           "additionalProperties": true

@@ -2029,3 +2029,96 @@ body.intro.is-enhanced noscript { display: none !important; }
 @media (max-width: 768px) {
   .intro-dialog__body .intro-portrait__art > img[src$="/kim-seokyoung.png"] { width: min(100%, 330px, 55vh); }
 }
+
+/* Visitor information follows the original ink-and-paper presentation. */
+.intro .intro-visitor {
+  position: relative;
+  width: min(1200px, calc(100% - 80px));
+  margin: clamp(58px, 7vw, 108px) auto 0;
+  padding-top: clamp(25px, 3vw, 42px);
+  border-top: 1px solid #9d926a80;
+  color: #344334;
+  text-shadow: 0 1px 2px #fffaf0, 0 0 18px #fffaf0b3;
+}
+.intro .intro-visitor::before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: -5px;
+  left: 0;
+  border: 1px solid #a9935f;
+  background: #e9e6cf;
+  transform: rotate(45deg);
+}
+.intro .intro-visitor__eyebrow {
+  margin: 0 0 12px;
+  color: #8a7857;
+  font-size: 11px;
+  letter-spacing: .16em;
+}
+.intro .intro-visitor h3 {
+  margin: 0;
+  color: #293e2d;
+  font-family: var(--intro-serif);
+  font-size: clamp(26px, 3vw, 39px);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.intro .intro-visitor__items {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px 32px;
+  margin-top: 30px;
+}
+.intro .intro-visitor__item {
+  min-width: 0;
+  padding-top: 16px;
+  border-top: 1px solid #b8a981a8;
+}
+.intro .intro-visitor__item > span {
+  color: #9b835c;
+  font-family: var(--intro-serif);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+.intro .intro-visitor__item h4 {
+  margin: 9px 0 8px;
+  color: #314937;
+  font-family: var(--intro-serif);
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.intro .intro-visitor__item p {
+  max-width: 28em;
+  margin: 0;
+  color: #5a6554;
+  font-size: 14px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.intro .intro-visitor__item .intro-text-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 8px;
+}
+.intro #notice,
+.intro .intro-visitor__item h4[id] { scroll-margin-top: calc(var(--intro-header-height, 84px) + 22px); }
+@media (max-width: 1024px) {
+  .intro .intro-visitor__items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .intro .intro-visitor { width: calc(100% - 36px); margin-top: 55px; }
+  .intro .intro-visitor__items { grid-template-columns: 1fr; gap: 22px; margin-top: 24px; }
+  .intro .intro-visitor__item { padding-top: 14px; }
+  .intro .intro-visitor__item h4 { font-size: 19px; }
+}
+
+/* Keep clinic information legible over artwork. */
+.intro .intro-media .intro-heading__description { color: #fff8e9; text-shadow: 0 2px 5px #10191c, 0 0 16px #10191c; }
+.intro .intro-visitor__item :is(h4, p, span) { text-shadow: 0 1px 2px #fffdf4, 0 0 12px #fffdf4, 0 0 22px #fffdf4; }
+.intro .intro-visitor__item p { color: #303b30; }
+.intro #faq { scroll-margin-top: calc(var(--intro-header-height, 84px) + 22px); }

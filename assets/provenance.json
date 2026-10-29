@@ -129,6 +129,51 @@
       },
       "description": "김석영 한의사 참고 인물 사진",
       "transformation": "none"
+    },
+    {
+      "path": "assets/art/clinic-interior-concept.png",
+      "sha256": "f158a5627da2dc78544a20fb1efcaebe0d8815e389efbcc91a256629b61a9e28",
+      "bytes": 2641613,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy HANOK clinic reception, waiting area and consultation/treatment room; herbal drawers, natural wood, lattice windows and garden; warm daylight; no people, logos or text."
+      },
+      "description": "한의원 둘러보기를 위한 가상의 한옥 실내 시안 이미지. 실제 시설 사진이 아님.",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/clinic-consult-concept.png",
+      "sha256": "08f88d5df48fe66d603584dd7aae9f9b72f9b0825a33b19bbf2e39f2b79bcd23",
+      "bytes": 2759861,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy HANOK consultation room, wood desk and two chairs, herbal cabinets, lattice windows and garden; no people, logos or text."
+      },
+      "description": "상담 공간을 표현한 가상 시안 원화이며 실제 시설 사진이 아님.",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/clinic-treatment-concept.png",
+      "sha256": "7909e4c6dc88ebc4b880bae963357a0cfc66a2289fb89f7da46a0ab07b3dce83",
+      "bytes": 2787042,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy HANOK treatment room, two neatly made beds and linen curtains, traditional wood lattice and garden; no people, procedures, logos or text."
+      },
+      "description": "진료 및 치료 공간을 표현한 가상 시안 원화이며 실제 시설 사진이 아님.",
+      "transformation": "none"
     }
   ]
 }
