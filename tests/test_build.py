@@ -131,6 +131,16 @@ class ClinicIntroChecks(TestCase):
             original = page.read_text(encoding="utf-8")
             self.assertIn("/suan-clinic-demo/assets/", original)
             markup = Markup(original)
+            # Informational cards and footer links must navigate within the page;
+            # reserving remains an inert demo action rather than an external link.
+            self.assertEqual([link.get("href") for link in markup.guide_links],
+                             ["#visit-first", "#gamefeatures"])
+            self.assertTrue(all("data-service-action" not in link for link in markup.guide_links))
+            footer_targets = {link.get("href") for link in markup.footer_links}
+            self.assertTrue({"#clinic", "#gamefeatures"} <= footer_targets)
+            self.assertTrue(any(tag == "button" and attrs.get("type") == "button"
+                                and attrs.get("data-service-action") == "play"
+                                for tag, attrs in markup.footer_services))
             self.assertEqual(markup.sections, self.data["site"]["sectionOrder"])
             self.assertEqual(markup.sections[:4], ["visual", "clinic", "notice", "universe"])
             self.assertLess(markup.sections.index("community"), markup.sections.index("products"))

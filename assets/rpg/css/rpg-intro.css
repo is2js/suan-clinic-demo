@@ -2239,3 +2239,25 @@ body.intro.is-enhanced noscript { display: none !important; }
   .intro .intro-menu-button { display: block; flex-shrink: 0; }
   .intro .intro-header__actions { margin-left: auto; }
 }
+
+/* Clinic palette and a mobile scene composed without stretching the artwork. */
+.intro .intro-header__start { background: linear-gradient(135deg, #315c4a, #1d3b31); }
+.intro .intro-header__start:hover { background: linear-gradient(135deg, #426e59, #275043); }
+.intro .intro-header__start:after { border-color: #e7d0a866; }
+@media (max-width: 768px) {
+  .intro .intro-hero { --hero-stage-width: clamp(1250px, calc(177.6svh - 60px), 1750px); }
+  .intro .intro-hero__sky > .intro-theme-image--night,
+  .intro.has-day .intro-hero__sky > .intro-theme-image--day { background-size: cover; background-position: 58% center; }
+  .intro .intro-hero__title { top: clamp(138px, 19svh, 176px); width: min(88%, 540px); }
+  .intro[data-theme="day"] .intro-hero__lead { text-shadow: 0 2px 4px #172e47e6, 0 0 14px #172e47d9; }
+  .intro .intro-hero__downloads > .intro-button { min-height: 44px; }
+  .intro .intro-back-top { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
+}
+@media (max-width: 768px) and (max-height: 700px) {
+  .intro .intro-hero__title { top: 130px; }
+}
+@supports selector(body:has(#clinic.is-active)) {
+  @media (max-width: 768px) {
+    body.intro:has(#clinic.is-active) .intro-back-top:not(:focus-visible) { opacity: 0; visibility: hidden; pointer-events: none; }
+  }
+}

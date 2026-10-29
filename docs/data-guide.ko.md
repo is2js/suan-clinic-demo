@@ -57,6 +57,8 @@
 
 `clinicDemo.tour.items`의 각 항목에서 `id`, `title`, `description`, `image`, `alt`를 편집합니다. 빌더가 같은 순서의 갤러리와 메뉴에 반영하므로 항목 수와 기존 갤러리·메뉴의 ID 순서를 맞춥니다. `clinicDemo.tour.notice`에는 실제 시설이 아닌 시안이라는 안내를 유지합니다. 현재 `assets/art/clinic-interior-concept.png`, `clinic-consult-concept.png`, `clinic-treatment-concept.png`는 OpenAI 이미지 생성으로 만든 가상의 한옥 실내 원화이며, 프롬프트·해시·크기 등은 `assets/provenance.json`에 기록되어 있습니다. 실제 시설 사진으로 교체할 때는 촬영 및 공개 사용 권한을 확인하세요.
 
+`guide.stories`의 `href`는 페이지 내부 앵커로 작성합니다. 기본값은 첫 방문 `#visit-first`, 진료 이야기 `#gamefeatures`이며 변경한 앵커는 실제 섹션 ID와 일치해야 합니다. 푸터의 진료 안내와 예약 현황도 각각 `#gamefeatures`, `#clinic`으로 연결됩니다.
+
 `clinicDemo.visitorGuides`의 `id`, `title`, `description`을 편집하면 이용 안내에 표시됩니다. 고정 `id`는 메뉴의 `href`와 연결되므로 변경할 때 함께 수정합니다. `actionId`와 `actionLabel`이 있는 항목의 버튼은 데모에서 “준비 중입니다.”를 표시합니다. 진료시간·주소·교통·주차·진료비·서류 정보는 확인되지 않은 상태에서 실제 정보처럼 적지 않습니다.
 
 ## 이미지·자산 교체

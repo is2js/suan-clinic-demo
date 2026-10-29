@@ -51,25 +51,25 @@
     },
     {
       "id": "autumn",
-      "name": "가을의 풍경",
-      "description": "차분한 사색을 위한 시안 일러스트입니다.",
+      "name": "약재가 머무는 곳",
+      "description": "한의학의 약재와 목재의 온기를 표현한 시안 일러스트입니다.",
       "image": "/assets/art/medical-apothecary.webp",
-      "tag": "AUTUMN",
-      "title": "가을의 풍경",
-      "eyebrow": "AUTUMN",
-      "alt": "가을의 풍경을 표현한 시안 일러스트",
+      "tag": "HERBAL ROOM",
+      "title": "약재가 머무는 곳",
+      "eyebrow": "HERBAL ROOM",
+      "alt": "한의학 약재실의 분위기를 표현한 시안 일러스트",
       "caption": "분위기를 표현한 시안 이미지",
       "gameplayCapture": false
     },
     {
       "id": "winter",
-      "name": "겨울의 풍경",
-      "description": "고요한 풍경을 담은 시안 일러스트입니다.",
+      "name": "한옥 마을의 풍경",
+      "description": "한옥과 자연이 어우러진 밝은 풍경을 표현한 시안 일러스트입니다.",
       "image": "/assets/art/hero-day.webp",
-      "tag": "WINTER",
-      "title": "겨울의 풍경",
-      "eyebrow": "WINTER",
-      "alt": "겨울의 풍경을 표현한 시안 일러스트",
+      "tag": "VILLAGE SCENE",
+      "title": "한옥 마을의 풍경",
+      "eyebrow": "VILLAGE SCENE",
+      "alt": "꽃과 한옥이 어우러진 마을의 낮 풍경 시안 일러스트",
       "caption": "분위기를 표현한 시안 이미지",
       "gameplayCapture": false
     }
@@ -1986,11 +1986,11 @@
         "description": "상담과 진료 안내를 차분히 살펴보세요.",
         "image": "/assets/art/clinic-morning-gate.webp",
         "tag": "VISIT GUIDE",
-        "actionId": "play",
         "title": "처음 방문하신다면",
         "eyebrow": "VISIT GUIDE",
-        "href": "/play",
-        "label": "예약 문의"
+        "href": "#visit-first",
+        "label": "첫 방문 안내 보기",
+        "target": "guide"
       },
       {
         "id": "healing-life",
@@ -1998,11 +1998,11 @@
         "description": "일상과 건강을 위한 진료 항목을 소개합니다.",
         "image": "/assets/art/healing-courtyard.webp",
         "tag": "VISIT GUIDE",
-        "actionId": "clinic",
         "title": "수안의 진료 이야기",
         "eyebrow": "VISIT GUIDE",
-        "href": "/rpg/clinic",
-        "label": "예약 문의"
+        "href": "#gamefeatures",
+        "label": "진료 항목 보기",
+        "target": "gamefeatures"
       }
     ]
   },
@@ -2672,11 +2672,11 @@
           },
           {
             "id": "autumn",
-            "name": "가을의 풍경"
+            "name": "약재가 머무는 곳"
           },
           {
             "id": "winter",
-            "name": "겨울의 풍경"
+            "name": "한옥 마을의 풍경"
           }
         ]
       },
@@ -3169,11 +3169,11 @@
           "description": "상담과 진료 안내를 차분히 살펴보세요.",
           "image": "/assets/art/clinic-morning-gate.webp",
           "tag": "VISIT GUIDE",
-          "actionId": "play",
           "title": "처음 방문하신다면",
           "eyebrow": "VISIT GUIDE",
-          "href": "/play",
-          "label": "예약 문의"
+          "href": "#visit-first",
+          "label": "첫 방문 안내 보기",
+          "target": "guide"
         },
         {
           "id": "healing-life",
@@ -3181,11 +3181,11 @@
           "description": "일상과 건강을 위한 진료 항목을 소개합니다.",
           "image": "/assets/art/healing-courtyard.webp",
           "tag": "VISIT GUIDE",
-          "actionId": "clinic",
           "title": "수안의 진료 이야기",
           "eyebrow": "VISIT GUIDE",
-          "href": "/rpg/clinic",
-          "label": "예약 문의"
+          "href": "#gamefeatures",
+          "label": "진료 항목 보기",
+          "target": "gamefeatures"
         }
       ]
     },
@@ -3560,25 +3560,25 @@
         },
         {
           "id": "autumn",
-          "name": "가을의 풍경",
-          "description": "차분한 사색을 위한 시안 일러스트입니다.",
+          "name": "약재가 머무는 곳",
+          "description": "한의학의 약재와 목재의 온기를 표현한 시안 일러스트입니다.",
           "image": "/assets/art/medical-apothecary.webp",
-          "tag": "AUTUMN",
-          "title": "가을의 풍경",
-          "eyebrow": "AUTUMN",
-          "alt": "가을의 풍경을 표현한 시안 일러스트",
+          "tag": "HERBAL ROOM",
+          "title": "약재가 머무는 곳",
+          "eyebrow": "HERBAL ROOM",
+          "alt": "한의학 약재실의 분위기를 표현한 시안 일러스트",
           "caption": "분위기를 표현한 시안 이미지",
           "gameplayCapture": false
         },
         {
           "id": "winter",
-          "name": "겨울의 풍경",
-          "description": "고요한 풍경을 담은 시안 일러스트입니다.",
+          "name": "한옥 마을의 풍경",
+          "description": "한옥과 자연이 어우러진 밝은 풍경을 표현한 시안 일러스트입니다.",
           "image": "/assets/art/hero-day.webp",
-          "tag": "WINTER",
-          "title": "겨울의 풍경",
-          "eyebrow": "WINTER",
-          "alt": "겨울의 풍경을 표현한 시안 일러스트",
+          "tag": "VILLAGE SCENE",
+          "title": "한옥 마을의 풍경",
+          "eyebrow": "VILLAGE SCENE",
+          "alt": "꽃과 한옥이 어우러진 마을의 낮 풍경 시안 일러스트",
           "caption": "분위기를 표현한 시안 이미지",
           "gameplayCapture": false
         }
@@ -3935,8 +3935,8 @@
         },
         {
           "id": "board-faq",
-          "title": "자주 묻는 질문",
-          "description": "방문과 이용에 관한 질문을 모아보는 공간입니다.",
+          "title": "방문 안내 질문",
+          "description": "방문과 이용에 관한 질문을 나누는 게시판 시안입니다.",
           "posts": [
             {
               "title": "방문 전 무엇을 확인하면 좋을까요?",

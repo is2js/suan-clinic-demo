@@ -16,10 +16,20 @@ class Markup(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.urls, self.ids, self.services, self.forms, self.sections = [], [], [], [], []
+        self.guide_links, self.footer_links, self.footer_services = [], [], []
+        self.in_footer = False
         self.feed(text)
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
+        if tag == "footer":
+            self.in_footer = True
+        if tag == "a" and "intro-guide-story" in attrs.get("class", "").split():
+            self.guide_links.append(attrs)
+        if self.in_footer and tag == "a":
+            self.footer_links.append(attrs)
+        if self.in_footer and "data-service-action" in attrs:
+            self.footer_services.append((tag, attrs))
         if "id" in attrs:
             self.ids.append(attrs["id"])
         if tag == "section" and "data-section" in attrs and "id" in attrs:
@@ -32,6 +42,10 @@ class Markup(HTMLParser):
             if attrs.get(key):
                 self.urls.append(attrs[key])
         self.urls.extend(re.findall(r"url\(['\"]?([^)'\"]+)", attrs.get("style", "")))
+
+    def handle_endtag(self, tag):
+        if tag == "footer":
+            self.in_footer = False
 
 
 def existing_exact(root, relative):

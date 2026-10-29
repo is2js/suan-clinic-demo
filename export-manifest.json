@@ -3,11 +3,11 @@
   "sourceRepository": "https://github.com/is2js/pvp",
   "sourceCommit": "c225a27c81ee1407b9fefd8a63b25c9229c0ae64",
   "contentRevision": "intro-authored-sections-20261022-r1",
-  "contentSha256": "c15a8799b1554a049efc50a75d4c1622be281ee9f0bfb844c112e99e1ebaa884",
+  "contentSha256": "09faee323df9b049a007b1828aed033789d7abdd9abdcf6f9fb9e1741f750bad",
   "mode": "demo",
   "pagesEnabled": true,
   "spriteRowVariants": 47,
-  "assetBytes": 87481958,
+  "assetBytes": 87483281,
   "files": [
     {
       "path": ".gitattributes",
@@ -687,8 +687,8 @@
     },
     {
       "path": "assets/rpg/css/rpg-intro.css",
-      "bytes": 241693,
-      "sha256": "1c43e187287d29ecaa3777ac7b7fec8a4e2e64f9e344970fefddacf7589e7ad0",
+      "bytes": 243016,
+      "sha256": "f84dc3efb94e5b6d83e395a1aa29f108c7c72d24b5946cf5890b5a8f83eeb9ee",
       "source": "assets/rpg/css/rpg-intro.css",
       "sourceSha256": "3f6edab9027fa5321dac0e9fa4847704ac9f2b4f67043537957d9aa5b0f72c19"
     },
@@ -2282,8 +2282,8 @@
     },
     {
       "path": "docs/data-guide.ko.md",
-      "bytes": 9675,
-      "sha256": "e87d06aa3fc28d3aef26b11b42d8b67580cdd09b61199485e4b7b20e4cef93b4",
+      "bytes": 9993,
+      "sha256": "bc1086d5a7114834c331105704b3f8c16e48ecfe8e16994e1eb855e7a636d81b",
       "source": "docs/rpg-intro-data-guide.ko.md"
     },
     {
@@ -2314,8 +2314,8 @@
     },
     {
       "path": "templates/rpg-intro.html",
-      "bytes": 44006,
-      "sha256": "8ed2f6b63a839e4facc1dee612d42ea753944f9a0e5ad054e46d3aedbd6e233e",
+      "bytes": 44129,
+      "sha256": "e4b7ee8232c5a6a5e2f9e10099418e6a4a6426fea9e32c2e60255c892b57e4e5",
       "source": "templates/rpg-intro.html"
     },
     {
@@ -2338,8 +2338,8 @@
     },
     {
       "path": "tools/verify.py",
-      "bytes": 4349,
-      "sha256": "0a5290f775ff05bcaed5ddb581ce784526c63323421c3eedd2c881c85ff7afb3",
+      "bytes": 4945,
+      "sha256": "dda88bde7888c4ee2ae9617875fe093d2d96af87de251b50d6de9afd3c55be4f",
       "source": "tools/rpg_intro_demo/verify.py"
     },
     {
