@@ -2552,12 +2552,15 @@
     "sectionOrder": [
       "visual",
       "clinic",
+      "notice",
       "universe",
       "character",
       "features",
       "gamefeatures",
       "sect",
       "skill",
+      "community",
+      "products",
       "guide",
       "media",
       "access"
@@ -2620,7 +2623,7 @@
     "navigation": [
       {
         "id": "clinic",
-        "label": "예약·공지",
+        "label": "예약",
         "kind": "links",
         "entries": [
           {
@@ -2629,15 +2632,22 @@
             "href": "#clinic"
           },
           {
-            "name": "공지사항",
-            "target": "clinic",
-            "href": "#notice"
-          },
-          {
             "name": "예약 문의",
             "actionId": "play",
             "href": "/play",
             "label": "예약 문의"
+          }
+        ]
+      },
+      {
+        "id": "notice",
+        "label": "공지사항",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "공지사항",
+            "target": "notice",
+            "href": "#notice"
           }
         ]
       },
@@ -2796,6 +2806,40 @@
         ]
       },
       {
+        "id": "community",
+        "label": "커뮤니티",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "건강 이야기",
+            "target": "community",
+            "href": "#board-health"
+          },
+          {
+            "name": "자주 묻는 질문",
+            "target": "community",
+            "href": "#faq"
+          },
+          {
+            "name": "상담 문의",
+            "target": "community",
+            "href": "#board-consult"
+          }
+        ]
+      },
+      {
+        "id": "products",
+        "label": "한방 상품",
+        "kind": "links",
+        "entries": [
+          {
+            "name": "상품 소개",
+            "target": "products",
+            "href": "#products"
+          }
+        ]
+      },
+      {
         "id": "guide",
         "label": "이용 안내",
         "kind": "links",
@@ -2832,7 +2876,7 @@
           },
           {
             "name": "자주 묻는 질문",
-            "target": "clinic",
+            "target": "community",
             "href": "#faq"
           }
         ]
@@ -2926,7 +2970,7 @@
       "schemaVersion": 5,
       "id": "character",
       "heading": {
-        "number": "03",
+        "number": "04",
         "eyebrow": "OUR DOCTORS",
         "title": "마음을 살피는 의료진",
         "description": "두 의료진이 함께 당신의 이야기에 귀 기울입니다."
@@ -2965,8 +3009,8 @@
       "heading": {
         "number": "01",
         "eyebrow": "TODAY AT SUAN",
-        "title": "오늘의 예약과 소식",
-        "description": "예약 현황과 공지는 실제 정보가 아닌 가상 예시입니다."
+        "title": "오늘의 예약",
+        "description": "예약 현황은 실제 정보가 아닌 가상 예시입니다."
       },
       "background": "/assets/rpg/ui/intro/v1/clinic-calls/v1/clinic-call-scene-r1.webp",
       "assets": {
@@ -2998,7 +3042,7 @@
       "schemaVersion": 5,
       "id": "features",
       "heading": {
-        "number": "04",
+        "number": "05",
         "eyebrow": "VOICES OF SUAN",
         "title": "우리의 진료 이야기",
         "description": "이곳에 소개된 후기는 화면 구성을 위한 가상 예시입니다."
@@ -3074,7 +3118,7 @@
       "schemaVersion": 5,
       "id": "gamefeatures",
       "heading": {
-        "number": "05",
+        "number": "06",
         "eyebrow": "THE ART OF HEALING",
         "title": "치유의 손끝, 빛나는 의술",
         "description": "진료 항목을 RPG 캐릭터의 모션으로 소개합니다. 실제 시술 화면은 아닙니다."
@@ -3094,7 +3138,7 @@
       "schemaVersion": 5,
       "id": "guide",
       "heading": {
-        "number": "08",
+        "number": "11",
         "eyebrow": "FIRST CHAPTER",
         "title": "첫걸음도, 함께",
         "description": "편안한 방문을 위한 작은 안내입니다."
@@ -3149,7 +3193,7 @@
       "schemaVersion": 5,
       "id": "media",
       "heading": {
-        "number": "09",
+        "number": "12",
         "eyebrow": "SPACE OF SUAN",
         "title": "한의원 둘러보기",
         "description": "공간 분위기를 표현한 시안 원화이며 실제 시설 사진이 아닙니다."
@@ -3205,7 +3249,7 @@
       "schemaVersion": 5,
       "id": "sect",
       "heading": {
-        "number": "06",
+        "number": "07",
         "eyebrow": "TOGETHER",
         "title": "처음부터 함께하는 진료",
         "description": "처음 만나는 순간부터 차분하게 안내합니다."
@@ -3434,7 +3478,7 @@
       "schemaVersion": 5,
       "id": "skill",
       "heading": {
-        "number": "07",
+        "number": "08",
         "eyebrow": "OUR CLINICS",
         "title": "몸과 마음을 살피는 진료",
         "description": "진료 항목을 네 가지 주제로 살펴보세요."
@@ -3468,7 +3512,7 @@
       "schemaVersion": 5,
       "id": "universe",
       "heading": {
-        "number": "02",
+        "number": "03",
         "eyebrow": "THE WORLD",
         "title": "수안의 이야기",
         "description": "한 사람의 일상에 귀 기울이는 두 마음의 진료."
@@ -3635,6 +3679,48 @@
         }
       ],
       "heroCopy": {}
+    },
+    "notice": {
+      "schemaVersion": 5,
+      "id": "notice",
+      "heading": {
+        "number": "02",
+        "eyebrow": "SUAN NOTICE",
+        "title": "수안의 소식",
+        "description": "방문과 진료를 위한 공지사항을 살펴보세요. 아래 내용은 예시입니다."
+      },
+      "background": "/assets/art/clinic-morning-gate.webp",
+      "assets": {},
+      "copy": {},
+      "actions": []
+    },
+    "products": {
+      "schemaVersion": 5,
+      "id": "products",
+      "heading": {
+        "number": "10",
+        "eyebrow": "SUAN HERBAL",
+        "title": "정성을 담은 한방 이야기",
+        "description": "한의학의 전통을 담은 상품 소개 시안입니다."
+      },
+      "background": "/assets/art/herbal-products-concept.png",
+      "assets": {},
+      "copy": {},
+      "actions": []
+    },
+    "community": {
+      "schemaVersion": 5,
+      "id": "community",
+      "heading": {
+        "number": "09",
+        "eyebrow": "SUAN COMMUNITY",
+        "title": "함께 나누는 이야기",
+        "description": "소식과 질문, 건강 이야기를 한곳에서 살펴보세요."
+      },
+      "background": "/assets/art/healing-courtyard.webp",
+      "assets": {},
+      "copy": {},
+      "actions": []
     }
   },
   "deployment": {
@@ -3824,6 +3910,101 @@
         "actionId": "staffBoard",
         "actionLabel": "문의하기"
       }
-    ]
+    ],
+    "community": {
+      "title": "함께 나누는 이야기",
+      "description": "소식과 질문을 모아보는 커뮤니티 시안입니다.",
+      "notice": "게시글과 게시판은 화면 구성을 위한 가상 예시이며 실제 운영 내용이 아닙니다.",
+      "boards": [
+        {
+          "id": "board-health",
+          "title": "건강 이야기",
+          "description": "생활 속 건강에 관한 이야기를 나누는 공간입니다.",
+          "posts": [
+            {
+              "title": "건강 이야기 게시판을 준비하고 있습니다.",
+              "label": "예시",
+              "date": "2026.10.26"
+            },
+            {
+              "title": "일상에서 궁금한 점을 살펴보세요.",
+              "label": "예시",
+              "date": "2026.10.23"
+            }
+          ]
+        },
+        {
+          "id": "board-faq",
+          "title": "자주 묻는 질문",
+          "description": "방문과 이용에 관한 질문을 모아보는 공간입니다.",
+          "posts": [
+            {
+              "title": "방문 전 무엇을 확인하면 좋을까요?",
+              "label": "예시",
+              "date": "2026.10.25"
+            },
+            {
+              "title": "상담과 예약은 어떻게 안내되나요?",
+              "label": "예시",
+              "date": "2026.10.22"
+            }
+          ]
+        },
+        {
+          "id": "board-consult",
+          "title": "상담 문의",
+          "description": "궁금한 내용을 나누는 문의 게시판 시안입니다.",
+          "posts": [
+            {
+              "title": "상담 문의 게시판을 준비하고 있습니다.",
+              "label": "예시",
+              "date": "2026.10.24"
+            },
+            {
+              "title": "방문 안내에 관한 문의 예시입니다.",
+              "label": "예시",
+              "date": "2026.10.21"
+            }
+          ]
+        }
+      ]
+    },
+    "products": {
+      "title": "정성을 담은 한방 이야기",
+      "description": "전통 한방 상품을 소개하는 화면 구성 예시입니다.",
+      "notice": "아래 상품과 이미지는 가상의 시안이며 실제 판매·가격·구성은 확인되지 않았습니다.",
+      "items": [
+        {
+          "id": "gongjindan",
+          "name": "공진단",
+          "category": "HERBAL STORY",
+          "description": "공진단을 소개하는 상품 시안입니다. 실제 취급 여부는 확인 후 안내합니다.",
+          "image": "/assets/art/herbal-products-concept.png",
+          "alt": "공진단 등 한방 상품을 표현한 생성 시안 이미지, 실제 제품 사진이 아닙니다.",
+          "actionId": "play",
+          "actionLabel": "상품 문의"
+        },
+        {
+          "id": "gyeongokgo",
+          "name": "경옥고",
+          "category": "HERBAL STORY",
+          "description": "경옥고를 소개하는 상품 시안입니다. 실제 취급 여부는 확인 후 안내합니다.",
+          "image": "/assets/art/herbal-jar-concept.png",
+          "alt": "전통 약 항아리를 표현한 생성 시안 이미지. 실제 제품 사진이 아닙니다.",
+          "actionId": "play",
+          "actionLabel": "상품 문의"
+        },
+        {
+          "id": "herbal-decoction",
+          "name": "한약",
+          "category": "HERBAL STORY",
+          "description": "한약에 관한 상담 안내를 위한 시안입니다. 자세한 내용은 확인 후 안내합니다.",
+          "image": "/assets/art/herbal-decoction-concept.png",
+          "alt": "탕약과 약재를 표현한 생성 시안 이미지. 실제 제품 사진이 아닙니다.",
+          "actionId": "play",
+          "actionLabel": "상담 문의"
+        }
+      ]
+    }
   }
 }

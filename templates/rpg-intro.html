@@ -106,18 +106,27 @@
         </div>
         <div class="intro-hero__story" data-reveal data-reveal-lines><p style="--reveal-order:0">{{ sections.visual['copy'].storyKicker }}</p><h2 style="--reveal-order:1">{{ sections.visual['copy'].storyTitleBefore }}<br><em>{{ sections.visual['copy'].storyTitleEmphasis }}</em>{{ sections.visual['copy'].storyTitleAfter }}</h2><a href="#universe" class="intro-story-link" style="--reveal-order:2"><span>{{ sections.visual['copy'].storyLink }}</span><b aria-hidden="true">▶</b></a></div>
       </section>
-      <section class="intro-section intro-clinic" id="clinic" data-section>
+      <section class="intro-section intro-clinic intro-reservations" id="clinic" data-section aria-label="금일 예약 현황">
         {{ scenery('clinic', sections.clinic.background) }}
         {{ section_heading("clinic") }}
-        <div class="intro-clinic-story" data-reveal>
-          <div class="intro-clinic-demo" aria-labelledby="clinic-demo-title">
-            <div class="intro-clinic-demo__head"><div><p class="intro-clinic-demo__eyebrow">TODAY AT SUAN · 예시 데이터</p><h3 id="clinic-demo-title">금일 예약 현황</h3><p data-clinic-date>오늘</p></div><strong>{{ intro_data.clinicDemo.appointments | length }} <small>건의 예시 예약</small></strong></div>
-            <p class="intro-clinic-demo__notice">가상의 예약 현황이며 실제 예약과 무관합니다.</p>
-            <div class="intro-clinic-demo__stats"><span>대기 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '대기') | list | length }}</b></span><span>진료 중 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '진료 중') | list | length }}</b></span><span>완료 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '완료') | list | length }}</b></span></div>
-            <ul class="intro-clinic-demo__list" aria-label="가상 금일 예약 목록">{% for appointment in intro_data.clinicDemo.appointments %}<li><time>{{ appointment.time }}</time><strong>{{ appointment.alias }}</strong><span>{{ appointment.status }}</span></li>{% endfor %}</ul>
+        <div class="intro-reservations__layout" data-reveal>
+          <div class="intro-reservations__intro">
+            <span class="intro-kicker">TODAY AT SUAN</span><h3>오늘의 진료 일정</h3>
+            <p data-clinic-date>오늘</p>
+            <p class="intro-reservations__notice">가상의 예약 현황이며 실제 예약과 무관합니다.</p>
+            <strong>{{ intro_data.clinicDemo.appointments | length }} <small>건의 예시 예약</small></strong>
+            <div class="intro-reservations__stats"><span>대기 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '대기') | list | length }}</b></span><span>진료 중 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '진료 중') | list | length }}</b></span><span>완료 <b>{{ intro_data.clinicDemo.appointments | selectattr('status', 'equalto', '완료') | list | length }}</b></span></div>
+            {{ service("play", "intro-button intro-button--ink", "예약 문의") }}
           </div>
-          <div class="intro-clinic-info"><div><h3 id="notice">공지 안내</h3>{% for notice in intro_data.clinicDemo.notices %}<p><small>{{ notice.label }}</small> {{ notice.title }}</p>{% endfor %}</div><div><h3 id="faq">자주 묻는 질문</h3>{% for item in intro_data.clinicDemo.faq %}<details><summary>{{ item.question }}</summary><p>{{ item.answer }}</p></details>{% endfor %}</div><p>오시는 길과 진료시간은 확인 후 안내해 드리겠습니다.</p></div>
-          <nav class="intro-clinic-links" aria-label="예약과 상담 문의">{{ service("play", "intro-button intro-button--ink", "예약 문의") }}{{ service("clinic", "intro-text-link", "상담 문의") }}{{ service("staffBoard", "intro-text-link", "전화 문의") }}</nav>
+          <div class="intro-reservations__schedule"><div class="intro-reservations__schedule-heading"><span>예약 시간</span><span>이름</span><span>진료 상태</span></div><ul aria-label="가상 금일 예약 목록">{% for appointment in intro_data.clinicDemo.appointments %}<li><time>{{ appointment.time }}</time><strong>{{ appointment.alias }}</strong><span class="intro-reservations__status">{{ appointment.status }}</span></li>{% endfor %}</ul></div>
+        </div>
+      </section>
+      <section class="intro-section intro-notices intro-illustrated" id="notice" data-section aria-label="공지사항">
+        {{ scenery('notices', sections.universe.background) }}
+        {{ section_heading("notice") }}
+        <div class="intro-notices__content" data-reveal>
+          <div class="intro-notices__lead"><span class="intro-kicker">NOTICE &amp; NEWS</span><h3>소식을 전합니다</h3><p>방문 전 알아두면 좋은 안내와 새로운 소식을 확인하세요.</p><span class="intro-notices__sample">가상 공지 · 실제 운영 공지가 아닙니다</span></div>
+          <div class="intro-notices__list" aria-label="가상 공지 목록">{% for notice in intro_data.clinicDemo.notices %}<button type="button" data-service-action="staffBoard" class="intro-notices__row"><span>{{ '%02d' | format(loop.index) }}</span><span><small>{{ notice.label }}</small><strong>{{ notice.title }}</strong></span><b aria-hidden="true">↗</b></button>{% endfor %}</div>
         </div>
       </section>
       <section class="intro-section intro-universe intro-illustrated" id="universe" data-section>
@@ -250,6 +259,24 @@
             <div class="intro-element-detail__copy"><span class="intro-element-detail__eyebrow">{{ sections.skill['copy'].detailEyebrow }}</span><h4 data-element-skill-name>{{ first_element_skill.name if first_element_skills else first_element.skillName }}</h4><p data-element-skill-description>{{ first_element_skill.description if first_element_skills else first_element.skillDescription }}</p></div>
           </div>
         </div>
+      </section>
+      <section class="intro-section intro-community intro-illustrated" id="community" data-section aria-label="{{ intro_data.clinicDemo.community.title }}">
+        {{ scenery('community', sections.guide.background) }}
+        {{ section_heading("community") }}
+        <p class="intro-community__notice" data-reveal>{{ intro_data.clinicDemo.community.notice }}</p>
+        <div class="intro-community__tabs" role="tablist" aria-label="커뮤니티 게시판 선택" data-reveal>{% for board in intro_data.clinicDemo.community.boards %}<button type="button" role="tab" id="{{ board.id }}" data-community-index="{{ loop.index0 }}" aria-controls="community-panel-{{ loop.index0 }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}"><span>{{ '%02d' | format(loop.index) }}</span>{{ board.title }}</button>{% endfor %}</div>
+        <div class="intro-community__boards" data-reveal>{% for board in intro_data.clinicDemo.community.boards %}
+          <article class="intro-community__board" id="community-panel-{{ loop.index0 }}" role="tabpanel" aria-labelledby="{{ board.id }}" data-community-panel="{{ loop.index0 }}"{% if not loop.first %} hidden{% endif %}><div class="intro-community__board-head"><span>{{ '%02d' | format(loop.index) }} / COMMUNITY</span><h3>{{ board.title }}</h3><p>{{ board.description }}</p></div><ul aria-label="{{ board.title }} 예시 글 목록">{% for post in board.posts %}<li><button type="button" data-service-action="staffBoard" aria-label="{{ post.title }} 예시 게시글 보기"><small>{{ post.label }}</small><span>{{ post.title }}</span><time>{{ post.date }}</time></button></li>{% endfor %}</ul><div class="intro-community__actions">{{ service("staffBoard", "intro-community__link", "게시판 더보기") }}{{ service("staffBoard", "intro-community__link", "글쓰기") }}</div></article>
+        {% endfor %}</div><noscript><style>.intro-community__board[hidden]{display:block}</style></noscript>
+        <div class="intro-community__faq" id="faq" data-reveal><div><span class="intro-kicker">FREQUENTLY ASKED</span><h3>자주 묻는 질문</h3></div><div>{% for item in intro_data.clinicDemo.faq %}<details><summary>{{ item.question }}</summary><p>{{ item.answer }}</p></details>{% endfor %}</div></div>
+      </section>
+      <section class="intro-section intro-products intro-illustrated" id="products" data-section aria-label="{{ intro_data.clinicDemo.products.title }}">
+        {{ scenery('products', sections.skill.background) }}
+        {{ section_heading("products") }}
+        <p class="intro-products__notice" data-reveal>{{ intro_data.clinicDemo.products.notice }}</p>
+        <div class="intro-products__list" data-reveal>{% for item in intro_data.clinicDemo.products['items'] %}
+          <article class="intro-products__item" id="product-{{ item.id }}"><div class="intro-products__image"><img data-scene-src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy" decoding="async"><noscript><img src="{{ item.image }}" alt="{{ item.alt }}" loading="lazy"></noscript><span>{{ '%02d' | format(loop.index) }}</span></div><div class="intro-products__copy"><span>{{ item.category }}</span><h3>{{ item.name }}</h3><p>{{ item.description }}</p>{{ service(item.actionId, 'intro-text-link', item.actionLabel) }}</div></article>
+        {% endfor %}</div>
       </section>
       <section class="intro-section intro-guide intro-illustrated" id="guide" data-section>
         {{ scenery('guide', sections.guide.background) }}

@@ -174,6 +174,51 @@
       },
       "description": "진료 및 치료 공간을 표현한 가상 시안 원화이며 실제 시설 사진이 아님.",
       "transformation": "none"
+    },
+    {
+      "path": "assets/art/herbal-products-concept.png",
+      "sha256": "8d897392b68355af6d0c21a9e846dfd80aabea6c8dad84ecaafbeee1793da093",
+      "bytes": 2292442,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy Korean herbal medicine product illustration: wooden presentation case, gold-wrapped pills, ceramic vessel and dried botanicals, hanok dispensary, no people, labels, text, or medical claims."
+      },
+      "description": "공진단을 포함한 한방 상품을 소개하기 위한 가상 시안 원화. 실제 상품 사진이 아님.",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/herbal-jar-concept.png",
+      "sha256": "b9a5afc7887c6eea72cbe973fa7dcc1630e9a5844badae56f88dcd36d656fcc3",
+      "bytes": 2287221,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy herbal product illustration; ceramic jar in wooden presentation case, herbal ingredients, hanok dispensary, no people, labels, text or medical claims."
+      },
+      "description": "한방 상품 항아리 연출을 위한 가상의 시안 이미지이며 실제 상품 사진이 아님.",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/herbal-decoction-concept.png",
+      "sha256": "9f3d8ab9ac48cc14a7f241a836954b9ba3d7506efac960c3de0652cd400bbb8d",
+      "bytes": 2297805,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "kind": "generated",
+        "generator": "OpenAI image generation",
+        "date": "2026-10-29",
+        "prompt": "Wide cinematic East Asian fantasy herbal decoction illustration; earthenware kettle and bowl, herbal cabinet and ingredients, hanok dispensary, no people, labels, text or medical claims."
+      },
+      "description": "한약 연출을 위한 가상의 시안 이미지이며 실제 상품 사진이 아님.",
+      "transformation": "none"
     }
   ]
 }

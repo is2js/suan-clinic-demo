@@ -15,13 +15,15 @@ from build import base_path, validate
 class Markup(HTMLParser):
     def __init__(self, text):
         super().__init__()
-        self.urls, self.ids, self.services, self.forms = [], [], [], []
+        self.urls, self.ids, self.services, self.forms, self.sections = [], [], [], [], []
         self.feed(text)
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
         if "id" in attrs:
             self.ids.append(attrs["id"])
+        if tag == "section" and "data-section" in attrs and "id" in attrs:
+            self.sections.append(attrs["id"])
         if "data-service-action" in attrs:
             self.services.append((tag, attrs))
         if tag == "form":
@@ -44,14 +46,16 @@ def existing_exact(root, relative):
 
 def verify(root, output, prefix):
     prefix = base_path(prefix)
-    _, manifest = validate(root)
+    data, manifest = validate(root)
     page = (output / "index.html").read_text(encoding="utf-8")
     markup = Markup(page)
     if len(set(markup.ids)) != len(markup.ids):
         raise ValueError("Static HTML has duplicate IDs")
-    expected = {"visual", "universe", "character", "features", "gamefeatures", "sect", "skill", "clinic", "guide", "media", "access"}
+    if markup.sections != data["site"]["sectionOrder"]:
+        raise ValueError("Static HTML section order or anchors differ from site.sectionOrder")
+    expected = {"visual", "clinic", "notice", "community", "products", "faq", "guide", "media"}
     if not expected <= set(markup.ids):
-        raise ValueError("Static HTML lost a section anchor")
+        raise ValueError("Static HTML lost a required section or FAQ anchor")
     if len(markup.services) < 10 or any(tag != "button" or attrs.get("type") != "button" for tag, attrs in markup.services):
         raise ValueError("Demo service actions must all be inert buttons")
     if markup.forms:

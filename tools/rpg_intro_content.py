@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlsplit
 
 from jsonschema import Draft202012Validator
 
-SECTION_IDS = ("visual", "universe", "character", "features", "gamefeatures", "sect", "skill", "clinic", "guide", "media", "access")
+SECTION_IDS = ("visual", "clinic", "notice", "universe", "character", "features", "gamefeatures", "sect", "skill", "community", "products", "guide", "media", "access")
 NAVIGATION_IDS = SECTION_IDS[1:-1]
 SCHEMA_VERSION = 5
 CATALOG_BYTE_BUDGET = 250_000
@@ -93,13 +93,13 @@ def validate_authored_content(authored: dict, project_root: Path, *, content_dir
     site, sections = authored["site"], authored["sections"]
     _validate_schema(site, schema, "site", "site")
     if set(sections) != set(SECTION_IDS):
-        raise ValueError("The authored section registry must contain exactly the eleven existing section IDs")
+        raise ValueError("The authored section registry must contain exactly the registered section IDs")
     if len(site["sectionOrder"]) != len(SECTION_IDS) or set(site["sectionOrder"]) != set(SECTION_IDS):
         raise ValueError("site.sectionOrder must include each existing section exactly once")
     navigation = site["navigation"]
     _unique_ids(navigation, "site.navigation")
     if {row["id"] for row in navigation} != set(NAVIGATION_IDS):
-        raise ValueError("site.navigation must contain the nine existing menu sections")
+        raise ValueError("site.navigation must contain the registered menu sections")
     for section_id, section in sections.items():
         _validate_schema(section, schema, "section", f"sections.{section_id}")
         if section["id"] != section_id:

@@ -3,11 +3,11 @@
   "sourceRepository": "https://github.com/is2js/pvp",
   "sourceCommit": "c225a27c81ee1407b9fefd8a63b25c9229c0ae64",
   "contentRevision": "intro-authored-sections-20261022-r1",
-  "contentSha256": "c5d5bfc091f03f04630f15e69bcd05d11d8075ff35a9bf0d2dc2ac9f0c0b06ce",
+  "contentSha256": "c15a8799b1554a049efc50a75d4c1622be281ee9f0bfb844c112e99e1ebaa884",
   "mode": "demo",
   "pagesEnabled": true,
   "spriteRowVariants": 47,
-  "assetBytes": 80593212,
+  "assetBytes": 87481958,
   "files": [
     {
       "path": ".gitattributes",
@@ -27,8 +27,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4833,
-      "sha256": "4ca273d0e300760c22334b7bc9cdf22511f381e0e25af01589b121b4e9d61e5e",
+      "bytes": 5526,
+      "sha256": "ffb583416f6b4e33d1fc2aa29ca50cad6df9458b114a213249d9f0df220cc1e4",
       "source": "tools/rpg_intro_demo/README.md"
     },
     {
@@ -687,8 +687,8 @@
     },
     {
       "path": "assets/rpg/css/rpg-intro.css",
-      "bytes": 230415,
-      "sha256": "440d3fcef7682727714cee4f18cb94684b151332df57cbd80883d136fcd63791",
+      "bytes": 241693,
+      "sha256": "1c43e187287d29ecaa3777ac7b7fec8a4e2e64f9e344970fefddacf7589e7ad0",
       "source": "assets/rpg/css/rpg-intro.css",
       "sourceSha256": "3f6edab9027fa5321dac0e9fa4847704ac9f2b4f67043537957d9aa5b0f72c19"
     },
@@ -2282,8 +2282,8 @@
     },
     {
       "path": "docs/data-guide.ko.md",
-      "bytes": 7947,
-      "sha256": "a9641c9720c15efb27fa05712ba34bddb0645e283d44be16a89f740f15a62ac8",
+      "bytes": 9675,
+      "sha256": "e87d06aa3fc28d3aef26b11b42d8b67580cdd09b61199485e4b7b20e4cef93b4",
       "source": "docs/rpg-intro-data-guide.ko.md"
     },
     {
@@ -2294,8 +2294,8 @@
     },
     {
       "path": "schema/schema.json",
-      "bytes": 65806,
-      "sha256": "7969fb46ab7e90d03ead3e37661681eaf63f4779822c32c3c9650160c6aa7476",
+      "bytes": 72260,
+      "sha256": "0396c255546e9f320cb26075671ccc6bcecdde2ac3f3a22cd35af14b593f5f82",
       "source": "data/rpg-intro/schema.json"
     },
     {
@@ -2307,15 +2307,15 @@
     },
     {
       "path": "src/rpg/intro.mjs",
-      "bytes": 103916,
-      "sha256": "3192d51c9af2f66456d734d4a7db326ef5badd6756e1998c5f3bc0058da6ea36",
+      "bytes": 104888,
+      "sha256": "778eaa0bfa29aa349637788b3fb302edad632d28bb46d83fcb406adb0044facd",
       "source": "src/rpg/intro.mjs",
       "sourceSha256": "082abef5997b68a110566ad16731913e0e209f693bd39ff67a02ca78bc605a1a"
     },
     {
       "path": "templates/rpg-intro.html",
-      "bytes": 40162,
-      "sha256": "cac4685c825caa149d2381ef0aa7b0083f56e28677d2b4f444782eb5df4f4ac7",
+      "bytes": 44006,
+      "sha256": "8ed2f6b63a839e4facc1dee612d42ea753944f9a0e5ad054e46d3aedbd6e233e",
       "source": "templates/rpg-intro.html"
     },
     {
@@ -2332,14 +2332,14 @@
     },
     {
       "path": "tools/rpg_intro_content.py",
-      "bytes": 13567,
-      "sha256": "ed566db684ac66f2c8319ed29bcbdcaf72b7e8867a4b12ee5a7f3f60ec9ecdfb",
+      "bytes": 13594,
+      "sha256": "98a7948a1e92e73b0e562c38208aa1386ff1eaa2f71629ec6ed975ec42a8ab38",
       "source": "tools/rpg_intro_content.py"
     },
     {
       "path": "tools/verify.py",
-      "bytes": 4077,
-      "sha256": "c1004cc1f93e9a620f4e4ec486789ed12906cba5e0d071d01d2fcf983ddfc470",
+      "bytes": 4349,
+      "sha256": "0a5290f775ff05bcaed5ddb581ce784526c63323421c3eedd2c881c85ff7afb3",
       "source": "tools/rpg_intro_demo/verify.py"
     },
     {
@@ -2407,6 +2407,24 @@
       "source": "OpenAI image generation; see assets/provenance.json",
       "bytes": 2787042,
       "sha256": "7909e4c6dc88ebc4b880bae963357a0cfc66a2289fb89f7da46a0ab07b3dce83"
+    },
+    {
+      "path": "assets/art/herbal-products-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2292442,
+      "sha256": "8d897392b68355af6d0c21a9e846dfd80aabea6c8dad84ecaafbeee1793da093"
+    },
+    {
+      "path": "assets/art/herbal-jar-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2287221,
+      "sha256": "b9a5afc7887c6eea72cbe973fa7dcc1630e9a5844badae56f88dcd36d656fcc3"
+    },
+    {
+      "path": "assets/art/herbal-decoction-concept.png",
+      "source": "OpenAI image generation; see assets/provenance.json",
+      "bytes": 2297805,
+      "sha256": "9f3d8ab9ac48cc14a7f241a836954b9ba3d7506efac960c3de0652cd400bbb8d"
     }
   ],
   "provenance": {

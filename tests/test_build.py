@@ -29,6 +29,12 @@ class ClinicIntroChecks(TestCase):
         self.assertTrue(self.data["clinicDemo"]["appointments"])
         self.assertIn("예시", self.data["clinicDemo"]["appointmentNotice"])
         self.assertIn("예시", self.data["clinicDemo"]["reviewNotice"])
+        community = self.data["clinicDemo"]["community"]
+        products = self.data["clinicDemo"]["products"]
+        self.assertIn("예시", community["notice"])
+        self.assertIn("시안", products["notice"])
+        self.assertGreaterEqual(len(community["boards"]), 2)
+        self.assertIn("공진단", [item["name"] for item in products["items"]])
         self.assertTrue(self.manifest["files"])
 
     def test_invalid_examples_and_actor_counts_are_rejected(self):
@@ -125,10 +131,23 @@ class ClinicIntroChecks(TestCase):
             original = page.read_text(encoding="utf-8")
             self.assertIn("/suan-clinic-demo/assets/", original)
             markup = Markup(original)
-            self.assertLess(markup.ids.index("visual"), markup.ids.index("clinic"))
-            self.assertLess(markup.ids.index("clinic"), markup.ids.index("universe"))
-            self.assertIn("notice", markup.ids)
+            self.assertEqual(markup.sections, self.data["site"]["sectionOrder"])
+            self.assertEqual(markup.sections[:4], ["visual", "clinic", "notice", "universe"])
+            self.assertLess(markup.sections.index("community"), markup.sections.index("products"))
             self.assertIn("faq", markup.ids)
+            for board in self.data["clinicDemo"]["community"]["boards"]:
+                with self.subTest(board=board["id"]):
+                    self.assertIn(board["id"], markup.ids)
+                    self.assertIn(board["title"], original)
+                    for post in board["posts"]:
+                        self.assertIn(post["title"], original)
+            for item in self.data["clinicDemo"]["products"]["items"]:
+                with self.subTest(product=item["id"]):
+                    self.assertIn(f"product-{item['id']}", markup.ids)
+                    self.assertIn(item["name"], original)
+                    self.assertIn(item["alt"], original)
+            self.assertIn(self.data["clinicDemo"]["community"]["notice"], original)
+            self.assertIn(self.data["clinicDemo"]["products"]["notice"], original)
             for guide in self.data["clinicDemo"]["visitorGuides"]:
                 with self.subTest(guide=guide["id"]):
                     self.assertIn(guide["id"], markup.ids)
@@ -140,6 +159,9 @@ class ClinicIntroChecks(TestCase):
             self.assertTrue(markup.services)
             self.assertTrue(all(tag == "button" and attrs.get("type") == "button"
                                 for tag, attrs in markup.services))
+            # Section navigation must continue to match the declared page order.
+            page.write_text(original.replace('id="notice" data-section', 'id="notice-missing" data-section', 1), encoding="utf-8")
+            with self.assertRaises(ValueError): verify(PROJECT, output, "/suan-clinic-demo/")
             for fragment in ('<form action="/booking"></form>', '<a href="tel:012345">전화</a>', '<a href="/play">게임</a>'):
                 with self.subTest(fragment=fragment):
                     page.write_text(original.replace("</body>", fragment + "</body>"), encoding="utf-8")

@@ -374,7 +374,7 @@ export function mountIntro(root, data) {
   if (menu) menu.inert = true;
 
   function layoutNav() {
-    if (!desktopNav || !navPanel || win.innerWidth <= 1152) return;
+    if (!desktopNav || !navPanel || win.innerWidth <= 1280) return;
     const rect = desktopNav.getBoundingClientRect(), bounds = header.getBoundingClientRect();
     navPanel.style.setProperty('--nav-left', `${rect.left - bounds.left}px`);
     navPanel.style.setProperty('--nav-width', `${rect.width}px`);
@@ -382,7 +382,7 @@ export function mountIntro(root, data) {
   }
   function setNav(open, { trigger = null, enter = null, restoreFocus = false } = {}) {
     if (!navPanel) return;
-    navOpen = !!open && win.innerWidth > 1152 && !drawerOpen && !dialog?.open;
+    navOpen = !!open && win.innerWidth > 1280 && !drawerOpen && !dialog?.open;
     if (trigger) navReturn = trigger;
     navPanel.hidden = !navOpen; navPanel.inert = !navOpen;
     navPanel.setAttribute('aria-hidden', String(!navOpen));
@@ -395,7 +395,7 @@ export function mountIntro(root, data) {
         const links = [...(column?.querySelectorAll('a[href]') || [])];
         (enter === 'last' ? links.at(-1) : links[0])?.focus({ preventScroll: true });
       }
-    } else if (restoreFocus && navReturn?.isConnected && win.innerWidth > 1152) {
+    } else if (restoreFocus && navReturn?.isConnected && win.innerWidth > 1280) {
       navRestoring = true; navReturn.focus({ preventScroll: true }); navRestoring = false;
     }
   }
@@ -760,6 +760,12 @@ export function mountIntro(root, data) {
     if (userInitiated) flash($('#skill'), 'is-element-changing');
     syncElementVideo(userInitiated);
     schedule();
+  }
+  function selectCommunity(index) {
+    const tabs = $$('[data-community-index]'), panels = $$('[data-community-panel]');
+    if (!Number.isInteger(index) || index < 0 || index >= tabs.length) return;
+    tabs.forEach((tab, i) => { const active = i === index; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; });
+    panels.forEach((panel, i) => { panel.hidden = i !== index; });
   }
   function syncElementVideo(seek = false) {
     const video = $('[data-element-video]'), item = data.elements?.[elementIndex];
@@ -1460,6 +1466,7 @@ export function mountIntro(root, data) {
     if (button.dataset.actorKind) setActorKind(button.dataset.actorKind);
     if (button.hasAttribute('data-actor-index')) chooseActor(actorKind, Number(button.dataset.actorIndex), button);
     if (button.hasAttribute('data-actor-scene-index')) chooseActor('actors', Number(button.dataset.actorSceneIndex), button);
+    if (button.hasAttribute('data-community-index')) selectCommunity(Number(button.dataset.communityIndex));
     if (button.hasAttribute('data-element-index')) selectElement(Number(button.dataset.elementIndex), true);
     if (button.hasAttribute('data-element-skill-index')) selectElementSkill(Number(button.dataset.elementSkillIndex), true);
     if (button.hasAttribute('data-medical-skill-index')) selectMedicalSkill(Number(button.dataset.medicalSkillIndex));
@@ -1469,9 +1476,10 @@ export function mountIntro(root, data) {
     if (button.matches('a[href^="#"]')) {
       const target = doc.getElementById(button.getAttribute('href').slice(1));
       if (target) {
+        if (target.hasAttribute('data-community-index')) selectCommunity(Number(target.dataset.communityIndex));
         event.preventDefault(); if (drawerOpen) setMenu(false);
         if (button.closest('[data-nav-panel],.intro-drawer-group__links')) {
-          target.tabIndex = -1; target.focus({ preventScroll: true });
+          if (!target.hasAttribute('data-community-index')) target.tabIndex = -1; target.focus({ preventScroll: true });
         }
         target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth', block: 'start' });
         win.history.replaceState(null, '', `#${target.id}`);
@@ -1567,8 +1575,8 @@ export function mountIntro(root, data) {
     parallaxLayers.forEach(el => { el.style.setProperty('--pointer-x', '0px'); el.style.setProperty('--pointer-y', '0px'); });
     dirty = elementPathsDirty = true;
     for (const carousel of carousels.values()) { carousel.wrapRemaining = 0; carousel.el.classList.add('is-track-reset'); carousel.resetFrames = 2; layoutCarousel(carousel); }
-    if (win.innerWidth > 1152 && drawerOpen) setMenu(false);
-    if (win.innerWidth <= 1152) {
+    if (win.innerWidth > 1280 && drawerOpen) setMenu(false);
+    if (win.innerWidth <= 1280) {
       const hadFocus = desktopNav?.contains(doc.activeElement); setNav(false);
       if (hadFocus) menuButton?.focus({ preventScroll: true });
     } else if (navOpen) layoutNav();
@@ -1576,6 +1584,10 @@ export function mountIntro(root, data) {
   }, { passive: true });
   on(motionPreference, 'change', () => { motionButton.hidden = !motionPreference.matches; if (reduced.matches) { elementPlaying = false; if (sequence) sequence.playing = false; content.querySelectorAll('video').forEach(video => { video.dataset.resume = 'false'; video.pause(); }); } encounters.forEach(encounter => encounter.sync()); visibleHeroSequences.forEach(prepareHeroSequence); syncMedicalControls(); syncElementVideo(); dirty = true; schedule(); });
   on(root, 'error', event => { const image = event.target; if (image?.tagName === 'IMG') { image.classList.add('is-missing'); image.removeAttribute('srcset'); image.style.visibility = 'hidden'; image.parentElement?.classList.add('has-missing-art'); } }, { capture: true });
+
+  const selectCommunityHash = () => { const target = doc.getElementById(win.location.hash.slice(1)); if (target?.hasAttribute('data-community-index')) selectCommunity(Number(target.dataset.communityIndex)); };
+  on(win, 'hashchange', selectCommunityHash);
+  selectCommunityHash();
 
   root.classList.add('is-enhanced', 'has-motion');
   root.classList.toggle('is-motion-preview', motionPreview);

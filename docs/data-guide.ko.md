@@ -11,14 +11,16 @@
 | 구간 | 편집 위치 | 준비할 내용과 이미지 |
 | --- | --- | --- |
 | 첫 화면 | `brand`, `site.brand`, `sections.visual` | 한의원명·소개 문구와 낮/밤 풍경. 투명 인물과 기존 레이어는 별도 이미지 |
-| 예약·공지 | `clinicDemo.appointments`, `clinicDemo.notices`, `sections.clinic` | 첫 화면 다음에 나타나는 예약 예시와 공지. 이름·시간·상태는 가상 데이터로 관리 |
+| 예약 | `clinicDemo.appointments`, `sections.clinic` | 첫 화면 다음의 금일 예약 예시. 이름·시간·상태는 가상 데이터로 관리 |
+| 공지사항 | `clinicDemo.notices` | 예약 다음의 독립 공지 섹션. 안내·소식은 실제 운영 공지가 아닌 예시 |
 | 한의원 소개 | `universe`, `sections.universe.items` | 소개 문구와 가로 풍경 5개, 각 이미지의 `alt`·설명. 실제 시설 사진이 아니라면 시안이라고 표시 |
 | 의료진 | `actors`, `sections.character.actorCopy` | 남녀 의료진 2명. `name`, `role`, `description`, `portrait`, `image`를 함께 수정. 사진 원본과 이용 범위 기록 |
 | 최근 후기 | `clinicDemo.reviews` | 다섯 가상 후기의 별명·내용·상대 날짜. 빌드 시 후기 카드와 메뉴에 자동 반영. 카드 배경은 `features`와 `sections.features.items`에서 관리 |
 | 의료 스킬 | `medical.skills`, `sections.gamefeatures` | 치료 항목 이름·설명·아이콘과 시연용 스프라이트. 실제 치료 효과나 확정적 결과를 주장하지 않음 |
 | 함께하는 진료 | `guild`, `sections.sect.items` | 세 장면의 배경과 문구. `motionActors`의 스프라이트는 기존 모션 |
 | 진료 항목 | `elements`, `sections.skill` | 네 분류별 두 항목. 이미지와 설명을 바꾸되 시연 프레임·효과 타이밍을 유지 |
-| 예약 현황 | `clinicDemo.appointments`, `sections.clinic` | `id`, `alias`, `time`, `status`와 예시 표기. 날짜는 한국 시간 기준 표시 |
+| 커뮤니티 | `clinicDemo.community` | 게시판 이름·설명과 게시글 예시. 게시글과 게시판은 실제 운영하지 않음 |
+| 한방 상품 | `clinicDemo.products` | 상품 소개 예시, 생성 원화와 상담 버튼. 판매·가격·구성 확인 전으로 표기 |
 | 이용 안내 | `guide`, `sections.guide`, `clinicDemo.visitorGuides`, `clinicDemo.faq` | 진료시간·예약·첫 방문·오시는 길·주차·진료비와 서류. 미확인 정보는 준비 중으로 남김 |
 | 한의원 둘러보기 | `clinicDemo.tour.items`, `clinicDemo.tour.notice` | 6개 공간 원화의 제목·설명·이미지·대체 문구. 빌드 시 갤러리와 메뉴에 반영 |
 | 마지막 안내 | `sections.access` | 방문과 예약을 안내하는 마무리 문구 |
@@ -42,6 +44,14 @@
 후기 `daysAgo`는 표시 기준 날짜에서 뺄 일수입니다. 실제 예약 접수·사용자 정보 저장·환자 조회 기능은 이 정적 시안에 없습니다.
 
 후기를 바꿀 때는 `clinicDemo.reviews`의 별명·내용·`daysAgo`만 편집하고 다시 빌드합니다. 빌더가 각 후기의 순서에 맞춰 카드 이름·본문·날짜 및 가상 예시 표시와 상단 메뉴 이름을 채웁니다. 기존 다섯 카드의 이미지·ID·순서는 유지되므로 후기 개수는 카드 개수와 같아야 하며 각 후기 ID는 중복될 수 없습니다. `features`와 `sections.features.items`의 카드 ID 및 메뉴 항목 순서는 서로 일치해야 합니다.
+
+## 공지·커뮤니티와 상품 시안
+
+`clinicDemo.notices`의 `label`, `title`은 공지 섹션에 표시되며 현재는 가상 예시입니다. `clinicDemo.community`의 `boards`는 각 게시판의 `id`, `title`, `description`, `posts`(각 `title`, `label`, `date`)로 구성합니다. 데이터의 `notice`에 실제 게시글이 아닌 예시임을 계속 표시합니다. 게시판 버튼은 “준비 중입니다.”를 안내하며 실제 읽기·쓰기나 서버 저장은 없습니다.
+
+`clinicDemo.products.items`의 `id`, `name`, `category`, `description`, `image`, `alt`, `actionId`, `actionLabel`을 수정하면 상품 시안에 반영됩니다. 상품 이미지와 제품 정보가 실제 판매 제품이 아닌 시안임을 `clinicDemo.products.notice`와 이미지 대체 텍스트에 표시합니다. 공진단은 사용자 요청에 따른 예시로, 실제 취급 여부와 가격·구성은 확인되지 않았습니다. 효능이나 치료 결과를 추정하여 기재하지 않습니다. 모든 상품 버튼은 주문이나 결제 없이 “준비 중입니다.”를 표시합니다.
+
+`assets/art/herbal-products-concept.png`, `herbal-jar-concept.png`, `herbal-decoction-concept.png`는 상품 분위기를 표현한 OpenAI 생성 원화로 실제 제품 사진이 아닙니다. 프롬프트와 해시는 `assets/provenance.json`을 참조하세요. 확인된 상품 사진으로 교체할 때는 사용 권한, 정보의 정확성 및 관련 표시를 검토합니다.
 
 ## 둘러보기와 방문 안내
 
