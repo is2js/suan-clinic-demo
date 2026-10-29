@@ -1,0 +1,140 @@
+{
+  "site": {
+    "brand": "수안부부한의원",
+    "tagline": "일상의 균형을 살피는 시간",
+    "description": "한의학의 차분한 시선으로 일상을 돌아보는 공간. 이 페이지는 디자인 시안입니다."
+  },
+  "hero": {
+    "eyebrow": "A MOMENT FOR YOUR WELLBEING",
+    "title": "당신의 일상에, 편안한 쉼을",
+    "description": "한 분 한 분의 이야기에 귀 기울이는 시간.\n수안부부한의원에서 나의 균형을 살펴보세요.",
+    "dayImage": "assets/art/hero-day.webp",
+    "nightImage": "assets/art/hero-night.webp"
+  },
+  "clinicians": [
+    {
+      "id": "jo-jaeseong",
+      "name": "조재성",
+      "role": "원장 · 한의사",
+      "image": "assets/clinicians/jo-jaeseong.png",
+      "focus": "근골격계 · 추나 · 재활",
+      "description": "몸의 움직임과 일상 속 불편에 귀 기울이는 진료 이야기를 소개합니다."
+    },
+    {
+      "id": "kim-seokyoung",
+      "name": "김석영",
+      "role": "원장 · 한의사",
+      "image": "assets/clinicians/kim-seokyoung.png",
+      "focus": "피부 · 미용 · 여성 건강",
+      "description": "저마다 다른 일상의 고민을 함께 살펴보는 진료 이야기를 소개합니다."
+    }
+  ],
+  "departments": [
+    {
+      "id": "musculoskeletal",
+      "name": "통증·재활",
+      "eyebrow": "MOVEMENT & BALANCE",
+      "description": "일상 속 움직임과 몸의 불편에 관한 상담을 살펴봅니다.",
+      "image": "assets/art/clinic-morning-gate.webp"
+    },
+    {
+      "id": "chuna",
+      "name": "추나",
+      "eyebrow": "A GENTLE APPROACH",
+      "description": "몸의 상태와 움직임을 바탕으로 추나 진료를 안내합니다.",
+      "image": "assets/art/healing-courtyard.webp"
+    },
+    {
+      "id": "womens-health",
+      "name": "여성 건강",
+      "eyebrow": "EVERYDAY CARE",
+      "description": "일상의 변화와 여성 건강에 대한 고민을 함께 살펴봅니다.",
+      "image": "assets/art/herb-garden.webp"
+    },
+    {
+      "id": "skin-beauty",
+      "name": "피부·미용",
+      "eyebrow": "SKIN & WELLNESS",
+      "description": "피부와 미용에 관한 개인의 고민을 나누는 시간을 소개합니다.",
+      "image": "assets/art/medical-apothecary.webp"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-example-01",
+      "alias": "김**",
+      "daysAgo": 0,
+      "content": "상담 내용을 차분하게 설명해 주어 편안한 마음으로 이야기할 수 있었어요."
+    },
+    {
+      "id": "review-example-02",
+      "alias": "박**",
+      "daysAgo": 1,
+      "content": "궁금했던 부분을 하나씩 물어볼 수 있어 좋았습니다."
+    },
+    {
+      "id": "review-example-03",
+      "alias": "이**",
+      "daysAgo": 2,
+      "content": "처음 방문할 때 필요한 안내를 이해하기 쉽게 들을 수 있었어요."
+    },
+    {
+      "id": "review-example-04",
+      "alias": "최**",
+      "daysAgo": 4,
+      "content": "제 이야기를 천천히 나눌 수 있는 시간이 인상적이었습니다."
+    },
+    {
+      "id": "review-example-05",
+      "alias": "정**",
+      "daysAgo": 6,
+      "content": "편안한 분위기에서 상담을 받을 수 있었습니다."
+    }
+  ],
+  "appointments": [
+    { "id": "appointment-example-01", "alias": "김**", "time": "09:30", "status": "완료" },
+    { "id": "appointment-example-02", "alias": "이**", "time": "10:00", "status": "완료" },
+    { "id": "appointment-example-03", "alias": "박**", "time": "10:30", "status": "진료 중" },
+    { "id": "appointment-example-04", "alias": "최**", "time": "11:00", "status": "대기" },
+    { "id": "appointment-example-05", "alias": "정**", "time": "11:30", "status": "대기" },
+    { "id": "appointment-example-06", "alias": "한**", "time": "14:00", "status": "대기" }
+  ],
+  "spaces": [
+    {
+      "id": "courtyard",
+      "name": "마음을 놓는 풍경",
+      "description": "자연과 한옥을 모티프로 한 분위기 이미지입니다.",
+      "image": "assets/art/healing-courtyard.webp"
+    },
+    {
+      "id": "herb-garden",
+      "name": "한의학의 정원",
+      "description": "한의학의 정취를 담아 표현한 상상 속 정원입니다.",
+      "image": "assets/art/herb-garden.webp"
+    },
+    {
+      "id": "apothecary",
+      "name": "약재가 머무는 곳",
+      "description": "전통 약재와 목재의 온기를 담은 분위기 이미지입니다.",
+      "image": "assets/art/medical-apothecary.webp"
+    }
+  ],
+  "notices": [
+    { "title": "방문 안내를 준비하고 있습니다.", "label": "안내 예시" },
+    { "title": "진료 정보는 확인 후 제공될 예정입니다.", "label": "소식 예시" }
+  ],
+  "faq": [
+    {
+      "question": "이 페이지에서 예약할 수 있나요?",
+      "answer": "현재는 디자인 시안으로, 온라인 예약 기능은 준비 중입니다."
+    },
+    {
+      "question": "보이는 예약 현황은 실제 정보인가요?",
+      "answer": "아닙니다. 현황판의 이름·시간·상태는 화면 구성을 위한 가상 예시입니다."
+    },
+    {
+      "question": "후기와 공간 사진은 실제 사례인가요?",
+      "answer": "후기는 가상 예시이며, 공간 이미지는 한의학의 분위기를 표현한 원화입니다."
+    }
+  ]
+}

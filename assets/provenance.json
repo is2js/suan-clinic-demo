@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "note": "기존 사용자 프로젝트에서 이미지 바이트를 변경하지 않고 복사한 시안용 자산. 판타지 풍경은 실제 시설이 아닙니다. 공개 사용 전 사진·초상과 원화의 이용 범위를 확인하세요.",
+  "assets": [
+    {
+      "path": "assets/art/hero-day.webp",
+      "sha256": "dd8f53dbfab75dd9d0f86c6510d84c5962395cf722fbc1191e0cc69771ad43e9",
+      "bytes": 444238,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v1/hero-sky-day.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "낮 풍경: 의맥전기 인트로 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/hero-night.webp",
+      "sha256": "03af9a9be6f68bc9846660848eba7ccb621ce66ec950e02c45abf787e0d12373",
+      "bytes": 439782,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v1/hero-sky-night.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "밤 풍경: 의맥전기 인트로 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/clinic-morning-gate.webp",
+      "sha256": "e8aea5c4c21dd133699a35d83a716eb0aa58c1482c8ff23b61715f64ecb078a8",
+      "bytes": 319940,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v5-medical-scenery/clinic-morning-gate.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "아침 한의학 풍경 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/healing-courtyard.webp",
+      "sha256": "d888cd285519f18e23a6c5f6e44cea97b95cb5ac43dba0f933f3c0b60d02372d",
+      "bytes": 405366,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v5-medical-scenery/healing-courtyard.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "한옥과 바다가 보이는 마당 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/medical-apothecary.webp",
+      "sha256": "abdebaba2a6f4b3d2b6d87c8dab2067048fc449da94c273a62bb6dc0f280ae70",
+      "bytes": 313944,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "전통 약재 공간의 분위기 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/art/herb-garden.webp",
+      "sha256": "28445e87a25a67f7d5e9b794f0bc7f0054f432d3dff5815bcb74a52c36eeda73",
+      "bytes": 460168,
+      "width": 1672,
+      "height": 941,
+      "source": {
+        "repository": "pvp",
+        "revision": "d050d735a58217042490591d7cd47151b460e5ce",
+        "path": "assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",
+        "referenceUrl": "https://is2js.github.io/uimaek-intro-demo/",
+        "matchesRevision": true
+      },
+      "description": "한의학 모티프의 정원 원화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/clinicians/jo-jaeseong.png",
+      "sha256": "0653720168a193d9e3d68156d99f8ecf4a10b90f2003950caf987d83a2f90d65",
+      "bytes": 252621,
+      "width": 515,
+      "height": 515,
+      "source": {
+        "repository": "bootstrap",
+        "revision": "68782b554765030ea327aecf44503ef50b9a64d3",
+        "path": "images/doctors/d001.png",
+        "referenceUrl": "http://hani.chojaeseong.com/",
+        "matchesRevision": true
+      },
+      "description": "조재성 한의사 참고 초상화",
+      "transformation": "none"
+    },
+    {
+      "path": "assets/clinicians/kim-seokyoung.png",
+      "sha256": "94fd999cfc69255998612205bd3bc3e7655c1b61e0a414a05fd95f2fff19707f",
+      "bytes": 100161,
+      "width": 326,
+      "height": 343,
+      "source": {
+        "repository": "bootstrap",
+        "revision": "68782b554765030ea327aecf44503ef50b9a64d3",
+        "path": "images/doctors/doctor002.png",
+        "referenceUrl": "http://hani.chojaeseong.com/",
+        "matchesRevision": true
+      },
+      "description": "김석영 한의사 참고 인물 사진",
+      "transformation": "none"
+    }
+  ]
+}

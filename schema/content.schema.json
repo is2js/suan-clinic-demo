@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/suan-clinic/content.schema.json",
+  "title": "수안부부한의원 정적 시안 콘텐츠",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["site", "hero", "clinicians", "reviews", "appointments", "departments", "spaces", "notices", "faq"],
+  "properties": {
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["brand", "tagline", "description"],
+      "properties": {
+        "brand": { "$ref": "#/$defs/text" },
+        "tagline": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eyebrow", "title", "description", "dayImage", "nightImage"],
+      "properties": {
+        "eyebrow": { "$ref": "#/$defs/text" },
+        "title": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "dayImage": { "$ref": "#/$defs/asset" },
+        "nightImage": { "$ref": "#/$defs/asset" }
+      }
+    },
+    "clinicians": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "role", "image", "focus", "description"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "name": { "$ref": "#/$defs/text" },
+          "role": { "$ref": "#/$defs/text" },
+          "image": { "$ref": "#/$defs/asset" },
+          "focus": { "$ref": "#/$defs/text" },
+          "description": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "alias", "daysAgo", "content"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "alias": { "$ref": "#/$defs/alias" },
+          "daysAgo": { "type": "integer", "minimum": 0, "maximum": 365 },
+          "content": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "appointments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "alias", "time", "status"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "alias": { "$ref": "#/$defs/alias" },
+          "time": { "type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$" },
+          "status": { "enum": ["대기", "진료 중", "완료"] }
+        }
+      }
+    },
+    "departments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "eyebrow", "description", "image"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "name": { "$ref": "#/$defs/text" },
+          "eyebrow": { "$ref": "#/$defs/text" },
+          "description": { "$ref": "#/$defs/text" },
+          "image": { "$ref": "#/$defs/asset" }
+        }
+      }
+    },
+    "spaces": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "description", "image"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "name": { "$ref": "#/$defs/text" },
+          "description": { "$ref": "#/$defs/text" },
+          "image": { "$ref": "#/$defs/asset" }
+        }
+      }
+    },
+    "notices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "label"],
+        "properties": {
+          "title": { "$ref": "#/$defs/text" },
+          "label": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["question", "answer"],
+        "properties": {
+          "question": { "$ref": "#/$defs/text" },
+          "answer": { "$ref": "#/$defs/text" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "alias": { "type": "string", "pattern": "^[가-힣]\\*\\*$" },
+    "asset": { "type": "string", "pattern": "^assets/[a-zA-Z0-9_/-]+\\.(?:png|webp|jpg|jpeg)$" }
+  }
+}
