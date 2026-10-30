@@ -2130,7 +2130,6 @@ body.intro.is-enhanced noscript { display: none !important; }
 .intro-products__track { display: flex; align-items: stretch; width: 100%; }
 .intro.is-enhanced .intro-products__track { transition: transform .35s cubic-bezier(.22, 1, .36, 1); touch-action: pan-y; }
 .intro-products__item { flex: 0 0 100%; width: 100%; min-width: 0; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr); align-items: center; gap: clamp(30px, 5vw, 76px); scroll-snap-align: start; scroll-margin-top: calc(var(--intro-header-height,72px) + 20px); }
-.intro-products__image { aspect-ratio: 16/10; }
 .intro-products__copy { padding: 24px 10px 24px 0; }
 .intro-products__copy h3 { margin: 14px 0; font-size: clamp(28px, 3vw, 42px); }
 .intro-products__copy p { max-width: 25em; font-size: 15px; line-height: 1.9; }
@@ -2151,7 +2150,6 @@ body.intro.is-enhanced noscript { display: none !important; }
 @media (max-width: 768px) {
   .intro-products-carousel { width: calc(100% - 40px); margin-top: 36px; }
   .intro-products__item { display: block; }
-  .intro-products__image { aspect-ratio: 16/10; }
   .intro-products__copy { padding: 20px 3px 0; }
   .intro-products__copy h3 { margin: 8px 0; font-size: 28px; }
   .intro-products__copy p { min-height: 0; font-size: 14px; }
@@ -2215,7 +2213,7 @@ body.intro.is-enhanced noscript { display: none !important; }
 .intro-community__faq details p { padding:0 0 14px; color:#555e50; }
 .intro-products__list { position:relative; width:min(1170px,calc(100% - 80px)); margin:52px auto 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:clamp(24px,3vw,40px); }
 .intro-products__item { min-width:0; }
-.intro-products__image { position:relative; aspect-ratio: 4/3; overflow:hidden; background:#d5c5a9; }
+.intro-products__image { position:relative; overflow:hidden; background:#d5c5a9; }
 .intro-products__image img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .7s ease; }
 .intro-products__item:hover .intro-products__image img { transform:scale(1.045); }
 .intro-products__image span { position:absolute; left:15px; top:12px; color:#fff4d8; font:15px var(--intro-serif); text-shadow:0 1px 6px #1a1a12; }
@@ -2336,12 +2334,312 @@ body.intro.is-enhanced noscript { display: none !important; }
   }
 }
 
-/* Soften the product art without masking its labels or controls. */
-.intro .intro-products__image { aspect-ratio: 16/9; border-radius: 6px; }
+/* Hero-only accents reuse the existing scene and its visibility state. */
+.intro .intro-hero__scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 42% 27% at 50% 76%, #d9b16a20, transparent 75%),
+    radial-gradient(ellipse 34% 50% at 13% 53%, #cbad8420, transparent 75%),
+    radial-gradient(ellipse 31% 49% at 89% 40%, #8baed821, transparent 76%);
+  opacity: .82;
+  transition: opacity .55s ease;
+}
+.intro[data-theme="day"] .intro-hero__scene::before { opacity: .48; }
+.intro .intro-hero__stars::before,
+.intro .intro-hero__stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .7;
+  background-repeat: no-repeat;
+}
+.intro .intro-hero__stars::before {
+  background-image:
+    radial-gradient(circle, #ffdea7d9 0 1px, #d8a85347 2px, transparent 5px),
+    radial-gradient(circle, #ffeac2c9 0 1px, #d8a8533d 2px, transparent 5px),
+    radial-gradient(circle, #ffe1a4c9 0 1px, #d8a85347 2px, transparent 4px),
+    radial-gradient(circle, #fff2d6bf 0 1px, #d8a8533d 2px, transparent 4px),
+    radial-gradient(circle, #ffdfa3cc 0 1px, #d8a85347 2px, transparent 5px),
+    radial-gradient(circle, #fff0d1b3 0 1px, #d8a85333 2px, transparent 4px);
+  background-size: 12px 12px, 10px 10px, 12px 12px, 10px 10px, 12px 12px, 10px 10px;
+  background-position: 12% 43%, 24% 28%, 36% 48%, 72% 29%, 84% 51%, 94% 35%;
+}
+.intro .intro-hero__stars::after {
+  background-image:
+    radial-gradient(circle, #ffe8bfc9 0 1px, #d8a85340 2px, transparent 4px),
+    radial-gradient(circle, #ffdfa3b3 0 1px, #d8a85340 2px, transparent 5px),
+    radial-gradient(circle, #fff2d6c9 0 1px, #d8a85333 2px, transparent 4px),
+    radial-gradient(circle, #ffdfa3b3 0 1px, #d8a85340 2px, transparent 5px);
+  background-size: 10px 10px, 12px 12px, 10px 10px, 12px 12px;
+  background-position: 6% 30%, 29% 57%, 77% 56%, 91% 22%;
+}
+.intro.has-motion .intro-hero.is-active .intro-hero__stars::before { animation: suan-hero-spark-drift 10s ease-in-out infinite alternate; }
+.intro.has-motion .intro-hero.is-active .intro-hero__stars::after { animation: suan-hero-spark-drift 13s -5s ease-in-out infinite alternate-reverse; }
+.intro.is-motion-suspended .intro-hero__stars::before,
+.intro.is-motion-suspended .intro-hero__stars::after { animation-play-state: paused; }
+@keyframes suan-hero-spark-drift {
+  0% { opacity: .35; transform: translate3d(0, 9px, 0); }
+  50% { opacity: .85; }
+  100% { opacity: .48; transform: translate3d(4px, -12px, 0); }
+}
+.intro .intro-hero__logo--clinic { text-shadow: 0 2px 8px #061021a8, 0 0 32px #deb77240; }
+.intro .intro-hero__downloads .intro-button { transition: border-color .3s, background-color .3s, box-shadow .3s; }
+.intro .intro-hero__downloads .intro-button:hover,
+.intro .intro-hero__downloads .intro-button:focus-visible { box-shadow: 0 0 22px #e6bf7566, inset 0 0 15px #fff0c01c; }
+@media (max-width: 768px) {
+  .intro .intro-hero__scene::before { opacity: .55; }
+  .intro .intro-hero__stars::after { display: none; }
+}
+@media (max-height: 600px) {
+  .intro .intro-hero__stars::before,
+  .intro .intro-hero__stars::after { animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-hero__stars::before,
+  .intro:not(.is-motion-preview) .intro-hero__stars::after { animation: none !important; }
+  .intro:not(.is-motion-preview) .intro-hero__scene::before,
+  .intro:not(.is-motion-preview) .intro-hero__downloads .intro-button { transition: none; }
+}
+
+
+/* Suan chapter refinement. Decorative effects do not move the sprite ground anchors. */
+.intro {
+  --suan-chapter-gold: #ad8b54;
+  --suan-chapter-ink: #284a3d;
+  --suan-chapter-ease: cubic-bezier(.22, 1, .36, 1);
+}
+.intro .intro-heading h2 > i {
+  filter: drop-shadow(0 1px 5px #c5a96b54);
+}
+.intro .intro-section:not(.intro-hero) > .intro-heading::after {
+  content: "";
+  display: block;
+  width: min(120px, 26vw);
+  height: 1px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, transparent, #af8a52bd 38%, #dbc995 50%, #af8a52bd 62%, transparent);
+  opacity: .65;
+  pointer-events: none;
+  transform-origin: center;
+}
+.intro.has-motion .intro-section.is-section-replaying.is-active > .intro-heading::after {
+  animation: suan-chapter-rule .72s .18s var(--suan-chapter-ease) both;
+}
+@keyframes suan-chapter-rule {
+  from { opacity: 0; scale: .18 1; }
+  to { opacity: .65; scale: 1; }
+}
+
+/* Actor light stays on the marker and art, never the village coordinate system. */
+.intro .intro-character-explorer .intro-village-actor__pin {
+  transition: background-color .25s, border-color .25s, box-shadow .25s;
+}
+.intro .intro-character-explorer .intro-village-actor:is(:hover, :focus-visible, .is-active) .intro-village-actor__pin {
+  border-color: #eed5a2;
+  box-shadow: 0 0 0 3px #24362952, 0 0 22px #ffe6a77a, 0 3px 10px #0005;
+}
+.intro .intro-character-explorer .intro-actor-panel__rule {
+  background: linear-gradient(90deg, #b99155, #d9c590 65%, transparent);
+  transform-origin: left;
+}
+.intro.has-motion .intro-actor-panel.is-revealing .intro-actor-panel__rule {
+  animation: suan-actor-rule .55s .15s var(--suan-chapter-ease) both;
+}
+@keyframes suan-actor-rule {
+  from { opacity: 0; scale: .2 1; }
+  to { opacity: 1; scale: 1; }
+}
+
+/* Selected therapies receive a warm highlight; the medical animation timing is unchanged. */
+.intro .intro-medical-skill__icon {
+  transition: border-color .3s, box-shadow .3s, background-color .3s;
+}
+.intro .intro-medical-skill:is(.is-active, :hover, :focus-visible) .intro-medical-skill__icon {
+  border-color: #a37a41;
+  box-shadow: inset 0 0 0 3px #fffaf0, 0 0 0 5px #d4ba8370, 0 6px 22px #ab824352;
+}
+.intro .intro-medical-skill > span:last-child,
+.intro .intro-element-tab > span:last-child {
+  background: transparent;
+  border-color: transparent;
+  transition: color .25s, border-color .25s;
+}
+.intro .intro-medical-skill.is-active > span:last-child,
+.intro .intro-element-tab.is-active > span:last-child {
+  background: transparent;
+  border-color: transparent transparent #a88b5e;
+}
+.intro .intro-element-tab__symbol {
+  box-shadow: inset 0 0 0 4px #fff9ebba, 0 4px 16px #856f4824;
+  transition: background-color .3s, box-shadow .3s, filter .3s;
+}
+.intro .intro-element-tab:is(.is-active, :hover, :focus-visible) .intro-element-tab__symbol {
+  box-shadow: inset 0 0 0 4px #fff9ebd9, 0 0 0 5px #dfcda44a, 0 5px 20px #ae916748;
+}
+.intro.has-motion .intro-elements.is-active.is-element-changing .intro-element-detail__copy {
+  animation: suan-therapy-copy .48s .06s var(--suan-chapter-ease) both;
+}
+@supports selector(:has(*)) {
+  .intro.has-motion .intro-medical.is-active .intro-medical__inner:has(.intro-medical-arena.is-skill-changing) .intro-medical-summary {
+    animation: suan-therapy-copy .42s var(--suan-chapter-ease) both;
+  }
+}
+@keyframes suan-therapy-copy {
+  from { opacity: .5; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Information sections stay in place: only the line and the active color respond. */
+.intro .intro-notices__row,
+.intro .intro-community__tabs button,
+.intro .intro-community__board li > button {
+  transition: color .22s, border-color .22s, background-color .22s;
+}
+.intro .intro-notices__row:is(:hover, :focus-visible),
+.intro .intro-community__board li > button:is(:hover, :focus-visible) {
+  color: #244c38;
+  background: linear-gradient(90deg, #e5ddc24d, transparent 85%);
+}
+.intro .intro-community__tabs button[aria-selected="true"]::after {
+  background: linear-gradient(90deg, #406748, #9caa79, #d1bd85);
+}
+
+/* Short desktop viewports keep the title and the beginning of the scene together. */
+@media (min-width: 769px) and (max-height: 760px) {
+  .intro .intro-section:not(.intro-hero):not(.intro-media):not(.intro-access) {
+    padding-top: clamp(58px, 9vh, 75px);
+  }
+  .intro .intro-section > .intro-heading h2 { margin-top: 10px; }
+  .intro .intro-section > .intro-heading::after { margin-top: 12px; }
+}
+@media (max-width: 768px) {
+  .intro .intro-section:not(.intro-hero) > .intro-heading::after { width: 72px; margin-top: 12px; }
+  .intro .intro-character-explorer .intro-village-actor:is(:hover, :focus-visible, .is-active) .intro-village-actor__pin {
+    box-shadow: 0 0 0 2px #24362952, 0 0 12px #ffe6a766, 0 3px 8px #0004;
+  }
+}
+@media (max-height: 600px) {
+  .intro.has-motion .intro-section.is-section-replaying > .intro-heading::after,
+  .intro.has-motion .intro-elements.is-element-changing .intro-element-detail__copy,
+  .intro.has-motion .intro-medical .intro-medical__inner:has(.intro-medical-arena.is-skill-changing) .intro-medical-summary { animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-section > .intro-heading::after,
+  .intro:not(.is-motion-preview) .intro-actor-panel__rule,
+  .intro:not(.is-motion-preview) .intro-element-detail__copy,
+  .intro:not(.is-motion-preview) .intro-medical-summary { animation: none !important; }
+  .intro:not(.is-motion-preview) .intro-medical-skill__icon,
+  .intro:not(.is-motion-preview) .intro-element-tab__symbol,
+  .intro:not(.is-motion-preview) .intro-village-actor__pin { transition: none; }
+}
+.intro:is(.is-paused, .is-overlay-open, .is-menu-open) .intro-heading::after,
+.intro:is(.is-paused, .is-overlay-open, .is-menu-open) .intro-actor-panel__rule,
+.intro:is(.is-paused, .is-overlay-open, .is-menu-open) .intro-element-detail__copy,
+.intro:is(.is-paused, .is-overlay-open, .is-menu-open) .intro-medical-summary { animation-play-state: paused !important; }
+
+
+/* Product, review, and space-gallery refinements. Track transforms stay owned by the carousel. */
+.intro .intro-products__image {
+  aspect-ratio: 16 / 9;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #ded5c1, #c4bea8 55%, #eee6d2);
+}
+
+/* Keep the art readable while its image is queued; remove only the placeholder on load. */
+@supports selector(:has(*)) {
+  .intro .intro-products__image:has(img.is-loaded) { background: transparent; }
+}
 @supports ((-webkit-mask-image: linear-gradient(#000, transparent)) or (mask-image: linear-gradient(#000, transparent))) {
-  .intro .intro-products__image { background: transparent; }
-  .intro .intro-products__image img { -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 88%, transparent 100%); }
+  .intro .intro-products__image img {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 94%, transparent 100%);
+  }
 }
 @supports ((mask-composite: intersect) or (-webkit-mask-composite: source-in)) {
-  .intro .intro-products__image img { -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 3%, #000 90%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 3%, #000 97%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 3%, #000 90%, transparent 100%); mask-composite: intersect; }
+  .intro .intro-products__image img {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.5%, #000 98.5%, transparent), linear-gradient(to bottom, transparent, #000 1.5%, #000 94%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent, #000 1.5%, #000 98.5%, transparent), linear-gradient(to bottom, transparent, #000 1.5%, #000 94%, transparent);
+    mask-composite: intersect;
+  }
+}
+@media (max-width: 768px) {
+  .intro .intro-products__image { aspect-ratio: 16 / 10; }
+}
+
+.intro .intro-products__arrow {
+  border-color: #a59069;
+  background: linear-gradient(145deg, #fffdf4, #e9e1cc);
+  box-shadow: inset 0 0 0 3px #faf7e9, 0 5px 14px #5a4d3220;
+  transition: background .25s, color .25s, border-color .25s, box-shadow .25s;
+}
+.intro .intro-products__arrow:is(:hover, :focus-visible) {
+  border-color: #68846b;
+  background: #435b46;
+  box-shadow: inset 0 0 0 3px #435b46, inset 0 0 0 4px #cdb78b, 0 6px 18px #394b3738;
+}
+.intro .intro-products__nav button { transition: color .25s; }
+.intro .intro-products__nav button::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: #648369;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+.intro .intro-products__nav button[aria-selected="true"]::after { transform: scaleX(1); }
+.intro .intro-features-carousel > .intro-arrow { transition: background .25s, border-color .25s, box-shadow .25s; }
+.intro .intro-features-carousel > .intro-arrow:focus-visible { outline: 2px solid #315f47; outline-offset: 4px; }
+.intro .intro-media__thumbnails > button { transition: opacity .3s, border-color .3s, box-shadow .3s; }
+.intro .intro-media__thumbnails > button:is(.is-active, :hover, :focus-visible) { box-shadow: inset 0 0 0 1px #f8dfaa, 0 0 18px #dfc28742; }
+.intro .intro-media__thumbnails > button:focus-visible { outline: 2px solid #f8dfaa; outline-offset: 3px; }
+
+@keyframes suan-slider-image-arrive {
+  from { opacity: .45; translate: 0 10px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes suan-slider-copy-arrive {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.intro.has-motion .intro-products-carousel.is-transitioning:not(.is-wrapping) .intro-products__item.is-active .intro-products__image {
+  animation: suan-slider-image-arrive .56s cubic-bezier(.22,1,.36,1) both;
+}
+.intro.has-motion .intro-products-carousel.is-transitioning:not(.is-wrapping) .intro-products__item.is-active .intro-products__copy > * {
+  animation: suan-slider-copy-arrive .45s .09s cubic-bezier(.22,1,.36,1) both;
+}
+.intro.has-motion .intro-products-carousel.is-transitioning:not(.is-wrapping) .intro-products__item.is-active .intro-products__copy > h3 { animation-delay: .14s; }
+.intro.has-motion .intro-products-carousel.is-transitioning:not(.is-wrapping) .intro-products__item.is-active .intro-products__copy > p { animation-delay: .19s; }
+.intro.has-motion .intro-products-carousel.is-transitioning:not(.is-wrapping) .intro-products__item.is-active .intro-products__copy > button { animation-delay: .24s; }
+.intro.has-motion .intro-media.is-active .intro-media-slide.is-active .intro-media-slide__caption > span {
+  animation: suan-slider-copy-arrive .45s .1s ease-out both;
+}
+.intro.has-motion .intro-media.is-active .intro-media-slide.is-active .intro-media-slide__caption > h3 {
+  animation: suan-slider-copy-arrive .55s .18s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-products__nav button::after,
+  .intro:not(.is-motion-preview) .intro-products__arrow,
+  .intro:not(.is-motion-preview) .intro-media__thumbnails > button { transition: none; }
+  .intro:not(.is-motion-preview) .intro-products__item.is-active .intro-products__image,
+  .intro:not(.is-motion-preview) .intro-products__item.is-active .intro-products__copy > *,
+  .intro:not(.is-motion-preview) .intro-media-slide.is-active .intro-media-slide__caption > * { animation: none !important; opacity: 1; translate: none; }
+}
+
+/* Reserve the illustration frame while scene images are being prepared. */
+@supports selector(:has(*)) {
+  .intro .intro-world-picture > button:has(img[data-scene-src]:not([src])),
+  .intro .intro-guide-story__art:has(img[data-scene-src]:not([src])) {
+    background: linear-gradient(135deg, #e8e1cf, #c7cbb9 55%, #f2ead7);
+  }
 }

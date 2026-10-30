@@ -14,6 +14,10 @@
 
 `#media`의 **한의원 둘러보기**는 접수·상담·치료·약재 공간을 소개하는 슬라이더입니다. 실내 원화 `assets/art/clinic-interior-concept.png`, `clinic-consult-concept.png`, `clinic-treatment-concept.png`는 이번 시안을 위해 생성한 가상의 이미지이며 실제 시설 사진이 아닙니다. 원본과 생성 정보는 `assets/provenance.json`에 기록했습니다. 이미지나 설명을 교체할 때는 [데이터 가이드](docs/data-guide.ko.md)의 `clinicDemo.tour.items` 절차를 따릅니다.
 
+## 화면 연출
+
+첫 화면의 금빛 장식과 섹션별 등장·선택 효과는 기존 CSS와 인트로 애니메이션 루프를 사용하며 외부 스크립트를 불러오지 않습니다. 모바일과 낮은 화면에서는 움직임을 줄이고, 시스템의 동작 줄이기 설정은 기본적으로 존중합니다. 사용자가 첫 화면의 연출 버튼으로 직접 연출을 켤 수 있습니다.
+
 ## 로컬 실행
 
 Python 3.10 이상, Node.js 18 이상이 필요합니다. 게임 서버·DB·로그인 없이 빌드합니다. 아래 명령은 Windows PowerShell 기준이며 macOS/Linux에서는 `.venv/bin/python`을 사용합니다.

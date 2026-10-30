@@ -1277,14 +1277,17 @@ export function mountIntro(root, data) {
         hero.style.setProperty('--hero-copy-opacity', opacity.toFixed(3));
         hero.classList.toggle('has-scroll-transition', scroll > 0 && win.innerHeight > 600); hero.classList.toggle('is-story-view', heroHidden);
       }
-      for (const section of sections) {
-        const rect = section.getBoundingClientRect(), progress = sectionProgress(rect.top, rect.height, win.innerHeight);
+      // Read geometry before writing styles so scene updates don't force repeated layouts.
+      const sectionRects = sections.map(section => ({ section, rect: section.getBoundingClientRect() }));
+      for (const { section, rect } of sectionRects) {
+        if (!activeSections.has(section)) continue;
+        const progress = sectionProgress(rect.top, rect.height, win.innerHeight);
         section.style.setProperty('--scene-progress', progress.toFixed(4));
         section.style.setProperty('--scene-y', `${reduced.matches ? 0 : ((progress - .5) * (mobile ? 16 : 32)).toFixed(2)}px`);
         if (section.querySelector('[data-companion-doors]')) section.style.setProperty('--door-progress', String(reduced.matches ? 1 : clamp01((progress - .20) / .35)));
       }
       resizeLeaves();
-      const current = sections.filter(el => el.getBoundingClientRect().top <= win.innerHeight * 0.5).at(-1) || sections[0];
+      const current = sectionRects.filter(({ rect }) => rect.top <= win.innerHeight * 0.5).at(-1)?.section || sections[0];
       if (actorSection && activeSections.has(actorSection)) {
         const rect = actorSection.getBoundingClientRect();
         const shift = reduced.matches ? 0 : Math.max(-9, Math.min(9, (win.innerHeight / 2 - rect.top - rect.height / 2) * 0.018));
