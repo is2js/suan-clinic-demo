@@ -2643,3 +2643,252 @@ body.intro.is-enhanced noscript { display: none !important; }
     background: linear-gradient(135deg, #e8e1cf, #c7cbb9 55%, #f2ead7);
   }
 }
+
+
+/* Suan reading hierarchy: preserve the illustration and existing motion. */
+.intro .intro-reservations__layout,
+.intro .intro-notices__content,
+.intro .intro-community__boards,
+.intro .intro-community__faq { text-shadow: 0 1px 5px #fffaf1d9, 0 0 14px #fffaf1c7; }
+.intro .intro-reservations__intro > p,
+.intro .intro-notices__lead p,
+.intro .intro-community__board-head p,
+.intro .intro-community__faq details p,
+.intro .intro-products__copy p {
+  color: #394a3b;
+  font-size: 16px;
+  line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.intro .intro-reservations__intro .intro-reservations__notice,
+.intro .intro-notices__sample,
+.intro .intro-community__notice,
+.intro .intro-products__notice,
+.intro .intro-sample-notice {
+  color: #685336;
+  font-size: 14px;
+  line-height: 1.7;
+  text-shadow: 0 1px 4px #fff9ed, 0 0 12px #fff9ed;
+}
+.intro .intro-reservations__stats { color: #344a38; font-size: 15px; }
+.intro .intro-reservations__schedule-heading { color: #65563e; font-size: 13px; font-weight: 600; }
+.intro .intro-reservations__schedule li { min-height: 58px; color: #253b2c; font-size: 16px; }
+.intro .intro-reservations__status { color: #355d3e; font-size: 15px; font-weight: 600; }
+.intro .intro-notices__row { min-height: 84px; }
+.intro .intro-notices__row small,
+.intro .intro-community__board li small { color: #705b3c; font-size: 12px; }
+.intro .intro-notices__row strong { color: #263c2d; font-size: 16px; line-height: 1.6; }
+.intro .intro-community__board li > button { min-height: 52px; font-size: 15px; }
+.intro .intro-community__board li time { color: #5b6451; font-size: 12px; }
+.intro .intro-community__faq summary { min-height: 48px; font-size: 15px; font-weight: 600; }
+.intro .intro-community__tabs button,
+.intro .intro-community__link,
+.intro .intro-products__nav button,
+.intro .intro-products__copy .intro-text-link { min-height: 44px; }
+.intro .intro-community__tabs button[aria-selected="true"],
+.intro .intro-products__nav button[aria-selected="true"] { color: #213f2b; font-weight: 700; }
+.intro .intro-products__copy .intro-text-link,
+.intro .intro-community__link { color: #34573b; font-size: 15px; }
+.intro .intro-products__nav button { color: #435344; font-size: 14px; }
+.intro .intro-products__nav button span { color: #705b3d; }
+.intro .intro-features-card__copy > p:last-of-type {
+  color: #3d493b;
+  font-size: 16px;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+.intro .intro-features-card__select { color: #314e37 !important; font-size: 14px; }
+.intro .intro-features-nav > button { color: #40513f !important; }
+.intro .intro-features-nav > button:focus-visible,
+.intro .intro-products__nav button:focus-visible,
+.intro .intro-community__faq summary:focus-visible { outline: 2px solid #315e3d; outline-offset: 3px; }
+.intro .intro-media-slide__caption > span { color: #fff1d4; font-size: 12px; text-shadow: 0 2px 7px #0c1718; }
+.intro .intro-media-download { min-width: 44px; min-height: 44px; }
+.intro .intro-media-counter { color: #fff2d9; font-size: 13px; font-weight: 600; }
+.intro .intro-media__thumbnails > button { min-width: 44px; min-height: 44px; }
+@media (max-width: 768px) {
+  .intro .intro-reservations__layout,
+  .intro .intro-notices__content { gap: 24px; }
+  .intro .intro-reservations__schedule li { min-height: 56px; font-size: 15px; }
+  .intro .intro-reservations__schedule-heading { font-size: 12px; }
+  .intro .intro-notices__row { min-height: 74px; }
+  .intro .intro-community__board-head p,
+  .intro .intro-products__copy p { min-height: 0; font-size: 15px; }
+  .intro .intro-community__notice,
+  .intro .intro-products__notice,
+  .intro .intro-sample-notice { font-size: 13px; }
+  .intro .intro-community__tabs button { padding-inline: 10px; }
+  .intro .intro-products__nav button { padding-inline: 3px; font-size: 12px; }
+  .intro .intro-products__arrow { flex-basis: 44px; min-width: 44px; min-height: 44px; }
+  .intro .intro-features-card__paper { height: 520px; grid-template-rows: 48% minmax(0, 1fr); }
+  .intro .intro-features-card__foreground { bottom: 52%; height: calc(48% + 68px); }
+  .intro .intro-features-card__copy > p:last-of-type { font-size: 15px; line-height: 1.65; }
+  .intro .intro-features-nav > button { min-height: 100px; font-size: 12px; }
+  .intro .intro-features-nav__name { line-height: 1.4; }
+}
+
+
+/* Keep the village scene and the sprite ground anchors intact; make both doctors discoverable. */
+.intro .intro-character-explorer .intro-village-caption {
+  color: #355940;
+  font-size: 13px;
+  font-weight: 600;
+}
+.intro .intro-character-explorer .intro-village-guide > p {
+  color: #3c5945;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+.intro .intro-character-explorer .intro-village-guide__pan { color: #405e47; font-size: 13px; }
+.intro .intro-character-explorer .intro-village-actor__pin {
+  width: 34px;
+  height: 34px;
+  border-color: #ebd39a;
+  background: #181c17;
+  box-shadow: 0 0 0 3px #1d302d66, 0 3px 12px #101a14aa;
+}
+.intro .intro-character-explorer .intro-village-actor__pin > i::before,
+.intro .intro-character-explorer .intro-village-actor__pin > i::after { width: 14px; height: 2px; background: #f6e8c1; }
+.intro .intro-character-explorer .intro-village-actor__pin::before { inset: -8px; }
+.intro .intro-character-explorer .intro-village-actor__name {
+  color: #213d2e;
+  background: #fffdf4f2;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 3px 14px #17312330;
+}
+.intro .intro-character-explorer .intro-explorer-selector {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 680px;
+  margin: 14px auto 0;
+}
+.intro .intro-character-explorer .intro-explorer-choice {
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #9caa92;
+  border-radius: 0;
+  color: #35573f;
+  background: #fffdf24d;
+}
+.intro .intro-character-explorer .intro-explorer-choice > .intro-explorer-choice__number {
+  display: inline;
+  margin-right: 10px;
+  color: #735d38;
+  font-size: 12px;
+}
+.intro .intro-character-explorer .intro-explorer-choice > .intro-explorer-choice__name {
+  flex: 1;
+  text-align: left;
+  color: #244b35;
+  font-size: 16px;
+  font-weight: 600;
+}
+.intro .intro-character-explorer .intro-explorer-choice > span:last-child {
+  color: #466f51;
+  font-size: 17px;
+}
+.intro .intro-character-explorer .intro-explorer-choice:is(:hover, :focus-visible, .is-active) {
+  color: #173f2c;
+  border-color: #476f52;
+  background: #d9e4d180;
+}
+.intro .intro-character-explorer :is(.intro-village-actor, .intro-explorer-choice, .intro-actor-panel__close, .intro-actor-panel__more, .intro-actor-panel__arrows button):focus-visible {
+  outline: 3px solid #2d6245;
+  outline-offset: 3px;
+}
+.intro .intro-character-explorer .intro-actor-panel__copy > p:first-child { color: #53654d; font-size: 13px; letter-spacing: .04em; }
+.intro .intro-character-explorer .intro-actor-panel__copy > h3 { color: #1d392b; font-size: clamp(28px, 3vw, 34px); font-weight: 600; }
+.intro .intro-character-explorer .intro-actor-panel__description { color: #36483a; font-size: 15px; line-height: 1.75; }
+.intro .intro-character-explorer .intro-actor-panel__more { min-height: 44px; font-size: 14px; }
+.intro .intro-character-explorer .intro-actor-panel__arrows button { min-width: 44px; min-height: 44px; }
+
+/* The first treatment area demonstrates motions; the second helps browse the items. */
+.intro .intro-medical-skill,
+.intro .intro-element-tab,
+.intro .intro-element-chain__skill { min-height: 44px; }
+.intro .intro-medical-skill > span:last-child,
+.intro .intro-element-tab > span:last-child,
+.intro .intro-element-chain__name { color: #344d37; font-size: 14px; line-height: 1.45; }
+.intro .intro-medical-summary > p,
+.intro .intro-element-introduction > p:last-child,
+.intro .intro-element-detail__copy > p { color: #39483a; font-size: 15px; line-height: 1.75; }
+.intro .intro-medical__motion-note,
+.intro .intro-medical__note { color: #48584a; font-size: 14px; line-height: 1.7; }
+.intro :is(.intro-medical-skill, .intro-element-tab, .intro-element-chain__skill):focus-visible { outline: 3px solid #2d6245; outline-offset: 4px; }
+@media (max-width: 768px) {
+  .intro .intro-character-explorer .intro-village-guide { gap: 8px; }
+  .intro .intro-character-explorer .intro-village-guide > p { font-size: 14px; }
+  .intro .intro-character-explorer .intro-village-guide__pan { font-size: 13px; }
+  .intro .intro-character-explorer .intro-explorer-selector { gap: 8px; }
+  .intro .intro-character-explorer .intro-explorer-choice { min-height: 56px; padding: 9px 12px; }
+  .intro .intro-character-explorer .intro-actor-panel__copy > h3 { font-size: 30px; }
+  .intro .intro-character-explorer .intro-actor-panel__description { font-size: 15px; line-height: 1.75; }
+  .intro .intro-medical-skills[data-skill-count="8"] { gap: 14px 6px; max-width: 420px; }
+  .intro .intro-medical-skill > span:last-child,
+  .intro .intro-element-tab > span:last-child { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-character-explorer .intro-explorer-choice { transition: none; }
+}
+/* Enlarge the existing individual photographs without changing their source or masks. */
+.intro .intro-character-explorer .intro-actor-panel__art > img.intro-actor-art[src$="/jo-jaeseong.png"] {
+  top: 2px; left: calc(50% - 130px); width: 260px; height: 260px;
+}
+.intro .intro-character-explorer .intro-actor-panel__art > img.intro-actor-art[src$="/kim-seokyoung.png"] {
+  top: 4px; left: calc(50% - 128px); width: 298px; height: 233px;
+}
+
+
+/* Five destination groups preserve the underlying data-driven section links. */
+.intro-mobile-quick { display: none; }
+@media (min-width: 1281px) {
+  .intro .intro-nav__top, .intro .intro-nav-panel__inner { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .intro .intro-nav__top > a { font-size: clamp(13px, 1vw, 15px); }
+  .intro .intro-nav-column { padding: 12px 8px 24px; }
+  .intro-nav-subgroup { display: flex; flex-direction: column; gap: 0; padding: 4px 0 8px; }
+  .intro-nav-subgroup + .intro-nav-subgroup { border-top: 1px solid #e4d6bb1c; }
+  .intro-nav-column .intro-nav-subgroup > a,
+  .intro-nav-column .intro-nav-subgroup > button { display: flex; justify-content: center; align-items: center; width: 100%; min-height: 34px; padding: 5px 4px; background: transparent; color: #d1c8ba; font: 13px/1.45 var(--intro-serif); text-align: center; }
+  .intro-nav-column .intro-nav-subgroup > .intro-nav-subgroup__title { color: #f3e6cf; font-size: 14px; }
+  .intro-nav-column .intro-nav-subgroup > :is(a,button):is(:hover,:focus-visible) { color: #f1ce8d; background: #ffffff0a; }
+}
+.intro-nav-subgroup > .intro-nav-overview { display: none !important; }
+.intro-drawer-group__links .intro-nav-subgroup { display: flex; flex-direction: column; padding: 5px 0 10px; }
+.intro-drawer-group__links .intro-nav-subgroup + .intro-nav-subgroup { border-top: 1px solid #ffffff17; }
+.intro-drawer-group__links .intro-nav-subgroup > a,
+.intro-drawer-group__links .intro-nav-subgroup > button { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 9px 14px; border-left: 1px solid #bca16d28; background: transparent; color: #ded5c5; font: 14px/1.5 var(--intro-serif); text-align: left; }
+.intro-drawer-group__links .intro-nav-subgroup > .intro-nav-subgroup__title { color: #f0d5a0; font-size: 15px; }
+.intro-drawer-group__links .intro-nav-subgroup > :is(a,button):is(:hover,:focus-visible) { color: #ffe3ae; background: #ffffff0b; }
+.intro-nav-subgroup > :is(a,button):focus-visible { outline: 2px solid #e6c680; outline-offset: -2px; }
+@media (max-width: 768px) {
+  .intro .intro-service-bar { display: none; }
+  .intro .intro-header__inner { padding-left: 12px; gap: 10px; }
+  .intro .intro-menu-button, .intro .intro-sound { width: 44px; height: 44px; flex: 0 0 44px; }
+  .intro .intro-header__actions { gap: 3px; }
+  .intro .intro-header__start { min-height: 44px; padding: 0 14px; white-space: nowrap; }
+  .intro .intro-hero__scene { height: 100svh; }
+  /* The persistent shortcuts carry these same actions on narrow screens. */
+  .intro .intro-hero__downloads { display: none; }
+  .intro .intro-hero__downloads > .intro-button { flex: 1 1 0; min-width: 0; min-height: 44px; gap: 4px; padding: 0 7px; font-size: 12px; white-space: nowrap; }
+  .intro .intro-hero__downloads > .intro-button--outline { flex: 1 1 0; font-size: 12px; }
+  .intro .intro-hero__downloads > .intro-button > b { font-size: 15px; }
+  .intro .intro-scroll-guide { display: none; }
+  .intro .intro-mobile-quick { position: fixed; z-index: 950; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr 1.05fr; align-items: stretch; min-height: calc(60px + env(safe-area-inset-bottom, 0px)); padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); gap: 4px; background: #182328f7; border-top: 1px solid #d7c19470; box-shadow: 0 -6px 24px #101b222b; }
+  .intro .intro-mobile-quick > :is(a,button) { display: flex; align-items: center; justify-content: center; gap: 7px; min-width: 0; min-height: 48px; padding: 6px 8px; border-radius: 2px; background: transparent; color: #f7efdf; font: 600 13px/1.3 var(--intro-serif); text-align: center; }
+  .intro .intro-mobile-quick > :is(a,button) > span { color: #ddc18b; font-size: 17px; }
+  .intro .intro-mobile-quick > .intro-mobile-quick__primary { background: #d6bd88; color: #1a3028; }
+  .intro .intro-mobile-quick > :is(a,button):focus-visible { outline: 2px solid #f5dca6; outline-offset: -3px; }
+  .intro:is(.is-overlay-open,.is-menu-open) .intro-mobile-quick { visibility: hidden; pointer-events: none; }
+  .intro .intro-footer { padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px)); }
+  .intro .intro-back-top { bottom: calc(75px + env(safe-area-inset-bottom, 0px)); }
+  .intro > .intro-status { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 360px) {
+  .intro .intro-header__start { padding: 0 8px; gap: 5px; font-size: 12px; }
+  .intro .intro-hero__downloads > .intro-button { font-size: 11px; }
+  .intro .intro-hero__downloads > .intro-button--outline { font-size: 11px; }
+}

@@ -1295,7 +1295,7 @@ export function mountIntro(root, data) {
         positionActorPanel();
       }
       if (navOpen) layoutNav();
-      navTriggers.forEach(link => { const active = link.getAttribute('href') === `#${current?.id}`; link.classList.toggle('is-active', active); if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+      navTriggers.forEach(link => { const active = (link.dataset.navSections || link.dataset.navTrigger || '').split(' ').includes(current?.id); link.classList.toggle('is-active', active); if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
       $('[data-header]')?.classList.toggle('is-scrolled', win.scrollY > 24);
       $('[data-action="top"]')?.classList.toggle('is-visible', win.scrollY > win.innerHeight * 0.6);
     }

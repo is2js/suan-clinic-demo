@@ -19,12 +19,20 @@ class Markup(HTMLParser):
         self.guide_links, self.footer_links, self.footer_services = [], [], []
         self.product_carousels, self.product_tracks = [], []
         self.product_slides, self.product_tabs, self.product_steps = [], [], []
+        self.nav_triggers, self.quick_links = [], []
+        self.in_mobile_quick = False
         self.product_section_depth = 0
         self.in_footer = False
         self.feed(text)
 
     def handle_starttag(self, tag, pairs):
         attrs = dict(pairs)
+        if tag == "nav" and "intro-mobile-quick" in attrs.get("class", "").split():
+            self.in_mobile_quick = True
+        if "data-nav-trigger" in attrs:
+            self.nav_triggers.append(attrs)
+        if self.in_mobile_quick and tag in ("a", "button"):
+            self.quick_links.append((tag, attrs))
         if tag == "section":
             if attrs.get("id") == "products":
                 self.product_section_depth = 1
@@ -63,6 +71,8 @@ class Markup(HTMLParser):
         self.urls.extend(re.findall(r"url\(['\"]?([^)'\"]+)", attrs.get("style", "")))
 
     def handle_endtag(self, tag):
+        if tag == "nav" and self.in_mobile_quick:
+            self.in_mobile_quick = False
         if tag == "section" and self.product_section_depth:
             self.product_section_depth -= 1
         if tag == "footer":
@@ -95,6 +105,13 @@ def verify(root, output, prefix):
         raise ValueError("Demo service actions must all be inert buttons")
     if markup.forms:
         raise ValueError("Demo HTML must not contain a submitting form")
+    shown_sections = [section for trigger in markup.nav_triggers for section in trigger.get("data-nav-sections", "").split()]
+    expected_sections = [group["id"] for group in data["site"]["navigation"]]
+    if len(markup.nav_triggers) != 5 or len(shown_sections) != len(set(shown_sections)) or set(shown_sections) != set(expected_sections):
+        raise ValueError("Navigation categories must cover every configured section exactly once")
+    quick = [(tag, attrs.get("href"), attrs.get("data-service-action")) for tag, attrs in markup.quick_links]
+    if quick != [("a", "#gamefeatures", None), ("a", "#character", None), ("button", None, "play")]:
+        raise ValueError("Mobile shortcuts must link to treatment and doctors and use the demo reservation action")
     products = data["clinicDemo"]["products"]["items"]
     if len(markup.product_carousels) != 1 or len(markup.product_tracks) != 1:
         raise ValueError("Product slider must have exactly one carousel and track")

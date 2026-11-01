@@ -2973,7 +2973,7 @@
         "number": "04",
         "eyebrow": "OUR DOCTORS",
         "title": "마음을 살피는 의료진",
-        "description": "두 의료진이 함께 당신의 이야기에 귀 기울입니다."
+        "description": "마을 속 의료진을 선택해 두 원장의 이야기를 만나보세요."
       },
       "background": "/assets/rpg/worlds/namhae-renewal-3d-3/review/concept-r14-distinct-villages/idong-myeon-concept.webp",
       "assets": {},
@@ -3120,7 +3120,7 @@
       "heading": {
         "number": "06",
         "eyebrow": "THE ART OF HEALING",
-        "title": "치유의 손끝, 빛나는 의술",
+        "title": "캐릭터로 만나는 진료 시연",
         "description": "진료 항목을 RPG 캐릭터의 모션으로 소개합니다. 실제 시술 화면은 아닙니다."
       },
       "background": "/assets/rpg/ui/intro/v5-medical-scenery/medical-apothecary.webp",
@@ -3480,7 +3480,7 @@
       "heading": {
         "number": "08",
         "eyebrow": "OUR CLINICS",
-        "title": "몸과 마음을 살피는 진료",
+        "title": "진료 항목 살펴보기",
         "description": "진료 항목을 네 가지 주제로 살펴보세요."
       },
       "background": "/assets/rpg/ui/intro/v5-medical-scenery/element-herb-garden.webp",

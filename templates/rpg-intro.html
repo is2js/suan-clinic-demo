@@ -3,6 +3,14 @@
 {% set deployment = intro_data.deployment | default({'mode': 'live'}) %}
 {% set demo = deployment.mode == 'demo' %}
 {% set nav_groups = site.navigation %}
+{# Presentation groups keep every data-driven section and its detailed links. #}
+{% set nav_categories = [
+  {'id':'gamefeatures', 'label':'진료', 'sections':['gamefeatures','sect','skill']},
+  {'id':'character', 'label':'의료진', 'sections':['character']},
+  {'id':'universe', 'label':'한의원', 'sections':['universe','media']},
+  {'id':'clinic', 'label':'이용 안내', 'sections':['clinic','guide']},
+  {'id':'notice', 'label':'소식·상품', 'sections':['notice','features','community','products']}
+] %}
 {% macro brand() -%}{{ site.brand.primary }}<span>{{ site.brand.secondary }}</span><small>{{ site.brand.hanja }}</small>{%- endmacro %}
 {% macro lines(text) -%}{% for line in text.split('\n') %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}{%- endmacro %}
 {% macro service(action_id, class_name='', label='', arrow=true) -%}
@@ -68,9 +76,9 @@
         <button class="intro-menu-button" type="button" data-action="menu" aria-label="메뉴 열기" aria-expanded="false" aria-controls="intro-menu"><span></span><span></span><span></span></button>
         <a class="intro-brand" href="#visual" aria-label="{{ site.brand.name }} 처음으로">{{ brand() }}</a>
         <nav class="intro-nav" data-desktop-nav aria-label="주요 메뉴">
-          <div class="intro-nav__top" data-nav-top>{% for group in nav_groups %}<a href="#{{ group.id }}" data-nav-trigger="{{ group.id }}" aria-controls="intro-nav-panel" aria-expanded="false">{{ group.label }}</a>{% endfor %}</div>
+          <div class="intro-nav__top" data-nav-top>{% for category in nav_categories %}<a href="#{{ category.id }}" data-nav-trigger="{{ category.id }}" data-nav-sections="{{ category.sections | join(' ') }}" aria-controls="intro-nav-panel" aria-expanded="false">{{ category.label }}</a>{% endfor %}</div>
           <div class="intro-nav-panel" id="intro-nav-panel" data-nav-panel hidden inert>
-            <div class="intro-nav-panel__inner">{% for group in nav_groups %}<div class="intro-nav-column" data-nav-column="{{ group.id }}" aria-label="{{ group.label }} 하위 메뉴">{{ nav_links(group) }}</div>{% endfor %}</div>
+            <div class="intro-nav-panel__inner">{% for category in nav_categories %}<div class="intro-nav-column" data-nav-column="{{ category.id }}" aria-label="{{ category.label }} 하위 메뉴">{% for group in nav_groups if group.id in category.sections %}<div class="intro-nav-subgroup"><a class="intro-nav-subgroup__title" href="#{{ group.id }}">{{ group.label }} <span aria-hidden="true">↗</span></a>{{ nav_links(group) }}</div>{% endfor %}</div>{% endfor %}</div>
           </div>
         </nav>
         <div class="intro-header__actions"><button class="intro-sound" type="button" data-action="sound" aria-label="환경음 켜기" aria-pressed="false"><span aria-hidden="true">♪</span><i></i><i></i><i></i></button>{{ service("play", "intro-header__start") }}</div>
@@ -80,7 +88,7 @@
       <button class="intro-drawer__shade" tabindex="-1" data-action="menu" type="button" aria-label="메뉴 닫기"></button>
       <nav class="intro-drawer__panel" aria-label="모바일 메뉴">
         <button class="intro-drawer__close" type="button" data-action="menu" data-drawer-close autofocus aria-label="메뉴 닫기">×</button><a class="intro-brand" href="#visual">{{ brand() }}</a><p>{{ site['copy'].drawerLead }}</p>
-        <div class="intro-drawer-groups" data-mobile-nav>{% for group in nav_groups %}<details class="intro-drawer-group" data-mobile-nav-group="{{ group.id }}"><summary><span><small>{{ '%02d' | format(loop.index) }}</small>{{ group.label }}</span><i aria-hidden="true"></i></summary><div class="intro-drawer-group__links">{{ nav_links(group) }}</div></details>{% endfor %}</div>
+        <div class="intro-drawer-groups" data-mobile-nav>{% for category in nav_categories %}<details class="intro-drawer-group" data-mobile-nav-group="{{ category.id }}"><summary><span><small>{{ '%02d' | format(loop.index) }}</small>{{ category.label }}</span><i aria-hidden="true"></i></summary><div class="intro-drawer-group__links">{% for group in nav_groups if group.id in category.sections %}<div class="intro-nav-subgroup"><a class="intro-nav-subgroup__title" href="#{{ group.id }}">{{ group.label }} <span aria-hidden="true">↗</span></a>{{ nav_links(group) }}</div>{% endfor %}</div></details>{% endfor %}</div>
         {{ service("play", "intro-button", site['copy'].drawerStart) }}
       </nav>
     </dialog>
@@ -102,7 +110,7 @@
           </div>
           <img class="intro-hero__healers" data-opening-layer="healers" src="{{ sections.visual.assets.healers }}" alt="{{ sections.visual['copy'].healersAlt }}" fetchpriority="high" decoding="async">
           <div class="intro-hero__layer intro-hero__front" data-parallax="front" data-opening-layer="front" aria-hidden="true"><div class="intro-theme-image intro-theme-image--night" style="background-image:url('{{ sections.visual.assets.layers.night.front }}')"></div><div class="intro-theme-image intro-theme-image--day" style="background-image:url('{{ sections.visual.assets.layers.day.front }}')"></div></div>
-          <div class="intro-hero__downloads" data-opening-layer="cta">{{ service("play", "intro-button intro-button--gold", sections.visual['copy'].startLabel) }}<a class="intro-button intro-button--outline" href="#universe">{{ sections.visual['copy'].aboutLabel }} <b aria-hidden="true">↓</b></a><a class="intro-scroll-guide" href="#clinic"><span>{{ sections.visual['copy'].scrollLabel }}</span><i></i><b aria-hidden="true">⌄</b></a></div>
+          <div class="intro-hero__downloads" data-opening-layer="cta">{{ service("play", "intro-button intro-button--gold", sections.visual['copy'].startLabel) }}<a class="intro-button intro-button--outline" href="#gamefeatures">진료 안내 <b aria-hidden="true">↓</b></a><a class="intro-button intro-button--outline" href="#character">의료진 <b aria-hidden="true">↓</b></a><a class="intro-scroll-guide" href="#clinic"><span>{{ sections.visual['copy'].scrollLabel }}</span><i></i><b aria-hidden="true">⌄</b></a></div>
         </div>
         <div class="intro-hero__story" data-reveal data-reveal-lines><p style="--reveal-order:0">{{ sections.visual['copy'].storyKicker }}</p><h2 style="--reveal-order:1">{{ sections.visual['copy'].storyTitleBefore }}<br><em>{{ sections.visual['copy'].storyTitleEmphasis }}</em>{{ sections.visual['copy'].storyTitleAfter }}</h2><a href="#universe" class="intro-story-link" style="--reveal-order:2"><span>{{ sections.visual['copy'].storyLink }}</span><b aria-hidden="true">▶</b></a></div>
       </section>
@@ -302,6 +310,11 @@
       <section class="intro-section intro-access intro-illustrated" id="access" data-section>{{ scenery('access', sections.access.background) }}<div class="intro-access__ornament" aria-hidden="true">緣</div><div data-reveal data-reveal-lines><p class="intro-heading__eyebrow" style="--reveal-order:0">{{ sections.access.heading.eyebrow }}</p><h2 style="--reveal-order:1">{{ lines(sections.access.heading.title) }}</h2><p style="--reveal-order:2">{{ sections.access.heading.description }}</p>{{ service("play", "intro-button intro-button--ink", sections.access.actions[0].label) }}</div></section>
     </main>
     <footer class="intro-footer"><a class="intro-brand" href="#visual">{{ brand() }}</a><nav aria-label="서비스 메뉴">{% for action_id in site.footer.actionIds %}{% if action_id == 'clinic' %}<a href="#gamefeatures">{{ site.actions[action_id].label }}</a>{% elif action_id == 'staffBoard' %}<a href="#clinic">{{ site.actions[action_id].label }}</a>{% elif action_id != 'admin' or landing_is_operator %}{{ service(action_id, arrow=false) }}{% endif %}{% endfor %}</nav><p>{{ site.footer.description.replace('LIVE', 'DEMO') if demo else site.footer.description }}</p><small>{{ site.footer.copyright }}</small>{% if landing_is_logged_in and not demo %}{{ service('logout', arrow=false) }}{% endif %}</footer>
+    <nav class="intro-mobile-quick" aria-label="빠른 진료 안내">
+      <a href="#gamefeatures"><span aria-hidden="true">✦</span>진료 안내</a>
+      <a href="#character"><span aria-hidden="true">♧</span>의료진</a>
+      {{ service('play', 'intro-mobile-quick__primary', '예약 문의', false) }}
+    </nav>
     <a class="intro-back-top" href="#visual" data-action="top" aria-label="맨 위로"><span aria-hidden="true">↑</span></a>
     <dialog id="intro-dialog" class="intro-dialog" aria-label="수안 이야기"><button class="intro-dialog__close" type="button" data-action="close-dialog" aria-label="닫기">×</button><div class="intro-dialog__body" data-dialog-content></div></dialog>
     <script type="application/json" id="intro-data">{{ intro_data | tojson }}</script>

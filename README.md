@@ -14,6 +14,8 @@
 
 `#media`의 **한의원 둘러보기**는 접수·상담·치료·약재 공간을 소개하는 슬라이더입니다. 실내 원화 `assets/art/clinic-interior-concept.png`, `clinic-consult-concept.png`, `clinic-treatment-concept.png`는 이번 시안을 위해 생성한 가상의 이미지이며 실제 시설 사진이 아닙니다. 원본과 생성 정보는 `assets/provenance.json`에 기록했습니다. 이미지나 설명을 교체할 때는 [데이터 가이드](docs/data-guide.ko.md)의 `clinicDemo.tour.items` 절차를 따릅니다.
 
+모바일에서는 하단에서 진료 안내·의료진·예약 문의에 바로 접근할 수 있습니다. 예약 문의는 실제 예약을 접수하지 않고 준비 중 안내를 표시합니다. 상단의 다섯 메뉴 묶음은 `templates/rpg-intro.html`의 `nav_categories`에서 구성하며, 각 세부 메뉴의 원본은 `data/content.json`의 `site.navigation`입니다. 메뉴를 추가하거나 묶음을 바꾸면 카테고리에 각 섹션 ID를 한 번씩 포함하고 검사를 실행하세요.
+
 ## 화면 연출
 
 첫 화면의 금빛 장식과 섹션별 등장·선택 효과는 기존 CSS와 인트로 애니메이션 루프를 사용하며 외부 스크립트를 불러오지 않습니다. 모바일과 낮은 화면에서는 움직임을 줄이고, 시스템의 동작 줄이기 설정은 기본적으로 존중합니다. 사용자가 첫 화면의 연출 버튼으로 직접 연출을 켤 수 있습니다.
