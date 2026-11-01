@@ -282,6 +282,15 @@
         {{ scenery('products', sections.skill.background) }}
         {{ section_heading("products") }}
         <p class="intro-products__notice" data-reveal>{{ intro_data.clinicDemo.products.notice }}</p>
+        <div class="intro-product-collection" data-reveal aria-label="한방 상품 시안 모아보기">
+          <div class="intro-product-collection__heading"><div><span>SUAN HERBAL COLLECTION</span><h3>한방 상품 둘러보기</h3></div><p>마음에 드는 상품을 선택해 자세히 살펴보세요.</p></div>
+          <ul class="intro-product-collection__grid">{% for item in intro_data.clinicDemo.products['items'] %}
+            <li><a class="intro-product-card" href="#product-{{ item.id }}" aria-label="{{ item.name }} 상품 시안 자세히 보기">
+              <span class="intro-product-card__image"><img data-scene-src="{{ item.image }}" alt="" loading="lazy" decoding="async"><noscript><img src="{{ item.image }}" alt="" loading="lazy" decoding="async"></noscript></span>
+              <span class="intro-product-card__body"><span class="intro-product-card__category">{{ item.category }} · 시안</span><strong>{{ item.name }}</strong><span class="intro-product-card__more">자세히 보기 <b aria-hidden="true">↗</b></span></span>
+            </a></li>
+          {% endfor %}</ul>
+        </div>
         <div class="intro-products-carousel" data-carousel="products" data-reveal aria-label="한방 상품 둘러보기">
           <div class="intro-products__viewport"><div class="intro-products__track" data-track>{% for item in intro_data.clinicDemo.products['items'] %}
             <article class="intro-products__item{% if loop.first %} is-active{% endif %}" id="product-{{ item.id }}" data-slide role="tabpanel" aria-labelledby="product-tab-{{ loop.index0 }}">

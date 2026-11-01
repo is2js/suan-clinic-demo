@@ -2892,3 +2892,99 @@ body.intro.is-enhanced noscript { display: none !important; }
   .intro .intro-hero__downloads > .intro-button { font-size: 11px; }
   .intro .intro-hero__downloads > .intro-button--outline { font-size: 11px; }
 }
+
+
+/* An image-led product collection. Existing detail carousel keeps its own motion. */
+.intro .intro-product-collection {
+  position: relative;
+  z-index: 2;
+  width: min(1170px, calc(100% - 80px));
+  margin: clamp(38px, 5vw, 62px) auto 0;
+}
+.intro .intro-product-collection__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 23px;
+  border-bottom: 1px solid #ac9a775e;
+  padding-bottom: 15px;
+}
+.intro .intro-product-collection__heading span {
+  color: #826a45;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .16em;
+}
+.intro .intro-product-collection__heading h3 {
+  margin: 6px 0 0;
+  color: #253c2d;
+  font: 600 clamp(24px, 2.4vw, 32px)/1.35 var(--intro-serif);
+}
+.intro .intro-product-collection__heading p {
+  margin: 0 0 3px;
+  color: #51604d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.intro .intro-product-collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 30px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.intro .intro-product-collection__grid > li { min-width: 0; }
+.intro .intro-product-card {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.intro .intro-product-card:focus-visible { outline: 3px solid #345f42; outline-offset: 5px; }
+.intro .intro-product-card__image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #e5ddca, #c7c2ab 60%, #eee5d2);
+  border-radius: 6px;
+  box-shadow: 0 7px 24px #443b291c;
+}
+.intro .intro-product-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .3s;
+}
+.intro .intro-product-card__image img[data-scene-src]:not([src]):not(.is-missing) { opacity: 0; }
+.intro:not(.is-enhanced) .intro-product-card__image > img[data-scene-src] { display: none; }
+.intro .intro-product-card:is(:hover, :focus-visible) .intro-product-card__image img { transform: scale(1.025); }
+.intro .intro-product-card__body { display: block; padding: 16px 2px 12px; }
+.intro .intro-product-card__category { display: block; color: #796546; font-size: 11px; font-weight: 600; letter-spacing: .08em; }
+.intro .intro-product-card__body strong { display: block; margin-top: 6px; color: #243d2c; font: 600 22px/1.4 var(--intro-serif); }
+.intro .intro-product-card__more { display: inline-flex; align-items: center; min-height: 44px; gap: 9px; color: #436449; font-size: 14px; }
+.intro .intro-product-card__more b { color: #a27d46; font-size: 15px; transition: translate .25s; }
+.intro .intro-product-card:is(:hover, :focus-visible) .intro-product-card__more b { translate: 3px -3px; }
+.intro .intro-products-carousel { margin-top: clamp(44px, 6vw, 76px); }
+@media (max-width: 1024px) {
+  .intro .intro-product-collection__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .intro .intro-product-collection { width: calc(100% - 40px); margin-top: 34px; }
+  .intro .intro-product-collection__heading { display: block; margin-bottom: 18px; }
+  .intro .intro-product-collection__heading p { margin-top: 7px; font-size: 14px; }
+  .intro .intro-product-collection__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .intro .intro-product-card__body { padding: 12px 2px 3px; }
+  .intro .intro-product-card__body strong { font-size: 18px; }
+  .intro .intro-products-carousel { margin-top: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro:not(.is-motion-preview) .intro-product-card__image img,
+  .intro:not(.is-motion-preview) .intro-product-card__more b { transition: none; }
+  .intro:not(.is-motion-preview) .intro-product-card:is(:hover,:focus-visible) .intro-product-card__image img { transform: none; }
+  .intro:not(.is-motion-preview) .intro-product-card:is(:hover,:focus-visible) .intro-product-card__more b { translate: none; }
+}

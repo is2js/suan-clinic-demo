@@ -19,6 +19,7 @@ class Markup(HTMLParser):
         self.guide_links, self.footer_links, self.footer_services = [], [], []
         self.product_carousels, self.product_tracks = [], []
         self.product_slides, self.product_tabs, self.product_steps = [], [], []
+        self.product_cards = []
         self.nav_triggers, self.quick_links = [], []
         self.in_mobile_quick = False
         self.product_section_depth = 0
@@ -39,6 +40,8 @@ class Markup(HTMLParser):
             elif self.product_section_depth:
                 self.product_section_depth += 1
         if self.product_section_depth:
+            if tag == "a" and "intro-product-card" in attrs.get("class", "").split():
+                self.product_cards.append(attrs)
             if attrs.get("data-carousel") == "products":
                 self.product_carousels.append((tag, attrs))
             if "data-track" in attrs:
@@ -113,6 +116,8 @@ def verify(root, output, prefix):
     if quick != [("a", "#gamefeatures", None), ("a", "#character", None), ("button", None, "play")]:
         raise ValueError("Mobile shortcuts must link to treatment and doctors and use the demo reservation action")
     products = data["clinicDemo"]["products"]["items"]
+    if [card.get("href") for card in markup.product_cards] != [f"#product-{item['id']}" for item in products]:
+        raise ValueError("Product cards must link to the corresponding catalog slides in order")
     if len(markup.product_carousels) != 1 or len(markup.product_tracks) != 1:
         raise ValueError("Product slider must have exactly one carousel and track")
     if len(markup.product_slides) != len(products) or len(markup.product_tabs) != len(products):
